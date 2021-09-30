@@ -27,16 +27,6 @@ class CreateOrdersTable extends Migration
             $table->string('country', 20);
             $table->timestamps();
         });
-
-        Schema::create('order_user', function (Blueprint $table) {
-
-            $table->unsignedBigInteger('order_id');
-            $table->unsignedBigInteger('product_id');
-
-            $table->foreign('order_id')->references('id')->on('orders');
-            $table->foreign('product_id')->references('id')->on('products');
-
-        });
     }
 
     /**

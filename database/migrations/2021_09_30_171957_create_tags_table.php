@@ -20,19 +20,6 @@ class CreateTagsTable extends Migration
             $table->timestamps();
 
         });
-
-        //tabella pivot
-
-        Schema::create('tag_user', function (Blueprint $table) {
-
-            $table->unsignedBigInteger('tag_id');
-            $table->unsignedBigInteger('user_id');
-
-            $table->foreign('tag_id')->references('id')->on('tags');
-            $table->foreign('user_id')->references('id')->on('users');
-
-        });
-
     }
 
     /**
