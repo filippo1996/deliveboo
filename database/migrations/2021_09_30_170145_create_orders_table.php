@@ -15,6 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('name', 45);
             $table->string('lastname', 45);
             $table->string('email', 150);
@@ -26,6 +27,8 @@ class CreateOrdersTable extends Migration
             $table->string('city', 45);
             $table->string('country', 20);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -21,6 +21,8 @@ class CreateTagUserTable extends Migration
     
             $table->foreign('tag_id')->references('id')->on('tags');
             $table->foreign('user_id')->references('id')->on('users');
+
+            $table->primary(['tag_id','user_id']);
         });
     }
 
