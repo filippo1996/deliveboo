@@ -1,5 +1,5 @@
 <template>
-  <div>HelloWorld con VUE</div>
+  <div>HelloWorld con VUE <i class="fas fa-icons"></i></div>
 </template>
 
 <script>
