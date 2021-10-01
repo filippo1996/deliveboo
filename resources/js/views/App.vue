@@ -1,10 +1,17 @@
 <template>
-  <div>HelloWorld con VUE <i class="fas fa-icons"></i></div>
+  <div>
+    <Header/>
+  </div>
 </template>
 
 <script>
-export default {
+import Header from '../traits/Header.vue';
 
+export default {
+  name: 'App',
+    components: {
+    Header,
+    }
 }
 </script>
 
