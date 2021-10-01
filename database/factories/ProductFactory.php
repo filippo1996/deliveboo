@@ -22,14 +22,16 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $nameProduct = $this->faker->name;
         return [
             'user_id' => \App\Models\User::factory(),
-            'name' => $this->faker->name,
+            'name' => $nameProduct,
             'description' => $this->faker->text($maxNbChars = 30),
             'img_path' => $this->faker->imageUrl($width = 640, $height = 480),
             'ingredient' => $this->faker->name,
             'visibility' => 1,
             'price' => 10,
+            'slug' => Str::slug($nameProduct),
         ];
     }
 }

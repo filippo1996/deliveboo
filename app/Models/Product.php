@@ -15,6 +15,7 @@ class Product extends Model
         'img_path',
         'ingredient',
         'visibility',
-        'price'
+        'price',
+        'slug'
     ];
 }

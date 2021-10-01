@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('ingredient', 255);
             $table->tinyInteger('visibility');
             $table->float('price',5,2);
+            $table->string('slug')->unique();
             $table->timestamps(); 
             $table->foreign('user_id')->references('id')->on('users');
         });
