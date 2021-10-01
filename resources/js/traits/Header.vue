@@ -1,15 +1,20 @@
 <template>
-  <header class="bg-secondary">
-    <div class="container-fluid">
-      <div class="row d-flex space-between">
-        <div class="col-5 col-sm-6">
-          logoooo
-        </div>
-        <div class="col-5 col-sm-6">
-          <button class="btn btn-primary" type="submit">Button</button>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">DeliveBoo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
 </template>
 
@@ -20,9 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header{
-  height: 80px;
-}
+
 
 </style>
 
