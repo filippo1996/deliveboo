@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Route::middleware('auth')->group(function(){
 
   // Order
   Route::resource('orders', OrderController::class);
+
+  // Product
+  Route::resource('products', ProductController::class);
 
 });
 
