@@ -6,8 +6,8 @@
       <div class="alert alert-success">{{ session('updated') }}</div>        
     @endif
     
-    <div class="row">
-      <div class="col">
+    <div class="row mt-5">
+      <div class="col-12">
         <div class="table-responsive mt-5">
           <table class="table table-sm table-hover">
             <thead class="table-dark">
