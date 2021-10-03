@@ -31,6 +31,8 @@
                   <td>{{ $product->description }}</td>
                   <td>{{ $product->ingredient }}</td>
 
+                  {{-- Per il momento tutte le icone dei bottoni sono inserire con svg --}}
+                  
                   {{-- Show --}}
                   <td class="text-center">
                     <a href="{{ route('products.show', ['product'=>$product->slug]) }}" class="text-muted">

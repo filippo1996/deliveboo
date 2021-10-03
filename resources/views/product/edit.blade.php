@@ -48,6 +48,7 @@
           <a href="{{ route('products.index') }}">
             <button type="button" class="btn btn-outline-danger">Annulla</button>
           </a>
+          {{-- Il bottone Annulla rimane in secondo piano, rispetto all'operazione "Salva modifiche" suggerita e in evidenza --}}
         </div>
       </div>
     </div>
