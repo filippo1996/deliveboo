@@ -5,6 +5,8 @@
     @if (session('updated'))
       <div class="alert alert-success">{{ session('updated') }}</div>        
     @endif
+
+    <img src="{{ Auth::user()->cover }}" alt=" {{ Auth::user()->name }}" width="200px">
     
     <div class="row mt-5">
       <div class="col-12">
@@ -15,7 +17,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Desrizione</th>
-                <th scope="col">Ingredienti</th>
+                <th scope="col">Foto</th>
                 <th scope="col" class="text-center">Visualizza</th>
                 <th scope="col" class="text-center">Modifica</th>
                 <th scope="col" class="text-center">Cancella</th>
@@ -29,7 +31,7 @@
                   
                   <td>{{ $product->name }}</td>
                   <td>{{ $product->description }}</td>
-                  <td>{{ $product->ingredient }}</td>
+                  <td><img src="{{ $product->img_path }}" alt="{{ $product->name }}" width="60px"></td>
 
                   {{-- Per il momento tutte le icone dei bottoni sono inserire con svg --}}
                   

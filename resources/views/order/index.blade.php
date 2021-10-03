@@ -3,12 +3,9 @@
 
 @section('content')
   <h1>I Tuoi Ordini</h1>
-  <ul>
+  <ul class="list-group">
     @foreach ($orders as $order)
-    <li>
-      {{ $order->id }}
-      {{ $order->name }}
-    </li>
+      <li class="list-group-item">{{ $order->id }} {{ $order->name }}</li>
     @endforeach
   </ul>
 @endsection

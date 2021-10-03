@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use FakerRestaurant\Provider\it_IT\Restaurant;
 
 class UserFactory extends Factory
 {
@@ -22,6 +23,10 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $this->faker->addProvider(new Restaurant($this->faker));
+
+        print_r($this->faker->dairyName());
+        die;
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
