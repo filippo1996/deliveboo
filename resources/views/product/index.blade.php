@@ -9,9 +9,9 @@
     <div class="row">
       <div class="col">
         <div class="table-responsive mt-5">
-          <table class="table table-hover">
+          <table class="table table-sm table-hover">
             <thead class="table-dark">
-              <tr class="text-left">
+              <tr class="text-start">
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Desrizione</th>
@@ -23,7 +23,7 @@
             </thead>
                 
             @foreach ($products as $product)
-              <tbody class="text-left">
+              <tbody class="text-start">
                 <tr>
                   <th scope="row">{{ $product->id }}</th>
                   
