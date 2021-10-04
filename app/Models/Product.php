@@ -18,4 +18,20 @@ class Product extends Model
         'price',
         'slug'
     ];
+
+    /**
+     * Get the user that owns the product.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * The orders that belong to the product.
+     */
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class, 'product_order')->withPivot('qty');
+    }
 }

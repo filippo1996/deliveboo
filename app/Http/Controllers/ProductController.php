@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -14,7 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('product.index', compact('products'));
     }
 
     /**
@@ -35,7 +37,38 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validazione dei Dati
+        $request->validate([
+            'name' => 'required|max:150',
+            'description' => 'required'
+        ]);
+
+        // Prendo i dati
+        $data = $request->all();
+
+        // Creo una nuova istanza
+        $created_product = new Product();
+        $slug = Str::slug($data['name'], '-');
+
+        // Verifico se c'è un titolo duplicato quando un Product viene creato
+        $slug_base = $slug;
+        $slug_presente = Product::where('slug', $slug)->first();
+
+        $contatore = 1;
+        while($slug_presente) {
+            $slug = $slug_base . '-' . $contatore;
+            $slug_presente = Product::where('slug', $slug)->first();
+            $contatore++;
+        }
+        // Verifico se c'è un titolo duplicato quando un Product viene creato
+
+        $created_product->slug = $slug; // In ogni caso $created_product avrà com valore $slug;
+        $created_product->fill($data);
+
+        // Salvo i dati
+        $created_product->save();
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -44,9 +77,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($slug)
     {
-        //
+        $product = Product::where('slug', $slug)->first();
+        return view('product.show', compact('product'));
     }
 
     /**
@@ -57,7 +91,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('product.edit', compact('product'));
     }
 
     /**
@@ -69,7 +103,42 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        // Validazione dei Dati
+        $request->validate([
+            'name' => 'required|max:150',
+            'description' => 'required'
+        ]);
+
+        $data = $request->all();
+      
+        // Calcolo lo slug SOLO se il titolo è stato modificato
+        if($data['name'] != $product->name) {
+            $slug = Str::slug($data['name'], '-');
+            $slug_base = $slug;
+            $slug_presente = Product::where('slug', $slug)->first();
+
+            // Nel caso in cui inserissi lo stesso titolo, lo slug verrebe modificato aggiungendo il contatore.
+            // Per es: titolo: stesso titolo   
+            // primo slug_ stesso-titolo 
+            // secondo slug: stesso-titolo-1
+
+            $contatore = 1;
+            while($slug_presente) {
+            // aggiungo al product precedente il contatore
+            $slug = $slug_base . '-' . $contatore;
+            // controlo se il product esiste ancora
+            $slug_presente = Product::where('slug', $slug)->first();
+            // incremento il contatore
+            $contatore++;
+            }
+
+            // Lo slug viene assegnato in ogni caso
+            $data['slug'] = $slug;
+        }
+
+        $product->update($data);
+
+        return redirect()->route('products.index')->with('updated', 'Elemento modificato con successo');
     }
 
     /**
@@ -80,6 +149,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        
     }
 }

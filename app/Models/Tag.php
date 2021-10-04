@@ -13,4 +13,12 @@ class Tag extends Model
         'name',
         'slug'
     ];
+
+    /**
+     * The users that belong to the tag.
+     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

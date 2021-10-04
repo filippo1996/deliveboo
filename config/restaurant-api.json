@@ -1,0 +1,900 @@
+{
+  "type": "restaurantItems",
+  "restaurantItems": [
+    {
+      "name": "Burger King",
+      "cover": "https://loghi-famosi.com/wp-content/uploads/2020/08/Burger-King-Logo.png",
+      "imageType": "png",
+      "servingSize": null,
+      "readableServingSize": null,
+      "products": [
+        {
+          "id": 424571,
+          "title": "Bacon King Burger",
+          "image": "https://images.spoonacular.com/file/wximages/424571-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Burger King",
+          "servingSize": null,
+          "readableServingSize": null
+        },
+        {
+          "id": 278131,
+          "title": "Hamburger",
+          "image": "https://images.spoonacular.com/file/wximages/278131-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Jack's",
+          "servingSize": null,
+          "readableServingSize": null
+        },
+        {
+          "id": 243808,
+          "title": "Hamburger w/Onion",
+          "image": "https://images.spoonacular.com/file/wximages/243808-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "In-N-Out",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 364691,
+          "title": "Hamburger Patty, 2 oz",
+          "image": "https://images.spoonacular.com/file/wximages/364691-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Jack's",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 419298,
+          "title": "Hamburger w/ mustard & ketchup instead of spread",
+          "image": "https://images.spoonacular.com/file/wximages/419298-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "In-N-Out",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 224185,
+          "title": "Papa Burger",
+          "image": "https://images.spoonacular.com/file/wximages/224185-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "A&W",
+          "servingSize": "210g",
+          "readableServingSize": "10 oz",
+          "servings": {
+              "number": 1.0,
+              "size": 210.0,
+              "unit": "g"
+          }
+      },
+      {
+          "id": 264615,
+          "title": "Taco Burger w/ Cheese",
+          "image": "https://images.spoonacular.com/file/wximages/264615-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Taco John's",
+          "servingSize": "5oz",
+          "readableServingSize": "5 oz",
+          "servings": {
+              "number": 1.0,
+              "size": 5.0,
+              "unit": "oz"
+          }
+      },
+      {
+          "id": 363251,
+          "title": "Onyum Burger",
+          "image": "https://images.spoonacular.com/file/wximages/363251-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Fatz",
+          "servingSize": "1 sandwich",
+          "readableServingSize": "1 sandwich",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "sandwich"
+          }
+      },
+      {
+          "id": 328981,
+          "title": "Glory Burger",
+          "image": "https://images.spoonacular.com/file/wximages/328981-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Glory Days Grill",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 382639,
+          "title": "Bacon Burger",
+          "image": "https://images.spoonacular.com/file/wximages/382639-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Bob's Burgers & Brew",
+          "servingSize": "1 serving",
+          "readableServingSize": "1 serving",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "serving"
+          }
+      },
+      {
+          "id": 382638,
+          "title": "B.O.B. Burger",
+          "image": "https://images.spoonacular.com/file/wximages/382638-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Bob's Burgers & Brew",
+          "servingSize": "1 serving",
+          "readableServingSize": "1 serving",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "serving"
+          }
+      },
+      {
+          "id": 382650,
+          "title": "Mushroom Burger",
+          "image": "https://images.spoonacular.com/file/wximages/382650-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Bob's Burgers & Brew",
+          "servingSize": "1 serving",
+          "readableServingSize": "1 serving",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "serving"
+          }
+      },
+      {
+          "id": 382642,
+          "title": "Bleu Cheese Burger",
+          "image": "https://images.spoonacular.com/file/wximages/382642-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Bob's Burgers & Brew",
+          "servingSize": "1 serving",
+          "readableServingSize": "1 serving",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "serving"
+          }
+      },
+      {
+          "id": 382648,
+          "title": "Guacamole Bacon Burger",
+          "image": "https://images.spoonacular.com/file/wximages/382648-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Bob's Burgers & Brew",
+          "servingSize": "1 serving",
+          "readableServingSize": "1 serving",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "serving"
+          }
+      },
+      {
+          "id": 382663,
+          "title": "Cordon Bleu Chicken Burger",
+          "image": "https://images.spoonacular.com/file/wximages/382663-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Bob's Burgers & Brew",
+          "servingSize": "1 serving",
+          "readableServingSize": "1 serving",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "serving"
+          }
+      },
+      {
+          "id": 250799,
+          "title": "Double Burger",
+          "image": "https://images.spoonacular.com/file/wximages/250799-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Outback",
+          "servingSize": "1 Burger",
+          "readableServingSize": "1 Burger",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "Burger"
+          }
+      },
+      {
+          "id": 343214,
+          "title": "Brunch Burger",
+          "image": "https://images.spoonacular.com/file/wximages/343214-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Jack in the Box",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 267314,
+          "title": "Jr. Hamburger",
+          "image": "https://images.spoonacular.com/file/wximages/267314-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Wendy's",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 256411,
+          "title": "Banzai Burger",
+          "image": "https://images.spoonacular.com/file/wximages/256411-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Red Robin",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344813,
+          "title": "Veggie Burger #2",
+          "image": "https://images.spoonacular.com/file/wximages/344813-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 316774,
+          "title": "Sonic Burger w/ Ketchup",
+          "image": "https://images.spoonacular.com/file/wximages/316774-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Sonic",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 316773,
+          "title": "Sonic Burger w/ Mustard",
+          "image": "https://images.spoonacular.com/file/wximages/316773-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Sonic",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 332048,
+          "title": "Kid Hamburger",
+          "image": "https://images.spoonacular.com/file/wximages/332048-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Wendy's",
+          "servingSize": null,
+          "readableServingSize": "Kids",
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 426054,
+          "title": "Sunrise Burger w/ Grass Fed Patty w/o Side Fries",
+          "image": "https://images.spoonacular.com/file/wximages/426054-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Chili's Grill and Bar",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 261164,
+          "title": "Jalapeno Burger",
+          "image": "https://images.spoonacular.com/file/wximages/261164-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Sonic",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 362915,
+          "title": "Bavarian Burger",
+          "image": "https://images.spoonacular.com/file/wximages/362915-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Shari's",
+          "servingSize": "479g",
+          "readableServingSize": "17 oz",
+          "servings": {
+              "number": 1.0,
+              "size": 479.0,
+              "unit": "g"
+          }
+      },
+      {
+          "id": 353378,
+          "title": "Kid's Hamburger",
+          "image": "https://images.spoonacular.com/file/wximages/353378-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Eat n Park",
+          "servingSize": null,
+          "readableServingSize": "Kid's",
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 276833,
+          "title": "Small Hamburger (plain)",
+          "image": "https://images.spoonacular.com/file/wximages/276833-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Runza",
+          "servingSize": "168g",
+          "readableServingSize": "Small",
+          "servings": {
+              "number": 1.0,
+              "size": 168.0,
+              "unit": "g"
+          }
+      },
+      {
+          "id": 231990,
+          "title": "Breakfast Burger",
+          "image": "https://images.spoonacular.com/file/wximages/231990-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Carl's Jr",
+          "servingSize": "309g",
+          "readableServingSize": "11 oz",
+          "servings": {
+              "number": 1.0,
+              "size": 309.0,
+              "unit": "g"
+          }
+      },
+      {
+          "id": 364693,
+          "title": "Hamburger Patty, 4 oz",
+          "image": "https://images.spoonacular.com/file/wximages/364693-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Jack's",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344815,
+          "title": "Vertigo Burger",
+          "image": "https://images.spoonacular.com/file/wximages/344815-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344811,
+          "title": "Veggie Burger #1",
+          "image": "https://images.spoonacular.com/file/wximages/344811-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344801,
+          "title": "Half-the-Guilt Burger #1",
+          "image": "https://images.spoonacular.com/file/wximages/344801-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344816,
+          "title": "Vertigo Burger wrapped in lettuce",
+          "image": "https://images.spoonacular.com/file/wximages/344816-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344807,
+          "title": "The Elevation Burger (Double Meat)",
+          "image": "https://images.spoonacular.com/file/wximages/344807-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344814,
+          "title": "Veggie Burger #2 wrapped in lettuce",
+          "image": "https://images.spoonacular.com/file/wximages/344814-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344812,
+          "title": "Veggie Burger #1 wrapped in lettuce",
+          "image": "https://images.spoonacular.com/file/wximages/344812-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344802,
+          "title": "Half-the-Guilt Burger #1 wrapped in lettuce",
+          "image": "https://images.spoonacular.com/file/wximages/344802-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344804,
+          "title": "Half-the-Guilt Burger #2 wrapped in lettuce",
+          "image": "https://images.spoonacular.com/file/wximages/344804-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344809,
+          "title": "The Elevation Burger (Double Meat, Double Cheese)",
+          "image": "https://images.spoonacular.com/file/wximages/344809-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344808,
+          "title": "The Elevation Burger (Double Meat) wrapped in lettuce",
+          "image": "https://images.spoonacular.com/file/wximages/344808-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 329209,
+          "title": "Steakhouse Burger",
+          "image": "https://images.spoonacular.com/file/wximages/329209-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Tony Roma's",
+          "servingSize": "1 sandwich",
+          "readableServingSize": "1 sandwich",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "sandwich"
+          }
+      },
+      {
+          "id": 228240,
+          "title": "BK Veggie Burger",
+          "image": "https://images.spoonacular.com/file/wximages/228240-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Burger King",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 278054,
+          "title": "BK Veggie Burger w/o Mayo",
+          "image": "https://images.spoonacular.com/file/wximages/278054-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Burger King",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 282225,
+          "title": "Double Mushroom Swiss Burger",
+          "image": "https://images.spoonacular.com/file/wximages/282225-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Good Times Burgers",
+          "servingSize": "1 burger",
+          "readableServingSize": "1 burger",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "burger"
+          }
+      },
+      {
+          "id": 282286,
+          "title": "Single Mushroom Swiss Burger",
+          "image": "https://images.spoonacular.com/file/wximages/282286-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Good Times Burgers",
+          "servingSize": "1 burger",
+          "readableServingSize": "Single",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "burger"
+          }
+      },
+      {
+          "id": 256412,
+          "title": "Bleu Ribbon Burger",
+          "image": "https://images.spoonacular.com/file/wximages/256412-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Red Robin",
+          "servingSize": "1 sandwich",
+          "readableServingSize": "1 sandwich",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "sandwich"
+          }
+      },
+      {
+          "id": 426334,
+          "title": "Steakzilla! Burger",
+          "image": "https://images.spoonacular.com/file/wximages/426334-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Checker's",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 424747,
+          "title": "Bacon Gouda Burger (add side)",
+          "image": "https://images.spoonacular.com/file/wximages/424747-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Denny's",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 380914,
+          "title": "Double R Bar Burger",
+          "image": "https://images.spoonacular.com/file/wximages/380914-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Roy Rogers Restaurants",
+          "servingSize": "1 sandwich",
+          "readableServingSize": "1 sandwich",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "sandwich"
+          }
+      },
+      {
+          "id": 349020,
+          "title": "Shackmeister Burger",
+          "image": "https://images.spoonacular.com/file/wximages/349020-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Shake Shack",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 403898,
+          "title": "Canyon Creek Burger (Bison)",
+          "image": "https://images.spoonacular.com/file/wximages/403898-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Ted's Montana Grill",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 316772,
+          "title": "Sonic Burger w/ Mayo",
+          "image": "https://images.spoonacular.com/file/wximages/316772-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Sonic",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 423186,
+          "title": "Daily Double Burger Mustard Style",
+          "image": "https://images.spoonacular.com/file/wximages/423186-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "McDonald's",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 383419,
+          "title": "Hawaiian Burger",
+          "image": "https://images.spoonacular.com/file/wximages/383419-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Islands Fine Burgers & Drinks",
+          "servingSize": "1 sandwich",
+          "readableServingSize": "1 sandwich",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "sandwich"
+          }
+      },
+      {
+          "id": 383378,
+          "title": "Turkey Burger Lite",
+          "image": "https://images.spoonacular.com/file/wximages/383378-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Islands Fine Burgers & Drinks",
+          "servingSize": "1 serving",
+          "readableServingSize": "1 serving",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "serving"
+          }
+      },
+      {
+          "id": 344882,
+          "title": "The Breakfast Burger",
+          "image": "https://images.spoonacular.com/file/wximages/344882-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Carl's Jr",
+          "servingSize": "289g",
+          "readableServingSize": "10 oz",
+          "servings": {
+              "number": 1.0,
+              "size": 289.0,
+              "unit": "g"
+          }
+      },
+      {
+          "id": 342577,
+          "title": "Morning Glory Burger",
+          "image": "https://images.spoonacular.com/file/wximages/342577-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Smokey Bones Bar & Fire Grill",
+          "servingSize": "1 platter",
+          "readableServingSize": "1 platter",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "platter"
+          }
+      },
+      {
+          "id": 342576,
+          "title": "Morning Glory Burger (Platter)",
+          "image": "https://images.spoonacular.com/file/wximages/342576-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Smokey Bones Bar & Fire Grill",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 424748,
+          "title": "Bourbon Bacon Burger (add side)",
+          "image": "https://images.spoonacular.com/file/wximages/424748-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Denny's",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 341719,
+          "title": "Mushroom Brie Burger (add choice of side)",
+          "image": "https://images.spoonacular.com/file/wximages/341719-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Mimi's Cafe",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 344810,
+          "title": "The Elevation Burger (Double Meat, Double Cheese) wrapped in lettuce",
+          "image": "https://images.spoonacular.com/file/wximages/344810-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Elevation Burger",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 424408,
+          "title": "Spicy Sriracha Burger",
+          "image": "https://images.spoonacular.com/file/wximages/424408-312x231.png",
+          "imageType": "png",
+          "restaurantChain": "Jack in the Box",
+          "servingSize": null,
+          "readableServingSize": null,
+          "servings": {
+              "number": 1.0,
+              "size": null,
+              "unit": null
+          }
+      },
+      {
+          "id": 256426,
+          "title": "Keep It Simple Burger",
+          "image": "https://images.spoonacular.com/file/wximages/256426-312x231.jpg",
+          "imageType": "jpg",
+          "restaurantChain": "Red Robin",
+          "servingSize": "1 sandwich",
+          "readableServingSize": "1 sandwich",
+          "servings": {
+              "number": 1.0,
+              "size": 1.0,
+              "unit": "sandwich"
+          }
+      }
+      ]
+    }
+  ]
+}
