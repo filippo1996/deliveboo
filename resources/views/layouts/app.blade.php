@@ -26,17 +26,18 @@
         <div class="container m-1 p-1">
 
           {{-- Logo ristorante --}}
-          <div class="m-2">
-            <img 
-              src="{{ Auth::user()->cover }}" 
-              alt=" {{ Auth::user()->name }}" 
-              width="100px">
-          </div>
+          @auth
+            <div class="m-2">
+              <img 
+                src="{{ Auth::user()->cover }}" 
+                alt=" {{ Auth::user()->name }}" 
+                width="100px">
+            </div>
 
-          <div class="text-primary fs-4 text-center p-1">Dashboard di: 
-            <span class="fs-5 fw-bold">{{ Auth::user()->name }}</span>
-          </div>
-
+            <div class="text-primary fs-4 text-center p-1">Dashboard di: 
+              <span class="fs-5 fw-bold">{{ Auth::user()->name }}</span>
+            </div>
+          @endauth
 
           <a 
             class="navbar-brand text-primary" 
