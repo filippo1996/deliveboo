@@ -6,9 +6,15 @@
       <div class="alert alert-success">{{ session('updated') }}</div>        
     @endif
 
-    <img src="{{ Auth::user()->cover }}" alt=" {{ Auth::user()->name }}" width="200px">
+    {{-- Logo ristorante --}}
+    <div class="text-end m-2">
+      <img 
+      src="{{ Auth::user()->cover }}" 
+      alt=" {{ Auth::user()->name }}" 
+      width="150px">
+    </div>
     
-    <div class="row mt-5">
+    <div class="row">
       <div class="col-12">
         <div class="table-responsive mt-5">
           <table class="table table-sm table-hover">
