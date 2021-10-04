@@ -37,6 +37,14 @@
               rows="10">{{ old('description', $product->description) }}</textarea>
           </div>
 
+          <div class="mb-3">
+            <label for="visibility" class="form-label">Disponibilità del prodotto</label>
+            <select id="visibility" name="visibility" class="form-select">
+              <option {{ $product->visibility || (int) old('visibility') ? 'selected' : ''}} value="1">Disponibile</option>
+              <option {{ $product->visibility || (int) old('visibility') ? '' : 'selected' }} value="0">Non disponibile</option>
+            </select>
+          </div>
+
           <button type="submit" class="btn btn-success">Salva modiche</button>
         </form>
       </div>

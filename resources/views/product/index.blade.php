@@ -7,6 +7,11 @@
     @endif
 
     <img src="{{ Auth::user()->cover }}" alt=" {{ Auth::user()->name }}" width="200px">
+
+
+    <div class="mt-5 text-end">
+      <a href="{{ route('products.create') }}" class="btn btn-outline-secondary">Crea Prodotto</a>
+    </div>
     
     <div class="row mt-5">
       <div class="col-12">
@@ -25,7 +30,7 @@
             </thead>
                 
             @foreach ($products as $product)
-              <tbody class="text-start">
+              <tbody data-product="{{ $product->id }}" class="text-start">
                 <tr>
                   <th scope="row">{{ $product->id }}</th>
                   
@@ -39,16 +44,7 @@
                   <td class="text-center">
                     <a href="{{ route('products.show', ['product'=>$product->slug]) }}" class="text-muted">
                       <div class="btn btn-outline-success">
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          width="16" 
-                          height="16" 
-                          fill="currentColor" 
-                          class="bi bi-eyeglasses" 
-                          viewBox="0 0 16 16">
-                            <path 
-                              d="M4 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
-                        </svg>
+                        <i class="fas fa-glasses"></i>
                       </div>
                     </a>
                   </td>
@@ -73,22 +69,9 @@
 
                   {{-- Destroy --}}
                   <td class="text-center">
-                    <a href="{{ route('products.destroy', ['product'=>$product->id]) }}" class="text-muted">
-                      <div class="btn btn-outline-danger">
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          width="16" 
-                          height="16" 
-                          fill="currentColor" 
-                          class="bi bi-trash" 
-                          viewBox="0 0 16 16">
-                            <path 
-                              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                            <path 
-                              fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                        </svg>
-                      </div>
-                    </a> 
+                    <button data-product-delete="{{ $product->id }}" class="btn btn-outline-danger">
+                      <i class="far fa-trash-alt"></i>
+                    </button> 
                   </td>
                 </tr>
               </tbody>
@@ -98,4 +81,33 @@
       </div>
     </div>
   </div>
+@endsection
+
+@section('script-footer')
+@parent
+<script>
+  let btnDelete = document.querySelectorAll('.btn-outline-danger');
+  btnDelete.forEach(ele => {
+    ele.addEventListener('click', function(event){
+      event.preventDefault();
+      let element = event.target;
+      if(event.target.tagName === 'I') element = event.target.parentNode;
+      const productId = element.dataset.productDelete;
+      // confirm delete product
+      const accept = confirm('Sicuro di voler eliminare definitivamente questo prodotto dal tuo catalogo?');
+
+      if(accept){
+        axios.delete('products/' + productId)
+          .then(response => {
+            if(response.data.status){
+              const tr = document.querySelector(`tbody[data-product="${productId}"]`);
+              tr.remove();
+              alert(response.data.message);
+            }
+          })
+          .catch(err => console.log(err));
+      }
+    });
+  });
+</script>
 @endsection
