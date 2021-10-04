@@ -22,21 +22,27 @@
 
   <body>
     <div id="app">
-      <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <div class="container">
-          <a class="navbar-brand" href="{{ url('/') }}"> {{ config('app.name', 'Laravel') }}</a>
-            <button 
-              class="navbar-toggler" 
-              type="button" 
-              data-toggle="collapse" 
-              data-target="#navbarSupportedContent" 
-              aria-controls="navbarSupportedContent" 
-              aria-expanded="false" 
-              aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container m-1 p-1">
+          <a 
+            class="navbar-brand text-primary" 
+            href="{{ url('/') }}"> 
+              {{-- {{ config('app.name', 'Laravel') }} --}}
+          </a>
+            
+          <button 
+            class="navbar-toggler" 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" 
+            aria-expanded="false" 
+            aria-label="{{ __('Toggle navigation') }}">
+              <span class="navbar-toggler-icon "></span>
+          </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div 
+            class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
               <!-- Left Side Of Navbar -->
               <ul class="navbar-nav mr-auto"></ul>
 
@@ -45,7 +51,7 @@
                 <!-- Authentication Links -->
                 @guest
                   @if (Route::has('login'))
-                    <li class="nav-item">
+                    <li class="nav-item ">
                       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                   @endif
@@ -58,14 +64,15 @@
                   @else
                     <li class="nav-item dropdown">
                       <a 
+                        {{-- classe dropdown-toggle rimossa --}}
                         id="navbarDropdown" 
-                        class="nav-link dropdown-toggle" 
+                        class="nav-link text-primary" 
                         href="#" 
                         role="button" 
                         data-toggle="dropdown" 
                         aria-haspopup="true" 
                         aria-expanded="false" v-pre>
-                          {{ Auth::user()->name }}
+                          {{-- {{ Auth::user()->name }} --}}
                       </a>
 
                       <div 
@@ -91,50 +98,56 @@
                 @endguest
               </ul>
             </div>
-        </div>
+          </div>
       </nav>
 
+      {{-- Sidebar Sx --}}
       <div class="container-fluid">
         <div class="row">
           @auth
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar py-4">
-              <div class="sidebar-sticky">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="{{ route('products.index') }}">
-                        <i class="fas fa-home"></i>
-                        Dashboard
+            <nav class="col-md-2 d-none d-md-block sidebar bg-dark p-4">
+              <div class="text-primary fs-3 text-center p-1">Dashboard di: 
+                <span class="fs-4 fw-bold">{{ Auth::user()->name }}</span>
+              </div>
+              
+              <div class="sidebar-sticky p-1">
+                <ul class="nav flex-column mt-5">
+                    <li class="nav-item mt-4 fs-5">
+                      {{-- Rotta in home da verificare --}}
+                      <a class="nav-link" href="{{ route('products.index') }}">
+                        <i class="fas fa-home fs-4 pe-2"></i>
+                        Home
                       </a>     
                     </li>
                               
-                    <li class="nav-item">
+                    <li class="nav-item mt-4 fs-5">
                       <a class="nav-link" href="{{ route('products.index') }}">
-                        <i class="fas fa-cubes"></i>
+                        <i class="fas fa-cubes fs-4 pe-2"></i>
                         Products
                       </a>
                     </li>
                               
-                    <li class="nav-item">
+                    <li class="nav-item mt-4 fs-5">
                       <a class="nav-link" href="{{ route('products.create') }}">
-                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus fs-4 pe-2"></i>
                         Create Product
                       </a>
                     </li>
                               
-                    <li class="nav-item">
+                    <li class="nav-item mt-4 fs-5">
                       <a class="nav-link" href="{{ route('orders.index') }}">
-                        <i class="fas fa-file-alt"></i>
+                        <i class="fas fa-file-alt fs-4 pe-2"></i>
                         Orders
                       </a>
                     </li>
                               
-                    <li class="nav-item">
+                    <li class="nav-item mt-4 fs-5">
                       <a 
                         class="nav-link danger" 
                         href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                          <i class="fas fa-sign-out-alt"></i>
+                          <i class="fas fa-sign-out-alt fs-4 pe-2"></i>
                           {{ __('Logout') }}
                       </a>
                                   
@@ -142,7 +155,7 @@
                         id="logout-form" 
                         action="{{ route('logout') }}" 
                         method="POST" 
-                        class="d-none">
+                        class="d-none mt-3 fs-5">
                           @csrf
                       </form>
                     </li>
