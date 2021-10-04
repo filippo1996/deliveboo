@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'postal_code' => ['required', 'string', 'max:7'],
             'country' => ['required', 'string', 'max:20'],
             'phone_number' => ['required', 'string', 'max:10'],
-            'vat_number' => ['required', 'string', 'max:100'],
+            'vat_number' => ['required', 'string', 'max:100', 'unique:users'],
             'city' => ['required', 'string', 'max:45'],
         ]);
     }

@@ -118,7 +118,15 @@
                             <div class="col-md-6">
                                 <input id="vat_number" type="text" class="form-control" name="vat_number" value="{{ old('vat_number') }}">
 
-                                
+                                @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li> 
+                                    @endforeach
+                                    </ul>
+                                </div>  
+                                @endif
                             </div>
                         </div>
 
