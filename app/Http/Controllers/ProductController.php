@@ -116,7 +116,9 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|max:150',
             'description' => 'required',
-            'visibility' => 'required|in:0,1'
+            'ingredient' => 'required',
+            'visibility' => 'required|in:0,1',
+            'price' => 'required',
         ]);
 
         $data = $request->all();
@@ -145,7 +147,7 @@ class ProductController extends Controller
             // Lo slug viene assegnato in ogni caso
             $data['slug'] = $slug;
         }
-
+        
         $product->update($data);
 
         return redirect()->route('products.index')->with('updated', 'Elemento modificato con successo');

@@ -22,7 +22,7 @@
 
   <body>
     <div id="app">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark vw-100">
         <div class="container m-1 p-1">
 
           {{-- Logo ristorante --}}
@@ -120,12 +120,12 @@
       <div class="container-fluid">
         <div class="row">
           @auth
-            <nav class="col-md-2 d-none d-md-block sidebar bg-dark p-4 pt-1">  
+            <nav class="col-md-2 d-none d-md-block sidebar bg-dark p-1 pt-1 min-vh-100">  
               <div class="sidebar-sticky p-1">
                 <ul class="nav flex-column mt-1">
                     <li class="nav-item mt-1 fs-5">
                       {{-- Rotta in home da verificare --}}
-                      <a class="nav-link" href="{{ route('products.index') }}">
+                      <a class="nav-link" href="{{ route('home') }}">
                         <i class="fas fa-home fs-4 pe-2"></i>
                         Home
                       </a>     
