@@ -106,7 +106,8 @@ class ProductController extends Controller
         // Validazione dei Dati
         $request->validate([
             'name' => 'required|max:150',
-            'description' => 'required'
+            'description' => 'required',
+            'visibility' => 'required|in:0,1'
         ]);
 
         $data = $request->all();
