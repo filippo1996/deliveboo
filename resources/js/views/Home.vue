@@ -21,13 +21,13 @@
 
       <div class="row justify-content-md-around">
 
-        <div class="col-12 col-sm-6  col-lg-3 d-flex my-3">
+        <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3">
           <div class="card bg-dark text-white">
             <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" alt="...">
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description ">
-                <h3 class="card-title">Titolo</h3>
-                <span class="tag">Tagggggg</span>
+                <h3 class="card-title">Ristorante</h3>
+                <span class="tag">Tag</span>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description ">
                 <h3 class="card-title">Titolo</h3>
-                <span class="tag">Tagggggg</span>
+                <span class="tag">Tag</span>
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description ">
                 <h3 class="card-title">Titolo</h3>
-                <span class="tag">Tagggggg</span>
+                <span class="tag">Tag</span>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description ">
                 <h3 class="card-title">Titolo</h3>
-                <span class="tag">Tagggggg</span>
+                <span class="tag">Tag</span>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description ">
                 <h3 class="card-title">Titolo</h3>
-                <span class="tag">Tagggggg</span>
+                <span class="tag">Tag</span>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description ">
                 <h3 class="card-title">Titolo</h3>
-                <span class="tag">Tagggggg</span>
+                <span class="tag">Tag</span>
               </div>
             </div>
           </div>
@@ -99,7 +99,7 @@
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description ">
                 <h3 class="card-title">Titolo</h3>
-                <span class="tag">Tagggggg</span>
+                <span class="tag">Tag</span>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description ">
                 <h3 class="card-title">Titolo</h3>
-                <span class="tag">Tagggggg</span>
+                <span class="tag">Tag</span>
               </div>
             </div>
           </div>
