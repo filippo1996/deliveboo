@@ -149,7 +149,16 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Product $product)
-    {
+    {   
+        try {
+            $res = $product->delete();
+        } catch(\Exception $e){
+            abort(500, 'Impossibile eliminare il prodotto, se il problema persiste, cotattare l\'assistenza');
+        }
         
+        return response()->json([
+            'status' => true,
+            'message' => 'Prodotto eliminato correttamente'
+        ]);
     }
 }

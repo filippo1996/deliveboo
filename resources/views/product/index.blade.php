@@ -25,7 +25,7 @@
             </thead>
                 
             @foreach ($products as $product)
-              <tbody class="text-start">
+              <tbody data-product="{{ $product->id }}" class="text-start">
                 <tr>
                   <th scope="row">{{ $product->id }}</th>
                   
@@ -64,22 +64,9 @@
 
                   {{-- Destroy --}}
                   <td class="text-center">
-                    <a href="{{ route('products.destroy', ['product'=>$product->id]) }}" class="text-muted">
-                      <div class="btn btn-outline-danger">
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          width="16" 
-                          height="16" 
-                          fill="currentColor" 
-                          class="bi bi-trash" 
-                          viewBox="0 0 16 16">
-                            <path 
-                              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                            <path 
-                              fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                        </svg>
-                      </div>
-                    </a> 
+                    <button data-product-delete="{{ $product->id }}" class="btn btn-outline-danger">
+                      <i class="far fa-trash-alt"></i>
+                    </button> 
                   </td>
                 </tr>
               </tbody>
@@ -89,4 +76,33 @@
       </div>
     </div>
   </div>
+@endsection
+
+@section('script-footer')
+@parent
+<script>
+  let btnDelete = document.querySelectorAll('.btn-outline-danger');
+  btnDelete.forEach(ele => {
+    ele.addEventListener('click', function(event){
+      event.preventDefault();
+      let element = event.target;
+      if(event.target.tagName === 'I') element = event.target.parentNode;
+      const productId = element.dataset.productDelete;
+      // confirm delete product
+      const accept = confirm('Sicuro di voler eliminare definitivamente questo prodotto dal tuo catalogo?');
+
+      if(accept){
+        axios.delete('products/' + productId)
+          .then(response => {
+            if(response.data.status){
+              const tr = document.querySelector(`tbody[data-product="${productId}"]`);
+              tr.remove();
+              alert(response.data.message);
+            }
+          })
+          .catch(err => console.log(err));
+      }
+    });
+  });
+</script>
 @endsection
