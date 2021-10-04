@@ -26,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -106,7 +106,8 @@ class ProductController extends Controller
         // Validazione dei Dati
         $request->validate([
             'name' => 'required|max:150',
-            'description' => 'required'
+            'description' => 'required',
+            'visibility' => 'required|in:0,1'
         ]);
 
         $data = $request->all();
@@ -148,7 +149,16 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Product $product)
-    {
+    {   
+        try {
+            $res = $product->delete();
+        } catch(\Exception $e){
+            abort(500, 'Impossibile eliminare il prodotto, se il problema persiste, cotattare l\'assistenza');
+        }
         
+        return response()->json([
+            'status' => true,
+            'message' => 'Prodotto eliminato correttamente'
+        ]);
     }
 }
