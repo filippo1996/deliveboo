@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <router-link class="nav-link active" :to="{name: 'shop'}">{{ 'Shop' }}</router-link>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Prodotti</a>
