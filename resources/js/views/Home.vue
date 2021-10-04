@@ -1,24 +1,24 @@
 <template>
   <main>
     <div class="container py-5">
-
+        
       <div class="row">
         <ul class="list-unstyled d-flex flex-wrap">
           <li>
-            <a class="text-decoration-none text-dark fs-3 me-3 p-1" href="">Panineria</a> 
+            <router-link class="nav-link active" :to="{name: 'panineria'}">{{ 'Panineria' }}</router-link>
           </li>
           <li>
-            <a class="text-decoration-none text-dark fs-3 me-3 p-1" href="">Pizzeria</a>
+            <router-link class="nav-link active" :to="{name: 'gelateria'}">{{ 'Gelateria' }}</router-link>
           </li>
           <li>
-            <a class="text-decoration-none text-dark fs-3 me-3 p-1" href="">Fast Food</a> 
+            <router-link class="nav-link active" :to="{name: 'fast-food'}">{{ 'Fastfood' }}</router-link>
           </li>
           <li>
-            <a class="text-decoration-none text-dark fs-3 me-3 p-1" href="">Gelateria</a> 
+            <router-link class="nav-link active" :to="{name: 'pizzeria'}">{{ 'Pizzeria' }}</router-link>
           </li>
+       
         </ul>
       </div>
-
       <div class="row justify-content-md-around">
 
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3">
