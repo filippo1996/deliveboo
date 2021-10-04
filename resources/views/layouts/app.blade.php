@@ -122,7 +122,7 @@
             <nav class="col-md-2 d-none d-md-block sidebar bg-dark p-4 pt-1">  
               <div class="sidebar-sticky p-1">
                 <ul class="nav flex-column mt-1">
-                    <li class="nav-item mt-4 fs-5">
+                    <li class="nav-item mt-1 fs-5">
                       {{-- Rotta in home da verificare --}}
                       <a class="nav-link" href="{{ route('products.index') }}">
                         <i class="fas fa-home fs-4 pe-2"></i>
@@ -130,7 +130,7 @@
                       </a>     
                     </li>
                               
-                    <li class="nav-item mt-1 fs-5">
+                    <li class="nav-item mt-4 fs-5">
                       <a class="nav-link" href="{{ route('products.index') }}">
                         <i class="fas fa-cubes fs-4 pe-2"></i>
                         Products
