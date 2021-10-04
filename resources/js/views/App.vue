@@ -3,6 +3,7 @@
     <Header/>
     <Jumbotron/>
     <Main/>
+    <Footer/>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Header from '../traits/Header.vue';
 import Jumbotron from '../traits/Jumbotron.vue';
 import Main from '../traits/Main.vue';
+import Footer from '../traits/Footer.vue';
 
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
     Header,
     Jumbotron,
     Main,
+    Footer,
     }
 }
 </script>
