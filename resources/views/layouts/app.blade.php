@@ -75,9 +75,62 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <div class="container-fluid">
+            <div class="row">
+                @auth
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar py-4">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{ route('products.index') }}">
+                                    <i class="fas fa-home"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('products.index') }}">
+                                    <i class="fas fa-cubes"></i>
+                                    Products
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('products.create') }}">
+                                    <i class="fas fa-plus"></i>
+                                    Create Product
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('orders.index') }}">
+                                    <i class="fas fa-file-alt"></i>
+                                    Orders
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link danger" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                @endauth
+
+                <main class="col-md-9 ml-sm-auto col-lg-10 px-4 py-4">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
+
+    
+
     </div>
+
+    @section('script-footer')
+        @show
 </body>
 </html>
