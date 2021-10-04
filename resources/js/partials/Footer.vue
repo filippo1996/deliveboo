@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-content-md-around">
 
-            <div class="col-12 col-md-6">
+            <div class="col-12 ">
               <div class="row mt-5">
                 <div class="col-12 col-md-3 me-5 bg-light">
                   <ul>
