@@ -129,5 +129,8 @@
     
 
     </div>
+
+    @section('script-footer')
+        @show
 </body>
 </html>
