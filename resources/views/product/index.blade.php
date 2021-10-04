@@ -7,11 +7,6 @@
     @endif
 
     <img src="{{ Auth::user()->cover }}" alt=" {{ Auth::user()->name }}" width="200px">
-
-
-    <div class="mt-5 text-end">
-      <a href="{{ route('products.create') }}" class="btn btn-outline-secondary">Crea Prodotto</a>
-    </div>
     
     <div class="row mt-5">
       <div class="col-12">

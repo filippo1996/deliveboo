@@ -24,9 +24,9 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('product.create');
+    public function create(Product $product)
+    { 
+        return view('product.create', compact('product'));
     }
 
     /**
@@ -40,11 +40,17 @@ class ProductController extends Controller
         // Validazione dei Dati
         $request->validate([
             'name' => 'required|max:150',
-            'description' => 'required'
+            'description' => 'required',
+            'ingredient' => 'required',
+            'visibility' => 'required|in:0,1',
+            'price' => 'required',
         ]);
+
+        // Auth::user()->id;
 
         // Prendo i dati
         $data = $request->all();
+        
 
         // Creo una nuova istanza
         $created_product = new Product();
@@ -63,12 +69,15 @@ class ProductController extends Controller
         // Verifico se c'è un titolo duplicato quando un Product viene creato
 
         $created_product->slug = $slug; // In ogni caso $created_product avrà com valore $slug;
+        $created_product->user_id = \Auth::user()->id;
+
         $created_product->fill($data);
+        // dd($created_product);
 
         // Salvo i dati
         $created_product->save();
 
-        return redirect()->route('product.index');
+        return redirect()->route('products.index');
     }
 
     /**
