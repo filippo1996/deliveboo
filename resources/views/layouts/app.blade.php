@@ -24,6 +24,20 @@
     <div id="app">
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container m-1 p-1">
+
+          {{-- Logo ristorante --}}
+          <div class="m-2">
+            <img 
+              src="{{ Auth::user()->cover }}" 
+              alt=" {{ Auth::user()->name }}" 
+              width="100px">
+          </div>
+
+          <div class="text-primary fs-4 text-center p-1">Dashboard di: 
+            <span class="fs-5 fw-bold">{{ Auth::user()->name }}</span>
+          </div>
+
+
           <a 
             class="navbar-brand text-primary" 
             href="{{ url('/') }}"> 
@@ -105,13 +119,9 @@
       <div class="container-fluid">
         <div class="row">
           @auth
-            <nav class="col-md-2 d-none d-md-block sidebar bg-dark p-4">
-              <div class="text-primary fs-3 text-center p-1">Dashboard di: 
-                <span class="fs-4 fw-bold">{{ Auth::user()->name }}</span>
-              </div>
-              
+            <nav class="col-md-2 d-none d-md-block sidebar bg-dark p-4 pt-1">  
               <div class="sidebar-sticky p-1">
-                <ul class="nav flex-column mt-5">
+                <ul class="nav flex-column mt-1">
                     <li class="nav-item mt-4 fs-5">
                       {{-- Rotta in home da verificare --}}
                       <a class="nav-link" href="{{ route('products.index') }}">
@@ -120,7 +130,7 @@
                       </a>     
                     </li>
                               
-                    <li class="nav-item mt-4 fs-5">
+                    <li class="nav-item mt-1 fs-5">
                       <a class="nav-link" href="{{ route('products.index') }}">
                         <i class="fas fa-cubes fs-4 pe-2"></i>
                         Products

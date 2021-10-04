@@ -5,18 +5,10 @@
     @if (session('updated'))
       <div class="alert alert-success">{{ session('updated') }}</div>        
     @endif
-
-    {{-- Logo ristorante --}}
-    <div class="text-end m-2">
-      <img 
-      src="{{ Auth::user()->cover }}" 
-      alt=" {{ Auth::user()->name }}" 
-      width="150px">
-    </div>
     
     <div class="row">
       <div class="col-12">
-        <div class="table-responsive mt-5">
+        <div class="table-responsive mt-3">
           <table class="table table-sm table-hover">
             <thead class="table-dark">
               <tr class="text-start">
@@ -38,8 +30,6 @@
                   <td>{{ $product->name }}</td>
                   <td>{{ $product->description }}</td>
                   <td><img src="{{ $product->img_path }}" alt="{{ $product->name }}" width="60px"></td>
-
-                  {{-- Per il momento tutte le icone dei bottoni sono inserire con svg --}}
                   
                   {{-- Show --}}
                   <td class="text-center">
