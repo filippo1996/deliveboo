@@ -21,68 +21,98 @@
 
       <div class="row justify-content-md-around">
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex my-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://www.biochetasi.it/wp-content/uploads/2019/09/I-bambini-e-il-cibo-spazzatura.-Meglio-non-esagerare-1-biochetasi-1000x600.jpg" class="card-img-top" alt="Foto cibo">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Visualizza prodotto</a>
+        <div class="col-12 col-sm-6  col-lg-3 d-flex my-3">
+          <div class="card bg-dark text-white">
+            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay text-center text-light shadow">
+              <div class="description ">
+                <h3 class="card-title">Titolo</h3>
+                <span class="tag">Tagggggg</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex my-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://www.biochetasi.it/wp-content/uploads/2019/09/I-bambini-e-il-cibo-spazzatura.-Meglio-non-esagerare-1-biochetasi-1000x600.jpg" class="card-img-top" alt="Foto cibo">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Visualizza prodotto</a>
+        <div class="col-12 col-sm-6  col-lg-3 d-flex my-3">
+          <div class="card bg-dark text-white">
+            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay text-center text-light shadow">
+              <div class="description ">
+                <h3 class="card-title">Titolo</h3>
+                <span class="tag">Tagggggg</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex my-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://www.biochetasi.it/wp-content/uploads/2019/09/I-bambini-e-il-cibo-spazzatura.-Meglio-non-esagerare-1-biochetasi-1000x600.jpg" class="card-img-top" alt="Foto cibo">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Visualizza prodotto</a>
+        <div class="col-12 col-sm-6  col-lg-3 d-flex my-3">
+          <div class="card bg-dark text-white">
+            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay text-center text-light shadow">
+              <div class="description ">
+                <h3 class="card-title">Titolo</h3>
+                <span class="tag">Tagggggg</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex my-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://www.biochetasi.it/wp-content/uploads/2019/09/I-bambini-e-il-cibo-spazzatura.-Meglio-non-esagerare-1-biochetasi-1000x600.jpg" class="card-img-top" alt="Foto cibo">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Visualizza prodotto</a>
+        <div class="col-12 col-sm-6  col-lg-3 d-flex my-3">
+          <div class="card bg-dark text-white">
+            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay text-center text-light shadow">
+              <div class="description ">
+                <h3 class="card-title">Titolo</h3>
+                <span class="tag">Tagggggg</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex my-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://www.biochetasi.it/wp-content/uploads/2019/09/I-bambini-e-il-cibo-spazzatura.-Meglio-non-esagerare-1-biochetasi-1000x600.jpg" class="card-img-top" alt="Foto cibo">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Visualizza prodotto</a>
+        <div class="col-12 col-sm-6  col-lg-3 d-flex my-3">
+          <div class="card bg-dark text-white">
+            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay text-center text-light shadow">
+              <div class="description ">
+                <h3 class="card-title">Titolo</h3>
+                <span class="tag">Tagggggg</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex my-3">
-          <div class="card" style="width: 18rem;">
-            <img src="https://www.biochetasi.it/wp-content/uploads/2019/09/I-bambini-e-il-cibo-spazzatura.-Meglio-non-esagerare-1-biochetasi-1000x600.jpg" class="card-img-top" alt="Foto cibo">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Visualizza prodotto</a>
+        <div class="col-12 col-sm-6  col-lg-3 d-flex my-3">
+          <div class="card bg-dark text-white">
+            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay text-center text-light shadow">
+              <div class="description ">
+                <h3 class="card-title">Titolo</h3>
+                <span class="tag">Tagggggg</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6  col-lg-3 d-flex my-3">
+          <div class="card bg-dark text-white">
+            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay text-center text-light shadow">
+              <div class="description ">
+                <h3 class="card-title">Titolo</h3>
+                <span class="tag">Tagggggg</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6  col-lg-3 d-flex my-3">
+          <div class="card bg-dark text-white">
+            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay text-center text-light shadow">
+              <div class="description ">
+                <h3 class="card-title">Titolo</h3>
+                <span class="tag">Tagggggg</span>
+              </div>
             </div>
           </div>
         </div>
@@ -100,6 +130,23 @@ export default {
 
 <style lang="scss" scoped>
 main{
-  background-color: orange;
+  background-color: rgb(255, 123, 0);
+
+    .shadow{
+      background-color: rgba(100, 100, 100, 0.4);
+      
+      .description{
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+
+    .tag{
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      border-radius: 20px;
+    }
 }
 </style>
