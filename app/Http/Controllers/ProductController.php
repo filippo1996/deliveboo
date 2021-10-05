@@ -86,16 +86,12 @@ class ProductController extends Controller
         $created_product->user_id = \Auth::user()->id;
 
         // Se l'immagine è presente, la salvo
-        if(array_key_exists('image', $data)) {
-            $image_path = Storage::put('img', $data['image']);
-            $data['img_path'] = $image_path;
+        if($request->has('image')) {
+            $data['img_path'] = $request->file('image')->store('products');
         }
 
         $created_product->fill($data);
         // dd($created_product);
-
-      
-
 
         // Salvo i dati
         $created_product->save();
@@ -148,7 +144,8 @@ class ProductController extends Controller
             'description' => 'required',
             'ingredient' => 'required',
             'visibility' => 'required|in:0,1',
-            'price' => 'required',
+            'price' => 'required|numeric',
+            'image' => 'nullable|image',
         ]);
 
         $data = $request->all();
@@ -177,6 +174,16 @@ class ProductController extends Controller
             // Lo slug viene assegnato in ogni caso
             $data['slug'] = $slug;
         }
+
+        if($request->has('image')){
+            $data['img_path'] = $request->file('image')->store('products');
+            Storage::delete($product->getRawOriginal('img_path'));
+        }
+
+        if($request->has('delete-img')){
+            $data['img_path'] = null;
+            Storage::delete($product->getRawOriginal('img_path'));
+        }
         
         $product->update($data);
 
@@ -203,5 +210,28 @@ class ProductController extends Controller
             'status' => true,
             'message' => 'Prodotto eliminato correttamente'
         ]);
+    }
+
+    public function visibility(Product $product)
+    {
+        $this->authorize('update', $product);
+
+        if(request()->ajax()){
+            $data = request()->input('status');
+            $status = filter_var($data, FILTER_VALIDATE_BOOLEAN);
+            $product->visibility = (int) $status;
+            $result = $product->save();
+            if($result){
+                return response()->json([
+                    'success' => true
+                ]);
+            } else {
+                return response()->json([
+                    'success' => false
+                ]);
+            }
+        }
+
+        abort(404);
     }
 }

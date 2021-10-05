@@ -17,6 +17,8 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Desrizione</th>
                 <th scope="col">Foto</th>
+                <th scope="col">Prezzo</th>
+                <th scope="col">Visibilità</th>
                 <th scope="col" class="text-center">Visualizza</th>
                 <th scope="col" class="text-center">Modifica</th>
                 <th scope="col" class="text-center">Cancella</th>
@@ -24,17 +26,19 @@
             </thead>
                 
             @foreach ($products as $product)
-              @if($product->visibility == 'Non disponibile')
-              <tbody style="opacity: 0.3" data-product="{{ $product->id }}" class="text-start">
-              @else
               <tbody data-product="{{ $product->id }}" class="text-start">
-              @endif
                 <tr>
                   <th scope="row">{{ $product->id }}</th>
-                  
-                  <td>{{ $product->name }}</td>
-                  <td>{{ $product->description }}</td>
+                  <td>{{ Str::limit($product->name, 15) }}</td>
+                  <td>{{ Str::limit($product->description, 25) }}</td>
                   <td><img src="{{ $product->img_path }}" alt="{{ $product->name }}" width="60px"></td>
+                  <th scope="row">{{ number_format($product->price, 2) }} &euro;</th>
+                  <th scope="row">
+                    <label class="switch">
+                      <input data-product="{{ $product->id }}" type="checkbox" {{ $product->visibility ? 'checked' : '' }}>
+                      <span class="slider round"></span>
+                    </label>
+                  </th>
                   
                   {{-- Show --}}
                   <td class="text-center">
@@ -96,5 +100,23 @@
       }
     });
   });
+
+
+  (function activeVisibility(){
+    const checkbox = document.querySelectorAll('.switch input[type="checkbox"]');
+    checkbox.forEach(ele => {
+      ele.addEventListener('change', function(event){
+        let idProduct = event.target.dataset.product;
+        let check = event.target.checked;
+        (async function api(){
+          try {
+            let response = await axios.patch('/restaurant/products/visibility/' + idProduct, { status: check });
+          } catch(err){
+            console.log(err);
+          }
+        }());
+      });
+    });
+  }());
 </script>
 @endsection
