@@ -5,24 +5,24 @@
       <div class="row">
         <ul class="list-unstyled d-flex flex-wrap">
           <li>
-            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'panineria' }}">{{ 'Panineria' }}</router-link>
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'panineria' }}">{{ 'Panineria' }}</router-link>
           </li>
           <li>
-            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'gelateria' }}">{{ 'Gelateria' }}</router-link>
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'gelateria' }}">{{ 'Gelateria' }}</router-link>
           </li>
           <li>
-            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'fast-food' }}">{{ 'Fast Food' }}</router-link>
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'fast-food' }}">{{ 'Fast Food' }}</router-link>
           </li>
           <li>
-            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'pizzeria' }}">{{ 'Pizzeria' }}</router-link>
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'pizzeria' }}">{{ 'Pizzeria' }}</router-link>
           </li>
         </ul>
       </div>
-      <div class="row justify-content-md-around">
 
+      <div class="row justify-content">
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
-          <div class="card bg-dark text-white">
-            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" alt="...">
+          <div class="card text-white overflow-hidden rest-card">
+            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" :alt="restaurant.name">
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description">
                 <h3 class="card-title">{{restaurant.name}}</h3>
@@ -62,6 +62,22 @@ export default {
 <style lang="scss" scoped>
 main{
   background-color: rgb(255, 214, 112);
+
+    .rest-tag{
+      color: #393f46;
+    }
+
+    .rest-card{
+      cursor: pointer;
+
+      img{
+        transition: 0.3s;
+      }
+    }
+    
+    .rest-card:hover img{
+      transform: scale(1.1);
+    }
 
     .shadow{
       background-color: rgba(100, 100, 100, 0.4);
