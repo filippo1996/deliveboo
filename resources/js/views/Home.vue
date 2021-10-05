@@ -21,7 +21,7 @@
 
       <div class="row justify-content">
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
-          <div class="card text-white overflow-hidden pippo">
+          <div class="card text-white overflow-hidden rest-card">
             <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" :alt="restaurant.name">
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description">
@@ -67,7 +67,7 @@ main{
       color: #393f46;
     }
 
-    .pippo{
+    .rest-card{
       cursor: pointer;
 
       img{
@@ -75,7 +75,7 @@ main{
       }
     }
     
-    .pippo:hover img{
+    .rest-card:hover img{
       transform: scale(1.1);
     }
 
