@@ -61,7 +61,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 main{
-  background-color: rgb(255, 123, 0);
+  background-color: rgb(255, 214, 112);
 
     .shadow{
       background-color: rgba(100, 100, 100, 0.4);
