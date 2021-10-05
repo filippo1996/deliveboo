@@ -5,10 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Storage;
+=======
+use Auth;
+>>>>>>> 94eb82039aa4793b7c48f07f6ab9fdb866bbe6fc
 
 class ProductController extends Controller
 {
+    /**
+     * Create the controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //$this->authorizeResource(Product::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +30,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::where('user_id', Auth::id())->orderBy('id', 'DESC')->get();
         return view('product.index', compact('products'));
     }
 
@@ -101,6 +115,9 @@ class ProductController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->first();
+
+        $this->authorize('view', $product);
+
         return view('product.show', compact('product'));
     }
 
@@ -112,6 +129,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $this->authorize('update', $product);
+
         return view('product.edit', compact('product'));
     }
 
@@ -124,6 +143,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        $this->authorize('update', $product);
+
         // Validazione dei Dati
         $request->validate([
             'name' => 'required|max:150',
@@ -173,6 +194,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {   
+        $this->authorize('delete', $product);
+
         try {
             $res = $product->delete();
         } catch(\Exception $e){

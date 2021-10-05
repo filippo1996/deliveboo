@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use Auth;
 
 class OrderController extends Controller
 {
@@ -15,8 +15,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //$orders = Order::paginate(1);
-        $orders = Order::all();
+        $orders = Order::where('user_id', Auth::id())->orderBy('id', 'DESC')->get();
         return view('order.index', compact('orders'));
     }
 
@@ -39,6 +38,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         // Validazione dei Dati
+        /*
         $request->validate([
             'name' => 'required|max:150',
             'lastname' => 'required',
@@ -56,6 +56,7 @@ class OrderController extends Controller
         // Prendo i dati
         $data = $request->all();
         return redirect()->route('orders.index');
+        */
     }
 
     /**
@@ -66,6 +67,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $this->authorize('view', $order);
         return view('order.show', compact('order'));
     }
 
