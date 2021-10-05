@@ -5,7 +5,10 @@
     <div class="row mt-5">
       <div class="col-12">
         <div class="card text-center w-50 mt-5 m-auto">
-          <img class="card-img-top" src="..." alt="Card image cap">
+          @if ($product->img_path)
+          <img class="card-img-top" src="{{ asset('storage/' . $product->image_path) }}" alt="Card image cap">  
+          @endif
+
           <h1 class="card-header">{{ $product->name }}</h1>
           <div class="card-body p-3">
             {{-- <h2 class="card-title">{{ $product->slug }}</h2> --}}
