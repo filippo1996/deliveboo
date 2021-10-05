@@ -1,4 +1,5 @@
 <template>
+  
   <div>
     <ul v-if="!message">
       <li v-for="restaurant in restaurants" :key="restaurant.id">

@@ -3,17 +3,17 @@
     <div class="container py-4">
       <div class="row text-center">
         <div class="col-10 col-md-9 col-xl-6 m-auto">
-          <h2 class="mb-4">
-            Trova quello che vuoi
-          </h2>
+          <h3 class="mb-4 text-light">
+            Inserisci il tuo indirizzo
+          </h3>
           <input type="text" class="w-100">
         </div>
       </div>
       <div class="row clearfix">
-        <div class="d-none d-sm-block col-sm-6 jumbo-text text-uppercase text-center position-absolute">
+        <div class="d-none d-sm-block col-sm-6 jumbo-text text-uppercase text-center text-light position-absolute">
           Consegnamo la felicità
         </div>
-        <div class="col-12 col-sm-6 position-absolute scooter">
+        <div class="col-12 col-sm-6 position-absolute scooter me-4">
           <img src="../../../public/img/scooter.png" alt="scooter">
         </div>
       </div>
@@ -34,9 +34,8 @@ export default {
 
   .jumbo-text{
     top: 50%;
-    font-size: 3rem;
     float: left;
-
+    font-size: clamp(1rem, 3vw, 3rem);
   }
 
   .scooter{
@@ -54,6 +53,7 @@ export default {
     height: 30px;
     border: none;
     border-radius: 50px;
+    padding: 20px;
   }
 }
 </style>
