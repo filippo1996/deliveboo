@@ -29,7 +29,7 @@ export default {
     async callApi(){
       let response = await axios.get(this.url + this.slug);
       if(response.data.success){
-        this.restaurants = response.data.results;
+        this.restaurants = response.data.results.users;
         if(!this.restaurants.length) this.message = 'Nessun ristorante trovato';
       } else {
         alert('Categoria non trovata');

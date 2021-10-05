@@ -21,13 +21,12 @@ class TagController extends Controller
             'results' => null
         ];
 
-        //$restaurants = Tag::where('slug', $slug)->with('users')->first();
-        $restaurants = Tag::where('slug', $slug)->first();
+        $restaurants = Tag::where('slug', $slug)->with('users')->first();
         
         if($restaurants){
             $results = [
                 'success' => true,
-                'results' => $restaurants->users
+                'results' => $restaurants
             ];
         }
 
