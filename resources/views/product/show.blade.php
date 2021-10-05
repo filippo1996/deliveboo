@@ -6,7 +6,7 @@
       <div class="col-12">
         <div class="card text-center w-50 mt-5 m-auto">
           @if ($product->img_path)
-          <img class="card-img-top" src="{{ asset('storage/' . $product->image_path) }}" alt="Card image cap">  
+          <img class="card-img-top" src="{{ asset('storage/' . $product->img_path) }}" alt="Card image cap">  
           @endif
 
           <h1 class="card-header">{{ $product->name }}</h1>
