@@ -3,119 +3,113 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div>
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header"><h1 class="text-center">Registrazione</h1></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                        <!-- Nome ristorante -->
+                        <div class="form-group row"> 
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <label for="name" class="col-md-4 col-form-label text-md-right ms-1">{{ __('Nome Ristorante') }}</label>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            <input id="name" type="text" class="ms-3 w-75 form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+
                         </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                        <!-- Email -->
+                        <div class="form-group row mb-3">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <label for="email" class="col-md-4 col-form-label text-md-right ms-1">{{ __('Indirizzo E-Mail') }}</label>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            <input id="email" type="email" class="ms-3 w-75 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+
                         </div>
 
+                        <h3 class="text-center">Informazioni di fatturazione</h3>
+
+                        <!-- Paese, Città e Codice Postale -->
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <!-- Paese -->
+                            <div class="col-md-4"> 
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Paese') }}</label>
+
+                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}">
+                                
                             </div>
+                            
+                            <!-- Città -->
+                            <div class="col-md-4">
+
+                                <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('Città') }}</label>
+
+                                <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}">
+
+                                    
+                            </div>
+
+                            <!-- Codice Postale -->
+                            <div class="col-md-4">
+
+                                <label for="postal_code" class="col-md-4 col-form-label text-md-right">{{ __('Codice Postale') }}</label>
+
+                                <input id="postal_code" type="text" class="form-control" name="postal_code" value="{{ old('postal_code') }}">
+             
+                            </div>
+
                         </div>
 
+                        <!-- Indirizzo e Numero Civico -->
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
+                            
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
+                                <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
 
-                        <!-- In class ci va il controllo degli errori -->
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
-
-                            <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}">
 
-                                <!-- qua vanno gli errori -->
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="house_number" class="col-md-4 col-form-label text-md-right">{{ __('Numero Civico') }}</label>
+
+                                    <input id="house_number" type="text" class="form-control" name="house_number" value="{{ old('house_number') }}">
+                                </div>
+
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="house_number" class="col-md-4 col-form-label text-md-right">{{ __('House Number') }}</label>
+                        <!-- Telefono e Partita IVA -->
+                        <div class="form-group row mb-4 ms-1">
 
                             <div class="col-md-6">
-                                <input id="house_number" type="text" class="form-control" name="house_number" value="{{ old('house_number') }}">
 
-                                
-                            </div>
-                        </div>
+                                <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Numero di Telefono') }}</label>
 
-                        <div class="form-group row">
-                            <label for="postal_code" class="col-md-4 col-form-label text-md-right">{{ __('Postal Code') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="postal_code" type="text" class="form-control" name="postal_code" value="{{ old('postal_code') }}">
-
-                                
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}">
-
-                                
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
-
-                            <div class="col-md-6">
                                 <input id="phone_number" type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}">
 
-                                
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="vat_number" class="col-md-4 col-form-label text-md-right">{{ __('Vat Number') }}</label>
 
                             <div class="col-md-6">
+
+                                <label for="vat_number" class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
+
                                 <input id="vat_number" type="text" class="form-control" name="vat_number" value="{{ old('vat_number') }}">
 
                                 @if ($errors->any())
@@ -130,25 +124,50 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
+                        <h3 class="ms-3 text-center">Password</h3>
+
+                        <!-- Password -->
+                        <div class="form-group row mb-2">
+
+                            <label for="password" class="ms-3 col-md-4 col-form-label text-md-right">{{ __('Inserisci Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}">
 
-                                
-                            </div>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                            </div> 
+
                         </div>
 
+                        <!-- Conferma Password -->
+                        <div class="form-group row mb-5">
 
+                            <label for="password-confirm" class="ms-3 col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
 
-                        <div class="form-group row mb-0">
+                            <div class="col-md-6">
+
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+
+                            </div>
+
+                        </div>
+                        
+                        <!-- Bottone -->
+                        <div class="form-group row mb-2 ms-5 justify-content-center">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                <button type="submit" class="btn btn-info ms-3">
+                                    {{ __('Registrati') }}
                                 </button>
                             </div>
                         </div>
+
+                        
                     </form>
                 </div>
             </div>
