@@ -33,6 +33,7 @@ export default {
     }
   },
   mounted(){
+    //this.$router.push({name: '404'});
     this.callApi();
   },
   methods: {
@@ -42,7 +43,7 @@ export default {
         this.restaurants = response.data.results.users;
         if(!this.restaurants.length) this.message = 'Nessun ristorante trovato';
       } else {
-        alert('Categoria non trovata');
+        this.$router.push({ name: '404' });
       }
     }
   }

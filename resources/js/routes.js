@@ -11,8 +11,11 @@ import NotFound from './views/errors/404.vue';
 const routes = [
     {
       path: "/:catchAll(.*)",
-      name: '404',
-      component: NotFound
+      redirect: '/404'
+    },
+    { path: '/404', 
+      name: '404', 
+      component: NotFound 
     },
     {
         path: '/',
