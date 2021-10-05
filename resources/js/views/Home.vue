@@ -5,16 +5,16 @@
       <div class="row">
         <ul class="list-unstyled d-flex flex-wrap">
           <li>
-            <router-link class="nav-link active" :to="{name: 'panineria'}">{{ 'Panineria' }}</router-link>
+            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'panineria' }}">{{ 'Panineria' }}</router-link>
           </li>
           <li>
-            <router-link class="nav-link active" :to="{name: 'gelateria'}">{{ 'Gelateria' }}</router-link>
+            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'gelateria' }}">{{ 'Gelateria' }}</router-link>
           </li>
           <li>
-            <router-link class="nav-link active" :to="{name: 'fast-food'}">{{ 'Fastfood' }}</router-link>
+            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'fast-food' }}">{{ 'Fast Food' }}</router-link>
           </li>
           <li>
-            <router-link class="nav-link active" :to="{name: 'pizzeria'}">{{ 'Pizzeria' }}</router-link>
+            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'pizzeria' }}">{{ 'Pizzeria' }}</router-link>
           </li>
        
         </ul>
