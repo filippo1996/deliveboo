@@ -5,11 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Storage;
-=======
 use Auth;
->>>>>>> 94eb82039aa4793b7c48f07f6ab9fdb866bbe6fc
 
 class ProductController extends Controller
 {

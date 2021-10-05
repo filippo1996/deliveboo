@@ -2,10 +2,6 @@
 
 @section('content')
   <div class="container">
-
-    
- 
- 
     <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
       @csrf
 
@@ -16,9 +12,7 @@
           @error('image')
           <div class="alert alert-danger">{{ $message }}</div> 
           @enderror
-
       </div>
-
 
       <div class="mt-5 mb-5">
         <label for="nome" class="form-label">Nome Prodotto</label>
