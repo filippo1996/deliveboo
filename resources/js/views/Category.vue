@@ -1,16 +1,7 @@
 <template>
-  
-  <!-- <div>
-    <ul v-if="!message">
-      <li v-for="restaurant in restaurants" :key="restaurant.id">
-        {{ restaurant.name }}
-      </li>
-    </ul>
-    <h3 v-else>{{ message }}</h3>
-  </div> -->
-<main>
-  <div class="container py-5">
-     <div class="row justify-content" v-if="!message">
+  <main>
+    <div class="container py-5">
+      <div class="row justify-content" v-if="!message">
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
           <div class="card text-white overflow-hidden pippo">
             <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" :alt="restaurant.name">
@@ -24,8 +15,8 @@
         </div>
       </div>
       <h3 v-else>{{ message }}</h3>
-  </div>   
-</main>
+    </div>   
+  </main>
 </template>
 
 <script>
