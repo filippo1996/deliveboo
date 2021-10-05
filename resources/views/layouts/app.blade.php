@@ -22,20 +22,20 @@
 
   <body>
     <div id="app">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark vw-100">
-        <div class="container m-1 p-1">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark m-0 p-0">
+        <div class="container m-1 p-0">
 
           {{-- Logo ristorante --}}
           @auth
-            <div class="m-2">
+            <div class="m-1">
               <img 
                 src="{{ Auth::user()->cover }}" 
                 alt=" {{ Auth::user()->name }}" 
-                width="100px">
+                width="80px">
             </div>
 
-            <div class="text-primary fs-4 text-center p-1">Dashboard di: 
-              <span class="fs-5 fw-bold">{{ Auth::user()->name }}</span>
+            <div class="text-primary fs-5 text-center p-1">Dashboard di: 
+              <span class="fs-6 fw-bold">{{ Auth::user()->name }}</span>
             </div>
           @endauth
 
@@ -123,42 +123,42 @@
             <nav class="col-md-2 d-none d-md-block sidebar bg-dark p-1 pt-1 min-vh-100">  
               <div class="sidebar-sticky p-1">
                 <ul class="nav flex-column mt-1">
-                    <li class="nav-item mt-1 fs-5">
+                    <li class="nav-item mt-1 fs-6">
                       {{-- Rotta in home da verificare --}}
                       <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-home fs-4 pe-2"></i>
+                        <i class="fas fa-home fs-5 pe-2"></i>
                         Home
                       </a>     
                     </li>
                               
-                    <li class="nav-item mt-4 fs-5">
+                    <li class="nav-item mt-4 fs-6">
                       <a class="nav-link" href="{{ route('products.index') }}">
-                        <i class="fas fa-cubes fs-4 pe-2"></i>
+                        <i class="fas fa-cubes fs-5 pe-2"></i>
                         Products
                       </a>
                     </li>
                               
-                    <li class="nav-item mt-4 fs-5">
+                    <li class="nav-item mt-4 fs-6">
                       <a class="nav-link" href="{{ route('products.create') }}">
-                        <i class="fas fa-plus fs-4 pe-2"></i>
+                        <i class="fas fa-plus fs-5 pe-2"></i>
                         Create Product
                       </a>
                     </li>
                               
-                    <li class="nav-item mt-4 fs-5">
+                    <li class="nav-item mt-4 fs-6">
                       <a class="nav-link" href="{{ route('orders.index') }}">
-                        <i class="fas fa-file-alt fs-4 pe-2"></i>
+                        <i class="fas fa-file-alt fs-5 pe-2"></i>
                         Orders
                       </a>
                     </li>
                               
-                    <li class="nav-item mt-4 fs-5">
+                    <li class="nav-item mt-4 fs-6">
                       <a 
                         class="nav-link danger" 
                         href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                          <i class="fas fa-sign-out-alt fs-4 pe-2"></i>
+                          <i class="fas fa-sign-out-alt fs-5 pe-2"></i>
                           {{ __('Logout') }}
                       </a>
                                   
@@ -166,7 +166,7 @@
                         id="logout-form" 
                         action="{{ route('logout') }}" 
                         method="POST" 
-                        class="d-none mt-3 fs-5">
+                        class="d-none mt-3 fs-6">
                           @csrf
                       </form>
                     </li>
@@ -175,7 +175,7 @@
             </nav>
           @endauth
 
-          <main class="col-md-9 ml-sm-auto col-lg-10 px-4 py-4">
+          <main class="col-md-9 ml-sm-auto col-lg-10 p-2">
             @yield('content')
           </main>
         </div>
