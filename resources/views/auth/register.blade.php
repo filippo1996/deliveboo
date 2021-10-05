@@ -12,7 +12,7 @@
                         @csrf
 
                         <!-- Nome ristorante -->
-                        <div class="form-group row"> 
+                        <div class="form-group row mb-3"> 
 
                             <label for="name" class="col-md-4 col-form-label text-md-right ms-1">{{ __('Nome Ristorante') }}</label>
 
@@ -23,6 +23,31 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+
+                        </div>
+
+                        <!-- Tag ristorante -->
+                        <div class="form-group row"> 
+
+                            <label for="tag_id" class="col-md-4 col-form-label text-md-right ms-1">{{ __('Categoria Ristorante') }}</label>
+
+                            <select name="tag_id" id="tag_id" class="w-25">
+                                <option value="">-- Seleziona una Categoria --</option>
+                                <option value="1">Panineria</option>
+                                <option value="2">Pizzeria</option>
+                                <option value="3">Fast Food</option>
+                                <option value="4">Gelateria</option>
+                            </select>
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li> 
+                                    @endforeach
+                                    </ul>
+                                </div>  
+                                @endif
 
                         </div>
 
