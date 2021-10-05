@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-Use App\Product;
+use App\Models\Product;
 
-class ApiController extends Controller
+class RestaurantController extends Controller
 {
     /**
      * Display a listing of the resource.
