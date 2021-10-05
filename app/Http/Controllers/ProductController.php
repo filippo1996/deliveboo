@@ -55,16 +55,12 @@ class ProductController extends Controller
             'description' => 'required',
             'ingredient' => 'required',
             'visibility' => 'required|in:0,1',
-            'price' => 'required',
+            'price' => 'required|numeric',
             'image' => 'nullable|image',
         ]);
 
-        // Auth::user()->id;
-
         // Prendo i dati
         $data = $request->all();
-       
-        
 
         // Creo una nuova istanza
         $created_product = new Product();
