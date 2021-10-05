@@ -24,7 +24,11 @@
             </thead>
                 
             @foreach ($products as $product)
+              @if($product->visibility == 'Non disponibile')
+              <tbody style="opacity: 0.3" data-product="{{ $product->id }}" class="text-start">
+              @else
               <tbody data-product="{{ $product->id }}" class="text-start">
+              @endif
                 <tr>
                   <th scope="row">{{ $product->id }}</th>
                   
