@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Auth;
 
 class OrderController extends Controller
 {
@@ -14,8 +15,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //$orders = Order::paginate(1);
-        $orders = Order::get();
+        $orders = Order::where('user_id', Auth::id())->orderBy('id', 'DESC')->get();
         return view('order.index', compact('orders'));
     }
 
