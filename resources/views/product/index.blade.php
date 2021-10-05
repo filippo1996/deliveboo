@@ -6,9 +6,9 @@
       <div class="alert alert-success">{{ session('updated') }}</div>        
     @endif
     
-    <div class="row">
+    <div class="row overflow-hidden vh-100">
       <div class="col-12">
-        <div class="table-responsive mt-3">
+        <div class="table-responsive mt-3 h-50">
           <table class="table table-sm table-hover">
             <thead class="table-dark">
               <tr class="text-start">
