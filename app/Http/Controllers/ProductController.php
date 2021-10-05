@@ -197,6 +197,7 @@ class ProductController extends Controller
         $this->authorize('delete', $product);
 
         try {
+            Storage::delete($product->getRawOriginal('img_path'));
             $res = $product->delete();
         } catch(\Exception $e){
             abort(500, 'Impossibile eliminare il prodotto, se il problema persiste, cotattare l\'assistenza');
