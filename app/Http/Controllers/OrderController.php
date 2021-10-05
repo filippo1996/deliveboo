@@ -37,7 +37,24 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validazione dei Dati
+        $request->validate([
+            'name' => 'required|max:150',
+            'lastname' => 'required',
+            'email' => 'required',
+            'prcie' => 'required|in:0,1',
+            'phone_number' => 'required',
+            'address' => 'required',
+            'house_number' => 'required',   
+            'postal_code' => 'required',   
+            'city' => 'required'   
+        ]);
+
+        // Auth::user()->id;
+
+        // Prendo i dati
+        $data = $request->all();
+        return redirect()->route('orders.index');
     }
 
     /**
@@ -48,7 +65,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        return view('order.show', compact('order'));
     }
 
     /**
