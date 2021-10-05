@@ -1,28 +1,33 @@
 <template>
-  <div class="jumbo position-relative">
-    <div class="container py-4">
-      <div class="row text-center">
-        <div class="col-10 col-md-9 col-xl-6 m-auto">
-          <h3 class="mb-4 text-light">
-            Cerca i tuoi prodotti o locali preferiti
-          </h3>
-          <input type="text" class="w-100">
-        </div>
-      </div>
-      <div class="row clearfix">
-        <div class="jumbo-text d-none d-sm-block col-sm-6 text-light position-absolute">
-          <div class="title text-uppercase">
-            Consegnamo la felicità
-          </div>
-          <div class="subtitle my-2">
-            Il cibo che ami direttamente a casa tua
+  <div>
+    <div class="jumbo position-relative">
+      <div class="container py-4">
+        <div class="row text-center">
+          <div class="col-10 col-md-9 col-xl-6 m-auto">
+            <h3 class="mb-4 text-light">
+              Cerca i tuoi prodotti o locali preferiti
+            </h3>
+            <input type="text" class="w-100">
           </div>
         </div>
-        <div class="col-10 col-sm-4 position-absolute scooter me-4">
-          <img src="../../../public/img/scooter.png" alt="scooter">
+        <div class="row clearfix">
+          <div class="jumbo-text d-none d-sm-block col-sm-6 text-light position-absolute">
+            <div class="title text-uppercase">
+              Consegnamo la felicità
+            </div>
+            <div class="subtitle my-2">
+              Il cibo che ami direttamente a casa tua
+            </div>
+          </div>
+          <div class="col-10 col-sm-6 position-absolute scooter me-4">
+            <div class="position-relative w-100 h-100">
+              <img src="../../../public/img/scooter.png" alt="scooter" class="position-absolute">
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <div class="wave"></div>
   </div>
 </template>
 
@@ -57,8 +62,21 @@ export default {
     right: 0;
 
     img{
-      height: 100%;
-      float: right;
+      bottom: -22px;
+      right: 0;
+      animation-delay: 2s;
+      animation-duration: 2.5s;
+      animation-name: example;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      transform: rotate(358.7deg);
+    }
+
+    @keyframes example {
+      0% {right: 0px; bottom:-22px;}
+      100% {right: 180px; bottom:-25px;}
+      from {right: 0px};
+      to {right: 120px};
     }
   }
 
@@ -68,6 +86,33 @@ export default {
     border-radius: 50px;
     padding: 20px;
     z-index: 3;
+  }
+}
+
+.wave{
+  height: 50px;
+  background-image: url('../../../public/img/wave2.png');
+  background-size: cover;
+  background-position: bottom;
+}
+
+
+//media query
+@media screen and (min-width: 0px) {
+  .scooter img{
+    height: 280px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .scooter img{
+    height: 320px;     
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .scooter img{
+    height: 380px;     
   }
 }
 </style>
