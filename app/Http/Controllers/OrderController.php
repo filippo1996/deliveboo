@@ -38,6 +38,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         // Validazione dei Dati
+        /*
         $request->validate([
             'name' => 'required|max:150',
             'lastname' => 'required',
@@ -55,6 +56,7 @@ class OrderController extends Controller
         // Prendo i dati
         $data = $request->all();
         return redirect()->route('orders.index');
+        */
     }
 
     /**
@@ -65,6 +67,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $this->authorize('view', $order);
         return view('order.show', compact('order'));
     }
 
