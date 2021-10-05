@@ -5,21 +5,20 @@
       <div class="row">
         <ul class="list-unstyled d-flex flex-wrap">
           <li>
-            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'panineria' }}">{{ 'Panineria' }}</router-link>
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'panineria' }}">{{ 'Panineria' }}</router-link>
           </li>
           <li>
-            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'gelateria' }}">{{ 'Gelateria' }}</router-link>
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'gelateria' }}">{{ 'Gelateria' }}</router-link>
           </li>
           <li>
-            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'fast-food' }}">{{ 'Fast Food' }}</router-link>
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'fast-food' }}">{{ 'Fast Food' }}</router-link>
           </li>
           <li>
-            <router-link class="nav-link active" :to="{name: 'category', params:{ slug: 'pizzeria' }}">{{ 'Pizzeria' }}</router-link>
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'pizzeria' }}">{{ 'Pizzeria' }}</router-link>
           </li>
         </ul>
       </div>
       <div class="row justify-content-md-around">
-
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
           <div class="card text-white overflow-hidden pippo">
             <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" :alt="restaurant.name">
@@ -34,7 +33,6 @@
 
       </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#212529" fill-opacity="1" d="M0,224L120,202.7C240,181,480,139,720,138.7C960,139,1200,181,1320,202.7L1440,224L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
   </main>
 </template>
 
@@ -63,6 +61,10 @@ export default {
 <style lang="scss" scoped>
 main{
   background-color: rgb(255, 214, 112);
+
+    .rest-tag{
+      color: #393f46;
+    }
 
     .pippo{
       cursor: pointer;
