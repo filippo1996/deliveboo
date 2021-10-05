@@ -3,16 +3,23 @@
 @section('content')
   <div class="container">
 
-    {{-- Carico immagine --}}
-    <div class="mt-2">
-      <form action="upload" method="post" enctype="multipart/form-data" name="upload_img"> 
-        Scegli immagine 
-        <input name="img" type="file"/>
-        <input type="submit" name="carica" value="carica"/>
-      </form>
+    
  
-    <form action="{{ route('products.store') }}" method="post">
+ 
+    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
       @csrf
+
+      {{-- Carico immagine --}}
+      <div>
+        <label for="img" class="form-label"></label>
+        <input type="file" name='image' class="form-control @error('image') is-invalid @enderror">
+          @error('image')
+          <div class="alert alert-danger">{{ $message }}</div> 
+          @enderror
+
+      </div>
+
+
       <div class="mt-5 mb-5">
         <label for="nome" class="form-label">Nome Prodotto</label>
         <input 

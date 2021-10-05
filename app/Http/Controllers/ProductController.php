@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -44,12 +45,14 @@ class ProductController extends Controller
             'ingredient' => 'required',
             'visibility' => 'required|in:0,1',
             'price' => 'required',
+            'image' => 'nullable|image',
         ]);
 
         // Auth::user()->id;
 
         // Prendo i dati
         $data = $request->all();
+       
         
 
         // Creo una nuova istanza
@@ -71,8 +74,17 @@ class ProductController extends Controller
         $created_product->slug = $slug; // In ogni caso $created_product avrà com valore $slug;
         $created_product->user_id = \Auth::user()->id;
 
+        // Se l'immagine è presente, la salvo
+        if(array_key_exists('image', $data)) {
+            $image_path = Storage::put('img', $data['image']);
+            $data['img_path'] = $image_path;
+        }
+
         $created_product->fill($data);
         // dd($created_product);
+
+      
+
 
         // Salvo i dati
         $created_product->save();
