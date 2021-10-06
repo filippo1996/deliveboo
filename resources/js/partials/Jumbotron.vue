@@ -83,11 +83,7 @@ export default {
 
 .wave{
   height: 50px;
-<<<<<<< HEAD
   background-image: url('/images/wave3.jpg');
-=======
-  background-image: url('/images/wave2.png');
->>>>>>> 69a3a34c29b4b2a95e4c7f8d3d074bd94bc06330
   background-size: cover;
   background-position: bottom;
 }

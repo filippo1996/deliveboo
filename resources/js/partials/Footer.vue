@@ -88,11 +88,7 @@ export default {
   border-radius: 50%;
   margin: 0.3em;
   position: relative;
-<<<<<<< HEAD
   color: $yellow;
-=======
-  color: #f0b208 ;
->>>>>>> 69a3a34c29b4b2a95e4c7f8d3d074bd94bc06330
   background: rgb(66, 65, 65);
   transition: all 0.4s;
 }

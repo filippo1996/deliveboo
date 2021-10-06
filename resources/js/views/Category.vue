@@ -7,13 +7,8 @@
           <h2>Risultati ricerca</h2>
         </div>
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
-<<<<<<< HEAD
           <div class="card text-white overflow-hidden rest-tag">
             <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" :alt="restaurant.name">
-=======
-          <div class="card text-white overflow-hidden pippo">
-            <img :src="restaurant.cover" class="card-img" :alt="restaurant.name">
->>>>>>> 69a3a34c29b4b2a95e4c7f8d3d074bd94bc06330
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description">
                 <h3 class="card-title">{{restaurant.name}}</h3>
