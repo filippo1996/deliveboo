@@ -77,13 +77,12 @@ export default {
     }
 
     .smoke{
-      height: 20px;
-      animation-delay: 1.5s;
-      animation-duration: 2s;
+      animation-delay: 2.2s;
+      animation-duration: 2.3s;
       animation-name: smoke;
       animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
-
+      opacity: 0;
     }
   }
 
@@ -140,10 +139,6 @@ export default {
       height: 320px;
       bottom: -39px;
       right: -27px;
-    }
-
-    .smoke{
-       
     }
 
     @keyframes delivery-man {
@@ -208,11 +203,25 @@ export default {
       right: -27px;
     }
 
+    .smoke{
+      height: 35px;
+      top: -70px;
+      right: 0;
+    }
+
     @keyframes delivery-man {
       0% {right: -27px; bottom: -30px};
       100% {right: 300px; bottom: -33px};
       from {right: -27px; bottom: -30px};
       to {right: 300px; bottom: -33px};
+    }
+
+    @keyframes smoke {
+      0% {right: 0; top: -70px; opacity: 0.1;};
+      50% {opacity: 1;}
+      100% {right: 100px; top: -70px; opacity: 0};
+      from {right: 0; top: -70px};
+      to {right: 240px; top: -70px};
     }
   }
 }
