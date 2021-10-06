@@ -133,6 +133,11 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-9 d-flex justify-content-center mb-5">
+        <a href="http://127.0.0.1:8000/" class="home"><i class="fas fa-home"></i>Torna alla home</a>
+      </div>
+    </div>
   </div>
 
 </section>
@@ -158,7 +163,7 @@ input{
   padding: 5px;
   border: none;
   background-color: white;
-  width: 30rem;
+  width: 35rem;
   &:focus{
     outline: $light-blue solid 3px;
   }
@@ -197,6 +202,13 @@ input{
 .order-button{
   background-color: $light-blue;
   color: white;
+}
+
+.home{
+  background-color: $light-blue;
+  padding: 10px;
+  border-radius: 20px;
+  text-decoration: none;
 }
 
 </style>
