@@ -51,7 +51,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 main{
-  background-color: rgb(255, 214, 112);
+  background-color: #ffd670;
 
     .rest-tag{
       color: #393f46;

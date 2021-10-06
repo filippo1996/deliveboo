@@ -86,7 +86,7 @@ export default {
   border-radius: 50%;
   margin: 0.3em;
   position: relative;
-  color: rgb(240, 178, 8) ;
+  color: #f0b208 ;
   background: rgb(66, 65, 65);
   transition: all 0.4s;
 }
