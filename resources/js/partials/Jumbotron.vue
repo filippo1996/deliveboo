@@ -7,7 +7,7 @@
             <h3 class="mb-4 text-light">
               Cerca i tuoi prodotti o locali preferiti
             </h3>
-            <input type="text" placeholder="Cerca Qui">
+            <input type="text" placeholder="Cerca Qui" class="border-0 text-light text-center">
           </div>
         </div>
         <div class="row clearfix">
@@ -21,7 +21,10 @@
           </div>
           <div class="col-10 col-sm-6 position-absolute scooter me-4">
             <div class="position-relative w-100 h-100">
-              <img src="/images/scooter2.png" alt="scooter" class="position-absolute">
+              <img src="/images/scooter2.png" alt="scooter" class="bike position-absolute">
+            </div>
+            <div class="position-relative w-100 h-100">
+              <img src="/images/smoke.png" alt="smoke" class="smoke position-absolute">
             </div>
           </div>
         </div>
@@ -64,7 +67,7 @@ export default {
     bottom: 0;
     right: 0;
 
-    img{
+    .bike{
       transform: rotate(358.7deg);
       animation-delay: 1.5s;
       animation-duration: 2s;
@@ -72,16 +75,23 @@ export default {
       animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
     }
+
+    .smoke{
+      height: 20px;
+      animation-delay: 1.5s;
+      animation-duration: 2s;
+      animation-name: smoke;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+
+    }
   }
 
   input{
     width: 26vw;
     background-color: #41708e;
     outline: none;
-    border: none;
     border-radius: 20px;
-    color: white;
-    text-align: center;
     font-size: 17px;
     text-transform: capitalize;
     transition: 0.2s;
@@ -98,7 +108,6 @@ export default {
       color: rgba(255, 255, 255, 0.815);
       font-size: 16px;
     }
-
   }
 }
 
@@ -113,7 +122,7 @@ export default {
 //        ---------------  animazione scooter media query  ---------------
 @media screen and (min-width: 0px) and (max-width: 575px) {
   .scooter{
-    img{
+    .bike{
       height: 280px;
       bottom: -45px;
       right: -30px;
@@ -127,10 +136,14 @@ export default {
   }
 
   .scooter{
-    img{
+    .bike{
       height: 320px;
       bottom: -39px;
       right: -27px;
+    }
+
+    .smoke{
+       
     }
 
     @keyframes delivery-man {
@@ -138,6 +151,13 @@ export default {
       100% {right: 120px; bottom: -42px};
       from {right: -27px; bottom: -39px};
       to {right: 120px; bottom: -42px};
+    }
+
+    @keyframes smoke {
+      0% {right: 0; bottom: -40px};
+      100% {right: 80px; bottom: -42px};
+      from {right: 0; bottom: -40px};
+      to {right: 80px; bottom: -42px};
     }
   }
 }
@@ -148,7 +168,7 @@ export default {
   }
 
   .scooter{
-    img{
+    .bike{
       height: 380px;
       bottom: -37px;
       right: -27px;
@@ -165,7 +185,7 @@ export default {
 
 @media screen and (min-width: 1200px) {
   .scooter{
-    img{
+    .bike{
       height: 380px;
       bottom: -34px;
       right: -27px;
@@ -182,7 +202,7 @@ export default {
 
 @media screen and (min-width: 1400px) {
   .scooter{
-    img{
+    .bike{
       height: 380px;
       bottom: -30px;
       right: -27px;

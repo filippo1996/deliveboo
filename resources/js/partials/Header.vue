@@ -34,6 +34,8 @@ export default {
   
   .bottone{
     background-color: rgb(133, 193, 255);
+    border-radius: 50px;
+    padding: 2px 15px;
     color: white;
 
     &:hover{
