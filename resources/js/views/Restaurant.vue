@@ -10,15 +10,15 @@
           <span>Contatta: numero di telefono</span>
         </div>
 
-          <div class="row mt-1 justify-content-center">
-            <input class="s-bar" type="search" placeholder="Barra di ricerca">
+          <div class="row mt-1 justify-content-center align-items-center">
+            <input class="text-center" type="search" placeholder="Cerca qui">
           </div>
 
           <div class="row py-5">
             <div class="col-6">
               <div class="card mb-4 py-1 px-1" style="max-width: 540px;">
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class=" col-6 col-md-4">
                     <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid rounded-start" alt="...">
                   </div>
                   <div class="col-md-8">
@@ -38,7 +38,7 @@
             <div class="col-6">
               <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-6 col-md-4">
                     <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid rounded-start" alt="...">
                   </div>
                   <div class="col-md-8">
@@ -58,7 +58,7 @@
             <div class="col-6">
               <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-6 col-md-4">
                     <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid rounded-start" alt="...">
                   </div>
                   <div class="col-md-8">
@@ -78,7 +78,7 @@
             <div class="col-6">
               <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-6 col-md-4">
                     <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid rounded-start" alt="...">
                   </div>
                   <div class="col-md-8">
@@ -158,6 +158,10 @@ input{
   padding: 5px;
   border: none;
   background-color: white;
+  width: 30rem;
+  &:focus{
+    outline: $light-blue solid 3px;
+  }
 }
 
 .s-bar{
