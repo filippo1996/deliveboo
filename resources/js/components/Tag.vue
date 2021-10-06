@@ -48,11 +48,21 @@ export default {
 <style lang="scss" scoped>
   main{
     background-color: rgb(255, 214, 112);
+    li{
+      transition: 0.3s;
+      transform: perspective(200px) rotateX(35deg);
+      &:hover{
+        transform: perspective(100px) rotateX(0deg);
+      }
+    }
+
     .rest-tag{
-      background-color: orangered;
-      margin: 0 5px;
-      border-radius: 30px;
-      color: #393f46;
-  }
+      background: rgb(226,225,206);
+      background: linear-gradient(0deg, rgba(226,225,206,1) 0%, rgba(215,84,3,1) 5%);
+      margin: 0 12px;
+      border-radius: 10px;
+      color: white;
+      
+    }
   }
 </style>
