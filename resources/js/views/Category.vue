@@ -7,7 +7,7 @@
           <h2>Risultati ricerca</h2>
         </div>
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
-          <div class="card text-white overflow-hidden pippo">
+          <div class="card text-white overflow-hidden rest-tag">
             <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" :alt="restaurant.name">
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description">
@@ -70,11 +70,8 @@ export default {
 main{
   background-color: rgb(255, 214, 112);
 
+    
     .rest-tag{
-      color: #393f46;
-    }
-
-    .pippo{
       cursor: pointer;
 
       img{
@@ -82,7 +79,7 @@ main{
       }
     }
     
-    .pippo:hover img{
+    .rest-tag:hover img{
       transform: scale(1.1);
     }
 

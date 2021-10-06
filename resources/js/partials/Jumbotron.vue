@@ -21,7 +21,7 @@
           </div>
           <div class="col-10 col-sm-6 position-absolute scooter me-4">
             <div class="position-relative w-100 h-100">
-              <img src="../../images/scooter2.png" alt="scooter" class="position-absolute">
+              <img src="/images/scooter2.png" alt="scooter" class="position-absolute">
             </div>
           </div>
         </div>
@@ -77,12 +77,13 @@ export default {
     border-radius: 50px;
     padding: 20px;
     z-index: 3;
+    outline: none;
   }
 }
 
 .wave{
   height: 50px;
-  background-image: url('../../images/wave2.png');
+  background-image: url('/images/wave3.jpg');
   background-size: cover;
   background-position: bottom;
 }

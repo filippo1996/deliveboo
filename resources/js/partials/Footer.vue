@@ -66,15 +66,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/_variables.scss';
+
 .center{
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .box{
   flex-direction: column;
 }
-
 
 .box a{
   width: 40px;
@@ -86,61 +88,73 @@ export default {
   border-radius: 50%;
   margin: 0.3em;
   position: relative;
-  color: rgb(240, 178, 8) ;
+  color: $yellow;
   background: rgb(66, 65, 65);
   transition: all 0.4s;
 }
-  .box a:hover{
-    transform: scale(0.9);
-  }
-  .box a::before{
-    content: attr(data-text);
-    position: absolute;
-    top: 7px;
-    left: 50px;
-    border-radius: 50px;
-    width: 150px;
-    height: 60%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    font-family: 700;
-    color: rgb(240, 178, 8);
-    background: rgb(255, 255, 255);
-    display: none;
-  }
-  .box a:hover::before{
-    display: flex;
-  }
-  .box a::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 50px;
-    width: 40px;
-    height: 40px;
-    background: rgb(255, 255, 255);
-    transform: scale(0);
-    transition: all 0.4s;
-  }
-  .box a:hover::after{
-    transform: scale(0.8);
-  }
-  .box a i{
-    z-index: 20;
-    transition: all 0.4s;
-  }
-  .box a:hover .facebook{
-    color: royalblue;
-  }
-  .box a:hover .instagram{
-    color: rgb(225, 65, 217);
-  }
-  .box a:hover .twitter{
-    color: rgb(103, 138, 241);
-  }
-  .box a:hover .youtube{
-    color: rgb(252, 18, 18);
-  }
+
+.box a:hover{
+
+  transform: scale(0.9);
+}
+
+.box a::before{
+  content: attr(data-text);
+  position: absolute;
+  top: 7px;
+  left: 50px;
+  border-radius: 50px;
+  width: 150px;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-family: 700;
+  color: rgb(240, 178, 8);
+  background: rgb(255, 255, 255);
+  display: none;
+}
+
+.box a:hover::before{
+  display: flex;
+}
+
+.box a::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  background: rgb(255, 255, 255);
+  transform: scale(0);
+  transition: all 0.4s;
+}
+
+.box a:hover::after{
+  transform: scale(0.8);
+}
+
+.box a i{
+  z-index: 20;
+  transition: all 0.4s;
+}
+
+.box a:hover .facebook{
+  color: royalblue;
+}
+
+.box a:hover .instagram{
+  color: rgb(225, 65, 217);
+}
+
+.box a:hover .twitter{
+  color: rgb(103, 138, 241);
+}
+
+.box a:hover .youtube{
+  color: rgb(252, 18, 18);
+}
+
 </style>
