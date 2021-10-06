@@ -3,9 +3,6 @@
     <div class="container py-5">
       <Tag/>
       <div class="row justify-content" :class="{'d-none': loading}" v-if="!message">
-        <div class="row">
-          <h2>Risultati ricerca</h2>
-        </div>
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
           <div class="card text-white overflow-hidden rest-tag">
             <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" :alt="restaurant.name">

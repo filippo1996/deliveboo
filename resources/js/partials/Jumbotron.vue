@@ -7,8 +7,9 @@
             <h3 class="mb-4 text-light">
               Cerca i tuoi prodotti o locali preferiti
             </h3>
-            <input type="text" placeholder="Cerca Qui">
+            <input v-model="search" type="text" placeholder="Cerca Qui">
           </div>
+          <Search v-if="search" :word="search"/>
         </div>
         <div class="row clearfix">
           <div class="jumbo-text d-none d-sm-block col-sm-6 text-light position-absolute">
@@ -32,8 +33,39 @@
 </template>
 
 <script>
+import Search from '../components/Search.vue';
+
 export default {
-  name: "Jumbotron"
+  name: "Jumbotron",
+  components:{
+    Search
+  },
+  data(){
+    return {
+      search: null
+    }
+  },
+  methods:{
+    searchUrl(active){
+      let url = new URL(window.location.href);
+      if(active){
+        url.searchParams.set('search', this.search);
+        window.history.replaceState({foo: 'search'}, 'Search', url.search);
+      }
+      let word = url.searchParams.get('search');
+      this.search = word;
+
+      if(!word) window.history.replaceState({foo: 'search'}, 'Search', "/");
+    }
+  },
+  created(){
+    this.searchUrl(false);
+  },
+  watch:{
+    search: function(){
+      this.searchUrl(true);
+    }
+  }
 }
 </script>
 
