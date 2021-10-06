@@ -25,23 +25,7 @@
 <script>
 export default {
   name: "Tag",
-  data(){
-    return{
-      apiUrl: 'http://127.0.0.1:8000/api/restaurants',
-      restaurants: []
-    }
-    },
-    mounted(){
-      this.getRestaurant()
-    },
-    methods: {
-      getRestaurant(){
-        axios.get(this.apiUrl)
-        .then(resp =>{
-          this.restaurants= resp.data.results;
-        })
-      }
-    }
+  
 }
 </script>
 
