@@ -1,11 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div>
-    <div class="main">
-      <div class="container">
-
-=======
->>>>>>> 7a30013ac9adb3d21c84172d973bdeed24cd8d16
 <section>
 
   <div class="container">
@@ -141,13 +134,9 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD
-</div>
-=======
 
 </section>
   
->>>>>>> 7a30013ac9adb3d21c84172d973bdeed24cd8d16
 </template>
 
 <script>

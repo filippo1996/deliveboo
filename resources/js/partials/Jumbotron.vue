@@ -51,6 +51,7 @@ export default {
     top: 50%;
     float: left;
     padding-right: 100px;
+    font-style: oblique;
 
     .title{
       font-size: clamp(1rem, 3vw, 3rem);
