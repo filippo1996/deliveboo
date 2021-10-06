@@ -7,7 +7,7 @@
             <h3 class="mb-4 text-light">
               Cerca i tuoi prodotti o locali preferiti
             </h3>
-            <input type="text" class="w-100">
+            <input type="text" placeholder="Cerca Qui">
           </div>
         </div>
         <div class="row clearfix">
@@ -38,6 +38,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/_variables.scss';
+
 .jumbo{
   height: 30rem;
   background-color: rgb(133, 193, 255);
@@ -63,21 +65,39 @@ export default {
 
     img{
       transform: rotate(358.7deg);
-      animation-delay: 2s;
-      animation-duration: 2.5s;
+      animation-delay: 1.5s;
+      animation-duration: 2s;
       animation-name: delivery-man;
-      animation-timing-function: ease-out;
+      animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
     }
   }
 
   input{
-    height: 30px;
-    border: none;
-    border-radius: 50px;
-    padding: 20px;
-    z-index: 3;
+    width: 26vw;
+    background-color: #41708e;
     outline: none;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    text-transform: capitalize;
+    transition: 0.2s;
+    height: 40px;
+
+    &:hover{
+      transition: 0.5s;
+      width: 40vw;
+      transform: scale(1.1);
+      outline: none;
+    }
+
+    &::placeholder{
+      color: rgba(255, 255, 255, 0.815);
+      font-size: 16px;
+    }
+
   }
 }
 
@@ -89,7 +109,7 @@ export default {
 }
 
 
-//media query
+//        ---------------  animazione scooter media query  ---------------
 @media screen and (min-width: 0px) and (max-width: 575px) {
   .scooter{
     img{
@@ -97,7 +117,6 @@ export default {
       bottom: -45px;
       right: -30px;
     }
-
   }
 }
 
@@ -136,9 +155,9 @@ export default {
 
     @keyframes delivery-man {
       0% {right: -27px; bottom: -37px};
-      100% {right: 140px; bottom: -39px};
+      100% {right: 180px; bottom: -39px};
       from {right: -27px; bottom: -37px};
-      to {right: 140px; bottom: -39px};
+      to {right: 180px; bottom: -39px};
     }
   }
 }
@@ -153,9 +172,9 @@ export default {
 
     @keyframes delivery-man {
       0% {right: -27px; bottom: -34px};
-      100% {right: 180px; bottom: -36px};
+      100% {right: 270px; bottom: -36px};
       from {right: -27px; bottom: -34px};
-      to {right: 180px; bottom: -36px};
+      to {right: 270px; bottom: -36px};
     }
   }
 }
@@ -170,9 +189,9 @@ export default {
 
     @keyframes delivery-man {
       0% {right: -27px; bottom: -30px};
-      100% {right: 200px; bottom: -33px};
+      100% {right: 300px; bottom: -33px};
       from {right: -27px; bottom: -30px};
-      to {right: 200px; bottom: -33px};
+      to {right: 300px; bottom: -33px};
     }
   }
 }
