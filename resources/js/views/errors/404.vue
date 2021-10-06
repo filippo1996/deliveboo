@@ -16,7 +16,10 @@
               <div class="d-flex justify-content-center mt-2 pb-5">
                 <ul class="d-flex list-unstyled">
                   <li class="fs-6 p-3">
-                    <a href="localhost:8000" class="text-reset text-decoration-none">Deliveboo</a>
+                    <router-link 
+                      class="text-reset text-decoration-none" 
+                      :to="{name: 'home'}">{{ 'Deliveboo' }}
+                    </router-link>
                   </li>
 
                   <li class="fs-6 p-3">
