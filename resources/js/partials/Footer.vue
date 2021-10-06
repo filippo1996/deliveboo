@@ -17,7 +17,7 @@
               </ul>
             </div>
 
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-2">
               <h4>About us</h4>
               <ul>
                 <li><a href="#">Link footer</a></li>
@@ -29,11 +29,8 @@
             </div>
             
             <div class="col-12 col-md-4">
-              <h2>Follow us</h2>
               <div class="main center">
-
                 <div class="box center">
-
                   <a href="#" data-text="Facebook">
                     <i class="fab fa-facebook facebook"></i>
                   </a>
@@ -46,8 +43,8 @@
                   <a href="#" data-text="Youtube">
                     <i class="fab fa-youtube youtube"></i>
                   </a>
-
                 </div>
+
                 
               </div>
             </div>
@@ -67,6 +64,18 @@ export default {
 
 <style lang="scss" scoped>
 @import 'resources/sass/_variables.scss';
+
+ul{
+  padding: 0;
+  li{
+  list-style: none;
+    a{
+      text-decoration: none;
+      color: rgb(240, 178, 8);
+    }
+  }
+}
+
 
 .center{
   display: flex;
