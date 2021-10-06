@@ -20,13 +20,15 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: Home
+        component: Home,
+        meta: { requiresJumbotron: true }
     },
     {
       path: '/category/:slug',
       name: 'category',
       component: Category,
-      props: true
+      props: true,
+      meta: { requiresJumbotron: true }
     },
     {
       path: '/local/:slug',
