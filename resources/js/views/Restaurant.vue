@@ -1,155 +1,104 @@
 <template>
-  <div>
-    <div class="main">
+<section>
 
-      <!-- Nome Ristorante -->
-      <div class="row cover">
-        <h2>Nome Ristorante</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+
+        <div class="row row-ristorante my-3">
+          <h1>Nome Ristorante</h1>
+          <span>Contatta: numero di telefono</span>
+        </div>
+
+          <div class="row mt-1">
+            <input type="search" placeholder="Barra di ricerca">
+          </div>
+
+          <div class="row py-5">
+            <div class="col-6">
+              <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title text-uppercase">i più venduti</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6"><span>5€</span></div>
+                  <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title text-uppercase">i più venduti</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6"><span>5€</span></div>
+                  <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus"></i></div>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+
+
       </div>
+      <div class="col-4">
+        <div class="row mt-3 justify-content-center">
+          <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title text-center">Carrello</h2>
+          <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
+          <div class="row my-3">
 
-      <!-- Descrizione -->
-      <div class="row p-5">
-        <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius et illo perspiciatis, nihil unde obcaecati. Quod rem debitis ullam iste ratione sint doloribus repellat, temporibus exercitationem ab, ducimus totam esse.</p>
-      </div>
-
-      <!-- Info -->
-      <div class="row mb-5 p-5">
-        <span class="info">Indirizzo: </span>
-        <span class="info">Numero Civico: </span>
-        <span class="info">Codice Postale: </span>
-        <span class="info">Numero di telefono: </span>
-      </div>
-
-      <h3 class="p-5">Prodotti</h3>
-
-      <!-- Scheda Singolo Prodotto -->
-      <div class="row mt-5 product">
-
-        <!-- img -->
-        <div class="col-3 align-self-center ">
-          <img src="https://www.auntminnieeurope.com/user/images/content_images/nws_rad/2015_01_28_12_24_19_220_hamburger_200.jpg" alt="food">
-        </div>
-
-        <!-- Nome e info prodotto -->
-        <div class="col-3 align-self-center">
-          <div class="row bold">Nome Prodotto</div>
-          <div class="row">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est totam asperiores modi officia distinctio architecto, sequi corporis tenetur deserunt blanditiis, dolorem illum quod dolorum, aperiam minus. Voluptatibus sint dolorum itaque.</div>
-        </div>
-
-        <!-- Prezzo -->
-        <div class="col-3 align-self-center text-center">Prezzo</div>
-
-        <!-- Cart icon -->
-        <div class="col-3 align-self-center">
-          <i class="fas fa-cart-plus"></i>
-        </div>
-      </div>
-
-      <!-- Scheda Singolo Prodotto -->
-      <div class="row mt-5 product">
-
-        <!-- img -->
-        <div class="col-3 align-self-center ">
-          <img src="https://www.auntminnieeurope.com/user/images/content_images/nws_rad/2015_01_28_12_24_19_220_hamburger_200.jpg" alt="food">
-        </div>
-
-        <div class="col-3">
-          <div class="row bold">Nome Prodotto</div>
-          <div class="row">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est totam asperiores modi officia distinctio architecto, sequi corporis tenetur deserunt blanditiis, dolorem illum quod dolorum, aperiam minus. Voluptatibus sint dolorum itaque.</div>
-        </div>
-
-        <div class="col-3 align-self-center text-center">Prezzo</div>
-
-        <div class="col-3 align-self-center">
-          <i class="fas fa-cart-plus"></i>
-        </div>
-      </div>
-
-      <!-- Scheda Singolo Prodotto -->
-      <div class="row mt-5 product">
-
-        <!-- img -->
-        <div class="col-3 align-self-center ">
-          <img src="https://www.auntminnieeurope.com/user/images/content_images/nws_rad/2015_01_28_12_24_19_220_hamburger_200.jpg" alt="food">
-        </div>
-
-        <div class="col-3">
-          <div class="row bold">Nome Prodotto</div>
-          <div class="row">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est totam asperiores modi officia distinctio architecto, sequi corporis tenetur deserunt blanditiis, dolorem illum quod dolorum, aperiam minus. Voluptatibus sint dolorum itaque.</div>
-        </div>
-
-        <div class="col-3 align-self-center text-center">Prezzo</div>
-
-        <div class="col-3 align-self-center">
-          <i class="fas fa-cart-plus"></i>
+          </div>
+          <div class="d-flex justify-content-center"><a href="#" class="btn btn-success rounded-pill">Ordina</a></div>
         </div>
       </div>
-
-      <!-- Scheda Singolo Prodotto -->
-      <div class="row mt-5 product">
-
-        <!-- img -->
-        <div class="col-3 align-self-center m-left">
-          <img src="https://www.auntminnieeurope.com/user/images/content_images/nws_rad/2015_01_28_12_24_19_220_hamburger_200.jpg" alt="food">
-        </div>
-
-        <div class="col-3">
-          <div class="row bold">Nome Prodotto</div>
-          <div class="row">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est totam asperiores modi officia distinctio architecto, sequi corporis tenetur deserunt blanditiis, dolorem illum quod dolorum, aperiam minus. Voluptatibus sint dolorum itaque.</div>
-        </div>
-
-        <div class="col-3 align-self-center text-center">Prezzo</div>
-
-        <div class="col-3 align-self-center">
-          <i class="fas fa-cart-plus"></i>
         </div>
       </div>
-
     </div>
   </div>
+
+</section>
+  
 </template>
 
 <script>
 export default {
-
+  
 }
 </script>
 
 <style lang="scss" scoped>
-
-.main{
-  background-color: rgb(255, 214, 112);
-  .cover{
-    background-image: url("https://wallpaperaccess.com/full/462778.jpg");
-    padding: 100px 0;
-    h2{
-      color: white;
-    }
-  }
+section{
+background: #ffd670;
 }
 
-// .m-left{
-//   margin-left: 50px;
-// }
-
-.p-5{
-  padding: 0 5%;
+.row-ristorante{
+  border: 2px solid black;
 }
-
-.bold{
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.product{
-  margin: 0 5%;
-  border: 5px solid black;
-  border-radius: 5px;
-}
-
-i{
-  font-size: 30px;
-  cursor: pointer;
+input{
+  border-radius: 20px;
+  padding: 5px;
+  border: none;
+  background-color: white;
 }
 
 </style>
