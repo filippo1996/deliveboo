@@ -17454,3 +17454,16 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.table-responsive {
+  height: 80vh;
+  overflow-y: scroll;
+}
+.table-responsive .container_img {
+  width: 55px;
+  height: 55px;
+}
+.table-responsive .container_img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}

@@ -1,0 +1,18 @@
+.table-responsive {
+  height: 80vh;
+  overflow-y: scroll;
+
+  .container_img {
+    width: 55px;
+    height: 55px;
+  
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+
+
+
+

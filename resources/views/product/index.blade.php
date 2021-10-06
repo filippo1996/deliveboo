@@ -7,9 +7,9 @@
       <div class="alert alert-success">{{ session('updated') }}</div>        
     @endif
     
-    <div class="row overflow-hidden vh-100">
+    <div class="row overflow-hidden">
       <div class="col-12">
-        <div class="table-responsive mt-3 h-50">
+        <div class="table-responsive mt-3">
           <table class="table table-sm table-hover">
             <thead class="table-dark">
               <tr class="text-start">
@@ -31,7 +31,11 @@
                   <th scope="row">{{ $product->id }}</th>
                   <td>{{ Str::limit($product->name, 15) }}</td>
                   <td>{{ Str::limit($product->description, 25) }}</td>
-                  <td><img src="{{ $product->img_path }}" alt="{{ $product->name }}" width="60px"></td>
+                  <td>
+                    <div>
+                      <img src="{{ $product->img_path }}" alt="{{ $product->name }}" width="60px" class="container_img">
+                    </div>
+                  </td>
                   <th scope="row">{{ number_format($product->price, 2) }} &euro;</th>
                   <th scope="row">
                     <label class="switch">
