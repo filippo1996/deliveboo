@@ -4,17 +4,8 @@
     <div class="row">
       <h2>Tipologie di Ristoranti</h2>
         <ul class="list-unstyled d-flex flex-wrap">
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'panineria' }}">{{ 'Panineria' }}</router-link>
-          </li>
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'gelateria' }}">{{ 'Gelateria' }}</router-link>
-          </li>
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'fast-food' }}">{{ 'Fast Food' }}</router-link>
-          </li>
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'pizzeria' }}">{{ 'Pizzeria' }}</router-link>
+          <li v-for="(tag, index) in tags" :key="index">
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: index }}">{{ tag }}</router-link>
           </li>
         </ul>
       </div>
@@ -25,7 +16,21 @@
 <script>
 export default {
   name: "Tag",
-  
+  data(){
+    return {
+      url: '/api/category/fast-food/?tags=show',
+      tags: []
+    }
+  },
+  mounted(){
+    this.getTags();
+  },
+  methods: {
+    async getTags(){
+      let response = await axios(this.url);
+      this.tags = response.data.results;
+    }
+  }
 }
 </script>
 
@@ -46,7 +51,6 @@ export default {
       margin: 0 12px;
       border-radius: 10px;
       color: white;
-      
     }
   }
 </style>
