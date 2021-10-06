@@ -78,7 +78,6 @@ export default {
 
     .smoke{
       height: 20px;
-      top: -60px;
       animation-delay: 1.5s;
       animation-duration: 2s;
       animation-name: smoke;
@@ -123,7 +122,7 @@ export default {
 //        ---------------  animazione scooter media query  ---------------
 @media screen and (min-width: 0px) and (max-width: 575px) {
   .scooter{
-    img{
+    .bike{
       height: 280px;
       bottom: -45px;
       right: -30px;
@@ -137,7 +136,7 @@ export default {
   }
 
   .scooter{
-    img{
+    .bike{
       height: 320px;
       bottom: -39px;
       right: -27px;
@@ -165,7 +164,7 @@ export default {
   }
 
   .scooter{
-    img{
+    .bike{
       height: 380px;
       bottom: -37px;
       right: -27px;
@@ -182,7 +181,7 @@ export default {
 
 @media screen and (min-width: 1200px) {
   .scooter{
-    img{
+    .bike{
       height: 380px;
       bottom: -34px;
       right: -27px;
@@ -199,7 +198,7 @@ export default {
 
 @media screen and (min-width: 1400px) {
   .scooter{
-    img{
+    .bike{
       height: 380px;
       bottom: -30px;
       right: -27px;
