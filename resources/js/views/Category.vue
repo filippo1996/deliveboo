@@ -1,7 +1,11 @@
 <template>
   <main>
     <div class="container py-5">
+      <Tag/>
       <div class="row justify-content" v-if="!message">
+        <div class="row">
+          <h2>Risultati ricerca</h2>
+        </div>
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
           <div class="card text-white overflow-hidden pippo">
             <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" :alt="restaurant.name">
@@ -13,6 +17,13 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <a href="http://127.0.0.1:8000/">
+            <div class="btn btn-primary">
+              Torna alla home
+            </div>
+          </a>
+        </div>
       </div>
       <h3 v-else>{{ message }}</h3>
     </div>   
@@ -20,8 +31,13 @@
 </template>
 
 <script>
+import Tag from '../components/Tag.vue';
+
 export default {
   name: 'Category',
+  components:{
+    Tag,
+  },
   props: {
     slug: String
   },
