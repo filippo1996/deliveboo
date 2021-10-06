@@ -158,7 +158,7 @@ input{
   padding: 5px;
   border: none;
   background-color: white;
-  width: 30rem;
+  width: 35rem;
   &:focus{
     outline: $light-blue solid 3px;
   }
