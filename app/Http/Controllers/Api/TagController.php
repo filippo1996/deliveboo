@@ -14,19 +14,27 @@ class TagController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function category($slug)
+    public function category(Request $request, $slug)
     {
+        //dd($request->query('tags'));
         $results = [
             'success' => false,
             'results' => null
         ];
 
-        $restaurants = Tag::where('slug', $slug)->with('users')->first();
+        //$restaurants = Tag::where('slug', $slug)->with('users')->first();
+
+        if($request->has('tags')){
+            $tags =  Tag::pluck('name','slug');
+        } else {
+            $eloquent = Tag::where('slug', $slug);
+            $tags = $eloquent->with('users')->first();
+        }
         
-        if($restaurants){
+        if($tags){
             $results = [
                 'success' => true,
-                'results' => $restaurants
+                'results' => $tags
             ];
         }
 

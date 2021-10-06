@@ -1,20 +1,14 @@
 <template>
-  <section>
+  <section :class="{'d-none': loading}">
     <div class="container pt-5 pb-2">
     <div class="row">
       <h2>Tipologie di Ristoranti</h2>
         <ul class="list-unstyled d-flex flex-wrap">
           <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'panineria' }}">{{ 'Panineria' }}</router-link>
+            <router-link class="nav-link rest-tag fw-bold" :to="{ name: 'home' }">{{ 'Tutti' }}</router-link>
           </li>
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'gelateria' }}">{{ 'Gelateria' }}</router-link>
-          </li>
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'fast-food' }}">{{ 'Fast Food' }}</router-link>
-          </li>
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'pizzeria' }}">{{ 'Pizzeria' }}</router-link>
+          <li v-for="(tag, index) in tags" :key="index">
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: index }}">{{ tag }}</router-link>
           </li>
         </ul>
       </div>
@@ -25,7 +19,24 @@
 <script>
 export default {
   name: "Tag",
-  
+  data(){
+    return {
+      url: '/api/category/fast-food/?tags=show',
+      tags: [],
+      loading: true
+    }
+  },
+  mounted(){
+    this.getTags();
+  },
+  methods: {
+    async getTags(){
+      this.loading = true;
+      let response = await axios(this.url);
+      this.tags = response.data.results;
+      this.loading = false;
+    }
+  }
 }
 </script>
 
@@ -46,7 +57,6 @@ export default {
       margin: 0 12px;
       border-radius: 10px;
       color: white;
-      width: 120px;
     }
   }
 </style>
