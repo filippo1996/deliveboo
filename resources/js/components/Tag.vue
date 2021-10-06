@@ -1,9 +1,12 @@
 <template>
-  <section>
+  <section :class="{'d-none': loading}">
     <div class="container pt-5 pb-2">
     <div class="row">
       <h2>Tipologie di Ristoranti</h2>
         <ul class="list-unstyled d-flex flex-wrap">
+          <li>
+            <router-link class="nav-link rest-tag fw-bold" :to="{ name: 'home' }">{{ 'Tutti' }}</router-link>
+          </li>
           <li v-for="(tag, index) in tags" :key="index">
             <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: index }}">{{ tag }}</router-link>
           </li>
@@ -19,7 +22,8 @@ export default {
   data(){
     return {
       url: '/api/category/fast-food/?tags=show',
-      tags: []
+      tags: [],
+      loading: true
     }
   },
   mounted(){
@@ -27,8 +31,10 @@ export default {
   },
   methods: {
     async getTags(){
+      this.loading = true;
       let response = await axios(this.url);
       this.tags = response.data.results;
+      this.loading = false;
     }
   }
 }
