@@ -1,23 +1,20 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <router-link class="nav-link active" :to="{name: 'home'}">{{ 'Deliveboo' }}</router-link>
+        <router-link class="nav-link active text-light" :to="{name: 'home'}">{{ 'Deliveboo' }}</router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <!-- <router-link class="nav-link active" :to="{name: 'shop'}">{{ 'Shop' }}</router-link> -->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Prodotti</a>
+              <a class="nav-link active text-light" aria-current="page" href="#">Chi siamo</a>
             </li>
           </ul>
           <div>
-            <a class="btn btn-danger me-2 text-decoration-none text-dark" href="http://localhost:8000/restaurant/login">Accedi</a>
-            <a class="btn btn-danger me-2 text-decoration-none text-dark" href="http://localhost:8000/restaurant/register">Registrati</a>
+            <a class="btn bottone me-2 text-decoration-none" href="http://localhost:8000/restaurant/login">Accedi</a>
+            <a class="btn bottone me-2 text-decoration-none" href="http://localhost:8000/restaurant/register">Registrati</a>
           </div>
         </div>
       </div>
@@ -32,7 +29,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.navbar{
+  background-color: rgb(65, 112, 142);
+  
+  .bottone{
+    background-color: rgb(133, 193, 255);
+    color: white;
 
+    &:hover{
+      background-color: rgb(112, 163, 214);
+      transition: 0.3s;
+    }
+  }
+  
+}
 
 </style>
 

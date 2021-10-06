@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header/>
-    <Jumbotron/>
+    <Jumbotron v-if="$route.meta.requiresJumbotron"/>
     <main>
       <!-- rendering -->
       <router-view></router-view>
@@ -26,6 +26,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../sass/_variables.scss';
 
 </style>
 

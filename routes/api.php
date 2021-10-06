@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\RestaurantController;
+use App\Http\Controllers\Api\TagController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,3 +20,4 @@ use App\Http\Controllers\Api\RestaurantController;
 // });
 
 Route::get('/restaurants',[RestaurantController::class,'index']);
+Route::get('/category/{slug}', [TagController::class, 'category']);
