@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <section>
     <div class="container pt-5 pb-2">
     <div class="row">
       <h2>Tipologie di Ristoranti</h2>
@@ -19,7 +19,7 @@
         </ul>
       </div>
   </div>
-  </main>
+  </section>
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  main{
+  section{
     background-color: rgb(255, 214, 112);
     li{
       transition: 0.3s;
