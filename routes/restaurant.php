@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function(){
 
   // Product
   Route::resource('products', ProductController::class);
+  Route::patch('/products/visibility/{product}', [ProductController::class, 'visibility']);
 
 });
 

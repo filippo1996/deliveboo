@@ -60,6 +60,7 @@ class RegisterController extends Controller
             'phone_number' => ['required', 'string', 'max:10'],
             'vat_number' => ['required', 'string', 'max:100', 'unique:users'],
             'city' => ['required', 'string', 'max:45'],
+            'tag_id' => ['required', 'integer'],
         ]);
     }
 
@@ -71,7 +72,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -81,7 +82,11 @@ class RegisterController extends Controller
             'country' => $data['country'],
             'phone_number' => $data['phone_number'],
             'vat_number' => $data['vat_number'],
-            'city' => $data['city']
+            'city' => $data['city'],
         ]);
+
+        $user->tags()->attach($data['tag_id']);
+
+        return $user;
     }
 }

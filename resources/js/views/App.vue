@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header/>
-    <Jumbotron/>
+    <Jumbotron v-if="$route.meta.requiresJumbotron"/>
     <main>
       <!-- rendering -->
       <router-view></router-view>

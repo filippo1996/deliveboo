@@ -14,15 +14,7 @@
           </div>  
         @endif
 
-        {{-- Carico immagine --}}
-        <div class="mt-2">
-          <form action="upload" method="post" enctype="multipart/form-data" name="upload_img"> 
-            Scegli immagine 
-            <input name="img" type="file"/>
-            <input type="submit" name="carica" value="carica"/>
-          </form> 
-
-        <form action="{{ route('products.update', $product->id) }}" method="post">
+        <form action="{{ route('products.update', $product->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method('PATCH')
           <div class="mt-5 mb-5">
@@ -65,20 +57,27 @@
 
           <div class="mb-5 w-25">
             <label for="prezzo" class="form-label">Prezzo</label>
-            <textarea 
-              name="price" 
-              class="form-control @error('price') is-invalid @enderror" 
-              id="prezzo" 
-              cols="25" 
-              rows="1">{{ old('price') }}
-            </textarea> 
+            <input class="form-control @error('price') is-invalid @enderror" type="number" id="prezzo" name="price" value="{{ old('price') ? old('price') : $product->price }}">
+          </div>
+
+          {{-- Carico immagine --}}
+          <div class="mt-5 mb-5">
+            <label for="image" class="form-label"></label>
+            <input type="file" id="image" name='image' class="form-control @error('image') is-invalid @enderror">
+            <img class="mt-5 mb-1" id="preview" src="{{ $product->img_path }}" alt="" width="260px"/>
+            @if($product->getRawOriginal('img_path'))
+            <button id="delete-img" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+            @endif
+
+              @error('image')
+              <div class="alert alert-danger">{{ $message }}</div> 
+              @enderror
           </div>
 
           <button type="submit" class="btn btn-success">Salva modiche</button>
         </form>  
       </div>
     </div>
-
 
     <div class="row mt-5">
       <div class="col-12">
@@ -91,4 +90,32 @@
       </div>
     </div>
   </div>
+@endsection
+
+@section('script-footer')
+@parent
+<script>
+  const image = document.getElementById('image');
+  const preview = document.getElementById('preview');
+  image.addEventListener('change', function(event){
+    let url = URL.createObjectURL(event.target.files[0]);
+    preview.src = url;
+    preview.onload = function(){
+      URL.revokeObjectURL(preview.src); // remove memory
+    }
+  });
+
+  const btnDeleteImg = document.getElementById('delete-img');
+  btnDeleteImg?.addEventListener('click', function(event){
+    event.preventDefault();
+    let input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'delete-img';
+    input.value = true;
+    btnDeleteImg.append(input);
+    btnDeleteImg.parentNode.insertBefore(input, btnDeleteImg.nextSibling);
+    image.value = '';
+    preview.src = '#';
+  });
+</script>
 @endsection

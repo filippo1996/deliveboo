@@ -5,9 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use Auth;
 
 class ProductController extends Controller
 {
+    /**
+     * Create the controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //$this->authorizeResource(Product::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +27,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::where('user_id', Auth::id())->orderBy('id', 'DESC')->get();
         return view('product.index', compact('products'));
     }
 
@@ -43,14 +55,12 @@ class ProductController extends Controller
             'description' => 'required',
             'ingredient' => 'required',
             'visibility' => 'required|in:0,1',
-            'price' => 'required',
+            'price' => 'required|numeric',
+            'image' => 'nullable|image',
         ]);
-
-        // Auth::user()->id;
 
         // Prendo i dati
         $data = $request->all();
-        
 
         // Creo una nuova istanza
         $created_product = new Product();
@@ -71,6 +81,11 @@ class ProductController extends Controller
         $created_product->slug = $slug; // In ogni caso $created_product avrà com valore $slug;
         $created_product->user_id = \Auth::user()->id;
 
+        // Se l'immagine è presente, la salvo
+        if($request->has('image')) {
+            $data['img_path'] = $request->file('image')->store('products');
+        }
+
         $created_product->fill($data);
         // dd($created_product);
 
@@ -89,6 +104,9 @@ class ProductController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->first();
+
+        $this->authorize('view', $product);
+
         return view('product.show', compact('product'));
     }
 
@@ -100,6 +118,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $this->authorize('update', $product);
+
         return view('product.edit', compact('product'));
     }
 
@@ -112,13 +132,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        $this->authorize('update', $product);
+
         // Validazione dei Dati
         $request->validate([
             'name' => 'required|max:150',
             'description' => 'required',
             'ingredient' => 'required',
             'visibility' => 'required|in:0,1',
-            'price' => 'required',
+            'price' => 'required|numeric',
+            'image' => 'nullable|image',
         ]);
 
         $data = $request->all();
@@ -147,6 +170,16 @@ class ProductController extends Controller
             // Lo slug viene assegnato in ogni caso
             $data['slug'] = $slug;
         }
+
+        if($request->has('image')){
+            $data['img_path'] = $request->file('image')->store('products');
+            Storage::delete($product->getRawOriginal('img_path'));
+        }
+
+        if($request->has('delete-img')){
+            $data['img_path'] = null;
+            Storage::delete($product->getRawOriginal('img_path'));
+        }
         
         $product->update($data);
 
@@ -161,7 +194,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {   
+        $this->authorize('delete', $product);
+
         try {
+            Storage::delete($product->getRawOriginal('img_path'));
             $res = $product->delete();
         } catch(\Exception $e){
             abort(500, 'Impossibile eliminare il prodotto, se il problema persiste, cotattare l\'assistenza');
@@ -171,5 +207,28 @@ class ProductController extends Controller
             'status' => true,
             'message' => 'Prodotto eliminato correttamente'
         ]);
+    }
+
+    public function visibility(Product $product)
+    {
+        $this->authorize('update', $product);
+
+        if(request()->ajax()){
+            $data = request()->input('status');
+            $status = filter_var($data, FILTER_VALIDATE_BOOLEAN);
+            $product->visibility = (int) $status;
+            $result = $product->save();
+            if($result){
+                return response()->json([
+                    'success' => true
+                ]);
+            } else {
+                return response()->json([
+                    'success' => false
+                ]);
+            }
+        }
+
+        abort(404);
     }
 }

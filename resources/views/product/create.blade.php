@@ -2,17 +2,18 @@
 
 @section('content')
   <div class="container">
-
-    {{-- Carico immagine --}}
-    <div class="mt-2">
-      <form action="upload" method="post" enctype="multipart/form-data" name="upload_img"> 
-        Scegli immagine 
-        <input name="img" type="file"/>
-        <input type="submit" name="carica" value="carica"/>
-      </form>
- 
-    <form action="{{ route('products.store') }}" method="post">
+    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
       @csrf
+
+      {{-- Carico immagine --}}
+      <div>
+        <label for="img" class="form-label"></label>
+        <input type="file" name='image' class="form-control @error('image') is-invalid @enderror">
+          @error('image')
+          <div class="alert alert-danger">{{ $message }}</div> 
+          @enderror
+      </div>
+
       <div class="mt-5 mb-5">
         <label for="nome" class="form-label">Nome Prodotto</label>
         <input 
@@ -60,20 +61,14 @@
       <div class="mb-5 w-50">
         <label for="visibility" class="form-label">Disponibilità del prodotto</label>
         <select id="visibility" name="visibility" class="form-select">
-          <option {{ $product->visibility || (int) old('visibility') ? 'selected' : ''}} value="1">Disponibile</option>
-          <option {{ $product->visibility || (int) old('visibility') ? '' : 'selected' }} value="0">Non disponibile</option>
+          <option selected value="1">Disponibile</option>
+          <option value="0">Non disponibile</option>
         </select>
       </div>
 
-
       <div class="mb-5 w-25">
         <label for="prezzo" class="form-label">Prezzo</label>
-        <textarea 
-          name="price" 
-          class="form-control @error('price') is-invalid @enderror" 
-          id="prezzo" 
-          cols="25" 
-          rows="1">{{ old('price') }}</textarea>
+        <input class="form-control @error('price') is-invalid @enderror" type="number" id="prezzo" name="price" value="{{ old('price') }}">
 
         @error('price')
           <div class="alert alert-danger">{{ $message }}</div> 
