@@ -142,6 +142,10 @@ export default {
       right: -27px;
     }
 
+    .smoke{
+       
+    }
+
     @keyframes delivery-man {
       0% {right: -27px; bottom: -39px};
       100% {right: 120px; bottom: -42px};
