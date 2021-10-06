@@ -1,9 +1,7 @@
 <template>
   <main>
     <div class="container py-5">
-        
       <Tag/>
-
       <div class="row justify-content">
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
           <div class="card text-white overflow-hidden rest-card">
@@ -16,7 +14,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </main>

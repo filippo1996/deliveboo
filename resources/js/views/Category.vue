@@ -2,13 +2,13 @@
   <main>
     <div class="container py-5">
       <Tag/>
-      <div class="row justify-content" v-if="!message">
+      <div class="row justify-content" :class="{'d-none': loading}" v-if="!message">
         <div class="row">
           <h2>Risultati ricerca</h2>
         </div>
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
           <div class="card text-white overflow-hidden pippo">
-            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" :alt="restaurant.name">
+            <img :src="restaurant.cover" class="card-img" :alt="restaurant.name">
             <div class="card-img-overlay text-center text-light shadow">
               <div class="description">
                 <h3 class="card-title">{{restaurant.name}}</h3>
@@ -16,13 +16,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <a href="http://127.0.0.1:8000/">
-            <div class="btn btn-primary">
-              Torna alla home
-            </div>
-          </a>
         </div>
       </div>
       <h3 v-else>{{ message }}</h3>
@@ -45,15 +38,17 @@ export default {
     return {
       restaurants: [],
       url: '/api/category/',
-      message: undefined
+      message: undefined,
+      loading: true
     }
   },
   mounted(){
-    //this.$router.push({name: '404'});
     this.callApi();
   },
   methods: {
     async callApi(){
+      this.loading = true;
+      this.message = '';
       let response = await axios.get(this.url + this.slug);
       if(response.data.success){
         this.restaurants = response.data.results.users;
@@ -61,6 +56,12 @@ export default {
       } else {
         this.$router.push({ name: '404' });
       }
+      this.loading = false;
+    }
+  },
+  watch: {
+    slug: function(){
+      this.callApi();
     }
   }
 }

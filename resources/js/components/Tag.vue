@@ -31,7 +31,7 @@ export default {
       restaurants: []
     }
     },
-    created(){
+    mounted(){
       this.getRestaurant()
     },
     methods: {
