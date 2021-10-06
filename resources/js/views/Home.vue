@@ -2,22 +2,7 @@
   <main>
     <div class="container py-5">
         
-      <div class="row">
-        <ul class="list-unstyled d-flex flex-wrap">
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'panineria' }}">{{ 'Panineria' }}</router-link>
-          </li>
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'gelateria' }}">{{ 'Gelateria' }}</router-link>
-          </li>
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'fast-food' }}">{{ 'Fast Food' }}</router-link>
-          </li>
-          <li>
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: 'pizzeria' }}">{{ 'Pizzeria' }}</router-link>
-          </li>
-        </ul>
-      </div>
+      <Tag/>
 
       <div class="row justify-content">
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
@@ -38,8 +23,13 @@
 </template>
 
 <script>
+import Tag from '../components/Tag.vue';
+
 export default {
     name: "Main",
+    components: {
+      Tag,
+    },
     data(){
         return{
             apiUrl: 'http://127.0.0.1:8000/api/restaurants',
