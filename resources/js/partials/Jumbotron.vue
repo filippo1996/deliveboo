@@ -77,12 +77,13 @@ export default {
     border-radius: 50px;
     padding: 20px;
     z-index: 3;
+    outline: none;
   }
 }
 
 .wave{
   height: 50px;
-  background-image: url('/images/wave2.png');
+  background-image: url('/images/wave3.jpg');
   background-size: cover;
   background-position: bottom;
 }
