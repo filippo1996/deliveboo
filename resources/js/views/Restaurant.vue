@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="main">
+      <div class="container">
 
       <!-- Nome Ristorante -->
       <div class="row cover">
@@ -107,6 +108,7 @@
 
     </div>
   </div>
+</div>
 </template>
 
 <script>
