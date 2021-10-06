@@ -62,21 +62,12 @@ export default {
     right: 0;
 
     img{
-      bottom: -22px;
-      right: 0;
+      transform: rotate(358.7deg);
       animation-delay: 2s;
       animation-duration: 2.5s;
-      animation-name: example;
+      animation-name: delivery-man;
       animation-timing-function: ease-out;
       animation-fill-mode: forwards;
-      transform: rotate(358.7deg);
-    }
-
-    @keyframes example {
-      0% {right: 0px; bottom:-22px;}
-      100% {right: 180px; bottom:-25px;}
-      from {right: 0px};
-      to {right: 120px};
     }
   }
 
@@ -98,21 +89,90 @@ export default {
 
 
 //media query
-@media screen and (min-width: 0px) {
-  .scooter img{
-    height: 280px;
+@media screen and (min-width: 0px) and (max-width: 575px) {
+  .scooter{
+    img{
+      height: 280px;
+      bottom: -45px;
+      right: -30px;
+    }
+
   }
 }
 
-@media screen and (min-width: 576px) {
-  .scooter img{
-    height: 320px;     
+@media screen and (min-width: 575px) and (max-width: 768px ){
+  .subtitle{
+    padding-right: 110px;
+  }
+
+  .scooter{
+    img{
+      height: 320px;
+      bottom: -39px;
+      right: -27px;
+    }
+
+    @keyframes delivery-man {
+      0% {right: -27px; bottom: -39px};
+      100% {right: 120px; bottom: -42px};
+      from {right: -27px; bottom: -39px};
+      to {right: 120px; bottom: -42px};
+    }
   }
 }
 
-@media screen and (min-width: 768px) {
-  .scooter img{
-    height: 380px;     
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .subtitle{
+    padding-right: 120px;
+  }
+
+  .scooter{
+    img{
+      height: 380px;
+      bottom: -37px;
+      right: -27px;
+    }
+
+    @keyframes delivery-man {
+      0% {right: -27px; bottom: -37px};
+      100% {right: 140px; bottom: -39px};
+      from {right: -27px; bottom: -37px};
+      to {right: 140px; bottom: -39px};
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .scooter{
+    img{
+      height: 380px;
+      bottom: -34px;
+      right: -27px;
+    }
+
+    @keyframes delivery-man {
+      0% {right: -27px; bottom: -34px};
+      100% {right: 180px; bottom: -36px};
+      from {right: -27px; bottom: -34px};
+      to {right: 180px; bottom: -36px};
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .scooter{
+    img{
+      height: 380px;
+      bottom: -30px;
+      right: -27px;
+    }
+
+    @keyframes delivery-man {
+      0% {right: -27px; bottom: -30px};
+      100% {right: 200px; bottom: -33px};
+      from {right: -27px; bottom: -30px};
+      to {right: 200px; bottom: -33px};
+    }
   }
 }
 </style>
