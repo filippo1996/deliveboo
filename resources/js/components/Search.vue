@@ -10,14 +10,14 @@
             <div class="col-8 m-auto p-2">
               <div class="card mb-3">
                 <div class="row g-0">
-                  <div class="col-md-4 d-flex">
+                  <div class="col-md-4 d-flex ps-4">
                     <div class="box_img d-flex align-items-center rounded-circle">
                       <img :src="item.img_path" alt="{{item.name}}">
                     </div>
                     
                   </div> 
-                  <div class="col-md-8">
-                    <div class="card-body">
+                  <div class="col-md-8 ps-4">
+                    <div class="card-body text-start">
                       <h5 class="card-title">{{item.name}}</h5>
                       <p class="card-text"> {{item.ingredient}} </p>
                       <p class="card-text"><small class="text-muted">{{item.price}}</small></p>
@@ -89,18 +89,21 @@ export default {
         width: 80%;
         margin: 0 auto;
         background-color: #fff;
+        border-radius: 0px 16px 0px 16px;
         padding: 10px;
 
+
         img {
-          width: 80px; 
-          height: 80px; 
-          -webkit-border-radius: 80px; 
+          width: 100px; 
+          height: 100px; 
+          -webkit-border-radius: 50%; 
           -webkit-background-clip: padding-box; 
-          -moz-border-radius: 80px; 
+          -moz-border-radius: 50%; 
           -moz-background-clip: padding; 
-          border-radius: 80px; 
+          border-radius: 50%; 
           background-clip: padding-box; 
-          margin: 7px 0 0 5px; 
+          object-fit: fill;
+          margin: 8px 0 0 8px; 
         }
       } 
     }
