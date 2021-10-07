@@ -24,7 +24,7 @@
             <div class="position-relative w-100 h-100">
               <img src="/images/scooter2.png" alt="scooter" class="bike position-absolute">
             </div>
-            <div class="position-relative w-100 h-100">
+            <div class="position-relative w-100 h-100 smoke-container">
               <img src="/images/smoke.png" alt="smoke" class="smoke position-absolute">
             </div>
           </div>
@@ -109,7 +109,6 @@ export default {
     }
 
     .smoke{
-      transform: rotate(358.7deg);
       animation-delay: 2.2s;
       animation-duration: 2s;
       animation-name: smoke;
@@ -151,13 +150,17 @@ export default {
 }
 
 
-//        ---------------  animazione scooter media query  ---------------
+//        ---------------  animazione media query  ---------------
 @media screen and (min-width: 0px) and (max-width: 575px) {
   .scooter{
     .bike{
       height: 280px;
       bottom: -45px;
       right: -30px;
+    }
+
+    .smoke-container{
+      display: none;
     }
   }
 }
@@ -172,6 +175,10 @@ export default {
       height: 320px;
       bottom: -39px;
       right: -27px;
+    }
+    
+    .smoke-container{
+      display: none;
     }
 
     @keyframes delivery-man {
@@ -202,11 +209,23 @@ export default {
       right: -27px;
     }
 
+    .smoke{
+      height: 40px;
+    }
+
     @keyframes delivery-man {
       0% {right: -27px; bottom: -37px};
       100% {right: 180px; bottom: -39px};
       from {right: -27px; bottom: -37px};
       to {right: 180px; bottom: -39px};
+    }
+
+    @keyframes smoke {
+      0% {right: 40px; top: -5px; opacity: 0; transform: scale(0.8);};
+      50% {opacity: 1; transform: scale(1.1);}
+      100% {right: 0; top: -15px; opacity: 0; transform: scale(1.2);};
+      from {right: 40px; top: -5px; transform: scale(0.8);};
+      to {right: 0; top: -15px; opacity: 0; transform: scale(1.4);};
     }
   }
 }
@@ -233,11 +252,11 @@ export default {
     }
 
     @keyframes smoke {
-      0% {right: 0; top: -25px; opacity: 0.1;};
-      50% {opacity: 1;}
-      100% {right: 100px; top: -18px; opacity: 0};
-      from {right: 0; top: -25px};
-      to {right: 240px; top: -18px};
+      0% {right: 75px; top: -19px; opacity: 0; transform: scale(0.8);};
+      50% {opacity: 1; transform: scale(1.1);}
+      100% {right: 10px; top: -26px; opacity: 0; transform: scale(1.2);};
+      from {right: 75px; top: -19px; transform: scale(0.8);};
+      to {right: 10px; top: -26px; opacity: 0; transform: scale(1.4);};
     }
   }
 }
@@ -246,8 +265,6 @@ export default {
   .scooter{
     .bike{
       height: 380px;
-      bottom: -30px;
-      right: -27px;
     }
 
     .smoke{
@@ -262,13 +279,13 @@ export default {
       from {right: -27px; bottom: -30px};
       to {right: 300px; bottom: -33px};
     }
-
+    
     @keyframes smoke {
-      0% {right: 0; top: -28px; opacity: 0.1;};
-      50% {opacity: 1;}
-      100% {right: 100px; top: -22px; opacity: 0};
-      from {right: 0; top: -28px};
-      to {right: 240px; top: -22px};
+      0% {right: 75px; top: -20px; opacity: 0; transform: scale(0.8);};
+      50% {opacity: 1; transform: scale(1.1);}
+      100% {right: 10px; top: -35px; opacity: 0; transform: scale(1.2);};
+      from {right: 75px; top: -20px; transform: scale(0.8);};
+      to {right: 10px; top: -35px; opacity: 0; transform: scale(1.4);};
     }
   }
 }
