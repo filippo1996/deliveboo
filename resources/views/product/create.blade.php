@@ -21,7 +21,8 @@
           class="form-control @error('name') is-invalid @enderror" 
           id="nome" 
           name="name" 
-          value="{{ old('name') }}">
+          value="{{ old('name') }}"
+          required>
 
           @error('name')
             <div class="alert alert-danger">{{ $message }}</div> 
@@ -50,7 +51,8 @@
           class="form-control @error('ingredient') is-invalid @enderror" 
           id="ingredienti" 
           cols="25" 
-          rows="1">{{ old('ingredient') }}</textarea>
+          rows="1"
+          required>{{ old('ingredient') }}</textarea>
 
         @error('ingredient')
           <div class="alert alert-danger">{{ $message }}</div> 
@@ -60,15 +62,15 @@
 
       <div class="mb-5 w-50">
         <label for="visibility" class="form-label">Disponibilità del prodotto</label>
-        <select id="visibility" name="visibility" class="form-select">
+        <select id="visibility" name="visibility" class="form-select" required>
           <option selected value="1">Disponibile</option>
           <option value="0">Non disponibile</option>
         </select>
       </div>
 
       <div class="mb-5 w-25">
-        <label for="prezzo" class="form-label">Prezzo</label>
-        <input class="form-control @error('price') is-invalid @enderror" type="number" id="prezzo" name="price" value="{{ old('price') }}">
+        <label for="price" class="form-label">Prezzo</label>
+        <input class="form-control @error('price') is-invalid @enderror" type="number" step="0.01" min="0" id="price" name="price" value="{{ old('price') }}" required>
 
         @error('price')
           <div class="alert alert-danger">{{ $message }}</div> 

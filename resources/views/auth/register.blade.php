@@ -31,7 +31,7 @@
 
                             <label for="tag_id" class="col-md-4 col-form-label text-md-right ms-1">{{ __('Categoria Ristorante') }}</label>
 
-                            <select name="tag_id" id="tag_id" class="w-25">
+                            <select name="tag_id" id="tag_id" class="w-25" required>
                                 <option value="">-- Seleziona una Categoria --</option>
                                 <option value="1">Panineria</option>
                                 <option value="2">Pizzeria</option>
@@ -76,7 +76,7 @@
 
                                 <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Paese') }}</label>
 
-                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}">
+                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" required>
                                 
                             </div>
                             
@@ -85,7 +85,7 @@
 
                                 <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('Città') }}</label>
 
-                                <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}">
+                                <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" required>
 
                                     
                             </div>
@@ -95,7 +95,7 @@
 
                                 <label for="postal_code" class="col-md-4 col-form-label text-md-right">{{ __('Codice Postale') }}</label>
 
-                                <input id="postal_code" type="text" class="form-control" name="postal_code" value="{{ old('postal_code') }}">
+                                <input id="postal_code" type="text" class="form-control" name="postal_code" value="{{ old('postal_code') }}" required>
              
                             </div>
 
@@ -107,14 +107,14 @@
                             <div class="col-md-6">
                                 <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
 
-                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}">
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
 
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="house_number" class="col-md-4 col-form-label text-md-right">{{ __('Numero Civico') }}</label>
 
-                                    <input id="house_number" type="text" class="form-control" name="house_number" value="{{ old('house_number') }}">
+                                    <input id="house_number" type="text" class="form-control" name="house_number" value="{{ old('house_number') }}" required>
                                 </div>
 
                             </div>
@@ -127,7 +127,7 @@
 
                                 <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Numero di Telefono') }}</label>
 
-                                <input id="phone_number" type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}">
+                                <input id="phone_number" type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}" required>
 
                             </div>
 
@@ -135,7 +135,7 @@
 
                                 <label for="vat_number" class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
 
-                                <input id="vat_number" type="text" class="form-control" name="vat_number" value="{{ old('vat_number') }}">
+                                <input id="vat_number" type="text" class="form-control" name="vat_number" value="{{ old('vat_number') }}" required>
 
                                 @if ($errors->any())
                                 <div class="alert alert-danger">
