@@ -24,7 +24,8 @@
               type="text" 
               class="form-control"
               id="nome" 
-              value="{{ old('name', $product->name) }}">
+              value="{{ old('name', $product->name) }}"
+              required>
           </div> 
 
           <div class="mb-5">
@@ -44,20 +45,21 @@
               class="form-control @error('ingredient') is-invalid @enderror" 
               id="ingredienti" 
               cols="25" 
-              rows="1">{{ old('ingredient', $product->ingredient) }}</textarea> 
+              rows="1"
+              required>{{ old('ingredient', $product->ingredient) }}</textarea> 
           </div>
 
           <div class="mb-5 w-50">
             <label for="visibility" class="form-label">Disponibilità del prodotto</label>
-            <select id="visibility" name="visibility" class="form-select">
+            <select id="visibility" name="visibility" class="form-select" required>
               <option {{ $product->visibility || (int) old('visibility') ? 'selected' : ''}} value="1">Disponibile</option>
               <option {{ $product->visibility || (int) old('visibility') ? '' : 'selected' }} value="0">Non disponibile</option>
             </select>
           </div>
 
           <div class="mb-5 w-25">
-            <label for="prezzo" class="form-label">Prezzo</label>
-            <input class="form-control @error('price') is-invalid @enderror" type="number" id="prezzo" name="price" value="{{ old('price') ? old('price') : $product->price }}">
+            <label for="price" class="form-label">Prezzo</label>
+            <input class="form-control @error('price') is-invalid @enderror" type="number" step="0.01" min="0" id="price" name="price" value="{{ old('price') ? old('price') : $product->price }}" required>
           </div>
 
           {{-- Carico immagine --}}

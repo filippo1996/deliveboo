@@ -97,7 +97,7 @@
             if(response.data.status){
               const tr = document.querySelector(`tbody[data-product="${productId}"]`);
               tr.remove();
-              alert(response.data.message);
+              //alert(response.data.message);
             }
           })
           .catch(err => console.log(err));

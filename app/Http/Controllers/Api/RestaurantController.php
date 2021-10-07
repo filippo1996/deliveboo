@@ -24,14 +24,14 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
+     * Show all products active in the restaurant
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showProducts($slug)
     {
-        //
+        $restaurant = User::with('products')->where('slug', $slug)->firstOrFail();
+        return $restaurant;
     }
 
 }

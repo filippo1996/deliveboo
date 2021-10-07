@@ -1,6 +1,6 @@
 <template>
   <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in items" :key="restaurant.id">
-    <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: slug(restaurant.name) }}">
+    <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: restaurant.slug }}">
       <div class="card text-white overflow-hidden rest-card">
         <img :src="restaurant.cover" class="card-img" :alt="restaurant.name">
         <div class="card-img-overlay text-center text-light shadow">
@@ -15,19 +15,10 @@
 </template>
 
 <script>
-import slug from '../utils/factory.js';
-
 export default {
   name: 'Card',
   props: {
     items: Object
-  },
-  data(){
-    return {
-      slug: (function(){
-        return slug;
-      }()),
-    }
   }
 }
 </script>
@@ -39,8 +30,12 @@ export default {
 
   .rest-card{
     cursor: pointer;
+    border-radius: 10px;
+    height: 200px;
 
     img{
+      position: relative;
+      bottom: 20%;
       transition: 0.3s;
     }
   }

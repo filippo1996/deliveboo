@@ -127,7 +127,7 @@
                       {{-- Rotta in home da verificare --}}
                       <a class="nav-link" href="{{ route('home') }}">
                         <i class="fas fa-home fs-5 pe-2"></i>
-                        Home
+                        Dashboard
                       </a>     
                     </li>
                               
@@ -169,6 +169,12 @@
                         class="d-none mt-3 fs-6">
                           @csrf
                       </form>
+                    </li>
+                    <li class="nav-item mt-1 fs-6">
+                      <a class="nav-link" href="http://localhost:8000/" target="_blank">
+                        <i class="fas fa-hand-point-left"></i>
+                        Torna alla home del sito
+                      </a>
                     </li>
                   </ul>
               </div>

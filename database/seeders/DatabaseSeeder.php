@@ -55,6 +55,7 @@ class DatabaseSeeder extends Seeder
         foreach($items->restaurantItems as $restaurant){
             $user = new User();
             $user->name = $restaurant->name;
+            $user->slug = \Str::slug($restaurant->name);
             $user->email = $faker->unique()->safeEmail();
             $user->email_verified_at = now();
             $user->password = \Hash::make('password'); // password
