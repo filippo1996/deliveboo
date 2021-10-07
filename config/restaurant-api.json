@@ -4,7 +4,7 @@
     {
       "name": "Burger King",
       "cover": "https://loghi-famosi.com/wp-content/uploads/2020/08/Burger-King-Logo.png",
-      "imageType": "png",
+      "tag": "2",
       "servingSize": null,
       "readableServingSize": null,
       "products": [

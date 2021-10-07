@@ -72,7 +72,8 @@ class DatabaseSeeder extends Seeder
             $user->save();
 
             // Pivot tag_user
-            $user->tags()->attach( Tag::all()->random()->id );
+            //$user->tags()->attach( Tag::all()->random()->id );
+            $user->tags()->attach( $restaurant->tag );
 
             // Product
             foreach($restaurant->products as $product){
