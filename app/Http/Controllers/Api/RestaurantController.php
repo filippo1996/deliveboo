@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
 use App\Models\User;
+use App\Models\Product;
 
 class RestaurantController extends Controller
 {
@@ -30,7 +32,15 @@ class RestaurantController extends Controller
      */
     public function showProducts($slug)
     {
-        $restaurant = User::with('products')->where('slug', $slug)->firstOrFail();
+
+        $restaurant = User::with(['products' => fn($query) => $query->where('visibility',1)])
+        ->whereHas('products', fn($query) => $query->where('visibility',1))->where('slug', $slug)->firstOrFail();
+
+        /*
+        $user = User::where('slug', $slug)->first();
+        $products = Product::where('user_id', $user->id)->where('visibility',1)->get();
+        */
+        
         return $restaurant;
     }
 
