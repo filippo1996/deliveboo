@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar{
-  background-color: rgb(65, 112, 142);
+  background-color: rgba(65, 113, 142, 0.884);
   
   .bottone{
     background-color: rgb(133, 193, 255);

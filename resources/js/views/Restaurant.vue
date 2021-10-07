@@ -135,7 +135,7 @@
     </div>
     <div class="row">
       <div class="col-9 d-flex justify-content-center mb-5">
-        <a href="http://127.0.0.1:8000/" class="home"><i class="fas fa-home"></i>Torna alla home</a>
+        <router-link class="home" :to="{ name: 'home' }">{{ '&#8962; Torna alla home' }}</router-link>
       </div>
     </div>
   </div>
