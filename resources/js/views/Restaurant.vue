@@ -17,22 +17,19 @@
 
           <div class="row py-5">
             <!-- start card product -->
-            <div class="col-6" v-for="product in products" :key="product.id">
-              <div class="card mb-4 py-1 px-1" style="max-width: 540px;">
-                <div class="row align-items-center">
-                  <div class=" col-6 col-md-4">
+            <div class="col-9 col-xl-6" v-for="product in products" :key="product.id">
+              <div class="card prodotto mb-4 pt-1 px-1">
+                <div class="row">
+                  <div class="  col-md-4">
                     <img :src="product.img_path" class="img-fluid card-img" :alt="product.name">
                   </div>
                   <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title text-uppercase">{{ product.name }}</h5>
-                      <p class="card-text">{{ product.description }}</p>
+                    <div class="card-body p-3">
+                      <h5 class="card-title text-uppercase fs-5">{{ product.name }}</h5>
+                      <p class="card-text descrizione m-0 d-none d-md-inline-block">{{ product.description }}</p>
+                      <div class="col-md-6 float-lg-end mt-4 ">{{ product.price.toFixed(2) }} &euro; <i class="fas fa-plus big-icon"></i></div>
                     </div>
                   </div>
-                </div>
-                <div class="row mx-3 mb-2 align-items-center">
-                  <div class="col-md-6"><span>{{ product.price.toFixed(2) }} &euro;</span></div>
-                  <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus big-icon"></i></div>
                 </div>
               </div>
             </div>
@@ -41,9 +38,9 @@
 
       </div>
       <!-- start cart -->
-      <div class="col-3">
+      <div class="col-3 align-self-start">
         <div class="row mt-3 justify-content-center">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
         <div class="card-body">
           <h2 class="card-title text-center">Carrello</h2>
           <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
@@ -137,12 +134,35 @@ input{
     outline: $light-blue solid 3px;
   }
 }
-.card{
+.card-title{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.prodotto{
   border-radius: 30px;
-  min-height: 250px;
+  height: 230px;
+}
+.descrizione{
+  height: 100px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+  width: 5px;
+  }
+ 
+  &::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #ffd670;
+  }
+ 
+  &::-webkit-scrollbar-thumb {
+  background-color: $light-blue;
+  outline: 1px solid $light-blue;
+  }
 }
 .card-img{
   border-top-left-radius: 25px;
+  height: 100px;
 }
 
 .big-icon{
@@ -151,6 +171,7 @@ input{
   background-color: $light-blue;
   padding: 5px 7px;
   border-radius: 50%;
+  margin-left: 20px;
 }
 
 .lista{
