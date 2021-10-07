@@ -135,7 +135,7 @@
     </div>
     <div class="row">
       <div class="col-9 d-flex justify-content-center mb-5">
-        <router-link class="home" :to="{ name: 'home' }">{{ '&#8962; Torna alla home' }}</router-link>
+        <router-link class="home px-3" :to="{ name: 'home' }"><i class="fas fa-home"></i> {{ 'Torna alla home' }}</router-link>
       </div>
     </div>
   </div>
