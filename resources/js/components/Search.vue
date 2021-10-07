@@ -95,7 +95,7 @@ export default {
 
         img {
           width: 100px; 
-          height: 100px; 
+          height: 100px;
           -webkit-border-radius: 50%; 
           -webkit-background-clip: padding-box; 
           -moz-border-radius: 50%; 
