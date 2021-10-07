@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="jumbo position-relative">
-      <div class="container py-4">
+      <div class="container py-3">
         <div class="row text-center">
           <div class="col-10 col-md-9 col-xl-6 m-auto">
             <h3 class="mb-4 text-light">

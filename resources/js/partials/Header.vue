@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <router-link class="nav-link active text-light" :to="{name: 'home'}">{{ 'Deliveboo' }}</router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar{
-  background-color: rgb(65, 112, 142);
+  background-color: rgba(65, 113, 142, 0.884);
   
   .bottone{
     background-color: rgb(133, 193, 255);
