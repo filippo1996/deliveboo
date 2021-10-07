@@ -14,7 +14,7 @@
         <div class="row clearfix">
           <div class="jumbo-text d-none d-sm-block col-sm-6 text-light position-absolute">
             <div class="title text-uppercase">
-              Consegnamo la felicità
+              Consegniamo la felicità
             </div>
             <div class="subtitle my-2">
               Il cibo che ami direttamente a casa tua
