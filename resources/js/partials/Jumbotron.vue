@@ -13,7 +13,7 @@
         </div>
         <div class="row clearfix">
           <div class="jumbo-text d-none d-sm-block col-sm-6 text-light position-absolute">
-            <div class="title text-uppercase">
+            <div class="title">
               Consegniamo la felicità
             </div>
             <div class="subtitle my-2">
@@ -80,6 +80,7 @@ export default {
   background-color: rgb(133, 193, 255);
 
   .jumbo-text{
+    font-family: 'Comfortaa', cursive;
     top: 50%;
     float: left;
     padding-right: 100px;
