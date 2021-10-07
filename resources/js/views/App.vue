@@ -25,8 +25,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import 'resources/sass/_variables.scss';
+*{
+  font-family: 'Comfortaa', cursive;
+}
 
 </style>
 
