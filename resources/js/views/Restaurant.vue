@@ -18,13 +18,8 @@
           <div class="row py-5">
             <!-- start card product -->
             <div class="col-6" v-for="product in products" :key="product.id">
-<<<<<<< HEAD
               <div class="card prodotto mb-4 pt-1 px-1">
                 <div class="row">
-=======
-              <div class="card mb-4 py-1 px-1" style="max-width: 540px;">
-                <div class="row align-items-center">
->>>>>>> 9f7a77ae9818a3ead3351da0c67f2de494e747f8
                   <div class=" col-6 col-md-4">
                     <img :src="product.img_path" class="img-fluid card-img" :alt="product.name">
                   </div>
@@ -146,7 +141,6 @@ input{
 }
 .prodotto{
   border-radius: 30px;
-<<<<<<< HEAD
   height: 230px;
 }
 .descrizione{
@@ -165,9 +159,6 @@ input{
   background-color: $light-blue;
   outline: 1px solid $light-blue;
   }
-=======
-  min-height: 250px;
->>>>>>> 9f7a77ae9818a3ead3351da0c67f2de494e747f8
 }
 .card-img{
   border-top-left-radius: 25px;
