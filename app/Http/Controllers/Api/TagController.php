@@ -16,18 +16,15 @@ class TagController extends Controller
      */
     public function category(Request $request, $slug)
     {
-        //dd($request->query('tags'));
         $results = [
             'success' => false,
             'results' => null
         ];
 
-        //$restaurants = Tag::where('slug', $slug)->with('users')->first();
-
         if($request->has('tags')){
             $tags =  Tag::pluck('name','slug');
         } else {
-            $eloquent = Tag::where('slug', $slug);
+            $eloquent = Tag::where('slug', $slug)->with('users');
             $tags = $eloquent->with('users')->first();
         }
         

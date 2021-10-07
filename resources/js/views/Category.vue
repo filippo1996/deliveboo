@@ -1,32 +1,37 @@
 <template>
-  <main>
+  <section>
     <div class="container py-5">
       <Tag/>
       <div class="row justify-content" :class="{'d-none': loading}" v-if="!message">
+        <!-- start card category -->
         <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
-          <div class="card text-white overflow-hidden rest-tag">
-            <img src="https://www.obiettivoinsalute.it/media/k2/items/cache/4fcf9d660236ddb62c8456017158615a_XL.jpg" class="card-img" :alt="restaurant.name">
-            <div class="card-img-overlay text-center text-light shadow">
-              <div class="description">
-                <h3 class="card-title">{{restaurant.name}}</h3>
-                <span class="tag">Tag</span>
+          <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: slugRestaurant(restaurant.name) }}">
+            <div class="card text-white overflow-hidden rest-card">
+              <img :src="restaurant.cover" class="card-img" :alt="restaurant.name">
+              <div class="card-img-overlay text-center text-light shadow">
+                <div class="description">
+                  <h3 class="card-title">{{ restaurant.name }}</h3>
+                  <span class="tag">{{ tag }}</span>
+                </div>
               </div>
             </div>
-          </div>
+          </router-link>
         </div>
+        <!-- end card category -->
       </div>
       <h3 v-else>{{ message }}</h3>
     </div>   
-  </main>
+  </section>
 </template>
 
 <script>
 import Tag from '../components/Tag.vue';
+import slugRestaurant from '../utils/factory.js';
 
 export default {
   name: 'Category',
   components:{
-    Tag,
+    Tag
   },
   props: {
     slug: String
@@ -34,9 +39,13 @@ export default {
   data(){
     return {
       restaurants: [],
+      tag: '',
       url: '/api/category/',
       message: undefined,
-      loading: true
+      loading: true,
+      slugRestaurant: (function(){
+        return slugRestaurant;
+      }())
     }
   },
   mounted(){
@@ -49,6 +58,7 @@ export default {
       let response = await axios.get(this.url + this.slug);
       if(response.data.success){
         this.restaurants = response.data.results.users;
+        this.tag = response.data.results.name;
         if(!this.restaurants.length) this.message = 'Nessun ristorante trovato';
       } else {
         this.$router.push({ name: '404' });
@@ -65,37 +75,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main{
+section{
   background-color: rgb(255, 214, 112);
 
+  .rest-tag{
+    color: #393f46;
+  }
+
+  .rest-card{
+    cursor: pointer;
+
+    img{
+      transition: 0.3s;
+    }
+  }
+  
+  .rest-card:hover img{
+    transform: scale(1.1);
+  }
+
+  .shadow{
+    background-color: rgba(100, 100, 100, 0.4);
     
-    .rest-tag{
-      cursor: pointer;
+    .description{
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
 
-      img{
-        transition: 0.3s;
-      }
-    }
-    
-    .rest-tag:hover img{
-      transform: scale(1.1);
-    }
-
-    .shadow{
-      background-color: rgba(100, 100, 100, 0.4);
-      
-      .description{
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-      }
-    }
-
-    .tag{
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 5px 10px;
-      border-radius: 20px;
-    }
+  .tag{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
 }
 </style>
