@@ -109,8 +109,9 @@ export default {
     }
 
     .smoke{
+      transform: rotate(358.7deg);
       animation-delay: 2.2s;
-      animation-duration: 2.3s;
+      animation-duration: 2s;
       animation-name: smoke;
       animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
@@ -218,11 +219,25 @@ export default {
       right: -27px;
     }
 
+    .smoke{
+      height: 50px;
+      top: -70px;
+      right: 0;
+    }
+
     @keyframes delivery-man {
       0% {right: -27px; bottom: -34px};
       100% {right: 270px; bottom: -36px};
       from {right: -27px; bottom: -34px};
       to {right: 270px; bottom: -36px};
+    }
+
+    @keyframes smoke {
+      0% {right: 0; top: -25px; opacity: 0.1;};
+      50% {opacity: 1;}
+      100% {right: 100px; top: -18px; opacity: 0};
+      from {right: 0; top: -25px};
+      to {right: 240px; top: -18px};
     }
   }
 }
@@ -236,7 +251,7 @@ export default {
     }
 
     .smoke{
-      height: 35px;
+      height: 50px;
       top: -70px;
       right: 0;
     }
@@ -249,11 +264,11 @@ export default {
     }
 
     @keyframes smoke {
-      0% {right: 0; top: -70px; opacity: 0.1;};
+      0% {right: 0; top: -28px; opacity: 0.1;};
       50% {opacity: 1;}
-      100% {right: 100px; top: -70px; opacity: 0};
-      from {right: 0; top: -70px};
-      to {right: 240px; top: -70px};
+      100% {right: 100px; top: -22px; opacity: 0};
+      from {right: 0; top: -28px};
+      to {right: 240px; top: -22px};
     }
   }
 }
