@@ -6,99 +6,41 @@
       <div class="col-9">
 
         <div class="row row-ristorante my-3 py-5">
-          <h1>Nome Ristorante</h1>
-          <span>Contatta: numero di telefono</span>
+          <h1>{{ restaurant.name }}</h1>
+          <span>Contatta: {{ restaurant.phone_number }}</span>
         </div>
-
+          <!--
           <div class="row mt-1 justify-content-center align-items-center">
             <input class="text-center" type="search" placeholder="Cerca qui">
           </div>
+          -->
 
           <div class="row py-5">
-            <div class="col-6">
+            <!-- start card product -->
+            <div class="col-6" v-for="product in products" :key="product.id">
               <div class="card mb-4 py-1 px-1" style="max-width: 540px;">
                 <div class="row">
                   <div class=" col-6 col-md-4">
-                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid card-img" alt="...">
+                    <img :src="product.img_path" class="img-fluid card-img" :alt="product.name">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title text-uppercase">i più venduti</h5>
-                      <p class="card-text">Descrizione prodotto super wow</p>
+                      <h5 class="card-title text-uppercase">{{ product.name }}</h5>
+                      <p class="card-text">{{ product.description }}</p>
                     </div>
                   </div>
                 </div>
                 <div class="row mx-3 mb-2 align-items-center">
-                  <div class="col-md-6"><span>5€</span></div>
+                  <div class="col-md-6"><span>{{ product.price.toFixed(2) }} &euro;</span></div>
                   <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus big-icon"></i></div>
                 </div>
               </div>
             </div>
-
-            <div class="col-6">
-              <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
-                <div class="row">
-                  <div class="col-6 col-md-4">
-                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid card-img" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title text-uppercase">i più venduti</h5>
-                      <p class="card-text">Descrizione prodotto super wow</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mx-3 mb-2 align-items-center">
-                  <div class="col-md-6"><span>5€</span></div>
-                  <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus big-icon"></i></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6">
-              <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
-                <div class="row">
-                  <div class="col-6 col-md-4">
-                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid card-img" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title text-uppercase">i più venduti</h5>
-                      <p class="card-text">Descrizione prodotto super wow</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mx-3 mb-2 align-items-center">
-                  <div class="col-md-6"><span>5€</span></div>
-                  <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus big-icon"></i></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6">
-              <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
-                <div class="row">
-                  <div class="col-6 col-md-4">
-                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid card-img" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title text-uppercase">i più venduti</h5>
-                      <p class="card-text">Descrizione prodotto super wow</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mx-3 mb-2 align-items-center">
-                  <div class="col-md-6"><span>5€</span></div>
-                  <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus big-icon"></i></div>
-                </div>
-              </div>
-            </div>  
-        
+            <!-- end card product -->
           </div>
 
-
       </div>
+      <!-- start cart -->
       <div class="col-3">
         <div class="row mt-3 justify-content-center">
           <div class="card" style="width: 18rem;">
@@ -130,6 +72,7 @@
           <div class="d-flex justify-content-center"><a href="#" class="order-button btn btn-success rounded-pill">Ordina</a></div>
         </div>
       </div>
+      <!-- end cart -->
         </div>
       </div>
     </div>
@@ -146,7 +89,33 @@
 
 <script>
 export default {
-  
+  name: 'Restaurant',
+  props:{
+    slug: String
+  },
+  data(){
+    return {
+      url: '/api/restaurant/',
+      restaurant: {},
+      products: [],
+      loading: true
+    }
+  },
+  mounted(){
+    this.getRestaurant();
+  },
+  methods: {
+    async getRestaurant(){
+      try {
+        let response = await axios(this.url + this.slug);
+        let value = response.data;
+        this.restaurant = {id: value.id, name: value.name, slug: value.slug, phone_number: value.phone_number};
+        this.products = response.data.products;
+      } catch(err){
+        console.log(err);
+      }
+    }
+  }
 }
 </script>
 

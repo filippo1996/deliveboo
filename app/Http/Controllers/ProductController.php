@@ -52,7 +52,7 @@ class ProductController extends Controller
         // Validazione dei Dati
         $request->validate([
             'name' => 'required|max:150',
-            'description' => 'required',
+            'description' => 'nullable',
             'ingredient' => 'required',
             'visibility' => 'required|in:0,1',
             'price' => 'required|numeric',
@@ -137,7 +137,7 @@ class ProductController extends Controller
         // Validazione dei Dati
         $request->validate([
             'name' => 'required|max:150',
-            'description' => 'required',
+            'description' => 'nullable',
             'ingredient' => 'required',
             'visibility' => 'required|in:0,1',
             'price' => 'required|numeric',
