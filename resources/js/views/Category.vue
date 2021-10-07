@@ -16,7 +16,7 @@
                 </div>
               </div>
               <!-- Card Ristorante -->
-
+            </div>
           </router-link>
         </div>
         <!-- end card category -->
