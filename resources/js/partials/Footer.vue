@@ -17,7 +17,7 @@
               </ul>
             </div>
 
-            <div class="col-12 col-md-2">
+            <div class="col-12 col-md-4">
               <h4>About us</h4>
               <ul>
                 <li><a href="#">Link footer</a></li>
@@ -77,11 +77,11 @@ ul{
 }
 
 
-.center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// .center{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 .box{
   flex-direction: column;
