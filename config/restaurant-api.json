@@ -2,9 +2,9 @@
   "type": "restaurantItems",
   "restaurantItems": [
     {
-      "name": "Burger King",
-      "cover": "https://loghi-famosi.com/wp-content/uploads/2020/08/Burger-King-Logo.png",
-      "tag": "2",
+      "name": "Urban Cagiun",
+      "cover": "https://i.pinimg.com/564x/30/a8/86/30a886be90b0de3727ef5c6288e6ee4b.jpg",
+      "tag": "3",
       "servingSize": null,
       "readableServingSize": null,
       "products": [
@@ -898,8 +898,8 @@
     },
     {
       "name": "Pastificio Loco",
-      "cover": "https://loghi-famosi.com/wp-content/uploads/2020/08/Burger-King-Logo.png",
-      "imageType": "png",
+      "cover": "https://i.pinimg.com/564x/8b/61/d4/8b61d4f1eef0b0a9d574d353d89cd746.jpg",
+      "tag": "5",
       "servingSize": null,
       "readableServingSize": null,
       "products": [
@@ -2178,6 +2178,379 @@
             }
         }
       ]
+    },
+    {
+        "name": "Bleecker",
+        "cover": "https://i.pinimg.com/564x/3f/92/2b/3f922ba36f9ce6b2ceb55420c649b983.jpg",
+        "tag": "2",
+        "servingSize": null,
+        "readableServingSize": null,
+        "products": [
+            {
+                "id": 320123,
+                "title": "Pizza Veggie",
+                "image": "https://images.spoonacular.com/file/wximages/320123-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "Buca Di Beppo",
+                "servingSize": null,
+                "readableServingSize": null,
+                "servings": {
+                    "number": 1.0,
+                    "size": null,
+                    "unit": null
+                }
+            },
+            {
+                "id": 284934,
+                "title": "Pizza Sub (12\")",
+                "image": "https://images.spoonacular.com/file/wximages/284934-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "East of Chicago",
+                "servingSize": "157g",
+                "readableServingSize": "6 oz",
+                "servings": {
+                    "number": 1.0,
+                    "size": 157.0,
+                    "unit": "g"
+                }
+            },
+            {
+                "id": 426101,
+                "title": "Pizza - Pepperoni - 6",
+                "image": "https://images.spoonacular.com/file/wximages/426101-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "Chili's Grill and Bar",
+                "servingSize": "Kids",
+                "readableServingSize": "Kids",
+                "servings": {
+                    "number": 1.0,
+                    "size": null,
+                    "unit": "Kids"
+                }
+            },
+            {
+                "id": 378562,
+                "title": "Donair Pizza, 9",
+                "image": "https://images.spoonacular.com/file/wximages/378562-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza 73",
+                "servingSize": "1 Slice",
+                "readableServingSize": "1 Slice",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "Slice"
+                }
+            },
+            {
+                "id": 378608,
+                "title": "Donair Pizza, 14",
+                "image": "https://images.spoonacular.com/file/wximages/378608-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza 73",
+                "servingSize": "1 Slice",
+                "readableServingSize": "1 Slice",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "Slice"
+                }
+            },
+            {
+                "id": 359084,
+                "title": "Meaty Max",
+                "image": "https://images.spoonacular.com/file/wximages/359084-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "Pizza Inn",
+                "servingSize": "8 slices",
+                "readableServingSize": "Medium",
+                "servings": {
+                    "number": 1.0,
+                    "size": 8.0,
+                    "unit": "slices"
+                }
+            },
+            {
+                "id": 378585,
+                "title": "Donair Pizza, 12",
+                "image": "https://images.spoonacular.com/file/wximages/378585-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza 73",
+                "servingSize": "1 Slice",
+                "readableServingSize": "1 Slice",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "Slice"
+                }
+            },
+            {
+                "id": 359089,
+                "title": "Meaty",
+                "image": "https://images.spoonacular.com/file/wximages/359089-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "Pizza Inn",
+                "servingSize": "6 slices",
+                "readableServingSize": "Small",
+                "servings": {
+                    "number": 1.0,
+                    "size": 6.0,
+                    "unit": "slices"
+                }
+            },
+            {
+                "id": 359081,
+                "title": "Meaty Max Pizza",
+                "image": "https://images.spoonacular.com/file/wximages/359081-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "Pizza Inn",
+                "servingSize": "8 slices",
+                "readableServingSize": "Large",
+                "servings": {
+                    "number": 1.0,
+                    "size": 8.0,
+                    "unit": "slices"
+                }
+            },
+            {
+                "id": 359166,
+                "title": "Veggie Max Pizza",
+                "image": "https://images.spoonacular.com/file/wximages/359166-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "Pizza Inn",
+                "servingSize": "8 slices",
+                "readableServingSize": "Large",
+                "servings": {
+                    "number": 1.0,
+                    "size": 8.0,
+                    "unit": "slices"
+                }
+            },
+            {
+                "id": 359137,
+                "title": "Taco Pizza, Giant",
+                "image": "https://images.spoonacular.com/file/wximages/359137-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "Pizza Inn",
+                "servingSize": "12 slices",
+                "readableServingSize": "12 slices",
+                "servings": {
+                    "number": 1.0,
+                    "size": 12.0,
+                    "unit": "slices"
+                }
+            },
+            {
+                "id": 390875,
+                "title": "Pomodoro Pizza",
+                "image": "https://images.spoonacular.com/file/wximages/390875-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza Pizza",
+                "servingSize": "1 slice",
+                "readableServingSize": "Medium",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "slice"
+                }
+            },
+            {
+                "id": 378553,
+                "title": "73 Deluxe Pizza, 9",
+                "image": "https://images.spoonacular.com/file/wximages/378553-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza 73",
+                "servingSize": "1 Slice",
+                "readableServingSize": "1 Slice",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "Slice"
+                }
+            },
+            {
+                "id": 390876,
+                "title": "Pepperoni Pizza",
+                "image": "https://images.spoonacular.com/file/wximages/390876-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza Pizza",
+                "servingSize": "1 slice",
+                "readableServingSize": "Small",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "slice"
+                }
+            },
+            {
+                "id": 390878,
+                "title": "Sweet Heat Piz",
+                "image": "https://images.spoonacular.com/file/wximages/390878-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza Pizza",
+                "servingSize": "1 slice",
+                "readableServingSize": "Small",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "slice"
+                }
+            },
+            {
+                "id": 378564,
+                "title": "Grand Slam Pizza, 9",
+                "image": "https://images.spoonacular.com/file/wximages/378564-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza 73",
+                "servingSize": "1 Slice",
+                "readableServingSize": "1 Slice",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "Slice"
+                }
+            },
+            {
+                "id": 403719,
+                "title": "Cheese - 18\" (Slice)",
+                "image": "https://images.spoonacular.com/file/wximages/403719-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza Hut",
+                "servingSize": "1 Slice",
+                "readableServingSize": "Slice",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "Slice"
+                }
+            },
+            {
+                "id": 390877,
+                "title": "Sweet Heat Pizza",
+                "image": "https://images.spoonacular.com/file/wximages/390877-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza Pizza",
+                "servingSize": "1 slice",
+                "readableServingSize": "Large",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "slice"
+                }
+            },
+            {
+                "id": 284956,
+                "title": "Pizza Sub (12\") w/ Mushrooms",
+                "image": "https://images.spoonacular.com/file/wximages/284956-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "East of Chicago",
+                "servingSize": "180g",
+                "readableServingSize": "6 oz",
+                "servings": {
+                    "number": 1.0,
+                    "size": 180.0,
+                    "unit": "g"
+                }
+            },
+            {
+                "id": 378568,
+                "title": "Lite Pizza Pizza, 9",
+                "image": "https://images.spoonacular.com/file/wximages/378568-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza 73",
+                "servingSize": "1 Slice",
+                "readableServingSize": "1 Slice",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "Slice"
+                }
+            },
+            {
+                "id": 359107,
+                "title": "Pepperoni M Pizza",
+                "image": "https://images.spoonacular.com/file/wximages/359107-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "Pizza Inn",
+                "servingSize": "6 slices",
+                "readableServingSize": "Small",
+                "servings": {
+                    "number": 1.0,
+                    "size": 6.0,
+                    "unit": "slices"
+                }
+            },
+            {
+                "id": 403738,
+                "title": "Supreme - 18\" (Slice)",
+                "image": "https://images.spoonacular.com/file/wximages/403738-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza Hut",
+                "servingSize": "1 Slice",
+                "readableServingSize": "Slice",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "Slice"
+                }
+            },
+            {
+                "id": 378569,
+                "title": "Hot Country Pizza, 9",
+                "image": "https://images.spoonacular.com/file/wximages/378569-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza 73",
+                "servingSize": "1 Slice",
+                "readableServingSize": "1 Slice",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "Slice"
+                }
+            },
+            {
+                "id": 359098,
+                "title": "Pepper Max Pizza",
+                "image": "https://images.spoonacular.com/file/wximages/359098-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "Pizza Inn",
+                "servingSize": "8 slices",
+                "readableServingSize": "Large",
+                "servings": {
+                    "number": 1.0,
+                    "size": 8.0,
+                    "unit": "slices"
+                }
+            },
+            {
+                "id": 378598,
+                "title": "Vegetarian Pizza, 12",
+                "image": "https://images.spoonacular.com/file/wximages/378598-312x231.png",
+                "imageType": "png",
+                "restaurantChain": "Pizza 73",
+                "servingSize": "1 Slice",
+                "readableServingSize": "1 Slice",
+                "servings": {
+                    "number": 1.0,
+                    "size": 1.0,
+                    "unit": "Slice"
+                }
+            },
+            {
+                "id": 359101,
+                "title": "Pepperoni Max Pizza",
+                "image": "https://images.spoonacular.com/file/wximages/359101-312x231.jpg",
+                "imageType": "jpg",
+                "restaurantChain": "Pizza Inn",
+                "servingSize": "8 slices",
+                "readableServingSize": "Medium",
+                "servings": {
+                    "number": 1.0,
+                    "size": 8.0,
+                    "unit": "slices"
+                }
+            }
+        ]
     }
   ]
 }
