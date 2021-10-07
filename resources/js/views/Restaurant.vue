@@ -19,7 +19,7 @@
             <!-- start card product -->
             <div class="col-6" v-for="product in products" :key="product.id">
               <div class="card mb-4 py-1 px-1" style="max-width: 540px;">
-                <div class="row">
+                <div class="row align-items-center">
                   <div class=" col-6 col-md-4">
                     <img :src="product.img_path" class="img-fluid card-img" :alt="product.name">
                   </div>
@@ -139,6 +139,7 @@ input{
 }
 .card{
   border-radius: 30px;
+  min-height: 250px;
 }
 .card-img{
   border-top-left-radius: 25px;
