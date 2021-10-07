@@ -17,16 +17,16 @@
 
           <div class="row py-5">
             <!-- start card product -->
-            <div class="col-6" v-for="product in products" :key="product.id">
+            <div class="col-9 col-xl-6" v-for="product in products" :key="product.id">
               <div class="card prodotto mb-4 pt-1 px-1">
                 <div class="row">
-                  <div class=" col-6 col-md-4">
+                  <div class="  col-md-4">
                     <img :src="product.img_path" class="img-fluid card-img" :alt="product.name">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body p-3">
                       <h5 class="card-title text-uppercase fs-5">{{ product.name }}</h5>
-                      <p class="card-text descrizione m-0">{{ product.description }}</p>
+                      <p class="card-text descrizione m-0 d-none d-md-inline-block">{{ product.description }}</p>
                       <div class="col-md-6 float-lg-end mt-4 ">{{ product.price.toFixed(2) }} &euro; <i class="fas fa-plus big-icon"></i></div>
                     </div>
                   </div>
