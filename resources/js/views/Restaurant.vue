@@ -40,7 +40,7 @@
       <!-- start cart -->
       <div class="col-3 align-self-start">
         <div class="row mt-3 justify-content-center">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
         <div class="card-body">
           <h2 class="card-title text-center">Carrello</h2>
           <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
