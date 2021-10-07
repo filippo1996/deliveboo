@@ -3,24 +3,38 @@
     <div class="container py-5">
       <Tag/>
       <div class="row justify-content" :class="{'d-none': loading}" v-if="!message">
+
         <!-- start card category -->
-        <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
-          <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: slugRestaurant(restaurant.name) }}">
-            <div class="card text-white overflow-hidden rest-card">
-              <img :src="restaurant.cover" class="card-img" :alt="restaurant.name">
-              <div class="card-img-overlay text-center text-light shadow">
-                <div class="description">
-                  <h3 class="card-title">{{ restaurant.name }}</h3>
-                  <span class="tag">{{ tag }}</span>
+        <div 
+          class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" 
+          v-for="restaurant in restaurants" :key="restaurant.id">
+          
+          <router-link 
+            class="nav-link rest-tag fw-bold" 
+            :to="{name: 'restaurant', params:{ slug: slugRestaurant(restaurant.name) }}">
+
+              <!-- Card Ristorante -->
+              <div class="card text-white overflow-hidden rest-card">
+                <!-- Cover e nome-->
+                <img :src="restaurant.cover" class="card-img" :alt="restaurant.name">
+                <!-- Nome e tag -->
+                <div class="card-img-overlay text-center text-light shadow">
+                  <div class="description">
+                    <h3 class="card-title">{{ restaurant.name }}</h3>
+                    <span class="tag">{{ tag }}</span>
+                  </div>
                 </div>
               </div>
-            </div>
+              <!-- Card Ristorante -->
+
           </router-link>
         </div>
         <!-- end card category -->
       </div>
+      
       <h3 v-else>{{ message }}</h3>
-    </div>   
+    </div>  
+    <!-- Container -->
   </section>
 </template>
 
