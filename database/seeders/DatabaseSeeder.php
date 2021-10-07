@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
         $faker = Factory::create();
 
         // Items Tag
-        $tags = ['Panineria', 'Pizzeria', 'Fast Food', 'Gelateria'];
+        $tags = ['Panineria', 'Pizzeria', 'Fast Food', 'Gelateria', 'pastificio'];
 
         // Tag
         foreach($tags as $tag){

@@ -83,6 +83,7 @@ class RegisterController extends Controller
             'phone_number' => $data['phone_number'],
             'vat_number' => $data['vat_number'],
             'city' => $data['city'],
+            'cover' => 'https://barcalcagno.it/sushi/wp-content/uploads/2020/10/46527491-gastronomia-simbolo-ristorante-forchetta-coltello-e-cucchiaio-logo-modello.jpg'
         ]);
 
         $user->tags()->attach($data['tag_id']);
