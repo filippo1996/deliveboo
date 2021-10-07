@@ -19,12 +19,12 @@
               <div class="card mb-4 py-1 px-1" style="max-width: 540px;">
                 <div class="row">
                   <div class=" col-6 col-md-4">
-                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid card-img" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title text-uppercase">i più venduti</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text">Descrizione prodotto super wow</p>
                     </div>
                   </div>
                 </div>
@@ -39,12 +39,12 @@
               <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
                 <div class="row">
                   <div class="col-6 col-md-4">
-                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid card-img" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title text-uppercase">i più venduti</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text">Descrizione prodotto super wow</p>
                     </div>
                   </div>
                 </div>
@@ -59,12 +59,12 @@
               <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
                 <div class="row">
                   <div class="col-6 col-md-4">
-                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid card-img" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title text-uppercase">i più venduti</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text">Descrizione prodotto super wow</p>
                     </div>
                   </div>
                 </div>
@@ -79,12 +79,12 @@
               <div class="card mb-3 py-1 px-1" style="max-width: 540px;">
                 <div class="row">
                   <div class="col-6 col-md-4">
-                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="https://www.cucina-naturale.it/wp-content/uploads/2018/07/ciambellacolorata.jpg" class="img-fluid card-img" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title text-uppercase">i più venduti</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text">Descrizione prodotto super wow</p>
                     </div>
                   </div>
                 </div>
@@ -168,9 +168,11 @@ input{
     outline: $light-blue solid 3px;
   }
 }
-
-.s-bar{
-  width: 98%;
+.card{
+  border-radius: 30px;
+}
+.card-img{
+  border-top-left-radius: 25px;
 }
 
 .big-icon{
