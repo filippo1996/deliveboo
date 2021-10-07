@@ -39,8 +39,12 @@ export default {
 
   .rest-card{
     cursor: pointer;
+    border-radius: 10px;
+    height: 200px;
 
     img{
+      position: relative;
+      bottom: 20%;
       transition: 0.3s;
     }
   }
