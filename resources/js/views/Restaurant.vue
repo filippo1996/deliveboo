@@ -123,31 +123,6 @@ export default {
   }
 }
 
-// let returnBtn = document.getElementById("returnBtn");
-
-// let myScrollFunc = function() {
-//   if (window.scrollY >= 2000) {
-//     returnBtn.className = "d-block"
-//   }
-// };
-
-// window.addEventListener("scroll", myScrollFunc);
-
-
-
-// var $win = $(window);
-
-// function checkScroll() {
-//     if ($win.scrollTop() > 100) {
-//         $win.off('scroll', checkScroll);
-//         $('#bottomMenu').fadeIn(2000);
-//     }
-// }
-
-// $win.scroll(checkScroll);
-
-
-
 </script>
 
 <style lang="scss" scoped>
