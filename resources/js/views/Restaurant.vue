@@ -123,31 +123,6 @@ export default {
   }
 }
 
-// let returnBtn = document.getElementById("returnBtn");
-
-// let myScrollFunc = function() {
-//   if (window.scrollY >= 2000) {
-//     returnBtn.className = "d-block"
-//   }
-// };
-
-// window.addEventListener("scroll", myScrollFunc);
-
-
-
-// var $win = $(window);
-
-// function checkScroll() {
-//     if ($win.scrollTop() > 100) {
-//         $win.off('scroll', checkScroll);
-//         $('#bottomMenu').fadeIn(2000);
-//     }
-// }
-
-// $win.scroll(checkScroll);
-
-
-
 </script>
 
 <style lang="scss" scoped>
@@ -247,14 +222,14 @@ input{
 }
 
 .freccia{
-  display: none;
+  // display: none;
   position: fixed;
   height: 40px;
   width: 40px;
   right: 30px;
   bottom: 50px;
   padding: 10px;
-  background-color: black;
+  background-color: $light-blue;
   color: $blue;
   border-radius: 50%;
   transition: ease all 0.4s;
