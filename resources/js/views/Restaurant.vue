@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-12 col-lg-9">
 
-        <div class="row row-ristorante my-3 py-5">
+        <div class="row row-ristorante text-white my-3 py-5">
           <h1>{{ restaurant.name }}</h1>
           <span>Contatta: {{ restaurant.phone_number }}</span>
         </div>
@@ -47,8 +47,8 @@
               <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
               <div class="row my-3 lista pb-2">
                 <div class="row">
-                  <div class="col-2 fw-bold n-carrello">1x</div>
-                  <div class="col-7 text-center">Nome del bellissimo prodotto</div>
+                  <div class="col-3 fw-bold n-carrello">1x</div>
+                  <div class="col-6 text-center">Nome del bellissimo prodotto</div>
                   <div class="col-3 price">5,20€</div>
                 </div>
                 <div class="row">
@@ -58,8 +58,8 @@
               </div>
               <div class="row my-3 lista pb-2">
                 <div class="row">
-                  <div class="col-2 fw-bold n-carrello">1x</div>
-                  <div class="col-7 text-center">Nome del bellissimo prodotto</div>
+                  <div class="col-3 fw-bold n-carrello">1x</div>
+                  <div class="col-6 text-center">Nome del bellissimo prodotto</div>
                   <div class="col-3 price">5,20€</div>
                 </div>
                 <div class="row">
@@ -67,7 +67,7 @@
                   <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus"></i></div>
                 </div>
               </div>
-              <div class="d-flex justify-content-center"><a href="#" class="order-button btn btn-success rounded-pill">Ordina</a></div>
+              <div class="d-flex justify-content-center"><a href="#" class="order-button text-white rounded-pill text-decoration-none">Ordina</a></div>
             </div>
           </div>
           <!-- end cart -->
@@ -206,12 +206,15 @@ input{
 
 .row-ristorante{
   background-image: url("https://wallpaperaccess.com/full/462778.jpg");
-  color: white;
 }
 
 .order-button{
   background-color: $light-blue;
-  color: white;
+  padding: 2px 15px;
+
+  &:hover{
+    background-color: #70a3d6;
+  }
 }
 
 .home{
