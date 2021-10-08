@@ -45,7 +45,6 @@
                   </a>
                 </div>
 
-                <a class="freccia text-center"><i class="fas fa-arrow-up"></i></a>
               </div>
             </div>
           </div>
@@ -158,22 +157,6 @@ ul{
 
 .box a:hover .youtube{
   color: rgb(252, 18, 18);
-}
-
-.freccia{
-  position: absolute;
-  height: 40px;
-  width: 40px;
-  right: 30px;
-  bottom: 50px;
-  padding: 10px;
-  background-color: $yellow;
-  color: $blue;
-  border-radius: 50%;
-  transition: ease all 0.4s;
-    &:hover{
-      transform: scale(1.1);
-    }
 }
 
 </style>

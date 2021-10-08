@@ -75,9 +75,13 @@
       </div>
     </div>
     <div class="row">
+    
     <div class="col-9 d-flex mb-5">
       <router-link class="home px-3" :to="{ name: 'home' }"><i class="fas fa-home"></i> {{ 'Torna alla home' }}</router-link>
     </div>
+
+    <a class="freccia text-center" @click="returnToTop" id="returnBtn"><i class="fas fa-arrow-up" ></i></a>
+  
   </div>
 </div>
 
@@ -113,8 +117,37 @@ export default {
         console.log(err);
       }
     },
+    returnToTop(){
+      document.documentElement.scrollTop = 0;
+    }
   }
 }
+
+// let returnBtn = document.getElementById("returnBtn");
+
+// let myScrollFunc = function() {
+//   if (window.scrollY >= 2000) {
+//     returnBtn.className = "d-block"
+//   }
+// };
+
+// window.addEventListener("scroll", myScrollFunc);
+
+
+
+// var $win = $(window);
+
+// function checkScroll() {
+//     if ($win.scrollTop() > 100) {
+//         $win.off('scroll', checkScroll);
+//         $('#bottomMenu').fadeIn(2000);
+//     }
+// }
+
+// $win.scroll(checkScroll);
+
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -211,6 +244,23 @@ input{
   padding: 10px;
   border-radius: 20px;
   text-decoration: none;
+}
+
+.freccia{
+  display: none;
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  right: 30px;
+  bottom: 50px;
+  padding: 10px;
+  background-color: black;
+  color: $blue;
+  border-radius: 50%;
+  transition: ease all 0.4s;
+    &:hover{
+      transform: scale(1.1);
+    }
 }
 
 </style>
