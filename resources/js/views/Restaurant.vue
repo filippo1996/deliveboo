@@ -22,7 +22,8 @@
                     <div class="card-body p-3">
                       <h5 class="card-title text-uppercase fs-5">{{ product.name }}</h5>
                       <p class="card-text descrizione m-0 d-none d-md-inline-block">{{ product.description }}</p>
-                      <div class="float-lg-end mt-4 ">{{ product.price.toFixed(2) }} &euro; <i class="fas fa-plus big-icon"></i></div>
+                      <input :data-product="product.id" value="1" type="number" placeholder="qty" min="1">
+                      <div class="float-lg-end mt-4 ">{{ product.price.toFixed(2) }} &euro; <span class="cart" @click="insertCart(product)"><i class="fas fa-plus big-icon"></i></span></div>
                     </div>
                   </div>
                 </div>
@@ -39,28 +40,17 @@
       </div>
 
       <!-- start cart -->
-      <div class="col-3 align-self-start d-none d-lg-block">
+      <div class="col-3 align-self-start d-lg-block" :class="{'d_none': !cart}">
         <div class="row mt-3 justify-content-center">
           <div class="card">
         <div class="card-body">
           <h2 class="card-title text-center">Carrello</h2>
           <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
-          <div class="row my-3 lista pb-2">
+          <div class="row my-3 lista pb-2" v-for="(obj, index) in cart" :key="index">
             <div class="row">
-              <div class="col-2 fw-bold n-carrello">1x</div>
-              <div class="col-7 text-center">Nome del bellissimo prodotto</div>
-              <div class="col-3 price">5,20€</div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 d-flex justify-content-start"><i class="fas fa-minus"></i></div>
-              <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus"></i></div>
-            </div>
-          </div>
-          <div class="row my-3 lista pb-2">
-            <div class="row">
-              <div class="col-2 fw-bold n-carrello">1x</div>
-              <div class="col-7 text-center">Nome del bellissimo prodotto</div>
-              <div class="col-3 price">5,20€</div>
+              <div class="col-2 fw-bold n-carrello">{{ obj.qty }}x</div>
+              <div class="col-7 text-center">{{ obj.item.name }}</div>
+              <div class="col-3 price">{{ obj.item.price.toFixed(2) }} &euro;</div>
             </div>
             <div class="row">
               <div class="col-md-6 d-flex justify-content-start"><i class="fas fa-minus"></i></div>
@@ -86,6 +76,8 @@
 </template>
 
 <script>
+import { Cart } from '../utils/factory.js';
+
 export default {
   name: 'Restaurant',
   props:{
@@ -96,11 +88,14 @@ export default {
       url: '/api/restaurant/',
       restaurant: {},
       products: [],
-      loading: true
+      loading: true,
+      cart: [],
     }
   },
   mounted(){
     this.getRestaurant();
+    let cart = new Cart();
+    this.cart = cart.getCart();
   },
   methods: {
     async getRestaurant(){
@@ -112,6 +107,12 @@ export default {
       } catch(err){
         console.log(err);
       }
+    },
+    insertCart(product){
+      const qty = document.querySelector(`input[data-product="${product.id}"]`);
+      let cart = new Cart(product);
+      cart.setCart(+qty.value);
+      this.cart = cart.getCart();
     }
   }
 }
@@ -211,6 +212,14 @@ input{
   padding: 10px;
   border-radius: 20px;
   text-decoration: none;
+}
+
+.cart{
+  cursor: pointer;
+}
+
+.d_none{
+  display: none !important;
 }
 
 </style>
