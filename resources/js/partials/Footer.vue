@@ -1,6 +1,6 @@
 <template>
   <div class="bg-dark">
-    <div class="container">
+    <div class="container position-relative">
       <div class="row justify-content-md-around">
 
         <div class="col-8 text-light mt-4">
@@ -45,7 +45,7 @@
                   </a>
                 </div>
 
-                
+                <a class="freccia text-center"><i class="fas fa-arrow-up"></i></a>
               </div>
             </div>
           </div>
@@ -60,6 +60,7 @@
 export default {
   name: "Footer",
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -157,6 +158,22 @@ ul{
 
 .box a:hover .youtube{
   color: rgb(252, 18, 18);
+}
+
+.freccia{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 30px;
+  bottom: 50px;
+  padding: 10px;
+  background-color: $yellow;
+  color: $blue;
+  border-radius: 50%;
+  transition: ease all 0.4s;
+    &:hover{
+      transform: scale(1.1);
+    }
 }
 
 </style>
