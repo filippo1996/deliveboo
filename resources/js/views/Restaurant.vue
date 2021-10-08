@@ -222,14 +222,14 @@ input{
 }
 
 .freccia{
-  display: none;
+  // display: none;
   position: fixed;
   height: 40px;
   width: 40px;
   right: 30px;
   bottom: 50px;
   padding: 10px;
-  background-color: black;
+  background-color: $light-blue;
   color: $blue;
   border-radius: 50%;
   transition: ease all 0.4s;
