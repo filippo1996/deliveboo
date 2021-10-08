@@ -78,6 +78,9 @@ export default {
 .jumbo{
   height: 30rem;
   background-color: rgb(133, 193, 255);
+  background: url('/images/case.png');
+  background-size: cover;
+  background-position: bottom;
 
   .jumbo-text{
     font-family: 'Comfortaa', cursive;
