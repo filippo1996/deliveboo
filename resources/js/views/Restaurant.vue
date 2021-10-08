@@ -40,7 +40,7 @@
       </div>
 
       <!-- start cart -->
-      <div class="col-3 align-self-start d-lg-block" :class="{'d_none': !cart}">
+      <div class="col-3 align-self-start d-lg-block" :class="{'d_none': !cart?.length}">
         <div class="row mt-3 justify-content-center">
           <div class="card">
         <div class="card-body">
@@ -53,8 +53,8 @@
               <div class="col-3 price">{{ obj.item.price.toFixed(2) }} &euro;</div>
             </div>
             <div class="row">
-              <div class="col-md-6 d-flex justify-content-start"><i class="fas fa-minus"></i></div>
-              <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus"></i></div>
+              <div class="col-md-6 d-flex justify-content-start"><span class="cart" @click="setQuantity(obj, '-')"><i class="fas fa-minus"></i></span></div>
+              <div class="col-md-6 d-flex justify-content-end"><span class="cart" @click="setQuantity(obj, '+')"><i class="fas fa-plus"></i></span></div>
             </div>
           </div>
           <!-- end cart -->
@@ -110,8 +110,15 @@ export default {
     },
     insertCart(product){
       const qty = document.querySelector(`input[data-product="${product.id}"]`);
-      let cart = new Cart(product);
+      const cart = new Cart(product);
       cart.setCart(+qty.value);
+      // set property cart
+      this.cart = cart.getCart();
+    },
+    setQuantity(product, symbol){
+      const cart = new Cart(product);
+      cart.setQty(1, symbol);
+      // set property cart
       this.cart = cart.getCart();
     },
     returnToTop(){

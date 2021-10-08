@@ -5,7 +5,8 @@ export default function slug(str){
 
 export class Cart {
 
-  cart = JSON.parse(localStorage.getItem('cart'));
+  nameStorage = 'cart';
+  cart = JSON.parse(localStorage.getItem(this.nameStorage));
 
   /**
    * we pass the object to the constructor
@@ -25,7 +26,7 @@ export class Cart {
 
     if(qty >= 1){
       this.insertCart(qty);
-      localStorage.setItem('cart', JSON.stringify(this.cart));
+      localStorage.setItem(this.nameStorage, JSON.stringify(this.cart));
     }
   }
 
@@ -37,7 +38,7 @@ export class Cart {
   }
 
   /**
-   * Set Quantity product
+   * insert product in the cart
    */
   insertCart(intQty){
 
@@ -67,6 +68,38 @@ export class Cart {
 
     if(!set) this.cart.push({ item: this.obj, qty: intQty });
 
+  }
+
+  /**
+   * Set quantity
+   */
+  setQty(qty, symbol){
+    this.cart.forEach((element, index) => {
+      const itemStorage = element.item;
+      const itemCart = this.obj.item;
+
+      if(itemStorage.id === itemCart.id){
+        switch(symbol){
+          case '+':
+            element.qty += qty;
+            break;
+          case '-':
+            element.qty -= qty;
+        }
+        
+        if(element.qty <= 0){
+          this.cart.splice(index,1);
+        }
+        localStorage.setItem(this.nameStorage, JSON.stringify(this.cart));
+      }
+    });
+  }
+
+  /**
+   * Clear Cart
+   */
+  clearCart(){
+    localStorage.removeItem(this.nameStorage);
   }
 
 }
