@@ -1,6 +1,6 @@
 <template>
   <div class="bg-dark">
-    <div class="container">
+    <div class="container position-relative">
       <div class="row justify-content-md-around">
 
         <div class="col-8 text-light mt-4">
@@ -45,7 +45,6 @@
                   </a>
                 </div>
 
-                
               </div>
             </div>
           </div>
@@ -60,6 +59,7 @@
 export default {
   name: "Footer",
 }
+
 </script>
 
 <style lang="scss" scoped>

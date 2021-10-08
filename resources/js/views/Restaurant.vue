@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-12 col-lg-9">
 
-        <div class="row row-ristorante my-3 py-5">
+        <div class="row row-ristorante text-white my-3 py-5">
           <h1>{{ restaurant.name }}</h1>
           <span>Contatta: {{ restaurant.phone_number }}</span>
         </div>
@@ -57,19 +57,19 @@
               <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus"></i></div>
             </div>
           </div>
-          <div class="d-flex justify-content-center"><a href="#" class="order-button btn btn-success rounded-pill">Ordina</a></div>
-        </div>
-      </div>
-      <!-- end cart -->
+          <!-- end cart -->
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-9 d-flex mb-5">
-        <router-link class="home px-3" :to="{ name: 'home' }"><i class="fas fa-home"></i> {{ 'Torna alla home' }}</router-link>
+      <div class="row">
+        <div class="col-9 d-flex mb-5">
+          <router-link class="home px-3" :to="{ name: 'home' }"><i class="fas fa-home"></i> {{ 'Torna alla home' }}</router-link>
+        </div>
+        <a class="freccia text-center" @click="returnToTop" id="returnBtn"><i class="fas fa-arrow-up" ></i></a>
       </div>
     </div>
   </div>
+</div>
 
 </section>
   
@@ -113,9 +113,13 @@ export default {
       let cart = new Cart(product);
       cart.setCart(+qty.value);
       this.cart = cart.getCart();
+    },
+    returnToTop(){
+      document.documentElement.scrollTop = 0;
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -199,12 +203,15 @@ input{
 
 .row-ristorante{
   background-image: url("https://wallpaperaccess.com/full/462778.jpg");
-  color: white;
 }
 
 .order-button{
   background-color: $light-blue;
-  color: white;
+  padding: 2px 15px;
+
+  &:hover{
+    background-color: #70a3d6;
+  }
 }
 
 .home{
@@ -222,4 +229,20 @@ input{
   display: none !important;
 }
 
+.freccia{
+  // display: none;
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  right: 30px;
+  bottom: 50px;
+  padding: 10px;
+  background-color: $light-blue;
+  color: $blue;
+  border-radius: 50%;
+  transition: ease all 0.4s;
+    &:hover{
+      transform: scale(1.1);
+    }
+}
 </style>
