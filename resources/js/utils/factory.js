@@ -108,7 +108,7 @@ export class Cart {
   getTotalPrice(){
     let totalPrice = 0;
 
-    this.cart.forEach(element => {
+    this.cart?.forEach(element => {
       let price = element.item.price;
       totalPrice += price * element.qty;
     });
