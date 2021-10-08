@@ -22,7 +22,7 @@
                     <div class="card-body p-3">
                       <h5 class="card-title text-uppercase fs-5">{{ product.name }}</h5>
                       <p class="card-text descrizione m-0 d-none d-md-inline-block">{{ product.description }}</p>
-                      <div class="float-lg-end mt-4 ">{{ product.price.toFixed(2) }} &euro; <i class="fas fa-plus big-icon"></i></div>
+                      <div class="float-lg-end mt-4">{{ product.price.toFixed(2) }} &euro; <i class="fas fa-plus big-icon"></i></div>
                     </div>
                   </div>
                 </div>
@@ -42,44 +42,44 @@
       <div class="col-3 align-self-start d-none d-lg-block">
         <div class="row mt-3 justify-content-center">
           <div class="card">
-        <div class="card-body">
-          <h2 class="card-title text-center">Carrello</h2>
-          <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
-          <div class="row my-3 lista pb-2">
-            <div class="row">
-              <div class="col-2 fw-bold n-carrello">1x</div>
-              <div class="col-7 text-center">Nome del bellissimo prodotto</div>
-              <div class="col-3 price">5,20€</div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 d-flex justify-content-start"><i class="fas fa-minus"></i></div>
-              <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus"></i></div>
+            <div class="card-body">
+              <h2 class="card-title text-center">Carrello</h2>
+              <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
+              <div class="row my-3 lista pb-2">
+                <div class="row">
+                  <div class="col-2 fw-bold n-carrello">1x</div>
+                  <div class="col-7 text-center">Nome del bellissimo prodotto</div>
+                  <div class="col-3 price">5,20€</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 d-flex justify-content-start"><i class="fas fa-minus"></i></div>
+                  <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus"></i></div>
+                </div>
+              </div>
+              <div class="row my-3 lista pb-2">
+                <div class="row">
+                  <div class="col-2 fw-bold n-carrello">1x</div>
+                  <div class="col-7 text-center">Nome del bellissimo prodotto</div>
+                  <div class="col-3 price">5,20€</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 d-flex justify-content-start"><i class="fas fa-minus"></i></div>
+                  <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus"></i></div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center"><a href="#" class="order-button btn btn-success rounded-pill">Ordina</a></div>
             </div>
           </div>
-          <div class="row my-3 lista pb-2">
-            <div class="row">
-              <div class="col-2 fw-bold n-carrello">1x</div>
-              <div class="col-7 text-center">Nome del bellissimo prodotto</div>
-              <div class="col-3 price">5,20€</div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 d-flex justify-content-start"><i class="fas fa-minus"></i></div>
-              <div class="col-md-6 d-flex justify-content-end"><i class="fas fa-plus"></i></div>
-            </div>
-          </div>
-          <div class="d-flex justify-content-center"><a href="#" class="order-button btn btn-success rounded-pill">Ordina</a></div>
-        </div>
-      </div>
-      <!-- end cart -->
+          <!-- end cart -->
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-9 d-flex mb-5">
-        <router-link class="home px-3" :to="{ name: 'home' }"><i class="fas fa-home"></i> {{ 'Torna alla home' }}</router-link>
-      </div>
+    <div class="col-9 d-flex mb-5">
+      <router-link class="home px-3" :to="{ name: 'home' }"><i class="fas fa-home"></i> {{ 'Torna alla home' }}</router-link>
     </div>
   </div>
+</div>
 
 </section>
   
