@@ -102,4 +102,18 @@ export class Cart {
     localStorage.removeItem(this.nameStorage);
   }
 
+  /**
+   * Set total paiment
+   */
+  getTotalPrice(){
+    let totalPrice = 0;
+
+    this.cart.forEach(element => {
+      let price = element.item.price;
+      totalPrice += price * element.qty;
+    });
+
+    return totalPrice;
+  }
+
 }

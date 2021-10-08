@@ -57,6 +57,7 @@
               <div class="col-md-6 d-flex justify-content-end"><span class="cart" @click="setQuantity(obj, '+')"><i class="fas fa-plus"></i></span></div>
             </div>
           </div>
+          <h3>Totale carrello {{ totalPriceCart.toFixed(2) }} &euro;</h3>
           <!-- end cart -->
         </div>
       </div>
@@ -90,12 +91,14 @@ export default {
       products: [],
       loading: true,
       cart: [],
+      totalPriceCart: 0
     }
   },
   mounted(){
     this.getRestaurant();
     let cart = new Cart();
     this.cart = cart.getCart();
+    this.totalPriceCart = cart.getTotalPrice();
   },
   methods: {
     async getRestaurant(){
@@ -114,12 +117,14 @@ export default {
       cart.setCart(+qty.value);
       // set property cart
       this.cart = cart.getCart();
+      this.totalPriceCart = cart.getTotalPrice();
     },
     setQuantity(product, symbol){
       const cart = new Cart(product);
       cart.setQty(1, symbol);
       // set property cart
       this.cart = cart.getCart();
+      this.totalPriceCart = cart.getTotalPrice();
     },
     returnToTop(){
       document.documentElement.scrollTop = 0;
