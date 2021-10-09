@@ -15,13 +15,13 @@
           <div class="row g-4">
             <div class="col-12 col-sm-6 col-xl-6" v-for="product in products" :key="product.id">
               <div class="card" id="prodotto">
-                <div class="row d-flex align-items-center">
-                  <div class="col-md-4 img-box d-flex justify-content-center">
-                    <img :src="product.img_path" class="img-fluid card-img" :alt="product.name">
+                <div class="row">
+                  <div class="col-md-4 img-box d-flex align-items-center justify-content-center">
+                    <img :src="product.img_path" class="card-img m-0 text" :alt="product.name">
                   </div>
                   
                   <div class="col-md-8">
-                    <div class="card-body p-2"> 
+                    <div class="card-body"> 
                       <h5 class="card-title text-uppercase fs-5 mt-3">{{ product.name }}</h5>
                       <p class="card-text descrizione my-3 overflow-auto d-none d-md-inline-block">{{ product.description }}</p>
                       <input 
@@ -30,7 +30,7 @@
                         type="number" 
                         placeholder="qty" 
                         min="1"
-                        class="w-25 h-auto border border mb-5 rounded_5">
+                        class="w-25 h-auto border border rounded_5">
                       <div class="float-lg-end ">{{ product.price.toFixed(2) }} &euro; 
                         <span class="cart" @click="insertCart(product)">
                           <i class="fas fa-plus big-icon"></i>
@@ -197,7 +197,7 @@ input{
 }
 #prodotto{
   border-radius: 15px;
-  height: 250px;
+  height: 260px;
 }
 .descrizione{
   height: 100px;
@@ -219,8 +219,8 @@ input{
 
 .img-box{
   .card-img{
-    width: 120px; 
-    height: 120px;
+    width: 100px; 
+    height: 100px;
     -webkit-border-radius: 50%; 
     -webkit-background-clip: padding-box; 
     -moz-border-radius: 50%; 
