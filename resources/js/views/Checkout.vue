@@ -67,15 +67,20 @@ export default {
         postal_code: 'Il codice postale'
       };
 
+      const address = {};
+
       for(const key of Object.keys(values)){
         let input = document.querySelector(`#${key}`);
         if(input.value){
           this[key] = input.value;
+          address[key] = this[key];
         } else {
           alert(values[key] + ' non è presente, si prega di inserirlo.');
           return;
         }
       }
+      
+      localStorage.setItem('address', JSON.stringify(address));
 
     }
   }
