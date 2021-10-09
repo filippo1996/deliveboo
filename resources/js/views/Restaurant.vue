@@ -23,7 +23,7 @@
                   <div class="col-md-8">
                     <div class="card-body"> 
                       <h5 class="card-title text-uppercase fs-5 mt-3">{{ product.name }}</h5>
-                      <p class="card-text descrizione my-3 overflow-auto d-none d-md-inline-block">{{ product.description }}</p>
+                      <p class="card-text descrizione overflow-auto d-md-inline-block my-3 px-2">{{ product.description }}</p>
                       <input 
                         :data-product="product.id" 
                         value="1" 
