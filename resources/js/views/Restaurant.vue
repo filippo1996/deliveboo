@@ -4,16 +4,15 @@
       <div class="row">
         <!-- Restaurant -->
         <div class="col-12 col-lg-9" :class="{'col-lg-12': !cart?.length}">
-
+          
           <!-- Restaurant Header -->
           <div class="row row-ristorante text-white my-3 py-5">
             <h1>{{ restaurant.name }}</h1>
             <span>Contatta: {{ restaurant.phone_number }}</span>
           </div>
 
-
           <!-- Card Product -->
-          <div class="row g-5">
+          <div class="row g-4">
             <div class="col-12 col-sm-6 col-xl-6" v-for="product in products" :key="product.id">
               <div class="card prodotto">
                 <div class="row d-flex align-items-center">
@@ -23,16 +22,16 @@
                   
                   <div class="col-md-8">
                     <div class="card-body p-2"> 
-                      <h5 class="card-title text-uppercase fs-5 fw-bold mb-2">{{ product.name }}</h5>
-                      <p class="card-text descrizione m-0 overflow-auto d-none d-md-inline-block">{{ product.description }}</p>
+                      <h5 class="card-title text-uppercase fs-5 mt-3">{{ product.name }}</h5>
+                      <p class="card-text descrizione my-3 overflow-auto d-none d-md-inline-block">{{ product.description }}</p>
                       <input 
                         :data-product="product.id" 
                         value="1" 
                         type="number" 
                         placeholder="qty" 
                         min="1"
-                        class="w-auto h-auto mt-1">
-                      <div class="float-lg-end p-1 ">{{ product.price.toFixed(2) }} &euro; 
+                        class="w-25 h-auto border border mb-5 rounded_5">
+                      <div class="float-lg-end ">{{ product.price.toFixed(2) }} &euro; 
                         <span class="cart" @click="insertCart(product)">
                           <i class="fas fa-plus big-icon"></i>
                         </span>
@@ -56,25 +55,25 @@
         <div class="col-3 align-self-start d-lg-block" :class="{'d_none': !cart?.length}">
           <div class="row mt-3 justify-content-center">
             <div class="card">
-          <div class="card-body">
-            <h2 class="card-title text-center">Carrello</h2>
-            <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
-            <div class="row my-3 lista pb-2" v-for="(obj, index) in cart" :key="index">
-              <div class="row">
-                <div class="col-2 fw-bold n-carrello">{{ obj.qty }}x</div>
-                <div class="col-7 text-center">{{ obj.item.name }}</div>
-                <div class="col-3 price">{{ obj.item.price.toFixed(2) }} &euro;</div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 d-flex justify-content-start"><span class="cart" @click="setQuantity(obj, '-')"><i class="fas fa-minus"></i></span></div>
-                <div class="col-md-6 d-flex justify-content-end"><span class="cart" @click="setQuantity(obj, '+')"><i class="fas fa-plus"></i></span></div>
+              <div class="card-body">
+                <h2 class="card-title text-center">Carrello</h2>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
+                <div class="row my-3 lista pb-2" v-for="(obj, index) in cart" :key="index">
+                  <div class="row">
+                    <div class="col-2 fw-bold n-carrello">{{ obj.qty }}x</div>
+                    <div class="col-7 text-center">{{ obj.item.name }}</div>
+                    <div class="col-3 price">{{ obj.item.price.toFixed(2) }} &euro;</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 d-flex justify-content-start"><span class="cart" @click="setQuantity(obj, '-')"><i class="fas fa-minus"></i></span></div>
+                    <div class="col-md-6 d-flex justify-content-end"><span class="cart" @click="setQuantity(obj, '+')"><i class="fas fa-plus"></i></span></div>
+                  </div>
+                </div>
+                <h3>Totale carrello {{ totalPriceCart.toFixed(2) }} &euro;</h3>
+                <!-- end cart -->
               </div>
             </div>
-            <h3>Totale carrello {{ totalPriceCart.toFixed(2) }} &euro;</h3>
-            <!-- end cart -->
-          </div>
-        </div>
-      </div> 
+          </div> 
         </div>
 
 
@@ -85,8 +84,8 @@
           </div>
           <a class="freccia text-center" @click="returnToTop" id="returnBtn"><i class="fas fa-arrow-up"></i></a>
         </div>
+      </div>
     </div>
-  </div>
   </section>
 </template>
 
@@ -158,24 +157,31 @@ section{
 background: #ffd670;
 }
 
+.card {
+  box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);
+}
 input{
-  border-radius: 20px;
-  padding: 5px;
-  border: none;
-  background-color: white;
-  width: 35rem;
+  &.rounded_5 {
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+  
   &:focus{
-    outline: $light-blue solid 3px;
+    outline: $blue solid 1px!important;
+    box-shadow:inset 0 1px 3px $blue;
+    -moz-box-shadow:inset 0 1px 3px $blue;
+    -webkit-box-shadow:inset 0 1px 3px $blue;
   }
 }
+
 .card-title{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 .prodotto{
-  border-radius: 30px;
-  height: 230px;
+  border-radius: 15px;
+  height: 250px;
 }
 .descrizione{
   height: 100px;
@@ -197,8 +203,8 @@ input{
 
 .img-box{
   .card-img{
-    width: 100px; 
-    height: 100px;
+    width: 120px; 
+    height: 120px;
     -webkit-border-radius: 50%; 
     -webkit-background-clip: padding-box; 
     -moz-border-radius: 50%; 
@@ -210,10 +216,10 @@ input{
 }
 
 .big-icon{
-  font-size: 20px;
-  color: #41708E;
+  font-size: 15px;
+  color: $blue;
   background-color: $light-blue;
-  padding: 5px 7px;
+  padding: 8px 10px;
   border-radius: 50%;
   margin-left: 20px;
 }
