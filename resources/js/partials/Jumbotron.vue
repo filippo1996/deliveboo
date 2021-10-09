@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-5">
     <div class="jumbo position-relative">
       <div class="container py-3">
         <div class="row text-center">
