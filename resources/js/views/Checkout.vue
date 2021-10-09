@@ -9,8 +9,19 @@
         <label for="lastname" class="form-label">Cognome</label>
         <input type="lastname" class="form-control" id="lastname" required>
       </div>
-      <input id="pac-input">
-      <button type="submit" class="btn btn-primary">Salva</button>
+      <div id="infowindow-content">
+        <input type="hidden" id="street_number">
+        <input type="hidden" id="route">
+        <input type="hidden" id="locality">
+        <input type="hidden" id="country">
+        <input type="hidden" id="postal_code">
+      </div>
+      <div class="mb-3">
+        <label for="pac-input" class="form-label">Indirizzo di spedizione</label>
+        <input class="form-control" type="text" id="pac-input" name="pac-input" placeholder="Inserisci la tua via">
+        <div id="map"></div>
+      </div>
+      <button class="btn btn-primary" @click.prevent="saveAddress">Procedi al pagamento</button>
     </form>
   </div>
 </template>
@@ -22,7 +33,13 @@ export default {
   name: 'Checkout',
   data(){
     return {
-      //
+      name: '',
+      lastname: '',
+      street_number: '',
+      route: '',
+      locality: '',
+      country: '',
+      postal_code: ''
     }
   },
   mounted(){
@@ -37,10 +54,51 @@ export default {
     funcMap.innerHTML = initMap;
     document.body.appendChild(funcMap);
 
+  },
+  methods:{
+    saveAddress(){
+      let values = {
+        name: 'Il nome',
+        lastname: 'Il cognome',
+        street_number: 'Il numero civico',
+        route: 'La via',
+        locality: 'La città',
+        country: 'Lo stato',
+        postal_code: 'Il codice postale'
+      };
+
+      for(const key of Object.keys(values)){
+        let input = document.querySelector(`#${key}`);
+        if(input.value){
+          this[key] = input.value;
+        } else {
+          alert(values[key] + ' non è presente, si prega di inserirlo.');
+          return;
+        }
+      }
+
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+#map {
+  height: 500px;
+}
+
+#pac-input{
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  font-size: 15px;
+  border-radius: 3px;
+  border: 0;
+  margin-top: 10px;
+  width: 30%;
+  height: 40px;
+  text-overflow: ellipsis;
+  padding: 0 1em;
+  position: absolute;
+  left: 35%;
+}
 
 </style>
