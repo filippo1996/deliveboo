@@ -1,79 +1,93 @@
 <template>
-<section :class="{'d_none': loading}">
+  <section :class="{'d_none': loading}">
+    <div class="container">
+      <div class="row">
+        <!-- Restaurant -->
+        <div class="col-12 col-lg-9" :class="{'col-lg-12': !cart?.length}">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-lg-9">
+          <!-- Restaurant Header -->
+          <div class="row row-ristorante text-white my-3 py-5">
+            <h1>{{ restaurant.name }}</h1>
+            <span>Contatta: {{ restaurant.phone_number }}</span>
+          </div>
 
-        <div class="row row-ristorante text-white my-3 py-5">
-          <h1>{{ restaurant.name }}</h1>
-          <span>Contatta: {{ restaurant.phone_number }}</span>
-        </div>
 
-          <div class="row py-5">
-            <!-- start card product -->
-            <div class="col-12 col-sm-6 col-xl-4" v-for="product in products" :key="product.id">
-              <div class="card prodotto mb-4 pt-1 px-1">
-                <div class="row">
-                  <div class="col-md-4 img-box">
+          <!-- Card Product -->
+          <div class="row g-5">
+            <div class="col-12 col-sm-6 col-xl-6" v-for="product in products" :key="product.id">
+              <div class="card prodotto">
+                <div class="row d-flex align-items-center">
+                  <div class="col-md-4 img-box d-flex justify-content-center">
                     <img :src="product.img_path" class="img-fluid card-img" :alt="product.name">
                   </div>
+                  
                   <div class="col-md-8">
-                    <div class="card-body p-3">
-                      <h5 class="card-title text-uppercase fs-5">{{ product.name }}</h5>
-                      <p class="card-text descrizione m-0 d-none d-md-inline-block">{{ product.description }}</p>
-                      <input :data-product="product.id" value="1" type="number" placeholder="qty" min="1">
-                      <div class="float-lg-end mt-4 ">{{ product.price.toFixed(2) }} &euro; <span class="cart" @click="insertCart(product)"><i class="fas fa-plus big-icon"></i></span></div>
+                    <div class="card-body p-2"> 
+                      <h5 class="card-title text-uppercase fs-5 fw-bold mb-2">{{ product.name }}</h5>
+                      <p class="card-text descrizione m-0 overflow-auto d-none d-md-inline-block">{{ product.description }}</p>
+                      <input 
+                        :data-product="product.id" 
+                        value="1" 
+                        type="number" 
+                        placeholder="qty" 
+                        min="1"
+                        class="w-auto h-auto mt-1">
+                      <div class="float-lg-end p-1 ">{{ product.price.toFixed(2) }} &euro; 
+                        <span class="cart" @click="insertCart(product)">
+                          <i class="fas fa-plus big-icon"></i>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- end card product -->
-          </div>
-
-      </div>
-
-      <!-- cart button -->
-      <div class="fixed-bottom text-center mb-4 d-lg-none">
-        <a href="#" class="cart-button px-4 py-3 rounded-pill text-decoration-none">Carrello</a>
-      </div>
-
-      <!-- start cart -->
-      <div class="col-3 align-self-start d-lg-block" :class="{'d_none': !cart?.length}">
-        <div class="row mt-3 justify-content-center">
-          <div class="card">
-        <div class="card-body">
-          <h2 class="card-title text-center">Carrello</h2>
-          <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
-          <div class="row my-3 lista pb-2" v-for="(obj, index) in cart" :key="index">
-            <div class="row">
-              <div class="col-2 fw-bold n-carrello">{{ obj.qty }}x</div>
-              <div class="col-7 text-center">{{ obj.item.name }}</div>
-              <div class="col-3 price">{{ obj.item.price.toFixed(2) }} &euro;</div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 d-flex justify-content-start"><span class="cart" @click="setQuantity(obj, '-')"><i class="fas fa-minus"></i></span></div>
-              <div class="col-md-6 d-flex justify-content-end"><span class="cart" @click="setQuantity(obj, '+')"><i class="fas fa-plus"></i></span></div>
-            </div>
-          </div>
-          <h3>Totale carrello {{ totalPriceCart.toFixed(2) }} &euro;</h3>
-          <!-- end cart -->
+          </div>  
         </div>
-      </div>
-    </div>
-      <div class="row">
-        <div class="col-9 d-flex mb-5">
-          <router-link class="home px-3" :to="{ name: 'home' }"><i class="fas fa-home"></i> {{ 'Torna alla home' }}</router-link>
+
+
+        <!-- Cart button -->
+        <div class="fixed-bottom text-center mb-4 d-lg-none">
+          <a href="#" class="cart-button px-4 py-3 rounded-pill text-decoration-none">Carrello</a>
         </div>
-        <a class="freccia text-center" @click="returnToTop" id="returnBtn"><i class="fas fa-arrow-up" ></i></a>
-      </div>
+
+
+        <!-- Cart -->
+        <div class="col-3 align-self-start d-lg-block" :class="{'d_none': !cart?.length}">
+          <div class="row mt-3 justify-content-center">
+            <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center">Carrello</h2>
+            <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
+            <div class="row my-3 lista pb-2" v-for="(obj, index) in cart" :key="index">
+              <div class="row">
+                <div class="col-2 fw-bold n-carrello">{{ obj.qty }}x</div>
+                <div class="col-7 text-center">{{ obj.item.name }}</div>
+                <div class="col-3 price">{{ obj.item.price.toFixed(2) }} &euro;</div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 d-flex justify-content-start"><span class="cart" @click="setQuantity(obj, '-')"><i class="fas fa-minus"></i></span></div>
+                <div class="col-md-6 d-flex justify-content-end"><span class="cart" @click="setQuantity(obj, '+')"><i class="fas fa-plus"></i></span></div>
+              </div>
+            </div>
+            <h3>Totale carrello {{ totalPriceCart.toFixed(2) }} &euro;</h3>
+            <!-- end cart -->
+          </div>
+        </div>
+      </div> 
+        </div>
+
+
+        <!-- Home & Return to Top -->
+        <div class="row">
+          <div class="col-lg-9 d-flex justify-content-center mb-5" :class="{'col-lg-12': !cart?.length}">
+            <router-link class="home px-3" :to="{ name: 'home' }"><i class="fas fa-home"></i> {{ 'Torna alla home' }}</router-link>
+          </div>
+          <a class="freccia text-center" @click="returnToTop" id="returnBtn"><i class="fas fa-arrow-up"></i></a>
+        </div>
     </div>
   </div>
-</div>
-
-</section>
-  
+  </section>
 </template>
 
 <script>
@@ -183,9 +197,15 @@ input{
 
 .img-box{
   .card-img{
-    border-radius: 25px 25px 0 0;
-    height: 120px;
-    object-fit: contain;
+    width: 100px; 
+    height: 100px;
+    -webkit-border-radius: 50%; 
+    -webkit-background-clip: padding-box; 
+    -moz-border-radius: 50%; 
+    -moz-background-clip: padding; 
+    border-radius: 50%; 
+    background-clip: padding-box; 
+    object-fit: cover;
   } 
 }
 
