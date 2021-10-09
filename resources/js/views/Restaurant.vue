@@ -181,6 +181,7 @@ export default {
 @import 'resources/sass/_variables.scss';
 
 
+
 // General
 
 section {
@@ -201,7 +202,7 @@ section {
 
 
 
-// Botton
+// Button
 
 #returnBtn {
   left: 0;
@@ -331,15 +332,6 @@ section {
     }
   }
 }
-
-
-
-
-
-
-
-
-
 
 
 
