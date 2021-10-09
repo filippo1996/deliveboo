@@ -14,7 +14,7 @@
           <!-- Card Product -->
           <div class="row g-4">
             <div class="col-12 col-sm-6 col-xl-6" v-for="product in products" :key="product.id">
-              <div class="card prodotto">
+              <div class="card" id="prodotto">
                 <div class="row d-flex align-items-center">
                   <div class="col-md-4 img-box d-flex justify-content-center">
                     <img :src="product.img_path" class="img-fluid card-img" :alt="product.name">
@@ -52,33 +52,49 @@
 
 
         <!-- Cart -->
-        <div class="col-3 align-self-start d-lg-block" :class="{'d_none': !cart?.length}">
+        <div class="col-3 align-self-start d-lg-block" :class="{'d_none': !cart?.length}" id="carrello">
           <div class="row mt-3 justify-content-center">
             <div class="card">
+              <div class="card-header bg-white">
+                 <h2 class="card-title text-center fs-4 pb-1">Il tuo Carrello</h2>
+                <h6 class="card-subtitle text-center text-muted fs-6 mb-2">Spendi € 8,00 per evitare il supplemento</h6>
+              </div>
+
               <div class="card-body">
-                <h2 class="card-title text-center">Carrello</h2>
-                <h6 class="card-subtitle mb-2 text-muted text-center">Spendi € 8,00 per evitare il supplemento</h6>
-                <div class="row my-3 lista pb-2" v-for="(obj, index) in cart" :key="index">
+                <div class="row my-2 pb-2" v-for="(obj, index) in cart" :key="index">
                   <div class="row">
                     <div class="col-2 fw-bold n-carrello">{{ obj.qty }}x</div>
-                    <div class="col-7 text-center">{{ obj.item.name }}</div>
+                    <div class="col-7 text-start ">{{ obj.item.name }}</div>
                     <div class="col-3 price">{{ obj.item.price.toFixed(2) }} &euro;</div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-6 d-flex justify-content-start"><span class="cart" @click="setQuantity(obj, '-')"><i class="fas fa-minus"></i></span></div>
-                    <div class="col-md-6 d-flex justify-content-end"><span class="cart" @click="setQuantity(obj, '+')"><i class="fas fa-plus"></i></span></div>
+                  <div class="row p-2">
+                    <div class="col-md-6 d-flex justify-content-start">
+                      <span class="cart" @click="setQuantity(obj, '-')">
+                        <i class="fas fa-minus"></i>
+                      </span>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end mb-4">
+                      <span class="cart" @click="setQuantity(obj, '+')">
+                        <i class="fas fa-plus"></i>
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <h3>Totale carrello {{ totalPriceCart.toFixed(2) }} &euro;</h3>
+                
                 <!-- end cart -->
               </div>
+
+              <div class="card-footer text-center bg-white mt-2">
+                <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }} &euro;</h3>
+              </div>
+
             </div>
           </div> 
         </div>
 
 
         <!-- Home & Return to Top -->
-        <div class="row">
+        <div class="row mt-5">
           <div class="col-lg-9 d-flex justify-content-center mb-5" :class="{'col-lg-12': !cart?.length}">
             <router-link class="home px-3" :to="{ name: 'home' }"><i class="fas fa-home"></i> {{ 'Torna alla home' }}</router-link>
           </div>
@@ -179,7 +195,7 @@ input{
   white-space: nowrap;
   overflow: hidden;
 }
-.prodotto{
+#prodotto{
   border-radius: 15px;
   height: 250px;
 }
@@ -229,9 +245,20 @@ input{
   color: white;
 }
 
-.lista{
-  max-height: 500px;
-  overflow-y: scroll;
+#carrello {
+  position: fixed;
+  right: 0;
+  transform: translateX(-22px);
+  
+  .card {
+    border-radius: 15px;
+    height: 85vh;
+    
+
+    .card-body {
+      overflow-y: auto;  
+    }
+    }
 }
 
 .n-carrello, .price{
@@ -270,6 +297,12 @@ input{
   display: none !important;
 }
 
+
+
+#returnBtn {
+  left: 0;
+  transform: translateX(22px);
+}
 .freccia{
   // display: none;
   position: fixed;
@@ -281,9 +314,9 @@ input{
   background-color: $light-blue;
   color: $blue;
   border-radius: 50%;
-  transition: ease all 0.4s;
+  transition: ease all 0.3s;
     &:hover{
-      transform: scale(1.1);
+      transform: scale(1.5);
     }
 }
 </style>
