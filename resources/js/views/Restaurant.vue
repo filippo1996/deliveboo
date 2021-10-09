@@ -105,7 +105,7 @@
 
           </div>
           <a 
-            class="arrow_up text-center" 
+            class="arrow_up text-center cursor_pointer" 
             @click="returnToTop" 
             id="returnBtn">
               <i class="fas fa-arrow-up"></i>

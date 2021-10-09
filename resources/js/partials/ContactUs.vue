@@ -4,8 +4,8 @@
       <div class="col-md-6 col-md-offset-3" id="form_container">
           <h2>Contattaci</h2>
           <p>Invia qui il tuo messaggio. Ti risponderemo al più presto!</p>
-          <form role="form" method="post" id="reused_form">
 
+          <form role="form" method="post" id="reused_form">
             <div class="row mb-4">
               <div class="col-sm-12 form-group">
                 <label for="message" class="mb-2">Messaggio:</label>
@@ -43,6 +43,7 @@
                 </div>
               </div>
           </form>
+
 
           <div id="success_message" style="width:100%; height:100%; display:none;">
             <h3>Posted your message successfully!</h3>
