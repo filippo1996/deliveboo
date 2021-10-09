@@ -1,4 +1,4 @@
-function initMap() {
+export default function initMap() {
   // [START maps_places_autocomplete_creation]
   const center = { lat: 50.064192, lng: -130.605469 };
   // Create a bounding box with sides ~10km away from the center point

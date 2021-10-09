@@ -13,11 +13,6 @@
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-  <!-- google maps -->
-  <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvVNeZeFGMSHvpISRfYdY68X5EMs2V7Yg&libraries=places&callback=initMap">
-  </script>
-
 </head>
 <body>
   <div id="app"></div>
