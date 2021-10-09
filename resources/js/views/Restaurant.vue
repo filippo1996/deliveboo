@@ -1,5 +1,5 @@
 <template>
-<section>
+<section :class="{'d_none': loading}">
 
   <div class="container">
     <div class="row">
@@ -103,12 +103,15 @@ export default {
   methods: {
     async getRestaurant(){
       try {
+        this.loading = true;
         let response = await axios(this.url + this.slug);
         let value = response.data;
         this.restaurant = {id: value.id, name: value.name, slug: value.slug, phone_number: value.phone_number};
         this.products = response.data.products;
+        this.loading = false;
       } catch(err){
-        console.log(err);
+        //console.log(err);
+        this.$router.push({ name: '404'});
       }
     },
     insertCart(product){
