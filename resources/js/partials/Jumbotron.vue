@@ -5,9 +5,9 @@
         <div class="row text-center">
           <div class="col-10 col-md-9 col-xl-6 m-auto">
             <h3 class="mb-4 text-light">
-              Cerca i tuoi prodotti o locali preferiti
+              Cerca i prodotti dei tuoi locali preferiti
             </h3>
-            <input v-model="search" type="text" placeholder="Cerca Qui" class="border-0 text-light text-center">
+            <input v-model="search" type="text" placeholder="Cerca" class="border-0 text-light text-center">
           </div>
           <Search v-if="search" :word="search"/>
         </div>
@@ -123,14 +123,14 @@ export default {
   }
 
   input{
-    width: 26vw;
+    width: 85%;
     background-color: #41708e;
     outline: none;
     border-radius: 20px;
     font-size: 17px;
     text-transform: capitalize;
     transition: 0.2s;
-    height: 40px;
+    height: 42px;
 
     &:hover{
       transition: 0.5s;
@@ -141,7 +141,7 @@ export default {
 
     &::placeholder{
       color: rgba(255, 255, 255, 0.815);
-      font-size: 16px;
+      font-size: .8rem;
     }
   }
 }

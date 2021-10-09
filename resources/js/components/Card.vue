@@ -1,18 +1,30 @@
 <template>
-  <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in items" :key="restaurant.id">
-    <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: restaurant.slug }}">
-      <div class="card text-white overflow-hidden rest-card">
-        <img :src="restaurant.cover" class="card-img" :alt="restaurant.name">
-        <div class="card-img-overlay text-center text-light shadow">
-          <div class="description">
-            <h3 class="card-title">{{ restaurant.name }}</h3>
-            <span class="tag">{{ restaurant.tags[0]?.name }}</span>
+  <div 
+    class="col-12 col-sm-6 col-lg-4 border-white d-flex my-3" 
+    v-for="restaurant in items" :key="restaurant.id">
+    
+    <router-link 
+      class="nav-link rest-tag fw-bold" 
+      :to="{name: 'restaurant', params:{ slug: restaurant.slug }}">
+        
+
+        <div class="card text-white overflow-hidden rest-card box_shadow">
+          <img 
+            :src="restaurant.cover" 
+            class="card-img" 
+            :alt="restaurant.name">
+
+          <div class="card-img-overlay text-center text-white shadow">
+            <div class="description">
+              <h3 class="card-title mb-5">{{ restaurant.name }}</h3>
+              <span class="tag">{{ restaurant.tags[0]?.name }}</span>
+            </div>
           </div>
         </div>
-      </div>
     </router-link>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -23,29 +35,33 @@ export default {
 }
 </script>
 
+
 <style lang="scss" scoped>
 .rest-tag{
-    color: #393f46;
+    // color: #393f46;
   }
-
+  
+  .card-title {
+    text-shadow: 1px 2px rgb(55, 55, 55);
+  }
   .rest-card{
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 15px;
     height: 200px;
 
     img{
       position: relative;
-      bottom: 20%;
+      bottom: 25%;
       transition: 0.3s;
     }
   }
   
   .rest-card:hover img{
-    transform: scale(1.1);
+    transform: scale(1.3);
   }
 
-  .shadow{
-    background-color: rgba(100, 100, 100, 0.4);
+  .shadow {
+    background-color: rgba(150, 150, 150, .5);
     
     .description{
       position: relative;
@@ -55,9 +71,13 @@ export default {
     }
   }
 
-  .tag{
-    background-color: rgba(0, 0, 0, 0.5);
+  .tag {
+    background-color: rgba(150, 150, 150, .8);
     padding: 5px 10px;
-    border-radius: 20px;
+    border-radius: 8px;
+  }
+
+  .box_shadow {
+    box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);
   }
 </style>
