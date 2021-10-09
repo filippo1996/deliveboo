@@ -116,6 +116,7 @@
   </section>
 </template>
 
+
 <script>
 import { Cart } from '../utils/factory.js';
 
@@ -176,6 +177,7 @@ export default {
 }
 
 </script>
+
 
 <style lang="scss" scoped>
 @import 'resources/sass/_variables.scss';
