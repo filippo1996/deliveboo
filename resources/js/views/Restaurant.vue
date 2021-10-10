@@ -6,7 +6,7 @@
         <div class="col-12 col-lg-9" :class="{'col-lg-12': !cart?.length}">
           
           <!-- Restaurant Header -->
-          <div class="row restaurant_header text-white my-3 py-5">
+          <div class="row restaurant_header text-white my-4 py-5">
             <h1>{{ restaurant.name }}</h1>
             <span>Contatta: {{ restaurant.phone_number }}</span>
           </div>
@@ -14,7 +14,8 @@
           <!-- Card Product -->
           <div class="row g-4">
             <div class="col-12 col-sm-6 col-xl-6" v-for="product in products" :key="product.id">
-              <div class="card" id="prodotto">
+              <div class="card prodotto"> 
+                <!-- modificare id !!!!! -->
                 <div class="row">
                   <div class="col-md-4 img-box d-flex align-items-center justify-content-center">
                     <img :src="product.img_path" class="card-img m-0 text" :alt="product.name">
@@ -240,7 +241,7 @@ section {
 
 // Product
 
-#prodotto {
+.prodotto {
   border-radius: 15px;
   height: 260px;
 }
