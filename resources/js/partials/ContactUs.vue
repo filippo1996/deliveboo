@@ -40,7 +40,7 @@
                   <div class="col-sm-12 form-group">
                     <button 
                       type="submit" 
-                      class="btn btn-outline-light">Invia
+                      class="btn">Invia
                     </button>
                   </div>
                 </div>
@@ -83,5 +83,8 @@ section {
   background-color: rgb(255, 214, 112);
   color: $blue;
 }
-
+.btn{
+  color: $blue;
+  border-color: $blue;
+}
 </style>
