@@ -1,11 +1,6 @@
 <template>
-<<<<<<< HEAD
   <div class="jumbo position-relative">
     <div class="h-100 w-100">
-=======
-  <div class="mt-5">
-    <div class="jumbo position-relative">
->>>>>>> 0c429b9f5552bbc2f452aeee810e8600df79a0e9
       <div class="container py-3">
         <div class="row text-center">
           <div class="col-10 col-md-9 col-xl-6 m-auto">
