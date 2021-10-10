@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div class="container mt-5">
     <form>
-      <div class="mb-3">
+      <div class="mb-3 pt-5">
         <label for="name" class="form-label">Nome</label>
         <input type="name" class="form-control" id="name" required>
       </div>
