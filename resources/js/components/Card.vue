@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="col-12 col-sm-6 col-lg-4 border-white d-flex my-3" 
+    class="col-12 col-sm-6 col-lg-3 border-white my-3" 
     v-for="restaurant in items" :key="restaurant.id">
     
     <router-link 
@@ -51,8 +51,10 @@ export default {
 
     img{
       position: relative;
-      bottom: 25%;
       transition: 0.3s;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
   
