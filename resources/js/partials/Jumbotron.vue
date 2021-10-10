@@ -4,7 +4,7 @@
       <div class="container py-3">
         <div class="row text-center">
           <div class="col-10 col-md-9 col-xl-6 m-auto">
-            <h3 class="mb-4 text-light">
+            <h3 class="mb-4 text-light pt-5">
               Cerca i prodotti dei tuoi locali preferiti
             </h3>
             <input v-model="search" type="text" placeholder="Cerca" class="border-0 text-light text-center">
@@ -101,7 +101,7 @@ export default {
   }
 
   .scooter{
-    height: 370px;
+    height: 270px;
     bottom: 0;
     right: 0;
 
@@ -210,7 +210,7 @@ export default {
 
   .scooter{
     .bike{
-      height: 380px;
+      height: 320px;
       bottom: -37px;
       right: -27px;
     }
@@ -239,7 +239,7 @@ export default {
 @media screen and (min-width: 1200px) {
   .scooter{
     .bike{
-      height: 380px;
+      height: 320px;
       bottom: -34px;
       right: -27px;
     }
@@ -270,7 +270,7 @@ export default {
 @media screen and (min-width: 1400px) {
   .scooter{
     .bike{
-      height: 380px;
+      height: 320px;
     }
 
     .smoke{
