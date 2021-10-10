@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .rest-tag{
-    // color: #393f46;
+    color: #393f46;
   }
   
   .card-title {
