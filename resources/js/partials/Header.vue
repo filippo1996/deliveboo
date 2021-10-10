@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <router-link class="nav-link active text-light" :to="{name: 'home'}">{{ 'Deliveboo' }}</router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.navbar{
+.navbar {
+  // position: fixed;
+
   background-color: rgba(65, 113, 142, 0.884);
   
   .bottone{

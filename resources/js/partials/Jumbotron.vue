@@ -1,18 +1,23 @@
 <template>
-  <div>
+<<<<<<< HEAD
+  <div class="jumbo position-relative">
+    <div class="h-100 w-100">
+=======
+  <div class="mt-5">
     <div class="jumbo position-relative">
+>>>>>>> 0c429b9f5552bbc2f452aeee810e8600df79a0e9
       <div class="container py-3">
         <div class="row text-center">
           <div class="col-10 col-md-9 col-xl-6 m-auto">
             <h3 class="mb-4 text-light">
-              Cerca i tuoi prodotti o locali preferiti
+              Cerca i prodotti dei tuoi locali preferiti
             </h3>
-            <input v-model="search" type="text" placeholder="Cerca Qui" class="border-0 text-light text-center">
+            <input v-model="search" type="text" placeholder="Cerca" class="border-0 text-light text-center">
           </div>
           <Search v-if="search" :word="search"/>
         </div>
         <div class="row clearfix">
-          <div class="jumbo-text d-none d-sm-block col-sm-6 text-light position-absolute">
+          <div class="jumbo-text d-none d-sm-block col-sm-6 position-absolute">
             <div class="title">
               Consegniamo la felicità
             </div>
@@ -78,8 +83,9 @@ export default {
 .jumbo{
   height: 30rem;
   background-color: rgb(133, 193, 255);
-  background: url('/images/case.png');
+  background: url('/images/background.png');
   background-size: cover;
+  background-repeat:no-repeat;
   background-position: bottom;
 
   .jumbo-text{
@@ -88,6 +94,7 @@ export default {
     float: left;
     padding-right: 100px;
     font-style: oblique;
+    color: white;
 
     .title{
       font-size: clamp(1rem, 3vw, 3rem);
@@ -123,14 +130,14 @@ export default {
   }
 
   input{
-    width: 26vw;
+    width: 85%;
     background-color: #41708e;
     outline: none;
     border-radius: 20px;
     font-size: 17px;
     text-transform: capitalize;
     transition: 0.2s;
-    height: 40px;
+    height: 42px;
 
     &:hover{
       transition: 0.5s;
@@ -141,14 +148,14 @@ export default {
 
     &::placeholder{
       color: rgba(255, 255, 255, 0.815);
-      font-size: 16px;
+      font-size: .8rem;
     }
   }
 }
 
 .wave{
   height: 50px;
-  background-image: url('/images/wave3.jpg');
+  background-image: url('/images/wave4.jpg');
   background-size: cover;
   background-position: bottom;
 }
@@ -278,9 +285,9 @@ export default {
     }
 
     @keyframes delivery-man {
-      0% {right: -27px; bottom: -30px};
+      0% {right: -27px; bottom: -38px};
       100% {right: 300px; bottom: -33px};
-      from {right: -27px; bottom: -30px};
+      from {right: -27px; bottom: -38px};
       to {right: 300px; bottom: -33px};
     }
     
@@ -292,5 +299,9 @@ export default {
       to {right: 10px; top: -35px; opacity: 0; transform: scale(1.4);};
     }
   }
+}
+
+.street{
+  
 }
 </style>
