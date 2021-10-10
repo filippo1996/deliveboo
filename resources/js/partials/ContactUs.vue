@@ -14,12 +14,12 @@
 
              <div class="row text-center mb-4">
                 <div class="col-12">
-                  <p class="m-0">Invia tuo messaggio. 
+                  <p class="m-0">Invia il tuo messaggio. 
                     Ti risponderemo al più presto!</p>
                 </div>
              </div>
      
-     
+
             <form role="form" method="post" id="reused_form">
               <div class="row mb-4">
                 <div class="col-sm-12 form-group">
