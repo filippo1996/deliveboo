@@ -4,6 +4,10 @@ import Home from './views/Home.vue';
 import Category from './views/Category.vue';
 import Restaurant from './views/Restaurant.vue';
 import NotFound from './views/errors/404.vue';
+import Checkout from './views/Checkout.vue';
+import Payment from './views/Payment.vue';
+
+import { Cart } from './utils/factory.js';
 
 // 2. Define some routes
 // Each route should map to a component.
@@ -35,6 +39,26 @@ const routes = [
       name: 'restaurant',
       component: Restaurant,
       props: true
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: Checkout,
+      props: true,
+      beforeEnter: (to, from) => {
+        const cart = new Cart();
+        if( !cart.getCart().length ) return from;
+      }
+    },
+    {
+      path: '/payment',
+      name: 'payment',
+      component: Payment,
+      props: true,
+      beforeEnter: (to, from) => {
+        const cart = new Cart();
+        if( !cart.getCart().length ) return from;
+      }
     }
 ];
 

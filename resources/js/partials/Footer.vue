@@ -3,34 +3,30 @@
     <div class="container position-relative">
       <div class="row justify-content-md-around">
 
-        <div class="col-8 text-light mt-4">
-          <h2>Deliveboo</h2>
-          <div class="row mt-3 mb-3">
-            <div class="col-12 col-md-4">
-              <h4>Lavora con noi</h4>
-              <ul>
-                <li><a href="#">Link footer</a></li>
-                <li><a href="#">Link footer</a></li>
-                <li><a href="#">Link footer</a></li>
-                <li><a href="#">Link footer</a></li>
-                <li><a href="#">Link footer</a></li>
+        <div class="col-12 text-light">
+          <div class="row">
+            <div class="col-12 col-md-4 mt-5">
+              <h4 class="fs-6 text-center mb-3">Lavora con noi</h4>
+              <ul class="fs-6 text-center">
+                <li><a href="#">Il nostro blog</a></li>
+                <li><a href="#">Lavora con noi</a></li>
+                <li><a href="#">Diventa nostro partner</a></li>
+                <li><a href="#">Investitori</a></li>
               </ul>
             </div>
 
-            <div class="col-12 col-md-4">
-              <h4>About us</h4>
-              <ul>
-                <li><a href="#">Link footer</a></li>
-                <li><a href="#">Link footer</a></li>
-                <li><a href="#">Link footer</a></li>
-                <li><a href="#">Link footer</a></li>
-                <li><a href="#">Link footer</a></li>
+            <div class="col-12 col-md-4 mt-5">
+              <h4 class="fs-6 text-center mb-3">Aiuto</h4>
+              <ul class="fs-6 text-center">
+                <li><a href="#">Contatti</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Tipi di cucina</a></li>
+                <li><a href="#">Mappa del sito</a></li>
               </ul>
             </div>
             
-            <div class="col-12 col-md-4">
-              <div class="main center">
-                <div class="box center">
+            <div class="col-12 col-md-4 my-5">
+                <div class="box d-flex justify-content-center">
                   <a href="#" data-text="Facebook">
                     <i class="fab fa-facebook facebook"></i>
                   </a>
@@ -44,8 +40,6 @@
                     <i class="fab fa-youtube youtube"></i>
                   </a>
                 </div>
-
-              </div>
             </div>
           </div>
         </div>
@@ -65,24 +59,27 @@ export default {
 <style lang="scss" scoped>
 @import 'resources/sass/_variables.scss';
 
-ul{
+ul {
   padding: 0;
-  li{
-  list-style: none;
-    a{
+
+  li {
+    list-style: none;
+
+    a {
       text-decoration: none;
       color: rgb(240, 178, 8);
     }
   }
 }
 
-.box{
-  flex-direction: column;
+.box {
+  // flex-direction: column;
 }
 
 .box a{
   width: 40px;
   height: 40px;
+  float: left;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +98,7 @@ ul{
 }
 
 .box a::before{
-  content: attr(data-text);
+  // content: attr(data-text);
   position: absolute;
   top: 7px;
   left: 50px;

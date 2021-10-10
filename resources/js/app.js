@@ -18,6 +18,14 @@ const router = createRouter({
   routes, // short for `routes: routes`
 });
 
+// Navigation Guards
+/*
+router.beforeEach((to, from) => {
+  console.log(to.fullPath);
+  return true;
+});
+*/
+
 // Import root component vue ( App.vue )
 import App from './views/App';
 
