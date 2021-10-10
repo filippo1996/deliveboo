@@ -4,9 +4,22 @@
 
       <div class="row d-flex justify-content-center py-5">
         <div class="col-md-6 col-md-offset-3" id="form_container">
-            <h2>Contattaci</h2>
-            <p>Invia qui il tuo messaggio. Ti risponderemo al più presto!</p>
+          
+              <div class="row text-center mb-1">
+                <div class="col-12 d-inline-block">
+                  <span class="fs-4 ps-3">Contattaci</span>
+                  <img src="/images/mail.png" alt="mail" class="ps-3">
+                </div>
+              </div>
 
+             <div class="row text-center mb-4">
+                <div class="col-12">
+                  <p class="m-0">Invia tuo messaggio. 
+                    Ti risponderemo al più presto!</p>
+                </div>
+             </div>
+     
+     
             <form role="form" method="post" id="reused_form">
               <div class="row mb-4">
                 <div class="col-sm-12 form-group">
@@ -83,8 +96,12 @@ section {
   background-color: rgb(255, 214, 112);
   color: $blue;
 }
-.btn{
+.btn {
   color: $blue;
   border-color: $blue;
+}
+
+img {
+  width: 80px;
 }
 </style>
