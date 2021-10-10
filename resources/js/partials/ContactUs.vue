@@ -81,7 +81,7 @@ export default {
 
 section {
   background-color: rgb(255, 214, 112);
-  color: white;
+  color: $blue;
 }
 
 </style>
