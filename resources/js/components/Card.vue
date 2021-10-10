@@ -54,6 +54,7 @@ export default {
       transition: 0.3s;
       height: 100%;
       width: 100%;
+      object-fit: cover;
     }
   }
   
