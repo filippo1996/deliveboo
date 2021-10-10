@@ -57,7 +57,7 @@ const routes = [
       props: true,
       beforeEnter: (to, from) => {
         const cart = new Cart();
-        if( !cart.getCart().length ) return from;
+        if( !cart.getCart().length || !localStorage.getItem('address') ) return from;
       }
     }
 ];

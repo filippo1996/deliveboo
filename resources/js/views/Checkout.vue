@@ -60,8 +60,8 @@ export default {
       let values = {
         name: 'Il nome',
         lastname: 'Il cognome',
-        street_number: 'Il numero civico',
         route: 'La via',
+        street_number: 'Il numero civico',
         locality: 'La città',
         country: 'Lo stato',
         postal_code: 'Il codice postale'
