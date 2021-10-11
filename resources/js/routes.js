@@ -6,6 +6,7 @@ import Restaurant from './views/Restaurant.vue';
 import NotFound from './views/errors/404.vue';
 import Checkout from './views/Checkout.vue';
 import Payment from './views/Payment.vue';
+import Success from './views/Success.vue';
 
 import { Cart } from './utils/factory.js';
 
@@ -59,7 +60,17 @@ const routes = [
         const cart = new Cart();
         if( !cart.getCart().length || !localStorage.getItem('address') ) return from;
       }
-    }
+    },
+    {
+      path: '/success',
+      name: 'success',
+      component: Success,
+      props: true,
+      beforeEnter: (to, from) => {
+        let status = to.params.repositories;
+        if(status !== 'authorized') return from;
+      }
+    },
 ];
 
 // Export const routes in file app.js
