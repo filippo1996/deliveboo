@@ -1,7 +1,7 @@
 <template>
   <div class="bg-dark">
-    <div class="container position-relative">
-      <div class="row justify-content-md-around">
+    <div class="container position-relative py-5">
+      <div class="row justify-content-md-around pb-2">
 
         <div class="col-12 text-light">
           <div class="row">
@@ -32,7 +32,7 @@
                   </a>
                   <a href="#" data-text="Instagram">
                     <i class="fab fa-instagram instagram"></i>
-                    </a>
+                  </a>
                   <a href="#" data-text="Twitter">
                     <i class="fab fa-twitter twitter"></i>
                   </a>
