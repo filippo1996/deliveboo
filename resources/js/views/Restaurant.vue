@@ -325,6 +325,7 @@ section {
   position: fixed;
   right: 0;
   transform: translateX(-22px);
+  z-index: 100;
   
   .card {
     border-radius: 15px;
