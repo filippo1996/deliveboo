@@ -8,18 +8,23 @@
         <Card :items="restaurants"/>
       </div>
     </div>
+    <div>
+      <Affiliati />
+    </div>
   </section>
 </template>
 
 <script>
 import Tag from '../components/Tag.vue';
 import Card from '../components/Card.vue';
+import Affiliati from '../partials/Affiliati.vue';
 
 export default {
   name: "Main",
   components: {
     Tag,
     Card,
+    Affiliati,
   },
   data(){
     return{

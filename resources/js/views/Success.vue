@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5">
+  <div class="mt-5 my-5">
     <h1>Ordine completato con successo</h1>
   </div>
 </template>
