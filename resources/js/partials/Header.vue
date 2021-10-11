@@ -2,7 +2,8 @@
   <header>
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
-        <router-link class="nav-link active text-light" :to="{name: 'home'}">{{ 'Deliveboo' }}</router-link>
+        <router-link class="nav-link active text-light d-none d-sm-block" :to="{name: 'home'}"> <img src="/images/logo.png" class="logo" alt="logo"></router-link>
+        <router-link class="nav-link active text-light d-block d-sm-none align-item-center logo-icon" :to="{name: 'home'}"> <img src="/images/logo_icon.png" class="logo-icon" alt="icona-logo"></router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,6 +45,12 @@ export default {
       background-color: rgb(112, 163, 214);
       transition: 0.3s;
     }
+  }
+  .logo{
+    width: 100px;
+  }
+  .logo-icon{
+    width: 35px;
   }
   
 }
