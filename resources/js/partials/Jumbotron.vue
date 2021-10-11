@@ -1,18 +1,15 @@
 <template>
   <div class="jumbo position-relative">
     <div class="h-100 w-100">
-      <div class="container py-3">
-        <div class="row text-center">
+      <div class="container pt-5">
+        <div class="row text-center  pt-5">
           <div class="col-10 col-md-9 col-xl-6 m-auto">
-            <h3 class="mb-4 text-light pt-5">
-              Cerca i prodotti dei tuoi locali preferiti
-            </h3>
-            <input v-model="search" type="text" placeholder="Cerca" class="border-0 text-light text-center">
+            <input v-model="search" type="text" placeholder="Cerca i prodotti dei tuoi locali preferiti" class="border-0 text-light text-center">
           </div>
           <Search v-if="search" :word="search"/>
         </div>
         <div class="row clearfix">
-          <div class="jumbo-text d-none d-sm-block col-sm-6 position-absolute">
+          <div class="jumbo-text d-sm-block col-sm-6 position-absolute">
             <div class="title">
               Consegniamo la felicità
             </div>
@@ -85,15 +82,11 @@ export default {
 
   .jumbo-text{
     font-family: 'Comfortaa', cursive;
-    top: 50%;
+    top: 35%;
     float: left;
     padding-right: 100px;
     font-style: oblique;
     color: white;
-
-    .title{
-      font-size: clamp(1rem, 3vw, 3rem);
-    }
 
     .subtitle{
       font-size: clamp(0.5rem, 3vw, 1.5rem);
@@ -136,7 +129,7 @@ export default {
 
     &:hover{
       transition: 0.5s;
-      width: 40vw;
+      width: 100%;
       transform: scale(1.1);
       outline: none;
     }
@@ -158,6 +151,14 @@ export default {
 
 //        ---------------  animazione media query  ---------------
 @media screen and (min-width: 0px) and (max-width: 575px) {
+  .title{
+    font-size: 30px;
+  }
+
+  .subtitle{
+    display: none;
+  }
+
   .scooter{
     .bike{
       height: 280px;
@@ -172,8 +173,12 @@ export default {
 }
 
 @media screen and (min-width: 575px) and (max-width: 768px ){
+  .title{
+    font-size: 30px;
+  }
+
   .subtitle{
-    padding-right: 110px;
+    display: none;
   }
 
   .scooter{
@@ -204,8 +209,13 @@ export default {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
+  .title{
+    font-size: 30px;
+  }
+
   .subtitle{
     padding-right: 120px;
+    display: block;
   }
 
   .scooter{
@@ -237,6 +247,14 @@ export default {
 }
 
 @media screen and (min-width: 1200px) {
+  .title{
+    font-size: 42px;
+  }
+  
+  .subtitle{
+    display: block;
+  }
+
   .scooter{
     .bike{
       height: 320px;
@@ -268,6 +286,10 @@ export default {
 }
 
 @media screen and (min-width: 1400px) {
+  .subtitle{
+    display: block;
+  }
+
   .scooter{
     .bike{
       height: 320px;
@@ -296,7 +318,4 @@ export default {
   }
 }
 
-.street{
-  
-}
 </style>

@@ -33,7 +33,7 @@ export default {
 .navbar {
   // position: fixed;
 
-  background-color: rgba(65, 113, 142, 0.884);
+  background-color: rgb(65, 113, 142);
   
   .bottone{
     background-color: rgb(133, 193, 255);
