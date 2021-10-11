@@ -6,7 +6,6 @@
       <!-- rendering -->
       <router-view></router-view>
     </main>
-    <Affiliati/>
     <ContactUs/>
     <Footer/>
   </div>
