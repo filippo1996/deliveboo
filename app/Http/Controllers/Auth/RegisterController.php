@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Tag;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -42,6 +43,17 @@ class RegisterController extends Controller
     }
 
     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        $tags = Tag::all();
+        return view('auth.register', compact('tags'));
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -49,18 +61,20 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        //$data['slug'] = \Str::slug($data['name']);
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'name' => ['bail','required', 'string', 'max:255','unique:users'],
+            'email' => ['bail','required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['bail','required', 'string', 'min:8', 'confirmed'],
             'address' => ['required', 'string', 'max:80'],
-            'house_number' => ['required', 'integer'],
-            'postal_code' => ['required', 'string', 'max:7'],
+            'house_number' => ['required', 'string', 'max:5'],
+            'postal_code' => ['required', 'numeric', 'digits:5'],
             'country' => ['required', 'string', 'max:20'],
-            'phone_number' => ['required', 'string', 'max:10'],
-            'vat_number' => ['required', 'string', 'max:100', 'unique:users'],
+            'phone_number' => ['required', 'numeric', 'digits:10'],
+            'vat_number' => ['bail','required', 'string', 'max:100', 'unique:users'],
             'city' => ['required', 'string', 'max:45'],
-            'tag_id' => ['required', 'integer'],
+            'tag_id' => ['bail','required', 'integer','exists:tags,id'],
         ]);
     }
 

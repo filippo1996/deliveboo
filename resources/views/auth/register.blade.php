@@ -31,23 +31,18 @@
 
                             <label for="tag_id" class="col-md-4 col-form-label text-md-right ms-1">{{ __('Categoria Ristorante') }}</label>
 
-                            <select name="tag_id" id="tag_id" class="w-25" required>
+                            <select name="tag_id" id="tag_id" class="w-25 @error('tag_id') is-invalid @enderror" required>
                                 <option value="">-- Seleziona una Categoria --</option>
-                                <option value="1">Panineria</option>
-                                <option value="2">Pizzeria</option>
-                                <option value="3">Fast Food</option>
-                                <option value="4">Gelateria</option>
+                                @foreach ($tags as $tag)
+                                    <option @if(old('tag_id') == $tag->id) selected @endif value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                @endforeach
                             </select>
 
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li> 
-                                    @endforeach
-                                    </ul>
-                                </div>  
-                                @endif
+                            @error('tag_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
 
                         </div>
 
@@ -76,18 +71,29 @@
 
                                 <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Paese') }}</label>
 
-                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" required>
+                                <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}" required>
                                 
                             </div>
+
+                            @error('country')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             
                             <!-- Città -->
                             <div class="col-md-4">
 
                                 <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('Città') }}</label>
 
-                                <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" required>
+                                <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}" required>
 
-                                    
+                                @error('city')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             </div>
 
                             <!-- Codice Postale -->
@@ -95,8 +101,14 @@
 
                                 <label for="postal_code" class="col-md-4 col-form-label text-md-right">{{ __('Codice Postale') }}</label>
 
-                                <input id="postal_code" type="text" class="form-control" name="postal_code" value="{{ old('postal_code') }}" required>
-             
+                                <input id="postal_code" type="text" class="form-control @error('postal_code') is-invalid @enderror" name="postal_code" value="{{ old('postal_code') }}" required>
+                                
+                                @error('postal_code')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             </div>
 
                         </div>
@@ -107,14 +119,26 @@
                             <div class="col-md-6">
                                 <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
 
-                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required>
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="house_number" class="col-md-4 col-form-label text-md-right">{{ __('Numero Civico') }}</label>
 
-                                    <input id="house_number" type="text" class="form-control" name="house_number" value="{{ old('house_number') }}" required>
+                                    <input id="house_number" type="text" class="form-control @error('house_number') is-invalid @enderror" name="house_number" value="{{ old('house_number') }}" required>
+
+                                    @error('house_number')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
 
                             </div>
@@ -127,7 +151,13 @@
 
                                 <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Numero di Telefono') }}</label>
 
-                                <input id="phone_number" type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}" required>
+                                <input id="phone_number" maxlength="10" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required>
+
+                                @error('phone_number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 
                             </div>
 
@@ -135,17 +165,14 @@
 
                                 <label for="vat_number" class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
 
-                                <input id="vat_number" type="text" class="form-control" name="vat_number" value="{{ old('vat_number') }}" required>
+                                <input id="vat_number" maxlength="10" type="text" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" value="{{ old('vat_number') }}" required>
 
-                                @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li> 
-                                    @endforeach
-                                    </ul>
-                                </div>  
-                                @endif
+                                @error('vat_number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             </div>
                         </div>
 
@@ -192,7 +219,6 @@
                             </div>
                         </div>
 
-                        
                     </form>
                 </div>
             </div>
