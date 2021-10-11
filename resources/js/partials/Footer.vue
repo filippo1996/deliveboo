@@ -6,8 +6,8 @@
         <div class="col-12 text-light">
           <div class="row">
             <div class="col-12 col-md-4 mt-5">
-              <h4 class="fs-6 text-center mb-3">Lavora con noi</h4>
-              <ul class="fs-6 text-center">
+              <h4 class="mb-4">Lavora con noi</h4>
+              <ul class="fs-6">
                 <li><a href="#">Il nostro blog</a></li>
                 <li><a href="#">Lavora con noi</a></li>
                 <li><a href="#">Diventa nostro partner</a></li>
@@ -16,8 +16,8 @@
             </div>
 
             <div class="col-12 col-md-4 mt-5">
-              <h4 class="fs-6 text-center mb-3">Aiuto</h4>
-              <ul class="fs-6 text-center">
+              <h4 class="mb-4">Aiuto</h4>
+              <ul class="fs-6">
                 <li><a href="#">Contatti</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Tipi di cucina</a></li>
@@ -26,7 +26,8 @@
             </div>
             
             <div class="col-12 col-md-4 my-5">
-                <div class="box d-flex justify-content-center">
+              <h4 class="mb-4">Social</h4>
+                <div class="box d-flex">
                   <a href="#" data-text="Facebook">
                     <i class="fab fa-facebook facebook"></i>
                   </a>
@@ -93,7 +94,6 @@ ul {
 }
 
 .box a:hover{
-
   transform: scale(0.9);
 }
 
@@ -140,12 +140,16 @@ ul {
   transition: all 0.4s;
 }
 
+.box a:hover i{
+  transform: scale(1.4);
+}
+
 .box a:hover .facebook{
   color: royalblue;
 }
 
 .box a:hover .instagram{
-  color: rgb(225, 65, 217);
+  color: #e7495b;
 }
 
 .box a:hover .twitter{

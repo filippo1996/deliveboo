@@ -2,7 +2,7 @@
   <section :class="{'d-none': loading}">
     <div class="container pt-5 pb-2">
     <div class="row">
-      <h2>Tipologie di Ristoranti</h2>
+      <h2 class="mt-3 mb-4">Tipologie di Ristoranti</h2>
         <ul class="list-unstyled d-flex flex-wrap">
           <li>
             <router-link class="nav-link rest-tag fw-bold" :to="{ name: 'home' }">{{ 'Tutti' }}</router-link>
@@ -45,7 +45,8 @@ export default {
     background-color: rgb(255, 214, 112);
     li{
       transition: 0.3s;
-      transform: perspective(200px) rotateX(35deg);
+      transform: perspective(200px) rotateX(25deg);
+
       &:hover{
         transform: perspective(100px) rotateX(0deg);
       }
