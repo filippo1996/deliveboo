@@ -2,7 +2,7 @@
   <div class="jumbo position-relative">
     <div class="h-100 w-100">
       <div class="container pt-5">
-        <div class="row text-center  pt-5">
+        <div class="row text-center">
           <div class="col-10 col-md-9 col-xl-6 m-auto">
             <input v-model="search" type="text" placeholder="Cerca i prodotti dei tuoi locali preferiti" class="border-0 text-light text-center">
           </div>
@@ -28,7 +28,48 @@
         </div>
       </div>
     </div>
-    <div class="wave"></div>
+
+    <!-- lo so che è osceno non giudicatemi, lo sistemo vvb :))) -->
+    <div class="street d-flex">
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+      <div class="linea"></div>
+    </div>
   </div>
 </template>
 
@@ -82,7 +123,7 @@ export default {
 
   .jumbo-text{
     font-family: 'Comfortaa', cursive;
-    top: 35%;
+    top: 140px;
     float: left;
     padding-right: 100px;
     font-style: oblique;
@@ -99,21 +140,25 @@ export default {
     right: 0;
 
     .bike{
-      transform: rotate(358.7deg);
+      bottom: -20px;
+      right: -27px;
       animation-delay: 1.5s;
       animation-duration: 2s;
       animation-name: delivery-man;
       animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
+      z-index: 100;
     }
 
     .smoke{
+      top: -20px;
       animation-delay: 2.2s;
-      animation-duration: 2s;
+      animation-duration: 1.7s;
       animation-name: smoke;
       animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
       opacity: 0;
+      z-index: 99;
     }
   }
 
@@ -126,6 +171,7 @@ export default {
     text-transform: capitalize;
     transition: 0.2s;
     height: 42px;
+    margin-top: 35px;
 
     &:hover{
       transition: 0.5s;
@@ -141,13 +187,23 @@ export default {
   }
 }
 
-.wave{
-  height: 50px;
-  background-image: url('/images/wave4.jpg');
-  background-size: cover;
-  background-position: bottom;
-}
+.street{
+  height: 30px;
+  width: 100%;
+  background-color: rgb(167, 167, 167);
+  overflow-x: hidden;
 
+  .linea{
+    width: 20px;
+    height: 4px;
+    background-color: white;
+    margin-right: 20px;
+    position: relative;
+    top: 5px;
+    flex-shrink: 0;
+    overflow-x: hidden;
+  }
+}
 
 //        ---------------  animazione media query  ---------------
 @media screen and (min-width: 0px) and (max-width: 575px) {
@@ -161,9 +217,7 @@ export default {
 
   .scooter{
     .bike{
-      height: 280px;
-      bottom: -45px;
-      right: -30px;
+      height: 230px;
     }
 
     .smoke-container{
@@ -184,8 +238,6 @@ export default {
   .scooter{
     .bike{
       height: 320px;
-      bottom: -39px;
-      right: -27px;
     }
     
     .smoke-container{
@@ -193,10 +245,8 @@ export default {
     }
 
     @keyframes delivery-man {
-      0% {right: -27px; bottom: -39px};
-      100% {right: 120px; bottom: -42px};
-      from {right: -27px; bottom: -39px};
-      to {right: 120px; bottom: -42px};
+      from {right: -27px};
+      to {right: 120px};
     }
 
     @keyframes smoke {
@@ -221,8 +271,6 @@ export default {
   .scooter{
     .bike{
       height: 320px;
-      bottom: -37px;
-      right: -27px;
     }
 
     .smoke{
@@ -230,18 +278,14 @@ export default {
     }
 
     @keyframes delivery-man {
-      0% {right: -27px; bottom: -37px};
-      100% {right: 180px; bottom: -39px};
-      from {right: -27px; bottom: -37px};
-      to {right: 180px; bottom: -39px};
+      from {right: -27px};
+      to {right: 180px};
     }
 
     @keyframes smoke {
-      0% {right: 40px; top: -5px; opacity: 0; transform: scale(0.8);};
+      0% {right: 50px; opacity: 0; transform: scale(0.8);};
       50% {opacity: 1; transform: scale(1.1);}
-      100% {right: 0; top: -15px; opacity: 0; transform: scale(1.2);};
-      from {right: 40px; top: -5px; transform: scale(0.8);};
-      to {right: 0; top: -15px; opacity: 0; transform: scale(1.4);};
+      100% {right: 0; top: -30px; opacity: 0; transform: scale(1.2);};
     }
   }
 }
@@ -250,7 +294,7 @@ export default {
   .title{
     font-size: 42px;
   }
-  
+
   .subtitle{
     display: block;
   }
@@ -258,29 +302,22 @@ export default {
   .scooter{
     .bike{
       height: 320px;
-      bottom: -34px;
-      right: -27px;
     }
 
     .smoke{
       height: 50px;
-      top: -70px;
-      right: 0;
+      top: -5px;
     }
 
     @keyframes delivery-man {
-      0% {right: -27px; bottom: -34px};
-      100% {right: 270px; bottom: -36px};
-      from {right: -27px; bottom: -34px};
-      to {right: 270px; bottom: -36px};
+      from {right: -27px};
+      to {right: 270px};
     }
 
     @keyframes smoke {
-      0% {right: 75px; top: -19px; opacity: 0; transform: scale(0.8);};
+      0% {right: 75px; opacity: 1; transform: scale(0.8);};
       50% {opacity: 1; transform: scale(1.1);}
       100% {right: 10px; top: -26px; opacity: 0; transform: scale(1.2);};
-      from {right: 75px; top: -19px; transform: scale(0.8);};
-      to {right: 10px; top: -26px; opacity: 0; transform: scale(1.4);};
     }
   }
 }

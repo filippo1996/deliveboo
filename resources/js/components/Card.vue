@@ -14,7 +14,7 @@
             class="card-img" 
             :alt="restaurant.name">
 
-          <div class="card-img-overlay text-center text-white shadow">
+          <div class="card-img-overlay text-center shadow">
             <div class="description">
               <h3 class="card-title mb-5">{{ restaurant.name }}</h3>
               <span class="tag">{{ restaurant.tags[0]?.name }}</span>
@@ -27,6 +27,7 @@
 
 
 <script>
+
 export default {
   name: 'Card',
   props: {
@@ -35,21 +36,24 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
+@import 'resources/sass/_variables.scss';
+
 .rest-tag{
     color: #393f46;
   }
   
   .card-title {
-    text-shadow: 1px 2px rgb(55, 55, 55);
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
   }
   .rest-card{
+    height: 200px;
     cursor: pointer;
     border-radius: 15px;
-    height: 200px;
+    transition: 0.3s;
 
     img{
+      filter: blur(0.5px);
       position: relative;
       transition: 0.3s;
       height: 100%;
@@ -59,13 +63,15 @@ export default {
   }
   
   .rest-card:hover img{
-    transform: scale(1.3);
+    filter: blur(0px);
+    transform: scale(1.1);
   }
 
   .shadow {
-    background-color: rgba(150, 150, 150, .5);
+    background-color: rgba(0, 0, 0, 0.1);
     
     .description{
+      color: white;
       position: relative;
       top: 50%;
       left: 50%;
@@ -79,7 +85,7 @@ export default {
     border-radius: 8px;
   }
 
-  .box_shadow {
-    box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);
+  .box_shadow:hover {
+    box-shadow: 15px 15px 0 hsl(0deg 0% 0% / 0.25);
   }
 </style>

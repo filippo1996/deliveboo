@@ -13,7 +13,7 @@
 
           <!-- Card Product -->
           <div class="row g-4">
-            <div class="col-12 col-sm-6 col-xl-6" v-for="product in products" :key="product.id">
+            <div class=" col-sm-12 col-lg-6" v-for="product in products" :key="product.id">
               <div class="card prodotto"> 
                 <div class="row">
                   <div class="col-md-4 img-box d-flex align-items-center justify-content-center">
@@ -51,9 +51,33 @@
         </div> -->
         <!-- Da implementare flottante -->
 
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary fixed-bottom d-flex justify-content-center mb-4 col-2 d-lg-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Carrello
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                pippoteresa
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         <!-- Cart -->
-        <div class="col-3 align-self-start d-lg-block" :class="{'d_none': !cart?.length}" id="carrello">
+        <div class="d-none align-self-start d-lg-block col-lg-3" :class="{'d_none': !cart?.length}" id="carrello">
           <div class="row mt-3 justify-content-center">
             <div class="card">
               <div class="card-header bg-white">
