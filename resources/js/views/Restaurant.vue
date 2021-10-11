@@ -1,6 +1,6 @@
 <template>
   <section :class="{'d_none': loading}">
-    <div class="container mt-5">
+    <div class="container py-5">
       <div class="row">
         <!-- Restaurant -->
         <div class="col-12 col-lg-9" :class="{'col-lg-12': !cart?.length}">
