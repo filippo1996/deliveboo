@@ -53,6 +53,7 @@ export default {
     transition: 0.3s;
 
     img{
+      filter: blur(0.5px);
       position: relative;
       transition: 0.3s;
       height: 100%;
@@ -62,6 +63,7 @@ export default {
   }
   
   .rest-card:hover img{
+    filter: blur(0px);
     transform: scale(1.1);
   }
 
