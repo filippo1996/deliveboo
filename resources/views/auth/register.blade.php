@@ -101,7 +101,7 @@
 
                                 <label for="postal_code" class="col-md-4 col-form-label text-md-right">{{ __('Codice Postale') }}</label>
 
-                                <input id="postal_code" type="text" class="form-control @error('postal_code') is-invalid @enderror" name="postal_code" value="{{ old('postal_code') }}" required>
+                                <input id="postal_code" type="text" minlength="5" maxlength="5" class="form-control @error('postal_code') is-invalid @enderror" name="postal_code" value="{{ old('postal_code') }}" required>
                                 
                                 @error('postal_code')
                                     <span class="invalid-feedback" role="alert">
