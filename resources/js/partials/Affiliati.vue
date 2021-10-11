@@ -35,11 +35,12 @@ export default {
 
     .title{
       text-align: center;
-
+      line-height: 1.6;
     }
-    
+
     .subtitle{
       font-size: 16px;
+      line-height: 1.6;
     }
 
   }

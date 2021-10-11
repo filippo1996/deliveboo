@@ -43,7 +43,9 @@ export default {
 <style lang="scss" scoped>
   section{
     background-color: rgb(255, 214, 112);
+    
     li{
+      font-size: 16px;
       transition: 0.3s;
       transform: perspective(200px) rotateX(25deg);
 
