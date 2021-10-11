@@ -34,11 +34,7 @@ export default {
         event.preventDefault();
 
         dropinInstance.requestPaymentMethod().then( async (payload) => {
-          // Step four: when the user is ready to complete their
-          //   transaction, use the dropinInstance to get a payment
-          //   method nonce for the user's selected payment method, then add
-          //   it a the hidden field before submitting the complete form to
-          //   a server-side integration
+          // Ready for payment
           const cart = new Cart();
           const address = JSON.parse(localStorage.getItem('address'));
           try{
@@ -52,12 +48,12 @@ export default {
               // payment successfully
               this.$router.push({ name: 'success', params: { repositories: 'authorized' } });
             } else {
-              let code = response.data.errors.code;
-              let message = response.data.errors.message;
+              let code = response.data.errors?.code;
+              let message = response.data.errors?.message;
               alert('errore nel pagamento codice ' + code + ' : ' + message);
             }
           } catch(error){
-            console.log('errore al server deliveboo ', error);
+            console.log(error);
           }
           //document.getElementById('nonce').value = payload.nonce;
           //form.submit();
