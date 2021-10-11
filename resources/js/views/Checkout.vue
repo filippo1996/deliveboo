@@ -22,12 +22,15 @@
         <div id="map"></div>
       </div>
 
+
       <router-link 
-        class="text-reset text-decoration-none" 
-        @click.prevent="saveAddress" 
+        class="text-reset text-decoration-none btn btn-primary" 
         :to="{name: 'payment'}">{{ 'payment' }}
       </router-link>
-     
+
+       <button class="btn btn-primary" 
+          @click.prevent="saveAddress">Salva Indirizzo
+      </button>
     </form>
   </div>
 </template>
