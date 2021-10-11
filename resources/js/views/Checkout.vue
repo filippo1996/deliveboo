@@ -21,7 +21,16 @@
         <input class="form-control" type="text" id="pac-input" name="pac-input" placeholder="Inserisci la tua via">
         <div id="map"></div>
       </div>
-      <button class="btn btn-primary" @click.prevent="saveAddress">Procedi al pagamento</button>
+
+
+      <router-link 
+        class="text-reset text-decoration-none btn btn-primary" 
+        :to="{name: 'payment'}">{{ 'payment' }}
+      </router-link>
+
+       <button class="btn btn-primary" 
+          @click.prevent="saveAddress">Salva Indirizzo
+      </button>
     </form>
   </div>
 </template>

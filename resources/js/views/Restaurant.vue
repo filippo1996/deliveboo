@@ -15,7 +15,6 @@
           <div class="row g-4">
             <div class="col-12 col-sm-6 col-xl-6" v-for="product in products" :key="product.id">
               <div class="card prodotto"> 
-                <!-- modificare id !!!!! -->
                 <div class="row">
                   <div class="col-md-4 img-box d-flex align-items-center justify-content-center">
                     <img :src="product.img_path" class="card-img m-0 text" :alt="product.name">
@@ -88,6 +87,13 @@
 
               <div class="card-footer text-center bg-white mt-2">
                 <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
+              </div>
+
+              <div class="text-center mt-1">
+                <router-link 
+                  class="text-reset text-decoration-none" 
+                  :to="{name: 'checkout'}">{{ 'checkout' }}
+                </router-link>
               </div>
 
             </div>

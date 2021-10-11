@@ -6,6 +6,7 @@
       <!-- rendering -->
       <router-view></router-view>
     </main>
+    <Affiliati/>
     <ContactUs/>
     <Footer/>
   </div>
@@ -14,6 +15,7 @@
 <script>
 import Header from '../partials/Header.vue';
 import Jumbotron from '../partials/Jumbotron.vue';
+import Affiliati from '../partials/Affiliati.vue';
 import ContactUs from '../partials/ContactUs.vue';
 import Footer from '../partials/Footer.vue';
 
@@ -22,6 +24,7 @@ export default {
     components: {
     Header,
     Jumbotron,
+    Affiliati,
     ContactUs,
     Footer,
     }

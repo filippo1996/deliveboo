@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\PaymentController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,3 +25,4 @@ Route::get('/restaurants',[RestaurantController::class,'index']);
 Route::get('/restaurant/{slug}', [RestaurantController::class, 'showProducts']);
 Route::get('/category/{slug}', [TagController::class, 'category']);
 Route::get('/products', [ProductController::class, 'index']);
+Route::post('/payment', [PaymentController::class, 'index']);
