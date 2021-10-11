@@ -17,7 +17,8 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurants = User::with('tags')->get();
+        $restaurants = User::with(['products' => fn($query) => $query->select('visibility')->where('visibility',1)])
+        ->whereHas('products', fn($query) => $query->select('visibility')->where('visibility',1))->with('tags')->get();
 
         return response()->json([
             'success' => true,
