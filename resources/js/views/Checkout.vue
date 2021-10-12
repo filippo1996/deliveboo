@@ -23,21 +23,22 @@
           <div id="map"></div>
         </div>
 
-      <div class="mb-3">
-        <div class="bottone btn me-2">
-          <router-link 
-            class="text-reset text-decoration-none" 
-            :to="{name: 'payment'}">{{ 'payment' }}
-          </router-link>
+        <div class="mb-3">
+          <div class="bottone btn me-2">
+            <router-link 
+              class="text-reset text-decoration-none" 
+              :to="{name: 'payment'}">{{ 'payment' }}
+            </router-link>
+          </div>
+
+          <button class="btn bottone text-decoration-none" 
+              @click.prevent="saveAddress">Salva Indirizzo
+          </button>
         </div>
 
-        <button class="btn bottone text-decoration-none" 
-            @click.prevent="saveAddress">Salva Indirizzo
-        </button>
-      </div>
-
-    </form>
-  </div>
+      </form>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -118,10 +119,6 @@ export default {
   padding: 0 1em;
   position: absolute;
   left: 35%;
-}
-
-.bg-color{
-  
 }
 
 section{
