@@ -22,15 +22,19 @@
         <div id="map"></div>
       </div>
 
+      <div class="mb-3">
+        <div class="bottone btn me-2">
+          <router-link 
+            class="text-reset text-decoration-none" 
+            :to="{name: 'payment'}">{{ 'payment' }}
+          </router-link>
+        </div>
 
-      <router-link 
-        class="text-reset text-decoration-none btn btn-primary" 
-        :to="{name: 'payment'}">{{ 'payment' }}
-      </router-link>
+        <button class="btn bottone" 
+            @click.prevent="saveAddress">Salva Indirizzo
+        </button>
+      </div>
 
-       <button class="btn btn-primary" 
-          @click.prevent="saveAddress">Salva Indirizzo
-      </button>
     </form>
   </div>
 </template>
