@@ -3,7 +3,7 @@
     <div class="container py-5">
       <div class="row">
         <!-- Restaurant -->
-        <div class="col-12 col-lg-9" :class="{'col-lg-12': !cart?.length}">
+        <div class="col-12 col-lg-9" :class="{'col-lg-12': !cart?.items?.length}">
           
           <!-- Restaurant Header -->
           <div class="row restaurant_header text-white my-4 py-5">
@@ -60,17 +60,18 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div class="row my-2 pb-2" v-for="(obj, index) in cart" :key="index">
+                <div class="row my-2 pb-2" v-for="(obj, index) in cart?.items" :key="index">
                   <div class="row">
                     <div class="col-2 fw-bold qty_cart">{{ obj.qty }}x</div>
-                    <div class="col-7 text-start ">{{ obj.item.name }}</div>
-                    <div class="col-3 price">{{ obj.item.price.toFixed(2) }}&euro;</div>
+                    <div class="col-7 text-start ">{{ obj.product.name }}</div>
+                    <div class="col-3 price">{{ obj.product.price.toFixed(2) }}&euro;</div>
                   </div>
                   <div class="row p-2">
                     <div class="col-md-6 d-flex justify-content-start">
                       <span class="cursor_pointer" @click="setQuantity(obj, '-')">
                         <i class="fas fa-minus"></i>
                       </span>
+                      <i class="fas fa-trash-alt mx-5"></i>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end mb-4">
                       <span class="cursor_pointer" @click="setQuantity(obj, '+')">
@@ -83,6 +84,7 @@
               <div class="modal-footer">
                 <div class="card-footer text-center bg-white mt-2">
                 <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
+                <i class="fas fa-trash-alt"></i>
               </div>
                  <router-link 
                   class="text-reset text-decoration-none" 
@@ -95,7 +97,7 @@
 
 
         <!-- Cart -->
-        <div class="d-none align-self-start d-lg-block col-lg-3" :class="{'d_none': !cart?.length}" id="carrello">
+        <div class="d-none align-self-start d-lg-block col-lg-3" :class="{'d_none': !cart?.items?.length}" id="carrello">
           <div class="row mt-3 justify-content-center">
             <div class="card">
               <div class="card-header bg-white">
@@ -104,19 +106,22 @@
               </div>
 
               <div class="card-body">
-                <div class="row my-2 pb-2" v-for="(obj, index) in cart" :key="index">
+                <div class="row my-2 pb-2" v-for="(obj, index) in cart?.items" :key="index">
                   <div class="row">
                     <div class="col-2 fw-bold qty_cart">{{ obj.qty }}x</div>
-                    <div class="col-7 text-start ">{{ obj.item.name }}</div>
-                    <div class="col-3 price">{{ obj.item.price.toFixed(2) }}&euro;</div>
+                    <div class="col-7 text-start ">{{ obj.product.name }}</div>
+                    <div class="col-3 price">{{ obj.product.price.toFixed(2) }}&euro;</div>
                   </div>
                   <div class="row p-2">
-                    <div class="col-md-6 d-flex justify-content-start">
+                    <div class="col-md-4 d-flex justify-content-start">
                       <span class="cursor_pointer" @click="setQuantity(obj, '-')">
                         <i class="fas fa-minus"></i>
                       </span>
                     </div>
-                    <div class="col-md-6 d-flex justify-content-end mb-4">
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-end mb-4">
                       <span class="cursor_pointer" @click="setQuantity(obj, '+')">
                         <i class="fas fa-plus"></i>
                       </span>
@@ -128,6 +133,7 @@
 
               <div class="card-footer text-center bg-white mt-2">
                 <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
+                <i class="fas fa-trash-alt"></i>
               </div>
 
               <div class="text-center mt-1">
@@ -144,7 +150,7 @@
 
         <!-- Home & Return to Top -->
         <div class="row mt-5">
-          <div class="col-lg-9 d-flex justify-content-center mb-5" :class="{'col-lg-12': !cart?.length}">
+          <div class="col-lg-9 d-flex justify-content-center mb-5" :class="{'col-lg-12': !cart?.items?.length}">
             <router-link 
               class=" bottone p-2" 
               :to="{ name: 'home' }">
@@ -205,14 +211,14 @@ export default {
     },
     insertCart(product){
       const qty = document.querySelector(`input[data-product="${product.id}"]`);
-      const cart = new Cart(product);
+      const cart = new Cart(this.restaurant,product);
       cart.setCart(+qty.value);
       // set property cart
       this.cart = cart.getCart();
       this.totalPriceCart = cart.getTotalPrice();
     },
     setQuantity(product, symbol){
-      const cart = new Cart(product);
+      const cart = new Cart(this.restaurant, product);
       cart.setQty(1, symbol);
       // set property cart
       this.cart = cart.getCart();

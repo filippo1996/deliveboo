@@ -1,26 +1,27 @@
 <template>
-  <div class="container mt-5">
-    <form>
-      <div class="mb-3 pt-5">
-        <label for="name" class="form-label">Nome</label>
-        <input type="name" class="form-control" id="name" required>
-      </div>
-      <div class="mb-3">
-        <label for="lastname" class="form-label">Cognome</label>
-        <input type="lastname" class="form-control" id="lastname" required>
-      </div>
-      <div id="infowindow-content">
-        <input type="hidden" id="street_number">
-        <input type="hidden" id="route">
-        <input type="hidden" id="locality">
-        <input type="hidden" id="country">
-        <input type="hidden" id="postal_code">
-      </div>
-      <div class="mb-3">
-        <label for="pac-input" class="form-label">Indirizzo di spedizione</label>
-        <input class="form-control" type="text" id="pac-input" name="pac-input" placeholder="Inserisci la tua via">
-        <div id="map"></div>
-      </div>
+  <section>
+    <div class="container mt-5 bg-color">
+      <form>
+        <div class="mb-3 pt-5">
+          <label for="name" class="form-label">Nome</label>
+          <input type="name" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Cognome</label>
+          <input type="lastname" class="form-control" id="lastname" required>
+        </div>
+        <div id="infowindow-content">
+          <input type="hidden" id="street_number">
+          <input type="hidden" id="route">
+          <input type="hidden" id="locality">
+          <input type="hidden" id="country">
+          <input type="hidden" id="postal_code">
+        </div>
+        <div class="mb-3">
+          <label for="pac-input" class="form-label">Indirizzo di spedizione</label>
+          <input class="form-control" type="text" id="pac-input" name="pac-input" placeholder="Inserisci la tua via">
+          <div id="map"></div>
+        </div>
 
       <div class="mb-3">
         <div class="bottone btn me-2">
@@ -30,7 +31,7 @@
           </router-link>
         </div>
 
-        <button class="btn bottone" 
+        <button class="btn bottone text-decoration-none" 
             @click.prevent="saveAddress">Salva Indirizzo
         </button>
       </div>
@@ -117,6 +118,15 @@ export default {
   padding: 0 1em;
   position: absolute;
   left: 35%;
+}
+
+.bg-color{
+  
+}
+
+section{
+  background-color: #6FA3D6;
+  color: white;
 }
 
 </style>

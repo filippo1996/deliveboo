@@ -1,7 +1,16 @@
 <template>
-  <div class="mt-5 my-5">
-    <h1>Ordine completato con successo</h1>
-  </div>
+  <section>
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-6 mt-5 d-flex align-items-center">
+         <h3>L'ordine è stato completato con successo e arriverà il prima possibile</h3>
+        </div>
+        <div class="col-6 d-flex justify-content-center mt-5">
+          <img src="/images/chef.png" alt="chef">
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -11,6 +20,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+  section{
+    background-color: #6FA3D6;
+  }
+
+  h3{
+    color: white;
+    text-align: center;
+  }
 
 </style>
