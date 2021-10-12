@@ -1,5 +1,8 @@
 <template>
   <header>
+
+    
+
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <router-link class="nav-link active text-light d-none d-sm-block" :to="{name: 'home'}"> <img src="/images/logo.png" class="logo" alt="logo"></router-link>
@@ -14,7 +17,7 @@
             </li>
           </ul>
           <div>
-            <a class="btn bottone me-2 text-decoration-none" href="http://localhost:8000/restaurant/login">Accedi</a>
+            <a class="btn bottone me-3 text-decoration-none" href="http://localhost:8000/restaurant/login">Accedi</a>
             <a class="btn bottone me-2 text-decoration-none" href="http://localhost:8000/restaurant/register">Registrati</a>
           </div>
         </div>
@@ -32,8 +35,19 @@ export default {
 <style lang="scss" scoped>
 @import 'resources/sass/_variables.scss';
 .navbar {
-
   background-color: rgb(65, 113, 142);
+  
+  .bottone{
+    background-color:  rgb(112, 163, 214);
+    border-radius: 13px;
+    padding: 5px 15px;
+    color: white;
+    transition: 0.4s;
+
+    &:hover{
+      background-color: rgb(133, 193, 255);
+    }
+  }
   .logo{
     width: 100px;
   }
