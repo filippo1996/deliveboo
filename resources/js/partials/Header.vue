@@ -31,19 +31,20 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  // position: fixed;
 
   background-color: rgb(65, 113, 142);
   
   .bottone{
     background-color: rgb(133, 193, 255);
-    border-radius: 50px;
-    padding: 2px 15px;
+    border-radius: 2px 12px 2px 12px;
+    padding: 5px 15px;
     color: white;
+    transition: 0.4s;
 
     &:hover{
       background-color: rgb(112, 163, 214);
-      transition: 0.3s;
+      border-radius: 12px 2px 12px 2px;
+    
     }
   }
   .logo{
