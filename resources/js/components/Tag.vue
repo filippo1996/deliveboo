@@ -4,10 +4,10 @@
     <div class="row">
       <h2 class="title mt-3 mb-4">Tipologie di Ristoranti</h2>
         <ul class="list-unstyled d-flex flex-wrap">
-          <li>
+          <li class="my-2">
             <router-link class="nav-link rest-tag fw-bold" :to="{ name: 'home' }">{{ 'Tutti' }}</router-link>
           </li>
-          <li v-for="(tag, index) in tags" :key="index">
+          <li class="my-2" v-for="(tag, index) in tags" :key="index">
             <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: index }}">{{ tag }}</router-link>
           </li>
         </ul>
@@ -52,19 +52,23 @@ export default {
 
     li{
       font-size: 16px;
-      transition: 0.3s;
-      transform: perspective(200px) rotateX(25deg);
+      transition: 0.5s;
+      // transform: perspective(200px) rotateX(25deg);
 
       &:hover{
-        transform: perspective(100px) rotateX(0deg);
+        // transform: perspective(100px) rotateX(0deg);
+        position: relative;
+        bottom: 15px;
+        // transform: translate-y(-15px);
       }
     }
 
     .rest-tag{
-      background: rgb(226,225,206);
-      background: linear-gradient(0deg, rgba(226,225,206,1) 0%, rgba(215,84,3,1) 5%);
+      // background: rgb(226,225,206);
+      // background: linear-gradient(0deg, rgba(226,225,206,1) 0%, rgba(215,84,3,1) 5%);
+      background-color: $blue;
       margin: 0 12px;
-      border-radius: 10px;
+      border-radius: 15px;
       color: white;
     }
   }
