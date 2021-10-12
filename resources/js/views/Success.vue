@@ -1,11 +1,11 @@
 <template>
   <section>
     <div class="container">
-      <div class="row my-5">
-        <div class="col-sm-12 col-6">
-         <h3>Ordine completato con successo e arriverà il prima possibile</h3>
+      <div class="row py-5">
+        <div class="col-6 mt-5 d-flex align-items-center">
+         <h3>L'ordine è stato completato con successo e arriverà il prima possibile</h3>
         </div>
-        <div class="col-sm-12 col-6 d-flex justify-content-center">
+        <div class="col-6 d-flex justify-content-center mt-5">
           <img src="/images/chef.png" alt="chef">
         </div>
       </div>
