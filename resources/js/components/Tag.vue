@@ -57,9 +57,9 @@ export default {
 
       &:hover{
         // transform: perspective(100px) rotateX(0deg);
-        position: relative;
-        bottom: 15px;
-        // transform: translate-y(-15px);
+        // position: relative;
+        // bottom: 50px;
+        transform: translateY(-15px)
       }
     }
 
