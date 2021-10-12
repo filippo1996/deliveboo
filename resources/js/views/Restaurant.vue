@@ -60,11 +60,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div class="row my-2 pb-2" v-for="(obj, index) in cart" :key="index">
+                <div class="row my-2 pb-2" v-for="(obj, index) in cart?.items" :key="index">
                   <div class="row">
                     <div class="col-2 fw-bold qty_cart">{{ obj.qty }}x</div>
-                    <div class="col-7 text-start ">{{ obj.item.name }}</div>
-                    <div class="col-3 price">{{ obj.item.price.toFixed(2) }}&euro;</div>
+                    <div class="col-7 text-start ">{{ obj.product.name }}</div>
+                    <div class="col-3 price">{{ obj.product.price.toFixed(2) }}&euro;</div>
                   </div>
                   <div class="row p-2">
                     <div class="col-md-6 d-flex justify-content-start">
