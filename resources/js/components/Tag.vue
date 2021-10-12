@@ -4,10 +4,10 @@
     <div class="row">
       <h2 class="title mt-3 mb-4">Tipologie di Ristoranti</h2>
         <ul class="list-unstyled d-flex flex-wrap">
-          <li class="my-2">
+          <li class="mt-2 mb-3 text-center">
             <router-link class="nav-link rest-tag fw-bold" :to="{ name: 'home' }">{{ 'Tutti' }}</router-link>
           </li>
-          <li class="my-2" v-for="(tag, index) in tags" :key="index">
+          <li class="mt-2 mb-3 text-center" v-for="(tag, index) in tags" :key="index">
             <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: index }}">{{ tag }}</router-link>
           </li>
         </ul>
@@ -48,14 +48,16 @@ export default {
 
     .title{
       color: $blue;
+      font-weight: 500;
     }
 
     li{
+      width: 140px;
       font-size: 16px;
       transition: 0.5s;
 
       &:hover{
-        transform: translateY(-15px)
+        transform: translateY(-15px);
       }
     }
 
@@ -64,6 +66,11 @@ export default {
       margin: 0 12px;
       border-radius: 15px;
       color: white;
+      transition: 0.5s;
+
+      &:hover{
+        background-color: #4e87aa;
+      }
     }
   }
 </style>
