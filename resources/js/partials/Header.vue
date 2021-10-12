@@ -36,7 +36,6 @@ export default {
 @import 'resources/sass/_variables.scss';
 .navbar {
   background-color: rgb(65, 113, 142);
-<<<<<<< HEAD
   
   .bottone{
     background-color:  rgb(112, 163, 214);
@@ -49,8 +48,6 @@ export default {
       background-color: rgb(133, 193, 255);
     }
   }
-=======
->>>>>>> 11a37b4367bebe4ea62eecee68d51e4f54580e7f
   .logo{
     width: 100px;
   }

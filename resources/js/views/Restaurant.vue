@@ -273,7 +273,6 @@ section {
   }
 }
 
-<<<<<<< HEAD
 .to_home_btn {
   background-color: $light-blue;
   padding: 10px;
@@ -282,8 +281,6 @@ section {
 }
 
 
-=======
->>>>>>> 11a37b4367bebe4ea62eecee68d51e4f54580e7f
 // Product
 
 .prodotto {
