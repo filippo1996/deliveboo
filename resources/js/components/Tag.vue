@@ -53,13 +53,10 @@ export default {
     li{
       font-size: 16px;
       transition: 0.5s;
-      // transform: perspective(200px) rotateX(25deg);
 
       &:hover{
-        // transform: perspective(100px) rotateX(0deg);
         position: relative;
         bottom: 15px;
-        // transform: translate-y(-15px);
       }
     }
 

@@ -21,7 +21,7 @@
             <div class="position-relative w-100 h-100">
               <img src="/images/scooter.png" alt="scooter" class="bike position-absolute">
             </div>
-            <div class="position-relative w-100 h-100 smoke-container">
+            <div class="position-relative w-100 smoke-container">
               <img src="/images/smoke.png" alt="smoke" class="smoke position-absolute">
             </div>
           </div>
@@ -127,15 +127,17 @@ export default {
       z-index: 100;
     }
 
-    .smoke{
-      top: -20px;
-      animation-delay: 2.7s;
-      animation-duration: 1.7s;
-      animation-name: smoke;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
-      opacity: 0;
-      z-index: 99;
+    .smoke-container{
+      .smoke{
+        top: -20px;
+        animation-delay: 2.7s;
+        animation-duration: 1.7s;
+        animation-name: smoke;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        z-index: 99;
+      }
     }
   }
 
