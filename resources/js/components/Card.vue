@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="col-12 col-sm-6 col-lg-3 border-white my-3" 
+    class="col-12 col-sm-6 col-lg-3 border-white mb-3" 
     v-for="restaurant in items" :key="restaurant.id">
     
     <router-link 

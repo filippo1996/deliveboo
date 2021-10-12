@@ -31,7 +31,7 @@
                         placeholder="qty" 
                         min="1"
                         class="w-25 h-auto border border rounded_5">
-                      <div class="float-lg-end ">{{ product.price.toFixed(2) }} &euro; 
+                      <div class="float-sm-end w-75">{{ product.price.toFixed(2) }} &euro; 
                         <span class="cursor_pointer" @click="insertCart(product)">
                           <i class="fas fa-plus plus_icon"></i>
                         </span>
@@ -46,7 +46,7 @@
 
         <!-- Button trigger modal -->
         <div class="row fixed-bottom justify-content-center">
-          <button type="button" class="btn btn-primary mb-4 col-2 d-lg-none cart-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn bottone mb-4 col-4 d-lg-none cart-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Carrello {{ totalPriceCart.toFixed(2) }}&euro;
           </button>
         </div>
@@ -146,7 +146,7 @@
         <div class="row mt-5">
           <div class="col-lg-9 d-flex justify-content-center mb-5" :class="{'col-lg-12': !cart?.length}">
             <router-link 
-              class="to_home_btn px-3" 
+              class=" bottone p-2" 
               :to="{ name: 'home' }">
                 <i class="fas fa-home"></i> {{ 'Torna alla home' }} 
             </router-link>
@@ -226,10 +226,8 @@ export default {
 
 </script>
 
-
 <style lang="scss" scoped>
 @import 'resources/sass/_variables.scss';
-
 
 
 // General
@@ -251,9 +249,7 @@ section {
 }
 
 
-
 // Button
-
 #returnBtn {
   left: 0;
   transform: translateX(22px);
@@ -285,7 +281,6 @@ section {
 }
 
 
-
 // Product
 
 .prodotto {
@@ -294,7 +289,11 @@ section {
 }
 
 .card {
-  box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);
+  transition: 0.4s;
+
+  &:hover{
+    box-shadow: 10px 10px 0 hsl(0deg 0% 0% / 0.25);  
+  }
 
   .img-box {
     .card-img {

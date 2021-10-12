@@ -21,7 +21,7 @@
             <div class="position-relative w-100 h-100">
               <img src="/images/scooter.png" alt="scooter" class="bike position-absolute">
             </div>
-            <div class="position-relative w-100 h-100 smoke-container">
+            <div class="position-relative w-100 smoke-container">
               <img src="/images/smoke.png" alt="smoke" class="smoke position-absolute">
             </div>
           </div>
@@ -31,44 +31,7 @@
 
     <!-- lo so che è osceno non giudicatemi, poi lo sistemo vvb :))) -->
     <div class="street d-flex">
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
+      <div id="linea"></div>
     </div>
   </div>
 </template>
@@ -102,12 +65,21 @@ export default {
   created(){
     this.searchUrl(false);
   },
+  // mounted(){
+  //   function printDiv() {
+  //     for(let i = 0; i < 100; i++){
+  //       document.getElementById('linea').innerHTML += 'ciao';
+  //     }
+  //   }
+  //   printDiv();
+  // },
   watch:{
     search: function(){
       this.searchUrl(true);
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -155,15 +127,17 @@ export default {
       z-index: 100;
     }
 
-    .smoke{
-      top: -20px;
-      animation-delay: 2.7s;
-      animation-duration: 1.7s;
-      animation-name: smoke;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
-      opacity: 0;
-      z-index: 99;
+    .smoke-container{
+      .smoke{
+        top: -20px;
+        animation-delay: 2.7s;
+        animation-duration: 1.7s;
+        animation-name: smoke;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        z-index: 99;
+      }
     }
   }
 
@@ -198,15 +172,21 @@ export default {
   background-color: rgb(167, 167, 167);
   overflow-x: hidden;
 
-  .linea{
-    width: 20px;
+  #linea{
+    // width: 20px;
+    // height: 4px;
+    // background-color: white;
+    // margin-right: 20px;
+    // position: relative;
+    // top: 5px;
+    // flex-shrink: 0;
+    // overflow-x: hidden;
+
+    width: 100%;
     height: 4px;
-    background-color: white;
-    margin-right: 20px;
-    position: relative;
-    top: 5px;
-    flex-shrink: 0;
-    overflow-x: hidden;
+    margin: 10px 0;
+    background-position: 60% 20%; 
+    background: repeating-linear-gradient(to right,white 0,white 40px,transparent 10px,transparent 80px);
   }
 }
 
@@ -391,6 +371,10 @@ export default {
       100% {right: 10px; top: -40px; opacity: 0; transform: scale(1.4)};
     }
   }
+
+  // #linea{
+
+  // }
 }
 
 </style>

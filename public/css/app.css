@@ -1,6 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@import url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap);
 @charset "UTF-8";
+.bottone {
+  background-color: #70a3d6;
+  border-radius: 4px 12px 4px 12px;
+  padding: 5px 15px;
+  color: white;
+  transition: 0.4s;
+}
+.bottone:hover {
+  background-color: #85c1ff;
+  border-radius: 12px 4px 12px 4px;
+}
+
 /*!
  * Bootstrap v5.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
