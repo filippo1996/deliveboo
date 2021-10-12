@@ -1,15 +1,17 @@
 <template>
-  <div class="container mt-5">
+  <section>
+    <div class="container mt-5">
     <div class="row pt-5">
       <div class="col">
-        <form id="payment-form mb-3">
+        <form id="payment-form">
           <div id="dropin-container"></div>
-          <input class="btn btn-primary" type="submit" value="Paga"/>
+          <input class="btn btn-primary mt-2 mb-5" type="submit" value="Paga"/>
           <!-- <input type="hidden" id="nonce" name="payment_method_nonce"/> -->
         </form>
       </div>
     </div>
   </div>
+  </section>
 </template>
 
 <script>
@@ -68,6 +70,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+section{
+  background-color: #6FA3D6;
+  color: white;
+}
 
 </style>
