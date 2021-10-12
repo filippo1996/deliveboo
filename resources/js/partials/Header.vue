@@ -35,15 +35,15 @@ export default {
   background-color: rgb(65, 113, 142);
   
   .bottone{
-    background-color: rgb(133, 193, 255);
-    border-radius: 2px 12px 2px 12px;
+    background-color:  rgb(112, 163, 214);
+    border-radius: 4px 12px 4px 12px;
     padding: 5px 15px;
     color: white;
     transition: 0.4s;
 
     &:hover{
-      background-color: rgb(112, 163, 214);
-      border-radius: 12px 2px 12px 2px;
+      background-color: rgb(133, 193, 255);
+      border-radius: 12px 4px 12px 4px;
     
     }
   }
