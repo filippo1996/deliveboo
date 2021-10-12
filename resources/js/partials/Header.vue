@@ -30,22 +30,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/_variables.scss';
 .navbar {
-  // position: fixed;
 
   background-color: rgb(65, 113, 142);
-  
-  .bottone{
-    background-color: rgb(133, 193, 255);
-    border-radius: 50px;
-    padding: 2px 15px;
-    color: white;
-
-    &:hover{
-      background-color: rgb(112, 163, 214);
-      transition: 0.3s;
-    }
-  }
   .logo{
     width: 100px;
   }

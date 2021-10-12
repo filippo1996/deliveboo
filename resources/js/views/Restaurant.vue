@@ -44,32 +44,50 @@
           </div>  
         </div>
 
-
-        <!-- Cart button -->
-        <!-- <div class="fixed-bottom text-center mb-4 d-lg-none">
-          <a href="#" class="cart-button px-4 py-3 rounded-pill text-decoration-none">Carrello</a>
-        </div> -->
-        <!-- Da implementare flottante -->
-
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary fixed-bottom d-flex justify-content-center mb-4 col-2 d-lg-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Carrello
-        </button>
+        <div class="row fixed-bottom justify-content-center">
+          <button type="button" class="btn bottone mb-4 col-4 d-lg-none cart-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Carrello {{ totalPriceCart.toFixed(2) }}&euro;
+          </button>
+        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Il tuo carrello</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                pippoteresa
+                <div class="row my-2 pb-2" v-for="(obj, index) in cart" :key="index">
+                  <div class="row">
+                    <div class="col-2 fw-bold qty_cart">{{ obj.qty }}x</div>
+                    <div class="col-7 text-start ">{{ obj.item.name }}</div>
+                    <div class="col-3 price">{{ obj.item.price.toFixed(2) }}&euro;</div>
+                  </div>
+                  <div class="row p-2">
+                    <div class="col-md-6 d-flex justify-content-start">
+                      <span class="cursor_pointer" @click="setQuantity(obj, '-')">
+                        <i class="fas fa-minus"></i>
+                      </span>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end mb-4">
+                      <span class="cursor_pointer" @click="setQuantity(obj, '+')">
+                        <i class="fas fa-plus"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="card-footer text-center bg-white mt-2">
+                <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
+              </div>
+                 <router-link 
+                  class="text-reset text-decoration-none" 
+                  :to="{name: 'checkout'}">{{ 'checkout' }}
+                </router-link>
               </div>
             </div>
           </div>
@@ -105,9 +123,8 @@
                     </div>
                   </div>
                 </div>
-                
-                <!-- end cart -->
               </div>
+                <!-- end cart -->
 
               <div class="card-footer text-center bg-white mt-2">
                 <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
@@ -129,7 +146,7 @@
         <div class="row mt-5">
           <div class="col-lg-9 d-flex justify-content-center mb-5" :class="{'col-lg-12': !cart?.items?.length}">
             <router-link 
-              class="to_home_btn px-3" 
+              class=" bottone p-2" 
               :to="{ name: 'home' }">
                 <i class="fas fa-home"></i> {{ 'Torna alla home' }} 
             </router-link>
@@ -260,15 +277,6 @@ section {
   }
 }
 
-.to_home_btn {
-  background-color: $light-blue;
-  padding: 10px;
-  border-radius: 20px;
-  text-decoration: none;
-}
-
-
-
 // Product
 
 .prodotto {
@@ -371,17 +379,17 @@ section {
 
 // Da implementare
 
-// .cart-button {
-//   background-color: $light-blue;
-//   color: white;
-// }
+.cart-button {
+  background-color: $light-blue;
+  color: white;
+}
 
-// .order-button{
-//   background-color: $light-blue;
-//   padding: 2px 15px;
+.order-button{
+  background-color: $light-blue;
+  padding: 2px 15px;
 
-//   &:hover{
-//     background-color: #70a3d6;
-//   }
-// }
+  &:hover{
+    background-color: #70a3d6;
+  }
+}
 </style>

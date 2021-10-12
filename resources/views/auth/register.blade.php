@@ -36,12 +36,6 @@
 
               <!-- Tag ristorante -->
                 <div class="form-group row my-4">
-                  {{-- <label 
-                    for="tag_id" 
-                    class="col-md-4 col-form-label text-md-right ms-1">
-                      {{ __('Categoria Ristorante') }}
-                  </label> --}}
-
                   <select 
                     name="tag_id" 
                     id="tag_id" 
@@ -69,7 +63,8 @@
                     class="w-100 form-control @error('email') is-invalid @enderror" 
                     name="email" 
                     value="{{ old('email') }}" 
-                    required autocomplete="email"
+                    required 
+                    autocomplete="email"
                     placeholder="E-mail">
 
                     @error('email')

@@ -19,9 +19,9 @@
           </div>
           <div class="col-10 col-sm-6 position-absolute scooter me-4">
             <div class="position-relative w-100 h-100">
-              <img src="/images/scooter2.png" alt="scooter" class="bike position-absolute">
+              <img src="/images/scooter.png" alt="scooter" class="bike position-absolute">
             </div>
-            <div class="position-relative w-100 h-100 smoke-container">
+            <div class="position-relative w-100 smoke-container">
               <img src="/images/smoke.png" alt="smoke" class="smoke position-absolute">
             </div>
           </div>
@@ -29,46 +29,9 @@
       </div>
     </div>
 
-    <!-- lo so che è osceno non giudicatemi, lo sistemo vvb :))) -->
+    <!-- lo so che è osceno non giudicatemi, poi lo sistemo vvb :))) -->
     <div class="street d-flex">
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
-      <div class="linea"></div>
+      <div id="linea"></div>
     </div>
   </div>
 </template>
@@ -102,12 +65,21 @@ export default {
   created(){
     this.searchUrl(false);
   },
+  // mounted(){
+  //   function printDiv() {
+  //     for(let i = 0; i < 100; i++){
+  //       document.getElementById('linea').innerHTML += 'ciao';
+  //     }
+  //   }
+  //   printDiv();
+  // },
   watch:{
     search: function(){
       this.searchUrl(true);
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -118,8 +90,13 @@ export default {
   background-color: rgb(133, 193, 255);
   background: url('/images/background.png');
   background-size: cover;
+  // background-position: 70% 0;
   background-repeat:no-repeat;
-  background-position: bottom;
+  animation-name: jumbo;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  animation-duration: 2s;
 
   .jumbo-text{
     font-family: 'Comfortaa', cursive;
@@ -142,7 +119,7 @@ export default {
     .bike{
       bottom: -20px;
       right: -27px;
-      animation-delay: 1.5s;
+      animation-delay: 2s;
       animation-duration: 2s;
       animation-name: delivery-man;
       animation-timing-function: ease-in-out;
@@ -150,15 +127,17 @@ export default {
       z-index: 100;
     }
 
-    .smoke{
-      top: -20px;
-      animation-delay: 2.2s;
-      animation-duration: 1.7s;
-      animation-name: smoke;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
-      opacity: 0;
-      z-index: 99;
+    .smoke-container{
+      .smoke{
+        top: -20px;
+        animation-delay: 2.7s;
+        animation-duration: 1.7s;
+        animation-name: smoke;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        z-index: 99;
+      }
     }
   }
 
@@ -193,20 +172,30 @@ export default {
   background-color: rgb(167, 167, 167);
   overflow-x: hidden;
 
-  .linea{
-    width: 20px;
+  #linea{
+    // width: 20px;
+    // height: 4px;
+    // background-color: white;
+    // margin-right: 20px;
+    // position: relative;
+    // top: 5px;
+    // flex-shrink: 0;
+    // overflow-x: hidden;
+
+    width: 100%;
     height: 4px;
-    background-color: white;
-    margin-right: 20px;
-    position: relative;
-    top: 5px;
-    flex-shrink: 0;
-    overflow-x: hidden;
+    margin: 10px 0;
+    background-position: 60% 20%; 
+    background: repeating-linear-gradient(to right,white 0,white 40px,transparent 10px,transparent 80px);
   }
 }
 
 //        ---------------  animazione media query  ---------------
 @media screen and (min-width: 0px) and (max-width: 575px) {
+  .jumbo{
+    background-position: 45% 0;
+  }
+
   .title{
     font-size: 30px;
   }
@@ -227,6 +216,10 @@ export default {
 }
 
 @media screen and (min-width: 575px) and (max-width: 768px ){
+  .jumbo{
+    background-position: 30% 0;
+  }
+
   .title{
     font-size: 30px;
   }
@@ -237,11 +230,16 @@ export default {
 
   .scooter{
     .bike{
-      height: 320px;
+      height: 300px;
     }
     
     .smoke-container{
       display: none;
+    }
+
+    @keyframes jumbo{
+      0% { background-position: 30% 0 };
+      100% { background-position: 20% 0 };
     }
 
     @keyframes delivery-man {
@@ -259,6 +257,10 @@ export default {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
+  .jumbo{
+    background-position: 50% 0;
+  }
+
   .title{
     font-size: 30px;
   }
@@ -277,6 +279,11 @@ export default {
       height: 40px;
     }
 
+    @keyframes jumbo{
+      0% { background-position: 50% 0 };
+      100% { background-position: 40% 0 };
+    }
+
     @keyframes delivery-man {
       from {right: -27px};
       to {right: 180px};
@@ -284,13 +291,17 @@ export default {
 
     @keyframes smoke {
       0% {right: 50px; opacity: 0; transform: scale(0.8);};
-      50% {opacity: 1; transform: scale(1.1);}
-      100% {right: 0; top: -30px; opacity: 0; transform: scale(1.2);};
+      50% {opacity: 1; transform: scale(1.2);}
+      100% {right: 0; top: -30px; opacity: 0; transform: scale(1.4);};
     }
   }
 }
 
 @media screen and (min-width: 1200px) {
+  .jumbo{
+    background-position: 60% 0;
+  }
+
   .title{
     font-size: 42px;
   }
@@ -305,8 +316,12 @@ export default {
     }
 
     .smoke{
-      height: 50px;
-      top: -5px;
+      height: 40px;
+    }
+
+    @keyframes jumbo{
+      0% { background-position: 60% 0 };
+      100% { background-position: 50% 0 };
     }
 
     @keyframes delivery-man {
@@ -315,14 +330,18 @@ export default {
     }
 
     @keyframes smoke {
-      0% {right: 75px; opacity: 1; transform: scale(0.8);};
-      50% {opacity: 1; transform: scale(1.1);}
-      100% {right: 10px; top: -26px; opacity: 0; transform: scale(1.2);};
+      0% {right: 100px; opacity: 0; transform: scale(0.8);};
+      50% {opacity: 1; top: -25px; transform: scale(1.2);};
+      100% {right: 10px; top: -27px; opacity: 0; transform: scale(1.4);};
     }
   }
 }
 
 @media screen and (min-width: 1400px) {
+  .jumbo{
+    background-position: 70% 0;
+  }
+
   .subtitle{
     display: block;
   }
@@ -334,25 +353,28 @@ export default {
 
     .smoke{
       height: 50px;
-      top: -70px;
-      right: 0;
+    }
+
+    @keyframes jumbo{
+      0% { background-position: 70% 0 };
+      100% { background-position: 60% 0 };
     }
 
     @keyframes delivery-man {
-      0% {right: -27px; bottom: -38px};
-      100% {right: 300px; bottom: -33px};
-      from {right: -27px; bottom: -38px};
-      to {right: 300px; bottom: -33px};
+      from {right: -27px};
+      to {right: 300px};
     }
     
     @keyframes smoke {
-      0% {right: 75px; top: -20px; opacity: 0; transform: scale(0.8);};
-      50% {opacity: 1; transform: scale(1.1);}
-      100% {right: 10px; top: -35px; opacity: 0; transform: scale(1.2);};
-      from {right: 75px; top: -20px; transform: scale(0.8);};
-      to {right: 10px; top: -35px; opacity: 0; transform: scale(1.4);};
+      0% {right: 100px; top: -27px; opacity: 0; transform: scale(0.8)};
+      50% {opacity: 1; top: -33px; transform: scale(1.1)};
+      100% {right: 10px; top: -40px; opacity: 0; transform: scale(1.4)};
     }
   }
+
+  // #linea{
+
+  // }
 }
 
 </style>
