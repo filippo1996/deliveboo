@@ -46,7 +46,7 @@
 
         <!-- Button trigger modal -->
         <div class="row fixed-bottom justify-content-center">
-          <button type="button" class="btn btn-primary mb-4 col-2 d-lg-none cart-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn bottone mb-4 col-4 d-lg-none cart-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Carrello {{ totalPriceCart.toFixed(2) }}&euro;
           </button>
         </div>
@@ -146,7 +146,7 @@
         <div class="row mt-5">
           <div class="col-lg-9 d-flex justify-content-center mb-5" :class="{'col-lg-12': !cart?.length}">
             <router-link 
-              class="to_home_btn px-3" 
+              class=" bottone p-2" 
               :to="{ name: 'home' }">
                 <i class="fas fa-home"></i> {{ 'Torna alla home' }} 
             </router-link>
@@ -273,6 +273,7 @@ section {
   }
 }
 
+<<<<<<< HEAD
 .to_home_btn {
   background-color: $light-blue;
   padding: 10px;
@@ -281,6 +282,8 @@ section {
 }
 
 
+=======
+>>>>>>> 11a37b4367bebe4ea62eecee68d51e4f54580e7f
 // Product
 
 .prodotto {
