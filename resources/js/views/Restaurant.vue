@@ -3,7 +3,7 @@
     <div class="container py-5">
       <div class="row">
         <!-- Restaurant -->
-        <div class="col-12 col-lg-9" :class="{'col-lg-12': !cart?.length}">
+        <div class="col-12 col-lg-9" :class="{'col-lg-12': !cart?.items?.length}">
           
           <!-- Restaurant Header -->
           <div class="row restaurant_header text-white my-4 py-5">
@@ -77,7 +77,7 @@
 
 
         <!-- Cart -->
-        <div class="d-none align-self-start d-lg-block col-lg-3" :class="{'d_none': !cart?.length}" id="carrello">
+        <div class="d-none align-self-start d-lg-block col-lg-3" :class="{'d_none': !cart?.items?.length}" id="carrello">
           <div class="row mt-3 justify-content-center">
             <div class="card">
               <div class="card-header bg-white">
@@ -86,11 +86,11 @@
               </div>
 
               <div class="card-body">
-                <div class="row my-2 pb-2" v-for="(obj, index) in cart" :key="index">
+                <div class="row my-2 pb-2" v-for="(obj, index) in cart?.items" :key="index">
                   <div class="row">
                     <div class="col-2 fw-bold qty_cart">{{ obj.qty }}x</div>
-                    <div class="col-7 text-start ">{{ obj.item.name }}</div>
-                    <div class="col-3 price">{{ obj.item.price.toFixed(2) }}&euro;</div>
+                    <div class="col-7 text-start ">{{ obj.product.name }}</div>
+                    <div class="col-3 price">{{ obj.product.price.toFixed(2) }}&euro;</div>
                   </div>
                   <div class="row p-2">
                     <div class="col-md-6 d-flex justify-content-start">
@@ -127,7 +127,7 @@
 
         <!-- Home & Return to Top -->
         <div class="row mt-5">
-          <div class="col-lg-9 d-flex justify-content-center mb-5" :class="{'col-lg-12': !cart?.length}">
+          <div class="col-lg-9 d-flex justify-content-center mb-5" :class="{'col-lg-12': !cart?.items?.length}">
             <router-link 
               class="to_home_btn px-3" 
               :to="{ name: 'home' }">
@@ -188,14 +188,14 @@ export default {
     },
     insertCart(product){
       const qty = document.querySelector(`input[data-product="${product.id}"]`);
-      const cart = new Cart(product);
+      const cart = new Cart(this.restaurant,product);
       cart.setCart(+qty.value);
       // set property cart
       this.cart = cart.getCart();
       this.totalPriceCart = cart.getTotalPrice();
     },
     setQuantity(product, symbol){
-      const cart = new Cart(product);
+      const cart = new Cart(this.restaurant, product);
       cart.setQty(1, symbol);
       // set property cart
       this.cart = cart.getCart();
