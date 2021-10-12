@@ -53,19 +53,13 @@ export default {
     li{
       font-size: 16px;
       transition: 0.5s;
-      // transform: perspective(200px) rotateX(25deg);
 
       &:hover{
-        // transform: perspective(100px) rotateX(0deg);
-        // position: relative;
-        // bottom: 50px;
         transform: translateY(-15px)
       }
     }
 
     .rest-tag{
-      // background: rgb(226,225,206);
-      // background: linear-gradient(0deg, rgba(226,225,206,1) 0%, rgba(215,84,3,1) 5%);
       background-color: $blue;
       margin: 0 12px;
       border-radius: 15px;
