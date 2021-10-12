@@ -37,17 +37,6 @@ export default {
 .navbar {
   background-color: rgb(65, 113, 142);
   
-  .bottone{
-    background-color:  rgb(112, 163, 214);
-    border-radius: 13px;
-    padding: 5px 15px;
-    color: white;
-    transition: 0.4s;
-
-    &:hover{
-      background-color: rgb(133, 193, 255);
-    }
-  }
   .logo{
     width: 100px;
   }

@@ -23,15 +23,19 @@
           <div id="map"></div>
         </div>
 
+        <div class="mb-3">
+          <div class="bottone btn me-2">
+            <router-link 
+              class="text-reset text-decoration-none" 
+              :to="{name: 'payment'}">{{ 'payment' }}
+            </router-link>
+          </div>
 
-        <router-link 
-          class="text-reset text-decoration-none btn btn-primary mb-5" 
-          :to="{name: 'payment'}">{{ 'Procedi al pagamento' }}
-        </router-link>
+          <button class="btn bottone text-decoration-none" 
+              @click.prevent="saveAddress">Salva Indirizzo
+          </button>
+        </div>
 
-        <button class="btn btn-primary mx-5 mb-5" 
-          @click.prevent="saveAddress">Salva Indirizzo
-        </button>
       </form>
     </div>
     <!-- <div ref="googleMaps"></div> -->
@@ -130,10 +134,6 @@ export default {
   padding: 0 1em;
   position: absolute;
   left: 35%;
-}
-
-.bg-color{
-  
 }
 
 section{

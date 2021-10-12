@@ -3,14 +3,13 @@
 @charset "UTF-8";
 .bottone {
   background-color: #70a3d6;
-  border-radius: 4px 12px 4px 12px;
+  border-radius: 13px;
   padding: 5px 15px;
   color: white;
   transition: 0.4s;
 }
 .bottone:hover {
   background-color: #85c1ff;
-  border-radius: 12px 4px 12px 4px;
 }
 
 /*!

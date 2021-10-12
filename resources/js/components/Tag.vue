@@ -57,7 +57,7 @@ export default {
       transition: 0.5s;
 
       &:hover{
-        transform: translateY(-15px);
+        transform: translateY(-10px);
       }
     }
 

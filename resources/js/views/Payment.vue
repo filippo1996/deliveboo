@@ -5,7 +5,7 @@
       <div class="col">
         <form id="payment-form">
           <div id="dropin-container"></div>
-          <input class="btn btn-primary mt-2 mb-5" type="submit" value="Paga"/>
+          <input class="btn bottone mb-3" type="submit" value="Paga"/>
           <!-- <input type="hidden" id="nonce" name="payment_method_nonce"/> -->
         </form>
       </div>

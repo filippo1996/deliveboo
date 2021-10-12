@@ -71,6 +71,7 @@
                       <span class="cursor_pointer" @click="setQuantity(obj, '-')">
                         <i class="fas fa-minus"></i>
                       </span>
+                      <i class="fas fa-trash-alt mx-5"></i>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end mb-4">
                       <span class="cursor_pointer" @click="setQuantity(obj, '+')">
@@ -83,6 +84,7 @@
               <div class="modal-footer">
                 <div class="card-footer text-center bg-white mt-2">
                 <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
+                <i class="fas fa-trash-alt"></i>
               </div>
                  <router-link 
                   class="text-reset text-decoration-none" 
@@ -111,12 +113,15 @@
                     <div class="col-3 price">{{ obj.product.price.toFixed(2) }}&euro;</div>
                   </div>
                   <div class="row p-2">
-                    <div class="col-md-6 d-flex justify-content-start">
+                    <div class="col-md-4 d-flex justify-content-start">
                       <span class="cursor_pointer" @click="setQuantity(obj, '-')">
                         <i class="fas fa-minus"></i>
                       </span>
                     </div>
-                    <div class="col-md-6 d-flex justify-content-end mb-4">
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-end mb-4">
                       <span class="cursor_pointer" @click="setQuantity(obj, '+')">
                         <i class="fas fa-plus"></i>
                       </span>
@@ -128,6 +133,7 @@
 
               <div class="card-footer text-center bg-white mt-2">
                 <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
+                <i class="fas fa-trash-alt"></i>
               </div>
 
               <div class="text-center mt-1">
