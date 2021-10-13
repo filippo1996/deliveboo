@@ -71,7 +71,7 @@
                       <span class="cursor_pointer" @click="setQuantity(obj, '-')">
                         <i class="fas fa-minus"></i>
                       </span>
-                      <i class="fas fa-trash-alt mx-5"></i>
+                      <span class="trash" @click="deleteProduct(index)"><i class="fas fa-trash-alt mx-5"></i></span>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end mb-4">
                       <span class="cursor_pointer" @click="setQuantity(obj, '+')">
@@ -84,7 +84,7 @@
               <div class="modal-footer">
                 <div class="card-footer text-center bg-white mt-2">
                 <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
-                <i class="fas fa-trash-alt"></i>
+                <span class="trash" @click="deleteProduct()"><i class="fas fa-trash-alt"></i></span>
               </div>
                  <router-link 
                   class="text-reset text-decoration-none" 
@@ -119,7 +119,7 @@
                       </span>
                     </div>
                     <div class="col-md-4 d-flex justify-content-center">
-                        <i class="fas fa-trash-alt"></i>
+                        <span class="trash" @click="deleteProduct(index)"><i class="fas fa-trash-alt"></i></span>
                     </div>
                     <div class="col-md-4 d-flex justify-content-end mb-4">
                       <span class="cursor_pointer" @click="setQuantity(obj, '+')">
@@ -133,7 +133,7 @@
 
               <div class="card-footer text-center bg-white mt-2">
                 <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
-                <i class="fas fa-trash-alt"></i>
+                <span class="trash" @click="deleteProduct()"><i class="fas fa-trash-alt"></i></span>
               </div>
 
               <div class="text-center mt-1">
@@ -185,7 +185,7 @@ export default {
       restaurant: {},
       products: [],
       loading: true,
-      cart: [],
+      cart: undefined,
       totalPriceCart: 0
     }
   },
@@ -223,6 +223,19 @@ export default {
       // set property cart
       this.cart = cart.getCart();
       this.totalPriceCart = cart.getTotalPrice();
+    },
+    deleteProduct(position = undefined){
+      const cart = new Cart();
+      if( position !== undefined ) {
+        cart.deleteProductCart(position);
+        // set property cart
+        this.cart = cart.getCart();
+        this.totalPriceCart = cart.getTotalPrice();
+      } else {
+        cart.clearCart();
+        this.totalPriceCart = cart.getTotalPrice();
+        this.cart = undefined;
+      }
     },
     returnToTop(){
       document.documentElement.scrollTop = 0;
@@ -406,4 +419,9 @@ section {
     background-color: #70a3d6;
   }
 }
+
+.trash{
+  cursor: pointer;
+}
+
 </style>

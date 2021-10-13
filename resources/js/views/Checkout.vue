@@ -38,6 +38,7 @@
 
       </form>
     </div>
+    <!-- <div ref="googleMaps"></div> -->
   </section>
 </template>
 
@@ -58,16 +59,19 @@ export default {
     }
   },
   mounted(){
+    this.removeGoogleMapScript();
     // API Google
     let googlemaps = document.createElement('script');
     googlemaps.setAttribute('src', "https://maps.googleapis.com/maps/api/js?key=AIzaSyDvVNeZeFGMSHvpISRfYdY68X5EMs2V7Yg&libraries=places&callback=initMap");
-    googlemaps.setAttribute('async', "");
+    googlemaps.setAttribute('defer', "");
     document.head.appendChild(googlemaps);
-
+    
     // Set function maps
     let funcMap = document.createElement('script');
+    funcMap.setAttribute('id', "initMap");
     funcMap.innerHTML = initMap;
     document.body.appendChild(funcMap);
+    //this.$refs.googleMaps.appendChild(funcMap);
 
   },
   methods:{
@@ -97,6 +101,17 @@ export default {
       
       localStorage.setItem('address', JSON.stringify(address));
 
+    },
+    removeGoogleMapScript(){
+      const keyword = 'maps.googleapis.com';
+      //Remove google from BOM (window object)
+      window.google = undefined;
+      //Remove google map scripts from DOM
+      let scripts = document.head.querySelectorAll(`script[src*='${keyword}']`);
+      scripts.forEach(element => element.remove());
+      // Remove script init Map
+      let script = document.getElementById('initMap');
+      script?.remove();
     }
   }
 }

@@ -134,6 +134,7 @@ export class Cart {
         
         if(element.qty <= 0){
           this.deleteProductCart(index);
+          return;
         }
 
         localStorage.setItem(this.nameStorage, JSON.stringify(this.cart));
@@ -156,6 +157,8 @@ export class Cart {
   deleteProductCart(position){
 
     this.cart.items.splice(position,1);
+
+    localStorage.setItem(this.nameStorage, JSON.stringify(this.cart));
 
     if(!this.cart.items.length) this.clearCart();
   }
