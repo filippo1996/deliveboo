@@ -201,7 +201,7 @@ export default {
         this.loading = true;
         let response = await axios(this.url + this.slug);
         let value = response.data;
-        this.restaurant = {id: value.id, name: value.name, slug: value.slug, phone_number: value.phone_number};
+        this.restaurant = {id: value.id, name: value.name, email: value.email, slug: value.slug, phone_number: value.phone_number};
         this.products = response.data.products;
         this.loading = false;
       } catch(err){

@@ -17,8 +17,8 @@
             </li>
           </ul>
           <div>
-            <a class="btn bottone me-3 text-decoration-none" href="http://localhost:8000/restaurant/login">Accedi</a>
-            <a class="btn bottone me-2 text-decoration-none" href="http://localhost:8000/restaurant/register">Registrati</a>
+            <a class="btn bottone me-3 text-decoration-none" href="http://127.0.0.1:8000/restaurant/login">Accedi</a>
+            <a class="btn bottone me-2 text-decoration-none" href="http://127.0.0.1:8000/restaurant/register">Registrati</a>
           </div>
         </div>
       </div>

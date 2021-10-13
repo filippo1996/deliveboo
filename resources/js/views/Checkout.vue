@@ -8,7 +8,15 @@
         </div>
         <div class="mb-3">
           <label for="lastname" class="form-label">Cognome</label>
-          <input type="lastname" class="form-control" id="lastname" required>
+          <input type="name" class="form-control" id="lastname" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="phone-number" class="form-label">Numero di telefono</label>
+          <input type="name" class="form-control" id="phone_number" required>
         </div>
         <div id="infowindow-content">
           <input type="hidden" id="street_number">
@@ -51,6 +59,8 @@ export default {
     return {
       name: '',
       lastname: '',
+      email: '',
+      phone_number: '',
       street_number: '',
       route: '',
       locality: '',
@@ -76,9 +86,12 @@ export default {
   },
   methods:{
     saveAddress(){
+      // messagge error
       let values = {
         name: 'Il nome',
         lastname: 'Il cognome',
+        email: 'La mail',
+        phone_number: 'Il numero di telefono',
         route: 'La via',
         street_number: 'Il numero civico',
         locality: 'La città',

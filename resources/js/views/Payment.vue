@@ -48,6 +48,7 @@ export default {
             });
             if(response.data.success) {
               // payment successfully
+              cart.clearCart(); 
               this.$router.push({ name: 'success', params: { repositories: 'authorized' } });
             } else {
               let code = response.data.errors?.code;
