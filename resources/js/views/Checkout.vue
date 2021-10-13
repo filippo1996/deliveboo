@@ -31,31 +31,29 @@
           <div id="map" class="w-100"></div>
         </div>
 
-        <div class="col-12 col-md-3 my-3">
+        <div class="col-12 col-md-3 my-3" v-if="'name' in statusAddress">
           <div class="mb-2">Il tuo Indirizzo</div>
           <div class="card">
             <div class="card-body text-black w-100">
-              <p class="card-text"> {{ name}} </p>
-              <p class="card-text"> {{ surname }} </p>
-              <p class="card-text"> {{ email }} </p>
-              <p class="card-text"> {{ phone_number }} </p>
-              <p class="card-text"> {{ street_number }} </p>
-              <p class="card-text"> {{ route }} </p>
-              <p class="card-text"> {{ locality }} </p>
-              <p class="card-text"> {{ country }} </p>
-              <p class="card-text"> {{ postal_code }} </p>
+              <p class="card-text">Nome: {{ name}} </p>
+              <p class="card-text">Cognome: {{ lastname }} </p>
+              <p class="card-text">Email: {{ email }} </p>
+              <p class="card-text">Telefono {{ phone_number }} </p>
+              <p class="card-text">Indirizzo: {{ route }}, {{ street_number }}</p>
+              <p class="card-text">Città: {{ locality }} </p>
+              <p class="card-text">CAP: {{ postal_code }} </p>
+              <p class="card-text">Stato: {{ country }} </p>
             </div>
           </div>
-        </div>
-
-        <div>
           <div class="bottone btn me-2 my-2">
             <router-link 
               class="text-reset text-decoration-none" 
               :to="{name: 'payment'}">{{ 'Pagamento' }}
             </router-link>
           </div>
+        </div>
 
+        <div>
           <button class="btn bottone text-decoration-none" 
               @click.prevent="saveAddress">Salva Indirizzo
           </button>
@@ -82,7 +80,8 @@ export default {
       route: '',
       locality: '',
       country: '',
-      postal_code: ''
+      postal_code: '',
+      statusAddress: {}
     }
   },
   mounted(){
@@ -131,21 +130,23 @@ export default {
           return;
         }
       }
-      
+  
       localStorage.setItem('address', JSON.stringify(address));
+      this.statusAddress = JSON.parse(localStorage.getItem('address')) || {};
 
     },
     getAddress(){
-      let adderees = JSON.parse(localStorage.getItem('address')) || {};
-      this.name = adderees.name;
-      this.lastname = adderees.lastname;
-      this.email = adderees.email;
-      this.phone_number = adderees.phone_number;
-      this.street_number = adderees.street_number;
-      this.route = adderees.route;
-      this.locality = adderees.locality;
-      this.country = adderees.country;
-      this.postal_code = adderees.postal_code;
+      let address = JSON.parse(localStorage.getItem('address')) || {};
+      this.name = address.name;
+      this.lastname = address.lastname;
+      this.email = address.email;
+      this.phone_number = address.phone_number;
+      this.street_number = address.street_number;
+      this.route = address.route;
+      this.locality = address.locality;
+      this.country = address.country;
+      this.postal_code = address.postal_code;
+      this.statusAddress = address;
     },
     removeGoogleMapScript(){
       const keyword = 'maps.googleapis.com';
