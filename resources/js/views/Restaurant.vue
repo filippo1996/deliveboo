@@ -23,7 +23,7 @@
                   <div class="col-md-8">
                     <div class="card-body"> 
                       <h5 class="card-title text-uppercase fs-5 mt-3">{{ product.name }}</h5>
-                      <p class="card-text descrizione overflow-auto d-md-inline-block my-3 px-2">{{ product.description }}</p>
+                      <p class="card-text w-100 descrizione overflow-auto d-md-inline-block my-3 px-2">{{ product.description }}</p>
                       <input 
                         :data-product="product.id" 
                         value="1" 
@@ -31,7 +31,7 @@
                         placeholder="qty" 
                         min="1"
                         class="w-25 h-auto border rounded_5">
-                      <div class="d-inline-block">{{ product.price.toFixed(2) }} &euro; 
+                      <div class="d-inline-block ps-2">{{ product.price.toFixed(2) }} &euro; 
                         <span class="cursor_pointer" @click="insertCart(product)">
                           <i class="fas fa-plus plus_icon"></i>
                         </span>
@@ -152,7 +152,7 @@
         <div class="row mt-5">
           <div class="col-lg-9 d-flex justify-content-center mb-5" :class="{'col-lg-12': !cart?.items?.length}">
             <router-link 
-              class=" bottone p-2" 
+              class="text-decoration-none bottone p-2" 
               :to="{ name: 'home' }">
                 <i class="fas fa-home"></i> {{ 'Torna alla home' }} 
             </router-link>

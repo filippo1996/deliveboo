@@ -10,7 +10,7 @@
         </div>
         <div class="col-3 d-flex justify-content-center mb-5">
          <router-link 
-              class=" bottone p-2 px-3" 
+              class="text-decoration-none bottone p-2 px-3" 
               :to="{ name: 'home' }">
                 <i class="fas fa-home"></i> {{ 'Torna alla home' }} 
         </router-link>

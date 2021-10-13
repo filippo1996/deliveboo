@@ -27,12 +27,14 @@
           </div>
         </div>
       </div>
+
+      <div class="street d-flex">
+        <div id="linea"></div>
+      </div>
+
     </div>
 
-    <!-- lo so che è osceno non giudicatemi, poi lo sistemo vvb :))) -->
-    <div class="street d-flex">
-      <div id="linea"></div>
-    </div>
+
   </div>
 </template>
 
@@ -65,14 +67,6 @@ export default {
   created(){
     this.searchUrl(false);
   },
-  // mounted(){
-  //   function printDiv() {
-  //     for(let i = 0; i < 100; i++){
-  //       document.getElementById('linea').innerHTML += 'ciao';
-  //     }
-  //   }
-  //   printDiv();
-  // },
   watch:{
     search: function(){
       this.searchUrl(true);
@@ -90,7 +84,6 @@ export default {
   background-color: rgb(133, 193, 255);
   background: url('/images/background.png');
   background-size: cover;
-  // background-position: 70% 0;
   background-repeat:no-repeat;
   animation-name: jumbo;
   animation-timing-function: ease-in-out;
@@ -168,24 +161,24 @@ export default {
 
 .street{
   height: 30px;
-  width: 100%;
+  width: 150%;
+  position: absolute;
+  bottom: 0;
   background-color: rgb(167, 167, 167);
-  overflow-x: hidden;
+  overflow: hidden;
 
   #linea{
-    // width: 20px;
-    // height: 4px;
-    // background-color: white;
-    // margin-right: 20px;
-    // position: relative;
-    // top: 5px;
-    // flex-shrink: 0;
-    // overflow-x: hidden;
-
+    overflow: hidden;
     width: 100%;
     height: 4px;
-    margin: 10px 0;
-    background-position: 60% 20%; 
+    position: relative;
+    top: 10px;
+    left: -20px;
+    animation-name: linea;
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
     background: repeating-linear-gradient(to right,white 0,white 40px,transparent 10px,transparent 80px);
   }
 }
@@ -371,10 +364,10 @@ export default {
       100% {right: 10px; top: -40px; opacity: 0; transform: scale(1.4)};
     }
   }
-
-  // #linea{
-
-  // }
+   @keyframes linea {
+      0% {left: -20px};
+      100% {left: 30px};
+   }
 }
 
 </style>
