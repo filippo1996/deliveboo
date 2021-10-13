@@ -3,7 +3,7 @@
     <div class="container py-5">
       <div class="row">
         <!-- Restaurant -->
-        <div class="col-12 col-lg-9" :class="{'col-lg-12': !cart?.items?.length}">
+        <div class="col-12 col-lg-9 pe-4" :class="{'col-lg-12': !cart?.items?.length}">
           
           <!-- Restaurant Header -->
           <div class="row restaurant_header text-white my-4 py-5">
