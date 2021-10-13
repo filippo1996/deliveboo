@@ -123,20 +123,20 @@ export default {
       for(const key of Object.keys(values)){
         let input = document.querySelector(`#${key}`);
         if(input.value){
-          this[key] = input.value;
-          address[key] = this[key];
+          address[key] = input.value;
         } else {
           alert(values[key] + ' non è presente, si prega di inserirlo.');
           return;
         }
       }
-  
-      localStorage.setItem('address', JSON.stringify(address));
-      this.statusAddress = JSON.parse(localStorage.getItem('address')) || {};
 
+      localStorage.setItem('address', JSON.stringify(address));
+      // set variable address
+      this.getAddress();
     },
     getAddress(){
       let address = JSON.parse(localStorage.getItem('address')) || {};
+      console.log(address);
       this.name = address.name;
       this.lastname = address.lastname;
       this.email = address.email;
