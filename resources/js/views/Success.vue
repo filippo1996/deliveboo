@@ -8,6 +8,13 @@
         <div class="col-6 d-flex justify-content-center mt-5">
           <img src="/images/chef.png" alt="chef">
         </div>
+        <div class="col-3 d-flex justify-content-center mb-5">
+         <router-link 
+              class=" bottone p-2 px-3" 
+              :to="{ name: 'home' }">
+                <i class="fas fa-home"></i> {{ 'Torna alla home' }} 
+        </router-link>
+        </div>
       </div>
     </div>
   </section>
@@ -21,9 +28,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/_variables.scss';
 
   section{
-    background-color: #6FA3D6;
+    background-color: $yellow;
   }
 
   h3{
