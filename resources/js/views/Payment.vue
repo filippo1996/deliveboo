@@ -71,10 +71,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/_variables.scss';
 
 section{
   background-color: #6FA3D6;
   color: white;
+
+  .bottone{
+    background-color: $blue;
+    
+    &:hover{
+      background-color: #5087aa;
+    }
+  }
 }
 
 </style>

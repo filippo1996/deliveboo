@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="pb-3">
     <div class="container mt-5 bg-color">
       <form>
         <div class="mb-3 pt-5">
@@ -23,11 +23,11 @@
           <div id="map"></div>
         </div>
 
-        <div class="mb-3">
+        <div class="">
           <div class="bottone btn me-2">
             <router-link 
               class="text-reset text-decoration-none" 
-              :to="{name: 'payment'}">{{ 'payment' }}
+              :to="{name: 'payment'}">{{ 'Pagamento' }}
             </router-link>
           </div>
 
@@ -118,6 +118,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/_variables.scss';
+
 #map {
   height: 500px;
 }
@@ -139,6 +141,14 @@ export default {
 section{
   background-color: #6FA3D6;
   color: white;
+
+  .bottone{
+    background-color: $blue;
+    
+    &:hover{
+      background-color: #5087aa;
+    }
+  }
 }
 
 </style>

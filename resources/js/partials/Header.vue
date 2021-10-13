@@ -34,6 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 @import 'resources/sass/_variables.scss';
+
 .navbar {
   background-color: rgb(65, 113, 142);
   
