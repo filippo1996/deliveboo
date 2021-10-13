@@ -10,24 +10,43 @@
           <div class="card-body p-3">
             {{-- <h2 class="card-title">{{ $product->slug }}</h2> --}}
             <div class="text-start p-2">
-              <p class="card-text">{{ $product->description }}</p>
-              <p class="card-text">{{ $product->ingredient }}</p>
-              <p class="card-text text-center mt-2">{{ $product->price }} &euro;</p>
+              
+              <p class="card-text">
+                Descrizione:
+                <br>
+                {{ $product->description }}
+              </p>
+              <p class="card-text">
+                Ingredienti:
+                <br>
+                {{ $product->ingredient }}
+              </p>
+
             </div>
-           
           </div>
+          <h1 class="card-header">{{ $product->price }}€</h1>
         </div>
       </div>
     </div> 
     
     <div class="row mt-5">
-      <div class="col-12">
+      <div class="col-12 mb-5">
+        <div class="text-center mt-5">
+          <a href="{{ route('products.edit', ['product'=>$product->id]) }}" class="btn btn-outline-info">
+            Modifica prodotto
+          </a>
+          <a href="{{ route('products.index') }}" class="btn btn-outline-success">
+            Torna ai prodotti
+          </a>
+        </div>
+      </div>
+      <!-- <div class="col-6">
         <div class="text-center mt-5">
           <a href="{{ route('products.index') }}" class="btn btn-outline-secondary">
             Torna ai prodotti
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>    
 @endsection
