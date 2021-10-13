@@ -3,7 +3,7 @@
     <div class="container py-5">
       <div class="row">
         <!-- Restaurant -->
-        <div class="col-12 col-lg-9" :class="{'col-lg-12': !cart?.items?.length}">
+        <div class="col-12 col-lg-9 pe-4" :class="{'col-lg-12': !cart?.items?.length}">
           
           <!-- Restaurant Header -->
           <div class="row restaurant_header text-white my-4 py-5">
@@ -30,8 +30,8 @@
                         type="number" 
                         placeholder="qty" 
                         min="1"
-                        class="w-25 h-auto border border rounded_5">
-                      <div class="float-sm-end w-75">{{ product.price.toFixed(2) }} &euro; 
+                        class="w-25 h-auto border rounded_5">
+                      <div class="d-inline-block">{{ product.price.toFixed(2) }} &euro; 
                         <span class="cursor_pointer" @click="insertCart(product)">
                           <i class="fas fa-plus plus_icon"></i>
                         </span>
@@ -112,7 +112,7 @@
                     <div class="col-7 text-start ">{{ obj.product.name }}</div>
                     <div class="col-3 price">{{ obj.product.price.toFixed(2) }}&euro;</div>
                   </div>
-                  <div class="row p-2">
+                  <div class="row p-2 align-items-center">
                     <div class="col-md-4 d-flex justify-content-start">
                       <span class="cursor_pointer" @click="setQuantity(obj, '-')">
                         <i class="fas fa-minus"></i>
@@ -121,7 +121,7 @@
                     <div class="col-md-4 d-flex justify-content-center">
                         <span class="trash" @click="deleteProduct(index)"><i class="fas fa-trash-alt"></i></span>
                     </div>
-                    <div class="col-md-4 d-flex justify-content-end mb-4">
+                    <div class="col-md-4 d-flex justify-content-end">
                       <span class="cursor_pointer" @click="setQuantity(obj, '+')">
                         <i class="fas fa-plus"></i>
                       </span>
@@ -132,14 +132,14 @@
                 <!-- end cart -->
 
               <div class="card-footer text-center bg-white mt-2">
-                <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
+                <h3 class="fw-bold fs-5 mt-2 mb-3">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
                 <span class="trash" @click="deleteProduct()"><i class="fas fa-trash-alt"></i></span>
               </div>
 
-              <div class="text-center mt-1">
+              <div class="text-center text-light mt-2 mb-3">
                 <router-link 
-                  class="text-reset text-decoration-none" 
-                  :to="{name: 'checkout'}">{{ 'checkout' }}
+                  class="text-reset bottone text-decoration-none" 
+                  :to="{name: 'checkout'}">{{ 'Checkout' }}
                 </router-link>
               </div>
 
@@ -201,7 +201,7 @@ export default {
         this.loading = true;
         let response = await axios(this.url + this.slug);
         let value = response.data;
-        this.restaurant = {id: value.id, name: value.name, slug: value.slug, phone_number: value.phone_number};
+        this.restaurant = {id: value.id, name: value.name, email: value.email, slug: value.slug, phone_number: value.phone_number};
         this.products = response.data.products;
         this.loading = false;
       } catch(err){
@@ -304,7 +304,7 @@ section {
 
 .prodotto {
   border-radius: 15px;
-  height: 260px;
+  height: 280px;
 }
 
 .card {
@@ -332,6 +332,8 @@ section {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-size: 16px;
+    margin: 2px;
   }
 
   input {
@@ -349,8 +351,9 @@ section {
   }
 
   .descrizione {
-    height: 100px;
+    height: 50px;
     overflow: auto;
+    font-size: 12px;
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -382,8 +385,8 @@ section {
 
 #carrello {
   position: fixed;
-  right: 0;
-  transform: translateX(-22px);
+  top: 55px;
+  right: 15px;
   z-index: 100;
   
   .card {
@@ -401,7 +404,6 @@ section {
     }
   }
 }
-
 
 
 // Da implementare
@@ -422,6 +424,28 @@ section {
 
 .trash{
   cursor: pointer;
+  padding: 7px 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+  background-color: rgb(255, 96, 96);
+
+  &:hover{
+    background-color: rgb(255, 66, 66);
+  }
 }
 
+.bottone:hover{
+  background-color:  #6694c2;
+}
+
+
+
+
+/////// MEDIA QUERIES ///////
+
+@media screen and (min-width: 768px) {
+  .prodotto {
+    height: 200px;
+  }
+}
 </style>

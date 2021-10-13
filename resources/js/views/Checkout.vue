@@ -1,30 +1,55 @@
 <template>
   <section class="pb-3">
     <div class="container mt-5 bg-color">
-      <form>
-        <div class="mb-3 pt-5">
+      <form class="row">
+        <div class="mb-3 pt-5 col-12 col-md-6">
           <label for="name" class="form-label">Nome</label>
           <input type="name" class="form-control" id="name" required>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 pt-5 col-12 col-md-6">
           <label for="lastname" class="form-label">Cognome</label>
-          <input type="lastname" class="form-control" id="lastname" required>
+          <input type="name" class="form-control" id="lastname" required>
         </div>
-        <div id="infowindow-content">
+        <div class="mb-3 col-12 col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3 col-12 col-md-6">
+          <label for="phone-number" class="form-label">Numero di telefono</label>
+          <input type="name" class="form-control" id="phone_number" required>
+        </div>
+        <div class="col-12" id="infowindow-content">
           <input type="hidden" id="street_number">
           <input type="hidden" id="route">
           <input type="hidden" id="locality">
           <input type="hidden" id="country">
           <input type="hidden" id="postal_code">
         </div>
-        <div class="mb-3">
+        <div class="mb-3 col-12 col-md-9">
           <label for="pac-input" class="form-label">Indirizzo di spedizione</label>
           <input class="form-control" type="text" id="pac-input" name="pac-input" placeholder="Inserisci la tua via">
-          <div id="map"></div>
+          <div id="map" class="w-100"></div>
         </div>
 
-        <div class="">
-          <div class="bottone btn me-2">
+        <div class="col-12 col-md-3 my-3">
+          <div class="mb-2">Il tuo Indirizzo</div>
+          <div class="card">
+            <div class="card-body text-black w-100">
+              <p class="card-text"> {{ name}} </p>
+              <p class="card-text"> {{ surname }} </p>
+              <p class="card-text"> {{ email }} </p>
+              <p class="card-text"> {{ phone_number }} </p>
+              <p class="card-text"> {{ street_number }} </p>
+              <p class="card-text"> {{ route }} </p>
+              <p class="card-text"> {{ locality }} </p>
+              <p class="card-text"> {{ country }} </p>
+              <p class="card-text"> {{ postal_code }} </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="bottone btn me-2 my-2">
             <router-link 
               class="text-reset text-decoration-none" 
               :to="{name: 'payment'}">{{ 'Pagamento' }}
@@ -51,6 +76,8 @@ export default {
     return {
       name: '',
       lastname: '',
+      email: '',
+      phone_number: '',
       street_number: '',
       route: '',
       locality: '',
@@ -76,9 +103,12 @@ export default {
   },
   methods:{
     saveAddress(){
+      // messagge error
       let values = {
         name: 'Il nome',
         lastname: 'Il cognome',
+        email: 'La mail',
+        phone_number: 'Il numero di telefono',
         route: 'La via',
         street_number: 'Il numero civico',
         locality: 'La città',
@@ -144,7 +174,7 @@ section{
 
   .bottone{
     background-color: $blue;
-    
+
     &:hover{
       background-color: #5087aa;
     }
