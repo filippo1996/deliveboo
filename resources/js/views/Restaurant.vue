@@ -433,8 +433,8 @@ section {
 /////// MEDIA QUERIES ///////
 
 @media screen and (min-width: 768px) {
-.prodotto {
-  height: 200px;
-}
+  .prodotto {
+    height: 200px;
+  }
 }
 </style>
