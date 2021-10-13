@@ -31,7 +31,7 @@
                   <td>{{ $order->name }}</td>
                   <td>{{ $order->lastname }}</td>
                   <td>{{ $order->email }}</td>
-                  <td>{{ $order->price }}</td>
+                  <td>{{ $order->price }}€</td>
                   <td>{{ $order->phone_number }}</td>
                   <td>{{ $order->address }}</td>
                   <td>{{ $order->house_number }}</td>
