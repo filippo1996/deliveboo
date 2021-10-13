@@ -1,12 +1,12 @@
 <template>
-  <section>
+  <section class="pb-3">
     <div class="container mt-5 bg-color">
-      <form>
-        <div class="mb-3 pt-5">
+      <form class="row">
+        <div class="mb-3 pt-5 col-12 col-md-6">
           <label for="name" class="form-label">Nome</label>
           <input type="name" class="form-control" id="name" required>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 pt-5 col-12 col-md-6">
           <label for="lastname" class="form-label">Cognome</label>
           <input type="name" class="form-control" id="lastname" required>
         </div>
@@ -18,24 +18,33 @@
           <label for="phone-number" class="form-label">Numero di telefono</label>
           <input type="name" class="form-control" id="phone_number" required>
         </div>
-        <div id="infowindow-content">
+        <div class="col-12" id="infowindow-content">
           <input type="hidden" id="street_number">
           <input type="hidden" id="route">
           <input type="hidden" id="locality">
           <input type="hidden" id="country">
           <input type="hidden" id="postal_code">
         </div>
-        <div class="mb-3">
+        <div class="mb-3 col-12 col-md-9">
           <label for="pac-input" class="form-label">Indirizzo di spedizione</label>
           <input class="form-control" type="text" id="pac-input" name="pac-input" placeholder="Inserisci la tua via">
-          <div id="map"></div>
+          <div id="map" class="w-100"></div>
         </div>
 
-        <div class="mb-3">
-          <div class="bottone btn me-2">
+        <div class="col-12 col-md-3 my-3">
+          <div class="mb-2">Il tuo Indirizzo</div>
+          <div class="card">
+            <div class="card-body text-black w-100">
+              <p class="card-text">Dati indirizzo </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="bottone btn me-2 my-2">
             <router-link 
               class="text-reset text-decoration-none" 
-              :to="{name: 'payment'}">{{ 'payment' }}
+              :to="{name: 'payment'}">{{ 'Pagamento' }}
             </router-link>
           </div>
 
@@ -131,6 +140,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/_variables.scss';
+
 #map {
   height: 500px;
 }
@@ -152,6 +163,14 @@ export default {
 section{
   background-color: #6FA3D6;
   color: white;
+
+  .bottone{
+    background-color: $blue;
+
+    &:hover{
+      background-color: #5087aa;
+    }
+  }
 }
 
 </style>
