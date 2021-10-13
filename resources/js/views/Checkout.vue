@@ -144,7 +144,7 @@ section{
 
   .bottone{
     background-color: $blue;
-    
+
     &:hover{
       background-color: #5087aa;
     }
