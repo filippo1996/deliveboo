@@ -92,6 +92,9 @@ export default {
     document.body.appendChild(funcMap);
     //this.$refs.googleMaps.appendChild(funcMap);
 
+    // get address
+    this.getAddress();
+
   },
   methods:{
     saveAddress(){
@@ -123,6 +126,18 @@ export default {
       
       localStorage.setItem('address', JSON.stringify(address));
 
+    },
+    getAddress(){
+      let adderees = JSON.parse(localStorage.getItem('address')) || {};
+      this.name = adderees.name;
+      this.lastname = adderees.lastname;
+      this.email = adderees.email;
+      this.phone_number = adderees.phone_number;
+      this.street_number = adderees.street_number;
+      this.route = adderees.route;
+      this.locality = adderees.locality;
+      this.country = adderees.country;
+      this.postal_code = adderees.postal_code;
     },
     removeGoogleMapScript(){
       const keyword = 'maps.googleapis.com';
