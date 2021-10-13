@@ -5,9 +5,9 @@
       <div class="row justify-content" :class="{'d-none': loading}" v-if="!message">
 
         <!-- start card category -->
-        <div class="col-12 col-sm-6 border-white col-lg-3 d-flex my-3" v-for="restaurant in restaurants" :key="restaurant.id">
+        <div class="col-12 col-sm-6 col-lg-3 border-white mb-3" v-for="restaurant in restaurants" :key="restaurant.id">
           <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: restaurant.slug }}">
-            <div class="card text-white overflow-hidden rest-card">
+            <div class="card text-white overflow-hidden rest-card box_shadow">
               <img :src="restaurant.cover" class="card-img" :alt="restaurant.name">
               <div class="card-img-overlay text-center text-light shadow">
                 <div class="description">
@@ -78,26 +78,39 @@ export default {
 section{
   background-color: rgb(255, 214, 112);
 
-  .rest-tag{
+ .rest-tag{
     color: #393f46;
   }
-
+  
+  .card-title {
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  }
   .rest-card{
+    height: 200px;
     cursor: pointer;
+    border-radius: 15px;
+    transition: 0.3s;
 
     img{
+      filter: blur(0.5px);
+      position: relative;
       transition: 0.3s;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
   
   .rest-card:hover img{
+    filter: blur(0px);
     transform: scale(1.1);
   }
 
-  .shadow{
-    background-color: rgba(100, 100, 100, 0.4);
+  .shadow {
+    background-color: rgba(0, 0, 0, 0.1);
     
     .description{
+      color: white;
       position: relative;
       top: 50%;
       left: 50%;
@@ -105,10 +118,14 @@ section{
     }
   }
 
-  .tag{
-    background-color: rgba(0, 0, 0, 0.5);
+  .tag {
+    background-color: rgba(150, 150, 150, .8);
     padding: 5px 10px;
-    border-radius: 20px;
+    border-radius: 8px;
+  }
+
+  .box_shadow:hover {
+    box-shadow: 15px 15px 0 hsl(0deg 0% 0% / 0.25);
   }
 }
 </style>

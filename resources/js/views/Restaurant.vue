@@ -30,8 +30,8 @@
                         type="number" 
                         placeholder="qty" 
                         min="1"
-                        class="w-25 h-auto border border rounded_5">
-                      <div class="float-sm-end w-75">{{ product.price.toFixed(2) }} &euro; 
+                        class="w-25 h-auto border rounded_5">
+                      <div class="d-inline-block">{{ product.price.toFixed(2) }} &euro; 
                         <span class="cursor_pointer" @click="insertCart(product)">
                           <i class="fas fa-plus plus_icon"></i>
                         </span>
@@ -304,7 +304,7 @@ section {
 
 .prodotto {
   border-radius: 15px;
-  height: 260px;
+  height: 280px;
 }
 
 .card {
@@ -332,6 +332,8 @@ section {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-size: 16px;
+    margin: 2px;
   }
 
   input {
@@ -349,8 +351,9 @@ section {
   }
 
   .descrizione {
-    height: 100px;
+    height: 50px;
     overflow: auto;
+    font-size: 12px;
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -424,4 +427,14 @@ section {
   cursor: pointer;
 }
 
+
+
+
+/////// MEDIA QUERIES ///////
+
+@media screen and (min-width: 768px) {
+.prodotto {
+  height: 200px;
+}
+}
 </style>
