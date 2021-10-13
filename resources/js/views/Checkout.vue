@@ -10,11 +10,11 @@
           <label for="lastname" class="form-label">Cognome</label>
           <input type="name" class="form-control" id="lastname" required>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 col-12 col-md-6">
           <label for="email" class="form-label">Email</label>
           <input type="email" class="form-control" id="email" required>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 col-12 col-md-6">
           <label for="phone-number" class="form-label">Numero di telefono</label>
           <input type="name" class="form-control" id="phone_number" required>
         </div>
@@ -35,7 +35,15 @@
           <div class="mb-2">Il tuo Indirizzo</div>
           <div class="card">
             <div class="card-body text-black w-100">
-              <p class="card-text">Dati indirizzo </p>
+              <p class="card-text"> {{ name}} </p>
+              <p class="card-text"> {{ surname }} </p>
+              <p class="card-text"> {{ email }} </p>
+              <p class="card-text"> {{ phone_number }} </p>
+              <p class="card-text"> {{ street_number }} </p>
+              <p class="card-text"> {{ route }} </p>
+              <p class="card-text"> {{ locality }} </p>
+              <p class="card-text"> {{ country }} </p>
+              <p class="card-text"> {{ postal_code }} </p>
             </div>
           </div>
         </div>
