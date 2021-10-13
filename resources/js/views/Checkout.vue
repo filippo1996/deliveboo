@@ -136,7 +136,6 @@ export default {
     },
     getAddress(){
       let address = JSON.parse(localStorage.getItem('address')) || {};
-      console.log(address);
       this.name = address.name;
       this.lastname = address.lastname;
       this.email = address.email;
