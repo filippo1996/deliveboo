@@ -305,6 +305,7 @@ section {
 .prodotto {
   border-radius: 15px;
   height: 280px;
+  overflow: hidden;
 }
 
 .card {
