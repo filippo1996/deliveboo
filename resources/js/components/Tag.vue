@@ -1,8 +1,8 @@
 <template>
   <section :class="{'d-none': loading}">
-    <div class="container pt-5 pb-2">
+    <div class="container pt-2 pb-2">
     <div class="row">
-      <h2 class="title mt-3 mb-4">Tipologie di Ristoranti</h2>
+      <h2 class="title mb-4">Tipologie di Ristoranti</h2>
         <ul class="list-unstyled d-flex flex-wrap">
           <li class="mt-2 mb-3 text-center">
             <router-link class="nav-link rest-tag fw-bold" :to="{ name: 'home' }">{{ 'Tutti' }}</router-link>
