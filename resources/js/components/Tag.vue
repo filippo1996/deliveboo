@@ -1,8 +1,8 @@
 <template>
   <section :class="{'d-none': loading}">
     <div class="container pt-2 pb-2">
-    <div class="row">
-      <h2 class="title mb-4">Tipologie di Ristoranti</h2>
+      <div class="row">
+        <h2 class="title mb-4">Tipologie di Ristoranti</h2>
         <ul class="list-unstyled d-flex flex-wrap">
           <li class="mt-2 mb-3 text-center">
             <router-link class="nav-link rest-tag fw-bold" :to="{ name: 'home' }">{{ 'Tutti' }}</router-link>
@@ -12,7 +12,7 @@
           </li>
         </ul>
       </div>
-  </div>
+    </div>
   </section>
 </template>
 
@@ -28,6 +28,7 @@ export default {
   },
   mounted(){
     this.getTags();
+
   },
   methods: {
     async getTags(){
@@ -52,9 +53,10 @@ export default {
     }
 
     li{
-      width: 140px;
+      width: 120px;
       font-size: 16px;
       transition: 0.5s;
+      margin: 0 10px;
 
       &:hover{
         transform: translateY(-10px);
@@ -63,7 +65,7 @@ export default {
 
     .rest-tag{
       background-color: $blue;
-      margin: 0 12px;
+      margin: 0;
       border-radius: 15px;
       color: white;
       transition: 0.5s;
@@ -73,4 +75,5 @@ export default {
       }
     }
   }
+
 </style>
