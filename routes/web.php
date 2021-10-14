@@ -20,6 +20,6 @@ Route::get('/', function () {
     return view('layouts.web');
 });
 */
-
+Route::view('/email', 'emails.order_confirm');
 // Route frontend
 Route::view('/{any}', 'layouts.web')->where('any','.*');

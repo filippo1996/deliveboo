@@ -60,7 +60,7 @@ fetch('restaurant/char/orders')
     })
     .catch(function (error) {
       // handle error
-      console.log(error, 'sei tu');
+      console.log(error);
     });   
 
 function char() {
@@ -68,13 +68,13 @@ function char() {
   const DATA_COUNT = 12;
   const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 20, from: orders };
 
-  const labels = Samples.utils.months({count: 12});
+  const labels = Samples.utils.months({ count: 12 });
 
   const data = {
     labels: labels,
     datasets: [
       {
-        label: 'Dataset 1',
+        label: 'Ordini',
         data: Samples.utils.numbers(NUMBER_CFG),
         borderColor: chartColors.red,
         backgroundColor: Samples.utils.transparentize(chartColors.red, 0.5),
@@ -101,7 +101,7 @@ function char() {
         },
         title: {
           display: true,
-          text: 'Grafico Ordini 2021'
+          text: 'Grafico ordini annuale'
         }
       }
     },
