@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::middleware('auth')->group(function(){
   // Product
   Route::resource('products', ProductController::class);
   Route::patch('/products/visibility/{product}', [ProductController::class, 'visibility']);
+
+  // Char
+  Route::get('/char/orders', [HomeController::class, 'charOrder']);
 
 });
 
