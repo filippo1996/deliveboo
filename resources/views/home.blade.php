@@ -60,15 +60,15 @@ fetch('restaurant/char/orders')
     })
     .catch(function (error) {
       // handle error
-      console.log(error, 'sei tu');
+      console.log(error);
     });   
 
 function char() {
 
-  const DATA_COUNT = 12;
+  const DATA_COUNT = 10;
   const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 20, from: orders };
 
-  const labels = Samples.utils.months({count: 12});
+  const labels = Samples.utils.months({count: 10});
 
   const data = {
     labels: labels,
