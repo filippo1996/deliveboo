@@ -41,10 +41,12 @@ class HomeController extends Controller
         });
 
         //$orders = Order::selectRaw("MONTH(created_at) as month")->distinct()->get();
-        foreach($orders as $key => $order) {
-            $char['orders'][(int)$key] = count($order);
+        $char = [];
+        if($orders){
+            foreach($orders as $key => $order) {
+                $char['orders'][(int)$key] = count($order);
+            }
         }
-
         return $char;
     }
 }
