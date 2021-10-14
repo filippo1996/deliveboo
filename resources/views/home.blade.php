@@ -60,7 +60,7 @@ fetch('restaurant/char/orders')
     })
     .catch(function (error) {
       // handle error
-      console.log(error);
+      console.log(error, 'sei tu');
     });   
 
 function char() {
