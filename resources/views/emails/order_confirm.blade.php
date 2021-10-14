@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body { font-family:verdana; }
-      h1 { text-align: center; margin-bottom: 20px; }
+      .title { text-align: center; margin-bottom: 25px; }
+      .subtitle { margin-bottom: 25px; }
       ul { list-style: none; }
       li { margin-bottom: 10px; }
     </style>
@@ -15,27 +16,24 @@
   <body>
 
     <div class="bg-primary">
-      <h1>Ordine confermato</h1>
-      <div>Il cliente xxx ha appena effettuato un'ordine:</div>
+      <h1 class="title"> Ordine confermato </h1>
+      <div class="subtitle"> ID ordine numero x effettuato dal cliente x</div>
       <div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Prodotto
-            <span class="badge bg-primary rounded-pill">14</span>
+        <ul>
+          <li>
+            id Prodotto - <span>quantità</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Prodotto
-            <span class="badge bg-primary rounded-pill">2</span>
+          <li>
+            id Prodotto - <span>quantità</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Prodotto
-            <span class="badge bg-primary rounded-pill">5</span>
+          <li>
+            id Prodotto - <span>quantità</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Prodotto
-            <span class="badge bg-primary rounded-pill">3</span>
+          <li>
+            id Prodotto - <span>quantità</span>
           </li>
         </ul>
+        <div> Spesa totale: € x </div>
       </div>
     </div>
 
