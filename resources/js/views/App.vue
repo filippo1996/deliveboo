@@ -6,7 +6,6 @@
       <!-- rendering -->
       <router-view></router-view>
     </main>
-    <ContactUs/>
     <Footer/>
   </div>
 </template>
@@ -15,7 +14,6 @@
 import Header from '../partials/Header.vue';
 import Jumbotron from '../partials/Jumbotron.vue';
 import Affiliati from '../partials/Affiliati.vue';
-import ContactUs from '../partials/ContactUs.vue';
 import Footer from '../partials/Footer.vue';
 
 export default {
@@ -24,7 +22,6 @@ export default {
     Header,
     Jumbotron,
     Affiliati,
-    ContactUs,
     Footer,
     }
 }

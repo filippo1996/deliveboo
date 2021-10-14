@@ -11,6 +11,9 @@
     <div>
       <Affiliati />
     </div>
+    <div>
+      <ContactUs/>
+    </div>
   </section>
 </template>
 
@@ -18,6 +21,7 @@
 import Tag from '../components/Tag.vue';
 import Card from '../components/Card.vue';
 import Affiliati from '../partials/Affiliati.vue';
+import ContactUs from '../partials/ContactUs.vue';
 
 export default {
   name: "Main",
@@ -25,6 +29,7 @@ export default {
     Tag,
     Card,
     Affiliati,
+    ContactUs,
   },
   data(){
     return{
