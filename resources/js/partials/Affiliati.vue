@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="col-12 col-md-6 h-100 text-center">
-          <img src="/images/food2.png" alt="chef" class="w-100 my-3 p-3">
+          <img src="/images/food.png" alt="chef" class="w-100 my-3 p-3">
         </div>
       </div>
     </div>
