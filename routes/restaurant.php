@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function(){
   Route::resource('products', ProductController::class);
   Route::patch('/products/visibility/{product}', [ProductController::class, 'visibility']);
 
-  // Char
+  // Char API
   Route::get('/char/orders', [HomeController::class, 'charOrder']);
 
 });

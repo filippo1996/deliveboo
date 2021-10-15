@@ -1,7 +1,7 @@
 // 1. Define route components.
 // These can be imported from other files
 import Home from './views/Home.vue';
-import Category from './views/Category.vue';
+//import Category from './views/Category.vue';
 import Restaurant from './views/Restaurant.vue';
 import NotFound from './views/errors/404.vue';
 import Checkout from './views/Checkout.vue';
@@ -28,6 +28,7 @@ const routes = [
         component: Home,
         meta: { requiresJumbotron: true }
     },
+    /*
     {
       path: '/category/:slug',
       name: 'category',
@@ -35,6 +36,7 @@ const routes = [
       props: true,
       meta: { requiresJumbotron: true }
     },
+    */
     {
       path: '/local/:slug',
       name: 'restaurant',

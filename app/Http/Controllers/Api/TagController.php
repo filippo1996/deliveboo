@@ -14,7 +14,7 @@ class TagController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function category(Request $request, $slug)
+    public function category(Request $request, $slug = null)
     {
         $results = [
             'success' => false,

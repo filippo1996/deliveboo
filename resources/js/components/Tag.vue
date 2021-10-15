@@ -4,11 +4,10 @@
       <div class="row">
         <h2 class="title mb-4">Tipologie di Ristoranti</h2>
         <ul class="list-unstyled d-flex flex-wrap">
-          <li class="mt-2 mb-3 text-center">
-            <router-link class="nav-link rest-tag fw-bold" :to="{ name: 'home' }">{{ 'Tutti' }}</router-link>
-          </li>
-          <li class="mt-2 mb-3 text-center" v-for="(tag, index) in tags" :key="index">
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: index }}">{{ tag }}</router-link>
+          <li class="mt-2 mb-3 text-center pointer" v-for="(tag, index) in tags" :key="index">
+            <!-- <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: index }}">{{ tag }}</router-link> -->
+            <span @click="emit(index)" class="nav-link rest-tag fw-bold">{{ tag }}</span>
+            <span :class="{'d-none': tagsActive.indexOf(index) < 0}">Attivo</span>
           </li>
         </ul>
       </div>
@@ -19,10 +18,13 @@
 <script>
 export default {
   name: "Tag",
+  props: {
+    tagsActive: Array
+  },
   data(){
     return {
-      url: '/api/category/fast-food/?tags=show',
-      tags: [],
+      url: '/api/category/?tags=show',
+      tags: {},
       loading: true
     }
   },
@@ -36,6 +38,9 @@ export default {
       let response = await axios(this.url);
       this.tags = response.data.results;
       this.loading = false;
+    },
+    emit(slug){
+      this.$emit('slugEmit', slug);
     }
   }
 }
@@ -57,6 +62,7 @@ export default {
       font-size: 16px;
       transition: 0.5s;
       margin: 0 10px;
+      cursor: pointer;
 
       &:hover{
         transform: translateY(-10px);

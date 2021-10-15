@@ -1,25 +1,30 @@
 <template>
   <section>
     <div class="container py-5">
-      <Tag/>
+      <Tag @slugEmit="callSlug" :tagsActive="slugs"/>
       <div class="row justify-content" :class="{'d-none': loading}" v-if="!message">
 
-        <!-- start card category -->
-        <div class="col-12 col-sm-6 col-lg-3 border-white mb-3" v-for="restaurant in restaurants" :key="restaurant.id">
-          <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: restaurant.slug }}">
-            <div class="card text-white overflow-hidden rest-card box_shadow">
-              <img :src="restaurant.cover" class="card-img" :alt="restaurant.name">
-              <div class="card-img-overlay text-center text-light shadow">
-                <div class="description">
-                  <h3 class="card-title">{{ restaurant.name }}</h3>
-                  <span class="tag">{{ tag }}</span>
+        <div v-for="(restaurant, index) in restaurants" :key="index">
+          <!-- Title category -->
+          <h3>{{ restaurant.tagName }}</h3>
+
+          <!-- start card category -->
+          <div class="col-sm-6 col-lg-3 border-white mb-3" v-for="item in restaurant.item" :key="item.id">
+            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: item.slug }}">
+              <div class="card text-white overflow-hidden rest-card box_shadow">
+                <img :src="item.cover" class="card-img" :alt="item.name">
+                <div class="card-img-overlay text-center text-light shadow">
+                  <div class="description">
+                    <h3 class="card-title">{{ item.name }}</h3>
+                    <span class="tag">{{ restaurant.tagName }}</span>
+                  </div>
                 </div>
+                <!-- Card Ristorante -->
               </div>
-              <!-- Card Ristorante -->
-            </div>
-          </router-link>
+            </router-link>
+          </div>
+          <!-- end card category -->
         </div>
-        <!-- end card category -->
       </div>
       
       <h3 v-else>{{ message }}</h3>
@@ -37,38 +42,60 @@ export default {
     Tag
   },
   props: {
-    slug: String
+    //slug: String
   },
   data(){
     return {
+      slug: '',
       restaurants: [],
-      tag: '',
+      slugs: [],
       url: '/api/category/',
-      message: undefined,
+      message: 'Scopri le nostre categorie',
       loading: true
     }
   },
   mounted(){
-    this.callApi();
+    //this.callApi();
   },
   methods: {
     async callApi(){
+      // Metod Active
+      if(this.activeCategory()) return;
       this.loading = true;
       this.message = '';
       let response = await axios.get(this.url + this.slug);
       if(response.data.success){
-        this.restaurants = response.data.results.users;
-        this.tag = response.data.results.name;
+        let restaurants = response.data.results.users;
+        let tag = response.data.results.name;
+        this.restaurants.push( {slug : this.slug, tagName: tag, item: {...restaurants}} );
         if(!this.restaurants.length) this.message = 'Nessun ristorante trovato';
-      } else {
-        this.$router.push({ name: '404' });
       }
       this.loading = false;
-    }
-  },
-  watch: {
-    slug: function(){
+    },
+    activeCategory(){
+      if(this.slugs.includes(this.slug)){
+        let index = this.slugs.indexOf(this.slug);
+        this.slugs.splice(index, 1);
+        // Metod remove restaurant
+        this.removeRestaurant(this.slug);
+        return true;
+      }
+
+      this.slugs.push(this.slug);
+      return false;
+    },
+    removeRestaurant(slug){
+      const filter = this.restaurants.filter(element => {
+        return element.slug !== slug;
+      });
+      this.restaurants = filter;
+    },
+    callSlug(slug){
+      this.slug = slug;
       this.callApi();
+      if(!this.slugs.length){
+        this.message = 'Scopri le nostre categorie';
+      }
     }
   }
 }

@@ -2,12 +2,12 @@
   <section>
     <div v-if="!loading">
       <div class="container py-5">
-        <!-- category -->
-        <Tag/>
-        <!-- end category -->
         <div class="row justify-content">
           <Card :items="restaurants"/>
         </div>
+        <!-- start category -->
+        <Category />
+        <!-- end category -->
       </div>
       <div>
         <Affiliati />
@@ -29,18 +29,18 @@
 </template>
 
 <script>
-import Tag from '../components/Tag.vue';
 import Card from '../components/Card.vue';
 import Affiliati from '../partials/Affiliati.vue';
 import ContactUs from '../partials/ContactUs.vue';
+import Category from '../views/Category.vue';
 
 export default {
   name: "Main",
   components: {
-    Tag,
     Card,
     Affiliati,
     ContactUs,
+    Category,
   },
   data(){
     return{

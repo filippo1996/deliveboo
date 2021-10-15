@@ -23,6 +23,6 @@ use App\Http\Controllers\Api\PaymentController;
 
 Route::get('/restaurants',[RestaurantController::class,'index']);
 Route::get('/restaurant/{slug}', [RestaurantController::class, 'showProducts']);
-Route::get('/category/{slug}', [TagController::class, 'category']);
+Route::get('/category/{slug?}', [TagController::class, 'category']);
 Route::get('/products', [ProductController::class, 'index']);
 Route::post('/payment', [PaymentController::class, 'index']);
