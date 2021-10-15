@@ -34,9 +34,9 @@ class HomeController extends Controller
      */
     public function charOrder()
     {
-        //$orders = Order::where('user_id', Auth::user()->id)->get();
+        $year = date('Y');
 
-        $orders = Order::select('created_at')->where('user_id', Auth::user()->id)->get()->groupBy(function($d) {
+        $orders = Order::select('created_at')->where('user_id', Auth::user()->id)->whereYear('created_at', $year)->get()->groupBy(function($d) {
             return Carbon::parse($d->created_at)->format('m');
         });
 

@@ -36,6 +36,9 @@ window.chartColors = {
         '#58595b',
         '#8549ba'
     ];
+
+    var formatMont = [];
+
     var Samples = global.Samples || (global.Samples = {});
     var Color = global.Color;
     Samples.utils = {
@@ -60,8 +63,8 @@ window.chartColors = {
             var decimals = cfg.decimals || 8;
             var continuity = cfg.continuity || 1;
             var dfactor = Math.pow(10, decimals) || 0;
-            var data = [];
-            var i, value;
+            var data = {};
+            var i, obj = {};
             /*
             for (i = 0, check = 1; check <= count; check++) {
                 //+ this.rand(min, max);
@@ -85,12 +88,17 @@ window.chartColors = {
                 }
             }
             */
-          for(i = 1; i <= count; i++){
-            value = from[i] || 0;
-            data.push(value);
-          }
+            for(i = 0; i < count; i++){
+                if(from[i + 1]){
+                    obj[MONTHS[i]] = from[i + 1];
+                } else {
+                    obj[MONTHS[i]] = 0;
+                }
+            }
 
-          return data;
+            formatMont.forEach((ele) => data[ele] = obj[ele] );
+
+            return data;
         },
         labels: function(config) {
             var cfg = config || {};
@@ -114,15 +122,26 @@ window.chartColors = {
             var cfg = config || {};
             var count = cfg.count || 12;
             var section = cfg.section;
+            var current = cfg.current || 0;
             var values = [];
             var i, value;
-
+            /*
             for (i = 0; i < count; ++i) {
                 value = MONTHS[Math.ceil(i) % 12];
                 values.push(value.substring(0, section));
             }
+            */
 
-            return values;
+            const currentMonth = current + 1;
+            const months = [...MONTHS];
+
+            let formatMonths = months.splice(currentMonth);
+
+            months.unshift(...formatMonths);
+
+            formatMont = months;
+
+            return months;
         },
         color: function(index) {
             return COLORS[index % COLORS.length];

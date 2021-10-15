@@ -67,8 +67,9 @@ function char() {
 
   const DATA_COUNT = 12;
   const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 20, from: orders };
+  const date = new Date();
 
-  const labels = Samples.utils.months({ count: 12 });
+  const labels = Samples.utils.months({ count: 12, current: date.getMonth() });
 
   const data = {
     labels: labels,
@@ -106,8 +107,6 @@ function char() {
       }
     },
   };
-
-
 
   const ctx = document.getElementById('chart');
   const chart = new Chart(ctx, config);

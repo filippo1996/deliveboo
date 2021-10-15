@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderConfirm;
 use Braintree;
+use Log;
 use App\Models\Order;
 
 class PaymentController extends Controller
@@ -97,6 +98,12 @@ class PaymentController extends Controller
         $emails['user'] = $user['email'];
 
         // send email order
-        Mail::to($emails)->send(new OrderConfirm($request));
+        try{
+            Mail::to($emails)->send(new OrderConfirm($request));
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage());
+        }finally {
+            return;
+        }
     }
 }
