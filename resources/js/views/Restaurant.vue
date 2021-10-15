@@ -1,12 +1,12 @@
 <template>
-  <section :class="{'d_none': loading}">
+  <section :class="{'load': loading}">
     <div class="container py-5">
       <div class="row">
         <!-- Restaurant -->
         <div class="col-12 col-lg-9 pe-4" :class="{'col-lg-12': !cart?.items?.length}">
           
           <!-- Restaurant Header -->
-          <div class="row restaurant_header text-white my-4 py-5">
+          <div class="row restaurant_header text-white my-4 py-5" :class="{'d_none': loading}">
             <h1>{{ restaurant.name }}</h1>
             <span>Contatta: {{ restaurant.phone_number }}</span>
           </div>
@@ -247,6 +247,17 @@ export default {
 
 <style lang="scss" scoped>
 @import 'resources/sass/_variables.scss';
+
+// loading
+.load{
+  height: 500px;
+  background-color: $yellow;
+  z-index: 500;
+  background-image: url("/images/metamorphosis.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 250px;
+}
 
 
 // General
