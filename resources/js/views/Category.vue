@@ -67,8 +67,8 @@ export default {
       if(response.data.success){
         let restaurants = response.data.results.users;
         let tag = response.data.results.name;
-        this.restaurants.push( {slug : this.slug, tagName: tag, item: {...restaurants}} );
-        if(!this.restaurants.length) this.message = 'Nessun ristorante trovato';
+        this.restaurants.unshift( {slug : this.slug, tagName: tag, item: {...restaurants}} );
+        if(!this.restaurants.length) this.message = 'Presto in arrivo nuovi ristoranti';
       }
       this.loading = false;
     },
