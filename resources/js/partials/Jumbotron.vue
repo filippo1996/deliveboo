@@ -84,7 +84,7 @@ export default {
 
   .jumbo-img{
     height: calc(100% - 30px);
-    background: url('/images/background2.png');
+    background: url('/images/background.png');
     background-position: 60% 0;
     background-size: cover;
     background-repeat:no-repeat;
@@ -115,7 +115,7 @@ export default {
       .bike{
         bottom: 7px;
         right: -27px;
-        animation-delay: 2s;
+        animation-delay: 2.5s;
         animation-duration: 2s;
         animation-name: delivery-man;
         animation-timing-function: ease-in-out;
@@ -126,7 +126,7 @@ export default {
       .smoke-container{
         .smoke{
           top: 0px;
-          animation-delay: 2.7s;
+          animation-delay: 3.2s;
           animation-duration: 1.7s;
           animation-name: smoke;
           animation-timing-function: ease-in-out;

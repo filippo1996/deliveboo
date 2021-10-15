@@ -1,8 +1,6 @@
 <template>
   <header>
 
-    
-
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <router-link class="nav-link active text-light d-none d-sm-block" :to="{name: 'home'}"> <img src="/images/logo.png" class="logo" alt="logo"></router-link>
@@ -23,6 +21,7 @@
         </div>
       </div>
     </nav>
+    
   </header>
 </template>
 

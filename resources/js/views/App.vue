@@ -1,12 +1,18 @@
 <template>
   <div>
-    <Header/>
-    <Jumbotron v-if="$route.meta.requiresJumbotron"/>
-    <main>
-      <!-- rendering -->
-      <router-view></router-view>
-    </main>
-    <Footer/>
+    <div class="preload w-100 vh-100 d-flex flex-column justify-content-center align-items-center position-fixed">
+      <div class="fw-bold buffering fs-5">Caricamento...</div>
+      <img src="/images/metamorphosis.gif" alt="food">
+    </div>
+    <div>
+      <Header/>
+      <Jumbotron v-if="$route.meta.requiresJumbotron"/>
+      <main>
+        <!-- rendering -->
+        <router-view></router-view>
+      </main>
+      <Footer/>
+    </div>
   </div>
 </template>
 
@@ -25,6 +31,12 @@ export default {
     Footer,
     }
 }
+
+window.addEventListener('load', () => {
+  const preload = document.querySelector('.preload');
+  preload.classList.add('preload-finish');
+})
+
 </script>
 
 <style lang="scss">
@@ -32,6 +44,28 @@ export default {
 *{
   font-family: 'Comfortaa', cursive;
 }
+
+.preload{
+  top: 0;
+  background-color: $yellow;
+  z-index: 1500;
+  transition: opacity 0.5s ease;
+
+  .buffering{
+    color: $blue;
+  }
+
+  img{
+    width: 250px;
+  }
+}
+
+.preload-finish{
+  opacity: 0;
+  pointer-events: none;
+}
+
+
 
 </style>
 

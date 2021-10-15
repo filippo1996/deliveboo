@@ -6,7 +6,7 @@
          <h3>L'ordine è stato completato con successo, arriverà il prima possibile.</h3>
         </div>
         <div class="col-6 d-flex justify-content-center mt-5">
-          <img src="/images/food2.png" alt="food">
+          <img src="/images/food.png" alt="food">
         </div>
         <div class="col-3 d-flex justify-content-center mb-5">
          <router-link 
