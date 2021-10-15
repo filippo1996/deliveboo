@@ -84,7 +84,7 @@ export default {
 
   .jumbo-img{
     height: calc(100% - 30px);
-    background: url('/images/background.png');
+    background: url('/images/background2.png');
     background-position: 60% 0;
     background-size: cover;
     background-repeat:no-repeat;

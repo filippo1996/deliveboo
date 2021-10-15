@@ -72,13 +72,16 @@ export default {
 
 .z_index {
   position: relative;
-  z-index: 50;
+  z-index: 500;
+  height: 50vh;
+  
 
   .modal-content {
     background-color: rgba(65, 112, 142, .3);
-    
+    height: 100%;
     width: 70%;
     margin: 0 auto;
+
 
     .modal-body {
       width: 100%;
