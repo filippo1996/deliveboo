@@ -7,24 +7,26 @@
       <div class="modal-content mt-3">
         <div class="modal-body" >
           <div class="row" v-for="item in items" :key="item.id">
-            <div class="col-8 m-auto p-2">
-              <div class="card mb-3">
-                <div class="row g-0">
-                  <div class="col-md-4 d-flex ps-4">
-                    <div class="box_img d-flex align-items-center rounded-circle">
-                      <img :src="item.cover" :alt="item.name">
-                    </div>
-                    
-                  </div> 
-                  <div class="col-md-8 ps-4">
-                    <div class="card-body text-start">
-                      <h5 class="card-title">{{item.name}}</h5>
-                      <span>Costo ristorante: €€</span>
+            <router-link  :to="{name: 'restaurant', params:{ slug: item.slug }}">
+              <div class="col-8 m-auto p-2">
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-md-4 d-flex ps-4">
+                      <div class="box_img d-flex align-items-center rounded-circle">
+                        <img :src="item.cover" :alt="item.name">
+                      </div>
+                      
+                    </div> 
+                    <div class="col-md-8 ps-4">
+                      <div class="card-body text-start">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <span>Costo ristorante: €€</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </router-link>
           </div>
         </div>
       </div>
