@@ -24,8 +24,7 @@ class TagController extends Controller
         if($request->has('tags')){
             $tags =  Tag::pluck('name','slug');
         } else {
-            $eloquent = Tag::where('slug', $slug)->with('users');
-            $tags = $eloquent->with('users')->first();
+            $tags = Tag::where('slug', $slug)->with(['users' => fn($query) => $query->whereHas('products', fn($query) => $query->select('user_id','visibility')->where('visibility',1))])->first();
         }
         
         if($tags){

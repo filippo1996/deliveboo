@@ -8,22 +8,26 @@
           <!-- Title category -->
           <h3>{{ restaurant.tagName }}</h3>
 
-          <!-- start card category -->
-          <div class="col-sm-6 col-lg-3 border-white mb-3" v-for="item in restaurant.item" :key="item.id">
-            <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: item.slug }}">
-              <div class="card text-white overflow-hidden rest-card box_shadow">
-                <img :src="item.cover" class="card-img" :alt="item.name">
-                <div class="card-img-overlay text-center text-light shadow">
-                  <div class="description">
-                    <h3 class="card-title">{{ item.name }}</h3>
-                    <span class="tag">{{ restaurant.tagName }}</span>
+          <div v-if="'0' in restaurant.item">
+            <!-- start card category -->
+            <div class="col-sm-6 col-lg-3 border-white mb-3" v-for="item in restaurant.item" :key="item.id">
+              <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: item.slug }}">
+                <div class="card text-white overflow-hidden rest-card box_shadow">
+                  <img :src="item.cover" class="card-img" :alt="item.name">
+                  <div class="card-img-overlay text-center text-light shadow">
+                    <div class="description">
+                      <h3 class="card-title">{{ item.name }}</h3>
+                      <span class="tag">{{ restaurant.tagName }}</span>
+                    </div>
                   </div>
+                  <!-- Card Ristorante -->
                 </div>
-                <!-- Card Ristorante -->
-              </div>
-            </router-link>
+              </router-link>
+            </div>
+            <!-- end card category -->
           </div>
-          <!-- end card category -->
+          <h3 class="mb-4" v-else>Presto in arrivo nuovi ristoranti</h3>
+        
         </div>
       </div>
       
@@ -68,7 +72,6 @@ export default {
         let restaurants = response.data.results.users;
         let tag = response.data.results.name;
         this.restaurants.unshift( {slug : this.slug, tagName: tag, item: {...restaurants}} );
-        if(!this.restaurants.length) this.message = 'Presto in arrivo nuovi ristoranti';
       }
       this.loading = false;
     },
