@@ -8,6 +8,7 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+    /*
     public function index(Request $request)
     {
         $eloquent = Product::where('visibility', 1);
@@ -18,4 +19,5 @@ class ProductController extends Controller
             return $products;
         }
     }
+    */
 }

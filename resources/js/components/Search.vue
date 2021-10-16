@@ -12,15 +12,14 @@
                 <div class="row g-0">
                   <div class="col-md-4 d-flex ps-4">
                     <div class="box_img d-flex align-items-center rounded-circle">
-                      <img :src="item.img_path" alt="{{item.name}}">
+                      <img :src="item.cover" :alt="item.name">
                     </div>
                     
                   </div> 
                   <div class="col-md-8 ps-4">
                     <div class="card-body text-start">
                       <h5 class="card-title">{{item.name}}</h5>
-                      <p class="card-text"> {{item.ingredient}} </p>
-                      <p class="card-text"><small class="text-muted">{{item.price}}</small></p>
+                      <span>Costo ristorante: €€</span>
                     </div>
                   </div>
                 </div>
@@ -41,7 +40,7 @@ export default {
   },
   data(){
     return {
-      url: '/api/products/?search=',
+      url: '/api/search/restaurants?search=',
       items: []
     }
   },

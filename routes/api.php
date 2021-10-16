@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\TagController;
-use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\PaymentController;
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +23,5 @@ use App\Http\Controllers\Api\PaymentController;
 Route::get('/restaurants',[RestaurantController::class,'index']);
 Route::get('/restaurant/{slug}', [RestaurantController::class, 'showProducts']);
 Route::get('/category/{slug?}', [TagController::class, 'category']);
-Route::get('/products', [ProductController::class, 'index']);
+Route::get('/search/restaurants', [RestaurantController::class, 'search']);
 Route::post('/payment', [PaymentController::class, 'index']);

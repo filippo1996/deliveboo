@@ -45,4 +45,14 @@ class RestaurantController extends Controller
         return $restaurant;
     }
 
+
+    public function search(Request $request)
+    {
+        if($request->has('search')){
+            $word = $request->query('search');
+            $restaurants = User::where('name', 'LIKE', "%$word%")->whereHas('products', fn($query) => $query->where('visibility',1))->get();
+            return $restaurants;
+        }
+    }
+
 }
