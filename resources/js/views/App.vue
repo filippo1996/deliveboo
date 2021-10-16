@@ -24,19 +24,27 @@ import Footer from '../partials/Footer.vue';
 
 export default {
   name: 'App',
-    components: {
-    Header,
-    Jumbotron,
-    Affiliati,
-    Footer,
-    }
+  components: {
+  Header,
+  Jumbotron,
+  Affiliati,
+  Footer,
+  },
+  created(){
+    window.addEventListener('load', () => {
+      const preload = document.querySelector('.preload');
+      preload.classList.add('preload-finish');
+    });
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler(to, from) {
+        document.title = to.meta.title || 'Deliveboo';
+      }
+    },
+  }
 }
-
-window.addEventListener('load', () => {
-  const preload = document.querySelector('.preload');
-  preload.classList.add('preload-finish');
-})
-
 </script>
 
 <style lang="scss">
@@ -64,8 +72,6 @@ window.addEventListener('load', () => {
   opacity: 0;
   pointer-events: none;
 }
-
-
 
 </style>
 

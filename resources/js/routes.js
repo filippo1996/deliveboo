@@ -20,13 +20,14 @@ const routes = [
     },
     { path: '/404', 
       name: '404', 
-      component: NotFound 
+      component: NotFound,
+      meta: { title: 'Pagina non trovata 404' }
     },
     {
-        path: '/',
-        name: 'home',
-        component: Home,
-        meta: { requiresJumbotron: true }
+      path: '/',
+      name: 'home',
+      component: Home,
+      meta: { requiresJumbotron: true }
     },
     /*
     {
@@ -48,6 +49,7 @@ const routes = [
       name: 'checkout',
       component: Checkout,
       props: true,
+      meta: { title: 'Indirizzo di spedizione' },
       beforeEnter: (to, from) => {
         const cart = new Cart();
         if( !cart.getCart().items?.length ) return from;
@@ -58,6 +60,7 @@ const routes = [
       name: 'payment',
       component: Payment,
       props: true,
+      meta: { title: 'Effettua il pagamento' },
       beforeEnter: (to, from) => {
         const cart = new Cart();
         if( !cart.getCart().items?.length || !localStorage.getItem('address') ) return from;
@@ -68,6 +71,7 @@ const routes = [
       name: 'success',
       component: Success,
       props: true,
+      meta: { title: 'Ordine completato con successo' },
       beforeEnter: (to, from) => {
         let status = to.params.repositories;
         if(status !== 'authorized') return from;

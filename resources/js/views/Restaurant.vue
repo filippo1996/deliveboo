@@ -189,6 +189,9 @@ export default {
       totalPriceCart: 0
     }
   },
+  created(){
+    document.title = 'Ristorante ' + this.slug;
+  },
   mounted(){
     this.getRestaurant();
     let cart = new Cart();

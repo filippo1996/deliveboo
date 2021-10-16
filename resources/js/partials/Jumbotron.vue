@@ -4,7 +4,7 @@
       <div class="container pt-5">
         <div class="row text-center">
           <div class="col-10 col-md-9 col-xl-6 m-auto">
-            <input v-model="search" type="text" placeholder="Cerca i prodotti dei tuoi locali preferiti" class="border-0 text-light text-center">
+            <input v-model="search" type="text" placeholder="Cerca i tuoi locali preferiti" class="border-0 text-light text-center">
           </div>
           <Search v-if="search" :word="search"/>
         </div>
