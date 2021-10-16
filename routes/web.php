@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Api\RestaurantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +20,8 @@ Route::get('/', function () {
 });
 */
 Route::view('/email', 'emails.order_confirm');
+
+// Verify access restaurant
+Route::get('/auth',[RestaurantController::class, 'auth']);
 // Route frontend
 Route::view('/{any}', 'layouts.web')->where('any','.*');

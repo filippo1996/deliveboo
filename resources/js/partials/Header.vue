@@ -14,9 +14,12 @@
               <a class="nav-link active text-light" aria-current="page" href="#">Chi siamo</a>
             </li>
           </ul>
-          <div>
+          <div v-if="!auth">
             <a class="btn bottone me-3 text-decoration-none" href="http://127.0.0.1:8000/restaurant/login">Accedi</a>
             <a class="btn bottone me-2 text-decoration-none" href="http://127.0.0.1:8000/restaurant/register">Registrati</a>
+          </div>
+          <div v-else>
+            <h6>Ciao, {{ name }} <a class="link-success" href="http://127.0.0.1:8000/restaurant">La tua Dashboard</a></h6>
           </div>
         </div>
       </div>
@@ -28,6 +31,33 @@
 <script>
 export default {
   name: "Header",
+  data(){
+    return {
+      name: undefined,
+      email: undefined,
+      cover: undefined,
+      auth: false
+    }
+  },
+  mounted(){
+    this.checkAuth();
+  },
+  methods: {
+    async checkAuth(){
+      try {
+        let response = await axios('/auth');
+        response = response.data;
+        if(response.success){
+          this.auth = true;
+          this.name = response.auth.name;
+          this.email = response.auth.email;
+          this.cover = response.auth.cover;
+        }
+      } catch(error) {
+        console.log(error);
+      }
+    }
+  },
 }
 </script>
 

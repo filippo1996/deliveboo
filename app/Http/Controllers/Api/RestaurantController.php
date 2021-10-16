@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\User;
 use App\Models\Product;
+use Auth;
 
 class RestaurantController extends Controller
 {
@@ -53,6 +54,23 @@ class RestaurantController extends Controller
             $restaurants = User::where('name', 'LIKE', "%$word%")->whereHas('products', fn($query) => $query->where('visibility',1))->get();
             return $restaurants;
         }
+    }
+
+    public function auth()
+    {
+        $response = ['success' => false];
+
+        if(Auth::user()){
+            $user = Auth::user();
+            $response['success'] = true;
+            $response['auth'] = [
+                'name' => $user->name,
+                'email' => $user->email,
+                'cover' => $user->cover
+            ];
+        }
+
+        return $response;
     }
 
 }
