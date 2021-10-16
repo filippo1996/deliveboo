@@ -7,9 +7,9 @@
       <div class="modal-content mt-3">
         <div class="modal-body" >
           <div class="row" v-for="item in items" :key="item.id">
-            <router-link  :to="{name: 'restaurant', params:{ slug: item.slug }}">
-              <div class="col-8 m-auto p-2">
-                <div class="card mb-3">
+            <div class="col-8 m-auto p-2">
+              <div class="card mb-3">
+                <router-link  :to="{name: 'restaurant', params:{ slug: item.slug }}">
                   <div class="row g-0">
                     <div class="col-md-4 d-flex ps-4">
                       <div class="box_img d-flex align-items-center rounded-circle">
@@ -24,9 +24,9 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </router-link>
               </div>
-            </router-link>
+            </div>
           </div>
         </div>
       </div>
