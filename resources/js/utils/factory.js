@@ -1,3 +1,4 @@
+// Message of the type: alert | confirm
 window.customMessage = function(type = 'alert', title = 'Title', description = 'Paragraph'){
   return new Promise((resolve, reject) => {
     // modal custom
