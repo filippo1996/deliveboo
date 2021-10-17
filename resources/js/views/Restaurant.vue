@@ -212,10 +212,10 @@ export default {
         this.$router.push({ name: '404'});
       }
     },
-    insertCart(product){
+    async insertCart(product){
       const qty = document.querySelector(`input[data-product="${product.id}"]`);
       const cart = new Cart(this.restaurant,product);
-      cart.setCart(+qty.value);
+      await cart.setCart(+qty.value);
       // set property cart
       this.cart = cart.getCart();
       this.totalPriceCart = cart.getTotalPrice();

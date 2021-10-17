@@ -125,7 +125,8 @@ export default {
         if(input.value){
           address[key] = input.value;
         } else {
-          alert(values[key] + ' non è presente, si prega di inserirlo.');
+          //alert(values[key] + ' non è presente, si prega di inserirlo.');
+          customMessage('alert', 'Campo mancante!', `${values[key]} non è presente, si prega di inserirlo.`);
           return;
         }
       }
