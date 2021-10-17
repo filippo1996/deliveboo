@@ -3,11 +3,14 @@
     <div class="container mt-5">
     <div class="row pt-5">
       <div class="col">
-        <form id="payment-form">
+        <form id="payment-form" :class="{ 'd-none' : paymentProcessing }">
           <div id="dropin-container"></div>
-          <input class="btn bottone mb-3" type="submit" value="Paga"/>
+          <input :class="{ 'd-none' : loadingPayament }" class="btn bottone mb-3" type="submit" value="Paga"/>
           <!-- <input type="hidden" id="nonce" name="payment_method_nonce"/> -->
         </form>
+        <div class="d-none" :class="{ 'load' : paymentProcessing }">
+          <div class="fw-bold buffering fs-5">Pagamento in corso...</div>
+        </div>
       </div>
     </div>
   </div>
@@ -21,7 +24,8 @@ export default {
   name: 'Payment',
   data(){
     return {
-      //
+      loadingPayament: true,
+      paymentProcessing: false
     }
   },
   mounted(){
@@ -32,11 +36,13 @@ export default {
       container: '#dropin-container',
       locale: 'it_IT'
     }).then((dropinInstance) => {
+      this.loadingPayament = false;
       form.addEventListener('submit', (event) => {
         event.preventDefault();
 
         dropinInstance.requestPaymentMethod().then( async (payload) => {
           // Ready for payment
+          this.paymentProcessing = true;
           const cart = new Cart();
           const address = JSON.parse(localStorage.getItem('address'));
           try{
@@ -51,9 +57,11 @@ export default {
               cart.clearCart(); 
               this.$router.push({ name: 'success', params: { repositories: 'authorized' } });
             } else {
+              // payment declined
+              this.paymentProcessing = false;
               let code = response.data.errors?.code;
               let message = response.data.errors?.message;
-              alert('errore nel pagamento codice ' + code + ' : ' + message);
+              customMessage('alert','Errore pagamento!', 'Codice ' + code + ' : ' + message);
             }
           } catch(error){
             console.log(error);
@@ -85,6 +93,18 @@ section{
       background-color: #5087aa;
     }
   }
+}
+
+// loading
+.load{
+  display: block !important;
+  height: 500px;
+  background-color: #6fa3d6;
+  z-index: 500;
+  background-image: url("/images/metamorphosis.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 250px;
 }
 
 </style>
