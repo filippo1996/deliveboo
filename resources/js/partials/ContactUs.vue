@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="contact">
     <div class="container">
 
       <div class="row d-flex justify-content-center py-5">

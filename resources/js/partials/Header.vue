@@ -11,6 +11,9 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#contact">Contattaci</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active text-light" aria-current="page" href="#">Chi siamo</a>
             </li>
           </ul>
