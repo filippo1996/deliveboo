@@ -7,21 +7,16 @@
       <div class="modal-content mt-3">
         <div class="modal-body" >
           <div class="row" v-for="item in items" :key="item.id">
-            <div class="col-8 m-auto p-2">
-              <div class="card mb-3">
+            <div class="p-2">
+              <div class="card mb-1">
                 <router-link  :to="{name: 'restaurant', params:{ slug: item.slug }}">
-                  <div class="row g-0">
-                    <div class="col-md-4 d-flex ps-4">
-                      <div class="box_img d-flex align-items-center rounded-circle">
-                        <img :src="item.cover" :alt="item.name">
-                      </div>
-                      
-                    </div> 
-                    <div class="col-md-8 ps-4">
-                      <div class="card-body text-start">
-                        <h5 class="card-title">{{item.name}}</h5>
-                        <span>Costo ristorante: €€</span>
-                      </div>
+                  <div class="d-flex ">
+                    <div class="align-items-center rounded-circle">
+                      <img :src="item.cover" :alt="item.name">
+                    </div>
+                    <div class="card-body text-start">
+                      <h5 class="card-title">{{item.name}}</h5>
+                      <span>Costo ristorante: €€€</span>
                     </div>
                   </div>
                 </router-link>
@@ -72,28 +67,28 @@ export default {
 @import 'resources/sass/_variables.scss';
 
 .z_index {
+  margin: 0 auto;
   position: relative;
   z-index: 500;
-  height: 50vh;
+  height: 55vh;
   
 
   .modal-content {
-    background-color: rgba(65, 112, 142, .3);
+    background-color: #41718eda;
     height: 100%;
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
+    border-radius: 10px;
 
 
     .modal-body {
-      width: 100%;
       height: 500px;
       overflow-y: auto;
       
       .card {
-        width: 80%;
-        margin: 0 auto;
+        margin: 0 20px;
         background-color: #fff;
-        border-radius: 0px 16px 0px 16px;
+        border-radius: 16px;
         padding: 10px;
 
 
@@ -107,7 +102,6 @@ export default {
           border-radius: 50%; 
           background-clip: padding-box; 
           object-fit: fill;
-          margin: 8px 0 0 8px; 
         }
       } 
     }
