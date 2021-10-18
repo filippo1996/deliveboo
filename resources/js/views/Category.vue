@@ -27,12 +27,14 @@
             </div>
             <!-- end card category -->
           </div>
-          <h3 class="mb-4 text_blue" v-else>Presto in arrivo nuovi ristoranti</h3>
+          <div class="row" v-else>
+            <h2 class="mb-4 text_blue">Presto in arrivo nuovi ristoranti</h2>
+          </div>
         
         </div>
       </div>
       
-      <h3 class="text_blue" v-else>{{ message }}</h3>
+      <h2 class="text_blue" v-else>{{ message }}</h2>
     </div>  
     <!-- Container -->
   </section>
