@@ -1,32 +1,50 @@
 <template>
   <header>
 
-    <nav class="navbar navbar-expand fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <router-link class="nav-link active text-light d-none d-sm-block" :to="{name: 'home'}"> <img src="/images/logo.png" class="logo" alt="logo"></router-link>
         <router-link class="nav-link active text-light d-block d-sm-none align-item-center logo-icon" :to="{name: 'home'}"> <img src="/images/logo_icon.png" class="logo-icon" alt="icona-logo"></router-link>
+        <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="fas fa-bars text-light"></i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#contact">Contattaci</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">Chi siamo</a>
+            </li>
+          </ul>
+          <div v-if="!auth">
+            <a class="btn bottone me-3 text-decoration-none" href="http://127.0.0.1:8000/restaurant/login">Accedi</a>
+            <a class="btn bottone me-2 text-decoration-none" href="http://127.0.0.1:8000/restaurant/register">Registrati</a>
+          </div>
+          <div v-else>
+            <!-- menu da lg in su -->
+            <div class="d-none d-lg-block">
+              <h6 class="text-light mb-3 d-inline">Ciao, </h6>
+              <div class="d-inline dropdown">
+                <button class="btn bottone dropdown-toggle text-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{ name }}<img class="logorest mx-1" :src="cover" alt="logo">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end prova" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/restaurant">Dashboard</a></li>
+                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/restaurant/products">Prodotti</a></li>
+                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/restaurant/orders">Ordini</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- menu mobile -->
+            <div class="d-lg-none">
+              <hr class="dropdown-divider text-light">
+              <h6 class="text-light mb-3 d-inline">Ciao, {{ name }} <img class="logorest" :src="cover" alt="logo"></h6>
+              <a href="http://127.0.0.1:8000/restaurant" class="nav-link active text-light">Dashboard</a>
+              <a href="http://127.0.0.1:8000/restaurant/products" class="nav-link active text-light">Prodotti</a>
+              <a href="http://127.0.0.1:8000/restaurant/orders" class="nav-link active text-light">Ordini</a>
+            </div>
 
-        <!-- <a class="nav-link active text-light d-none d-lg-block" aria-current="page" href="#">Chi siamo</a> -->
-
-        <div v-if="!auth">
-          <a class="btn bottone me-3 text-decoration-none" href="http://127.0.0.1:8000/restaurant/login">Accedi</a>
-          <a class="btn bottone me-2 text-decoration-none" href="http://127.0.0.1:8000/restaurant/register">Registrati</a>
-        </div>
-        <div v-else>
-          <!-- <h6>Ciao, {{ name }} <a class="link-success" href="http://127.0.0.1:8000/restaurant">La tua Dashboard</a></h6> -->
-          <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="pe-1 logorest" :src="cover" alt="logo"><h6 class="d-inline">{{ name }}</h6>
-            </a>
-
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li class="py-3"><a class="dropdown-item" href="http://127.0.0.1:8000/restaurant">Dashboard</a></li>
-              <hr>
-              <li class="py-3"><a class="dropdown-item" href="http://127.0.0.1:8000/restaurant/products">Prodotti</a></li>
-              <hr>
-              <li class="py-3"><a class="dropdown-item" href="http://127.0.0.1:8000/restaurant/orders">Ordini</a></li>
-              <!-- <li><a class="dropdown-item" :href="route('logout')">Logout</a></li> -->
-            </ul>
           </div>
         </div>
       </div>
@@ -83,16 +101,13 @@ export default {
   
 }
 
-.white{
-  color: white;
-}
-
 .logorest{
   width: 30px;
+  border-radius: 50%;
 }
 
-hr{
-  margin: 0 5px;
+.prova{
+  margin-top: 13px;
 }
 
 </style>
