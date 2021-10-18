@@ -1,3 +1,46 @@
+// Message of the type: alert | confirm
+window.customMessage = function(type = 'alert', title = 'Title', description = 'Paragraph'){
+  return new Promise((resolve, reject) => {
+    // modal custom
+    modalHtml(type, title, description);
+    const modal = document.querySelector('#customAlert');
+    const backdrop = document.querySelector('.modal-backdrop');
+    modal.addEventListener('click', function(event){
+      const input = +event.target.value;
+      if(!isNaN(input)){
+        modal.remove();
+        backdrop.remove();
+        resolve(!!input);
+      } 
+    });
+
+  });
+}
+
+function modalHtml(typeModal, heading, paragraph){
+  const modal = `<div class="modal fade show" id="customAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" style="display: block" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">${heading}</h5>
+          <button type="button" value="0" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ${paragraph}
+        </div>
+        <div class="modal-footer">
+          ${ typeModal === 'confirm' ? '<button type="button" value="0" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>' : '' }
+          <button type="button" value="1" class="btn btn-primary">Va bene</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
+  `;
+  document.body.insertAdjacentHTML('afterbegin', modal);
+}
+
+
 export default function slug(str){
   const array =  str.split(' ');
   return array.join('-').toLowerCase();
@@ -23,12 +66,12 @@ export class Cart {
    * we insert the product in the local storage
    * @param {Integer} obj
    */
-  setCart(qty){
+  async setCart(qty){
 
     if(!this.obj) return null;
 
     if(qty >= 1){
-      this.insertCart(qty);
+      await this.insertCart(qty);
       localStorage.setItem(this.nameStorage, JSON.stringify(this.cart));
     }
   }
@@ -77,7 +120,7 @@ export class Cart {
   /**
    * insert product in the cart
    */
-   insertCart(intQty){
+   async insertCart(intQty){
 
     if(!this.obj) return null;
 
@@ -87,7 +130,8 @@ export class Cart {
     }
 
     if(this.cart.user.id !== this.user.id){
-      const status = confirm('Selezionando un prodotto da un altro ristorante, perderai i prodotti che hai già nel carrello, Confermi?');
+      //const status = confirm('Selezionando un prodotto da un altro ristorante, perderai i prodotti che hai già nel carrello, Confermi?');
+      const status = await customMessage('confirm', 'Attenzione!', 'Selezionando un prodotto da un altro ristorante, perderai i prodotti che hai già nel carrello.');
       if(status){
         this.clearCart();
         this.cart = {user: this.user, items: [{product: this.obj, qty: intQty}]};

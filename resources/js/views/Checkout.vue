@@ -1,35 +1,40 @@
 <template>
   <section class="pb-3">
     <div class="container mt-5 bg-color">
-      <form class="row">
-        <div class="mb-3 pt-5 col-12 col-md-6">
-          <label for="name" class="form-label">Nome</label>
-          <input type="name" class="form-control" id="name" required>
-        </div>
-        <div class="mb-3 pt-5 col-12 col-md-6">
-          <label for="lastname" class="form-label">Cognome</label>
-          <input type="name" class="form-control" id="lastname" required>
-        </div>
-        <div class="mb-3 col-12 col-md-6">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" required>
-        </div>
-        <div class="mb-3 col-12 col-md-6">
-          <label for="phone-number" class="form-label">Numero di telefono</label>
-          <input type="name" class="form-control" id="phone_number" required>
-        </div>
-        <div class="col-12" id="infowindow-content">
-          <input type="hidden" id="street_number">
-          <input type="hidden" id="route">
-          <input type="hidden" id="locality">
-          <input type="hidden" id="country">
-          <input type="hidden" id="postal_code">
-        </div>
-        <div class="mb-3 col-12 col-md-9">
-          <label for="pac-input" class="form-label">Indirizzo di spedizione</label>
-          <input class="form-control" type="text" id="pac-input" name="pac-input" placeholder="Inserisci la tua via">
-          <div id="map" class="w-100"></div>
-        </div>
+      <div class="row">
+        <form @submit.prevent="saveAddress">
+          <div class="mb-3 pt-5 col-12 col-md-6">
+            <label for="name" class="form-label">Nome</label>
+            <input type="name" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3 pt-5 col-12 col-md-6">
+            <label for="lastname" class="form-label">Cognome</label>
+            <input type="name" class="form-control" id="lastname" required>
+          </div>
+          <div class="mb-3 col-12 col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3 col-12 col-md-6">
+            <label for="phone-number" class="form-label">Numero di telefono</label>
+            <input minlength="10" maxlength="10" type="name" class="form-control" id="phone_number" required>
+          </div>
+          <div class="col-12" id="infowindow-content">
+            <input type="hidden" id="street_number">
+            <input type="hidden" id="route">
+            <input type="hidden" id="locality">
+            <input type="hidden" id="country">
+            <input type="hidden" id="postal_code">
+          </div>
+          <div class="mb-3 col-12 col-md-9">
+            <label for="pac-input" class="form-label">Indirizzo di spedizione</label>
+            <input class="form-control" type="text" id="pac-input" name="pac-input" placeholder="Inserisci la tua via" required>
+            <div id="map" class="w-100"></div>
+          </div>
+          <div>
+            <button class="btn bottone text-decoration-none">Salva Indirizzo</button>
+          </div>
+        </form>
 
         <div class="col-12 col-md-3 my-3" v-if="'name' in statusAddress">
           <div class="mb-2">Il tuo Indirizzo</div>
@@ -53,13 +58,7 @@
           </div>
         </div>
 
-        <div>
-          <button class="btn bottone text-decoration-none" 
-              @click.prevent="saveAddress">Salva Indirizzo
-          </button>
-        </div>
-
-      </form>
+      </div>
     </div>
     <!-- <div ref="googleMaps"></div> -->
   </section>
@@ -103,7 +102,7 @@ export default {
     this.getAddress();
 
   },
-  methods:{
+  methods: {
     saveAddress(){
       // messagge error
       let values = {
@@ -125,7 +124,8 @@ export default {
         if(input.value){
           address[key] = input.value;
         } else {
-          alert(values[key] + ' non è presente, si prega di inserirlo.');
+          //alert(values[key] + ' non è presente, si prega di inserirlo.');
+          customMessage('alert', 'Campo mancante!', `${values[key]} non è presente, si prega di inserirlo.`);
           return;
         }
       }

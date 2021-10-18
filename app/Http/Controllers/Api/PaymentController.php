@@ -99,7 +99,7 @@ class PaymentController extends Controller
 
         // send email order
         try{
-            Mail::to($emails)->send(new OrderConfirm($request));
+            Mail::to($emails)->send(new OrderConfirm($request, $order->id));
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
         }finally {

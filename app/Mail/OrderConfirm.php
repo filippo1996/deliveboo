@@ -12,15 +12,17 @@ class OrderConfirm extends Mailable
     use Queueable, SerializesModels;
 
     public $order;
+    public $idOrder;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($_order)
+    public function __construct($_order, $_idOrder)
     {
         $this->order = $_order;
+        $this->idOrder = $_idOrder;
     }
 
     /**

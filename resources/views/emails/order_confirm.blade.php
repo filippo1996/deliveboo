@@ -11,29 +11,22 @@
       ul { list-style: none; }
       li { margin-bottom: 10px; }
     </style>
-    <title>Document</title>
+    <title>Ordine Confermato</title>
   </head>
   <body>
 
     <div class="bg-primary">
-      <h1 class="title"> Ordine confermato </h1>
-      <div class="subtitle"> ID ordine numero x effettuato dal cliente x</div>
+      <h1 class="title"> Ordine confermato nel ristorante {{ $order['cart']['user']['name'] }} </h1>
+      <div class="subtitle"> ID ordine numero {{ $idOrder }} effettuato da {{ $order['address']['name'] }} {{ $order['address']['lastname'] }}</div>
       <div>
         <ul>
-          <li>
-            id Prodotto - <span>quantità</span>
-          </li>
-          <li>
-            id Prodotto - <span>quantità</span>
-          </li>
-          <li>
-            id Prodotto - <span>quantità</span>
-          </li>
-          <li>
-            id Prodotto - <span>quantità</span>
-          </li>
+          @foreach ($order['cart']['items'] as $item)
+            <li>
+              {{ $item['product']['name'] }} - <span>Quantità: {{ $item['qty'] }}</span>
+            </li>
+          @endforeach
         </ul>
-        <div> Spesa totale: € x </div>
+        <div> Spesa totale: {{ number_format($order['totalPrice'], 2, ',', ' ') }} &euro;</div>
       </div>
     </div>
 
