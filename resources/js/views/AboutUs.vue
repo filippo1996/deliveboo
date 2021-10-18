@@ -11,22 +11,34 @@
           <div class="col-6 text-center">
             <img src="images/us/fil.jpg" alt="fil" class="circle">
             <div class="fs-3 mt-1">
-              <i class="fab fa-linkedin px-2"></i>
-              <i class="fab fa-github-square px-2"></i>
-              <i class="fab fa-twitter-square px-2"></i>
+              <a href="https://www.linkedin.com/in/filippo-mazzamuto/" class="text-reset text-decoration-none">
+                <i class="fab fa-linkedin px-2"></i>
+              </a>
+              <a href="https://github.com/filippo1996" class="text-reset text-decoration-none">
+                <i class="fab fa-github-square px-2"></i>
+              </a>
+              <a href="#" class="text-reset text-decoration-none">
+                <i class="fab fa-twitter-square px-2"></i>
+              </a>
             </div>
           </div>
         </div>
-
+        
 
         <!-- Riga 2 -->
         <div class="row mt-5 p-5">
           <div class="col-6 text-center">
             <img src="images/us/fraJ.jpg" alt="fraJ" class="circle">
             <div class="fs-3 mt-1">
-              <i class="fab fa-linkedin px-2"></i>
-              <i class="fab fa-github-square px-2"></i>
-              <i class="fab fa-twitter-square px-2"></i>
+              <a href="https://www.linkedin.com/in/francesco-pittiglio-806769221/" class="text-reset text-decoration-none">
+                <i class="fab fa-linkedin px-2"></i>
+              </a>
+              <a href="https://github.com/PittiglioFrancesco" class="text-reset text-decoration-none">
+                <i class="fab fa-github-square px-2"></i>
+              </a>
+              <a href="#" class="text-reset text-decoration-none">
+                <i class="fab fa-twitter-square px-2"></i>
+              </a>
             </div>
           </div>
           <div class="col-6 d-flex">
@@ -43,9 +55,15 @@
           <div class="col-6 text-center">
             <img src="images/us/fra.jpg" alt="fra" class="circle">
             <div class="fs-3 mt-1">
-              <i class="fab fa-linkedin px-2"></i>
-              <i class="fab fa-github-square px-2"></i>
-              <i class="fab fa-twitter-square px-2"></i>
+              <a href="https://www.linkedin.com/in/francesco-coclite-web-dev/" class="text-reset text-decoration-none">
+                <i class="fab fa-linkedin px-2"></i>
+              </a>
+              <a href="https://github.com/FrancescoCoclite" class="text-reset text-decoration-none">
+                <i class="fab fa-github-square px-2"></i>
+              </a>
+              <a href="#" class="text-reset text-decoration-none">
+                <i class="fab fa-twitter-square px-2"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -56,9 +74,15 @@
           <div class="col-6 text-center">
             <img src="images/us/nico.jpg" alt="nico" class="circle">
             <div class="fs-3 mt-1">
-              <i class="fab fa-linkedin px-2"></i>
-              <i class="fab fa-github-square px-2"></i>
-              <i class="fab fa-twitter-square px-2"></i>
+              <a href="https://www.linkedin.com/in/nicol%C3%B2-crivaro/" class="text-reset text-decoration-none">
+                <i class="fab fa-linkedin px-2"></i>
+              </a>
+              <a href="https://github.com/nicocriva" class="text-reset text-decoration-none">
+                <i class="fab fa-github-square px-2"></i>
+              </a>
+              <a href="#" class="text-reset text-decoration-none">
+                <i class="fab fa-twitter-square px-2"></i>
+              </a>
             </div>
           </div>
           <div class="col-6 d-flex">
@@ -76,9 +100,15 @@
           <div class="col-6 text-center">
             <img src="images/us/melo.png" alt="melo" class="circle">
             <div class="fs-3 mt-1">
-              <i class="fab fa-linkedin px-2"></i>
-              <i class="fab fa-github-square px-2"></i>
-              <i class="fab fa-twitter-square px-2"></i>
+              <a href="https://www.linkedin.com/in/carmelo-granvillano/" class="text-reset text-decoration-none">
+                <i class="fab fa-linkedin px-2"></i>
+              </a>
+              <a href="https://github.com/megralo" class="text-reset text-decoration-none">
+                <i class="fab fa-github-square px-2"></i>
+              </a>
+              <a href="#" class="text-reset text-decoration-none">
+                <i class="fab fa-twitter-square px-2"></i>
+              </a>
             </div>
           </div>
         </div>
