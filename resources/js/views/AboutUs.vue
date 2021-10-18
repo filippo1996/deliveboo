@@ -144,6 +144,11 @@ img {
   border-radius: 50%;
 }
 
+p,
+i {
+  color: #41708E;
+}
+
 p {
   min-width: 200px;
 }
