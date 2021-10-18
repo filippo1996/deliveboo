@@ -17,7 +17,7 @@
                   <img :src="item.cover" class="card-img" :alt="item.name">
                   <div class="card-img-overlay text-center shadow">
                     <div class="description">
-                      <h3 class="card-title text_blue mb-5">{{ item.name }}</h3>
+                      <h3 class="card-title mb-5">{{ item.name }}</h3>
                       <span class="tag">{{ restaurant.tagName }}</span>
                     </div>
                   </div>
