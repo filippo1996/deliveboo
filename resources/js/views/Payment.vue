@@ -5,11 +5,12 @@
       <div class="col">
         <form id="payment-form" :class="{ 'd-none' : paymentProcessing }">
           <div id="dropin-container"></div>
-          <input :class="{ 'd-none' : loadingPayament }" class="btn bottone mb-3" type="submit" value="Paga"/>
+          <input :class="{ 'd-none' : loadingPayament }" class="btn bottone my-3" type="submit" value="Paga"/>
           <!-- <input type="hidden" id="nonce" name="payment_method_nonce"/> -->
         </form>
         <div class="d-none" :class="{ 'load' : paymentProcessing }">
           <div class="fw-bold buffering fs-5">Pagamento in corso...</div>
+          <img src="/images/metamorphosis.gif" alt="food">
         </div>
       </div>
     </div>
@@ -97,14 +98,19 @@ section{
 
 // loading
 .load{
-  display: block !important;
-  height: 500px;
+  width: 100%;
+  height: 100vh;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #6fa3d6;
   z-index: 500;
-  background-image: url("/images/metamorphosis.gif");
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: 250px;
+
+  img{
+    width: 250px;
+  }
 }
 
 </style>

@@ -60,36 +60,38 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div class="row my-2 pb-2" v-for="(obj, index) in cart?.items" :key="index">
-                  <div class="row">
-                    <div class="col-2 fw-bold qty_cart">{{ obj.qty }}x</div>
-                    <div class="col-7 text-start ">{{ obj.product.name }}</div>
-                    <div class="col-3 price">{{ obj.product.price.toFixed(2) }}&euro;</div>
+                <div class="my-2 pb-2 d-flex justify-content-between" v-for="(obj, index) in cart?.items" :key="index">
+                  <div class="d-flex align-items-center">
+                    <div class="fw-bold qty_cart me-2">{{ obj.qty }}x</div>
+                    <div class="text-start me-2">{{ obj.product.name }}</div>
+                    <div class="price">{{ obj.product.price.toFixed(2) }}&euro;</div>
                   </div>
-                  <div class="row p-2">
-                    <div class="col-md-6 d-flex justify-content-start">
+                  <div class="p-2">
+                    <div class="col-md-6 d-flex justify-content-between align-items-center">
                       <span class="cursor_pointer" @click="setQuantity(obj, '-')">
                         <i class="fas fa-minus"></i>
                       </span>
-                      <span class="trash" @click="deleteProduct(index)"><i class="fas fa-trash-alt mx-5"></i></span>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-end mb-4">
-                      <span class="cursor_pointer" @click="setQuantity(obj, '+')">
-                        <i class="fas fa-plus"></i>
-                      </span>
+                      <span class="trash mx-2" @click="deleteProduct(index)"><i class="fas fa-trash-alt"></i></span>
+                      <div class="col-md-6">
+                        <span class="cursor_pointer" @click="setQuantity(obj, '+')">
+                          <i class="fas fa-plus"></i>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="modal-footer">
+              <div class="modal-footer d-flex justify-content-center border-0">
                 <div class="card-footer text-center bg-white mt-2">
-                <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
-                <span class="trash" @click="deleteProduct()"><i class="fas fa-trash-alt"></i></span>
-              </div>
-                 <router-link 
-                  class="text-reset text-decoration-none" 
-                  :to="{name: 'checkout'}">{{ 'checkout' }}
-                </router-link>
+                  <h3 class="fw-bold fs-5">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
+                  <div class="position-relative">
+                    <router-link 
+                      class="text-reset bottone text-decoration-none mt-1" 
+                      :to="{name: 'checkout'}">{{ 'Checkout' }}
+                    </router-link>
+                    <span class="trash" @click="deleteProduct()"><i class="fas fa-trash-alt"></i></span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -439,7 +441,7 @@ section {
 
 .trash{
   cursor: pointer;
-  padding: 7px 10px;
+  padding: 5px 10px;
   border-radius: 5px;
   transition: 0.5s;
   background-color: rgb(255, 96, 96);
@@ -452,6 +454,14 @@ section {
 .bottone:hover{
   background-color:  #6694c2;
 }
+
+.modal-footer{
+  .trash{
+    position: absolute;
+    right: 0;
+    top: -5px;
+  }
+} 
 
 
 

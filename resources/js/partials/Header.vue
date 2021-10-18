@@ -5,6 +5,7 @@
       <div class="container-fluid">
         <router-link class="nav-link active text-light d-none d-sm-block" :to="{name: 'home'}"> <img src="/images/logo.png" class="logo" alt="logo"></router-link>
         <router-link class="nav-link active text-light d-block d-sm-none align-item-center logo-icon" :to="{name: 'home'}"> <img src="/images/logo_icon.png" class="logo-icon" alt="icona-logo"></router-link>
+<<<<<<< HEAD
 
         <!-- <a class="nav-link active text-light d-none d-lg-block" aria-current="page" href="#">Chi siamo</a> -->
 
@@ -27,6 +28,26 @@
               <li class="py-3"><a class="dropdown-item" href="http://127.0.0.1:8000/restaurant/orders">Ordini</a></li>
               <!-- <li><a class="dropdown-item" :href="route('logout')">Logout</a></li> -->
             </ul>
+=======
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#contact">Contattaci</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">Chi siamo</a>
+            </li>
+          </ul>
+          <div v-if="!auth">
+            <a class="btn bottone me-3 text-decoration-none" href="http://127.0.0.1:8000/restaurant/login">Accedi</a>
+            <a class="btn bottone me-2 text-decoration-none" href="http://127.0.0.1:8000/restaurant/register">Registrati</a>
+          </div>
+          <div v-else>
+            <h6>Ciao, {{ name }} <a class="link-success" href="http://127.0.0.1:8000/restaurant">La tua Dashboard</a></h6>
+>>>>>>> 657fc8b4fa922618213b28c4d6b4e5519823670a
           </div>
         </div>
       </div>
