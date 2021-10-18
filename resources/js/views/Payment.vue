@@ -1,11 +1,11 @@
 <template>
-  <section>
+  <section :class="{'load': loading}">
     <div class="container mt-5">
     <div class="row pt-5">
       <div class="col">
         <form id="payment-form" :class="{ 'd-none' : paymentProcessing }">
           <div id="dropin-container"></div>
-          <input :class="{ 'd-none' : loadingPayament }" class="btn bottone my-3" type="submit" value="Paga"/>
+          <input :class="{ 'd-none' : loadingPayament }" class="btn bottone mt-3 mb-5" type="submit" value="Paga"/>
           <!-- <input type="hidden" id="nonce" name="payment_method_nonce"/> -->
         </form>
         <div class="d-none" :class="{ 'load' : paymentProcessing }">
@@ -26,6 +26,7 @@ export default {
   data(){
     return {
       loadingPayament: true,
+      loading: true,
       paymentProcessing: false
     }
   },
@@ -99,7 +100,7 @@ section{
 // loading
 .load{
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: flex !important;
   flex-direction: column;
   justify-content: center;

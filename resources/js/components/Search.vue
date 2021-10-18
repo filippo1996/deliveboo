@@ -9,7 +9,7 @@
           <div class="row" v-for="item in items" :key="item.id">
             <div class="p-2">
               <div class="card mb-1">
-                <router-link  :to="{name: 'restaurant', params:{ slug: item.slug }}">
+                <router-link class="text-decoration-none" :to="{name: 'restaurant', params:{ slug: item.slug }}">
                   <div class="d-flex ">
                     <div class="align-items-center rounded-circle">
                       <img :src="item.cover" :alt="item.name">
