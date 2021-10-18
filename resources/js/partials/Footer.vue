@@ -73,10 +73,6 @@ ul {
   }
 }
 
-.box {
-  // flex-direction: column;
-}
-
 .box a{
   width: 40px;
   height: 40px;

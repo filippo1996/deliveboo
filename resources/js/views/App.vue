@@ -2,7 +2,7 @@
   <div>
     <div class="preload w-100 vh-100 d-flex flex-column justify-content-center align-items-center position-fixed">
       <div class="fw-bold buffering fs-5">Caricamento...</div>
-      <img src="/images/metamorphosis.gif" alt="food">
+      <img src="/images/meta.gif" alt="food">
     </div>
     <div>
       <Header/>

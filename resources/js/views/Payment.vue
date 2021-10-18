@@ -1,6 +1,6 @@
 <template>
   <section :class="{'load': loading}">
-    <div class="container mt-5">
+    <div class="container mt-5 overflow-hidden">
     <div class="row pt-5">
       <div class="col">
         <form id="payment-form" :class="{ 'd-none' : paymentProcessing }">
@@ -8,9 +8,9 @@
           <input :class="{ 'd-none' : loadingPayament }" class="btn bottone mt-3 mb-5" type="submit" value="Paga"/>
           <!-- <input type="hidden" id="nonce" name="payment_method_nonce"/> -->
         </form>
-        <div class="d-none" :class="{ 'load' : paymentProcessing }">
+        <div class="d-none x" :class="{ 'load' : paymentProcessing }">
           <div class="fw-bold buffering fs-5">Pagamento in corso...</div>
-          <img src="/images/metamorphosis.gif" alt="food">
+          <img src="/images/meta.gif" alt="food">
         </div>
       </div>
     </div>
@@ -98,9 +98,15 @@ section{
 }
 
 // loading
+.x{
+  position: relative;
+  top: -10px;
+}
+
 .load{
   width: 100%;
   height: 90vh;
+  
   display: flex !important;
   flex-direction: column;
   justify-content: center;
