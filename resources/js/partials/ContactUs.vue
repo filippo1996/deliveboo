@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-                <div class="row mt-4">
+                <div class="row my-4">
                   <div class="col-sm-12 form-group">
                     <button 
                       type="submit" 
@@ -60,8 +60,8 @@
                 </div>
             </form>
 
-            <div v-show="response" id="success_message" style="width:100%; height:100%; ">
-              <h3>{{ response }}</h3>
+            <div v-show="response" id="success_message">
+              <span class="fs-5">{{ response }}</span>
             </div>
         </div>
       </div>
