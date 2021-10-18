@@ -63,9 +63,10 @@ export default {
       margin: 0 10px;
       cursor: pointer;
 
-      // &:hover{
-      //   transform: translateY(-10px);
-      // }
+      &:hover{
+         transform: translateY(-10px);
+      }
+      
     }
 
     .rest-tag{
@@ -75,9 +76,9 @@ export default {
       color: white;
       transition: 0.5s;
 
-      // &:hover{
-      //   background-color: #4e87aa;
-      // }
+      &:hover{
+        background-color: #4e87aa;
+      }
     }
     .bounce{
       background-color: $blue;
