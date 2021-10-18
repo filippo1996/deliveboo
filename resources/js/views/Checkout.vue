@@ -2,24 +2,22 @@
   <section class="pb-3">
     <div class="container mt-5 bg-color">
       <div class="row">
-        <form @submit.prevent="saveAddress">
-          <div class="mb-3 pt-5 col-12 col-md-6">
-            <label for="name" class="form-label">Nome</label>
-            <input type="name" class="form-control" id="name" required>
+        <div class="col-12 col-md-12 col-lg-8">
+          <form @submit.prevent="saveAddress">
+          <div class="col-12 col-md-6 mb-3 pt-5">
+            <input type="name" class="form-control" id="name" placeholder="Nome" required>
           </div>
-          <div class="mb-3 pt-5 col-12 col-md-6">
-            <label for="lastname" class="form-label">Cognome</label>
-            <input type="name" class="form-control" id="lastname" required>
+          <div class="col-12 col-md-6 mb-3">
+            <input type="name" class="form-control" id="lastname" placeholder="Cognome" required>
           </div>
-          <div class="mb-3 col-12 col-md-6">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required>
+          <div class="col-12 col-md-6 mb-3">
+            <input type="email" class="form-control" id="email" placeholder="Email" required>
           </div>
-          <div class="mb-3 col-12 col-md-6">
-            <label for="phone-number" class="form-label">Numero di telefono</label>
-            <input minlength="10" maxlength="10" type="name" class="form-control" id="phone_number" required>
+          <div class="col-12 col-md-6 mb-3">
+            <input minlength="10" maxlength="10" type="name" placeholder="Numero di telefono" class="form-control" id="phone_number" required>
           </div>
-          <div class="col-12" id="infowindow-content">
+
+          <div class="col-12 mt-4" id="infowindow-content">
             <input type="hidden" id="street_number">
             <input type="hidden" id="route">
             <input type="hidden" id="locality">
@@ -35,8 +33,10 @@
             <button class="btn bottone text-decoration-none">Salva Indirizzo</button>
           </div>
         </form>
+        </div>
 
-        <div class="col-12 col-md-3 my-3" v-if="'name' in statusAddress">
+
+        <div class="col-12 col-md-12 col-lg-4 my-3" v-if="'name' in statusAddress">
           <div class="mb-2">Il tuo Indirizzo</div>
           <div class="card">
             <div class="card-body text-black w-100">
@@ -50,6 +50,7 @@
               <p class="card-text">Stato: {{ country }} </p>
             </div>
           </div>
+          
           <div class="bottone btn me-2 my-2">
             <router-link 
               class="text-reset text-decoration-none" 
@@ -183,12 +184,12 @@ export default {
   border-radius: 3px;
   border: 0;
   margin-top: 10px;
-  width: 30%;
+  width: 50%;
   height: 40px;
   text-overflow: ellipsis;
   padding: 0 1em;
   position: absolute;
-  left: 35%;
+  left: 25%;
 }
 
 section{
