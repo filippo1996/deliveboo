@@ -6,7 +6,7 @@
 
         <div v-for="(restaurant, index) in restaurants" :key="index">
           <!-- Title category -->
-           <h3>{{ restaurant.tagName }}</h3>
+           <h3 class="text_blue">{{ restaurant.tagName }}</h3>
 
           <div v-if="'0' in restaurant.item">
             <!-- start card category -->
@@ -16,7 +16,7 @@
                   <img :src="item.cover" class="card-img" :alt="item.name">
                   <div class="card-img-overlay text-center shadow">
                     <div class="description">
-                      <h3 class="card-title mb-5">{{ item.name }}</h3>
+                      <h3 class="card-title text_blue mb-5">{{ item.name }}</h3>
                       <span class="tag">{{ restaurant.tagName }}</span>
                     </div>
                   </div>
@@ -26,12 +26,12 @@
             </div>
             <!-- end card category -->
           </div>
-          <h3 class="mb-4" v-else>Presto in arrivo nuovi ristoranti</h3>
+          <h3 class="mb-4 text_blue" v-else>Presto in arrivo nuovi ristoranti</h3>
         
         </div>
       </div>
       
-      <h3 v-else>{{ message }}</h3>
+      <h3 class="text_blue" v-else>{{ message }}</h3>
     </div>  
     <!-- Container -->
   </section>
@@ -105,6 +105,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/_variables.scss';
+
 section{
   background-color: rgb(255, 214, 112);
   
@@ -130,10 +132,10 @@ section{
       object-fit: cover;
     }
   }
-  
+
   .rest-card:hover img{
     filter: blur(0px);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   .shadow {
@@ -157,5 +159,9 @@ section{
   .box_shadow:hover {
     box-shadow: 15px 15px 0 hsl(0deg 0% 0% / 0.25);
   }
+}
+
+.text_blue{
+  color: $blue;
 }
 </style>
