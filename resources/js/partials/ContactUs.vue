@@ -20,18 +20,19 @@
              </div>
      
 
-            <form role="form" method="post" id="reused_form">
+            <form @submit.prevent="sendMessage" id="reused_form">
               <div class="row mb-4">
                 <div class="col-sm-12 form-group">
                   <label for="message" class="mb-2">Messaggio:</label>
-                    <textarea class="form-control" type="textarea" name="message" id="message" maxlength="6000" rows="7"></textarea>
+                    <textarea v-model="message" class="form-control" type="textarea" name="message" id="message" maxlength="6000" rows="7" required></textarea>
                     </div>
                 </div>
 
                 <div class="row">
                   <div class="col-sm-6 form-group">
                     <label for="name" class="mb-2">Nome:</label>
-                    <input 
+                    <input
+                      v-model="name" 
                       type="text" 
                       class="form-control" 
                       id="name" 
@@ -40,7 +41,8 @@
 
                     <div class="col-sm-6 form-group">
                       <label for="email" class="mb-2">E-mail:</label>
-                        <input 
+                        <input
+                          v-model="email" 
                           type="email" 
                           class="form-control" 
                           id="email" 
@@ -59,15 +61,8 @@
                 </div>
             </form>
 
-
-            <div id="success_message" style="width:100%; height:100%; display:none;">
-              <h3>Posted your message successfully!</h3>
-            </div>
-
-            <div id="error_message"
-              style="width:100%; height:100%; display:none; ">
-                <h3>Error</h3>
-                Spiacenti, si è verificato un errore durante l'invio del modulo
+            <div v-show="response" id="success_message" style="width:100%; height:100%; ">
+              <h3>{{ response }}</h3>
             </div>
         </div>
       </div>
@@ -80,9 +75,31 @@
 <script>
 export default {
   name: "ContactUs",
-
-  components: {
-    
+  data(){
+    return {
+      message: '',
+      name: '',
+      email: '',
+      response: undefined
+    }
+  },
+  methods:{
+    async sendMessage(){
+      try {
+        const response = await axios.post('/api/contact', {message: this.message, name: this.name, email: this.email});
+        if(response.data === 1) {
+          this.message = '';
+          this.name = '';
+          this.email = '';
+          this.response = 'Messaggio inviato con successo.';
+        } else {
+          this.response = response.data;
+        }
+        setTimeout(() => this.response = undefined, 5000);
+      } catch(error) {
+        console.log(error);
+      }
+    }
   }
 
 }
