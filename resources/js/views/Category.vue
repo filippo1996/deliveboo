@@ -2,21 +2,21 @@
   <section>
     <div class="container py-5">
       <Tag @slugEmit="callSlug" :tagsActive="slugs"/>
-      <div class="row justify-content" :class="{'d-none': loading}" v-if="!message">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4" :class="{'d-none': loading}" v-if="!message">
 
         <div v-for="(restaurant, index) in restaurants" :key="index">
           <!-- Title category -->
-          <h3>{{ restaurant.tagName }}</h3>
+           <h3>{{ restaurant.tagName }}</h3>
 
           <div v-if="'0' in restaurant.item">
             <!-- start card category -->
-            <div class="col-sm-6 col-lg-3 border-white mb-3" v-for="item in restaurant.item" :key="item.id">
+            <div class="border-white mb-3" v-for="item in restaurant.item" :key="item.id">
               <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: item.slug }}">
-                <div class="card text-white overflow-hidden rest-card box_shadow">
+                <div class="card text-white overflow-hidden rest-card box_shadow" >
                   <img :src="item.cover" class="card-img" :alt="item.name">
-                  <div class="card-img-overlay text-center text-light shadow">
+                  <div class="card-img-overlay text-center shadow">
                     <div class="description">
-                      <h3 class="card-title">{{ item.name }}</h3>
+                      <h3 class="card-title mb-5">{{ item.name }}</h3>
                       <span class="tag">{{ restaurant.tagName }}</span>
                     </div>
                   </div>
@@ -107,7 +107,7 @@ export default {
 <style lang="scss" scoped>
 section{
   background-color: rgb(255, 214, 112);
-
+  
  .rest-tag{
     color: #393f46;
   }
