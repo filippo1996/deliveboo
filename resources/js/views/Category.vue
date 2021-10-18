@@ -2,7 +2,7 @@
   <section>
     <div class="container py-5">
       <Tag @slugEmit="callSlug" :tagsActive="slugs"/>
-      <div class="row-cols" :class="{'d-none': loading}" v-if="!message">
+      <div class="row-cols" :class="{'d-none': loading}">
         <!-- row-cols-1 row-cols-sm-2 row-cols-lg-4 -->
 
         <div v-for="(restaurant, index) in restaurants" :key="index">
@@ -34,7 +34,7 @@
         </div>
       </div>
       
-      <h2 class="text_blue" v-else>{{ message }}</h2>
+      <!-- <h2 class="text_blue" v-else>{{ message }}</h2> -->
     </div>  
     <!-- Container -->
   </section>
@@ -57,7 +57,6 @@ export default {
       restaurants: [],
       slugs: [],
       url: '/api/category/',
-      message: 'Scopri le nostre categorie',
       loading: true
     }
   },
