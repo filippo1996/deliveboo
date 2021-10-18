@@ -1,28 +1,34 @@
 <template>
-  <div 
-    class="col-12 col-sm-6 col-lg-3 border-white mb-3" 
-    v-for="restaurant in items" :key="restaurant.id">
+<div class="container">
+  <div class="row">
     
-    <router-link 
-      class="nav-link rest-tag fw-bold" 
-      :to="{name: 'restaurant', params:{ slug: restaurant.slug }}">
-        
+    <div 
+      class="col-12 col-sm-6 col-lg-3 border-white mb-3" 
+      v-for="restaurant in items" :key="restaurant.id">
+      
+      <router-link 
+        class="nav-link rest-tag fw-bold" 
+        :to="{name: 'restaurant', params:{ slug: restaurant.slug }}">
+          
 
-        <div class="card text-white overflow-hidden rest-card box_shadow">
-          <img 
-            :src="restaurant.cover" 
-            class="card-img" 
-            :alt="restaurant.name">
+          <div class="card text-white overflow-hidden rest-card box_shadow">
+            <img 
+              :src="restaurant.cover" 
+              class="card-img" 
+              :alt="restaurant.name">
 
-          <div class="card-img-overlay text-center shadow">
-            <div class="description">
-              <h3 class="card-title mb-5">{{ restaurant.name }}</h3>
-              <span class="tag">{{ restaurant.tags[0]?.name }}</span>
+            <div class="card-img-overlay text-center shadow">
+              <div class="description">
+                <h3 class="card-title mb-5">{{ restaurant.name }}</h3>
+                <span class="tag">{{ restaurant.tags[0]?.name }}</span>
+              </div>
             </div>
           </div>
-        </div>
-    </router-link>
+      </router-link>
+    </div>
+
   </div>
+</div>
 </template>
 
 

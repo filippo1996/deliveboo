@@ -6,8 +6,7 @@
         <ul class="list-unstyled d-flex flex-wrap">
           <li class="mt-2 mb-3 text-center pointer" v-for="(tag, index) in tags" :key="index">
             <!-- <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: index }}">{{ tag }}</router-link> -->
-            <span @click="emit(index)" class="nav-link rest-tag fw-bold">{{ tag }}</span>
-            <span :class="{'d-none': tagsActive.indexOf(index) < 0}">Attivo</span>
+            <span @click="emit(index)" class="nav-link rest-tag fw-bold" :class="{'bounce': tagsActive.indexOf(index) < 0}">{{ tag }}</span>
           </li>
         </ul>
       </div>
@@ -25,7 +24,7 @@ export default {
     return {
       url: '/api/category/?tags=show',
       tags: {},
-      loading: true
+      loading: true,
     }
   },
   mounted(){
@@ -64,22 +63,27 @@ export default {
       margin: 0 10px;
       cursor: pointer;
 
-      &:hover{
-        transform: translateY(-10px);
-      }
+      // &:hover{
+      //   transform: translateY(-10px);
+      // }
     }
 
     .rest-tag{
-      background-color: $blue;
+      background-color: $light-blue;
       margin: 0;
       border-radius: 15px;
       color: white;
       transition: 0.5s;
 
-      &:hover{
-        background-color: #4e87aa;
-      }
+      // &:hover{
+      //   background-color: #4e87aa;
+      // }
     }
+    .bounce{
+      background-color: $blue;
+      transform: translateY(20px);
+    }
+
   }
 
 </style>
