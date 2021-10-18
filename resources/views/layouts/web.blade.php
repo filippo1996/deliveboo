@@ -7,6 +7,9 @@
 
   <title>{{ config('app.name', 'Deliveboo') }}</title>
 
+  <!-- favicon -->
+  <link rel="icon" href="{{ asset('images/logo_icon.png') }}">
+
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}" defer></script>
 
