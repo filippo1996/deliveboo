@@ -4,20 +4,30 @@
       <div class="row">
         <div class="col-12 col-md-12 col-lg-8">
           <form @submit.prevent="saveAddress">
-          <div class="col-12 col-md-6 mb-3 pt-5">
-            <input type="name" class="form-control" id="name" placeholder="Nome" required>
-          </div>
-          <div class="col-12 col-md-6 mb-3">
-            <input type="name" class="form-control" id="lastname" placeholder="Cognome" required>
-          </div>
-          <div class="col-12 col-md-6 mb-3">
-            <input type="email" class="form-control" id="email" placeholder="Email" required>
-          </div>
-          <div class="col-12 col-md-6 mb-3">
-            <input minlength="10" maxlength="10" type="name" placeholder="Numero di telefono" class="form-control" id="phone_number" required>
+
+          <div class="row pt-5">
+            <div class="col-12 col-md-6 col-lg-6 mb-3">
+              <input type="name" class="form-control" id="name" placeholder="Nome" required>
+             </div>
+
+            <div class="col-12 col-md-6 col-lg-6 mb-3">
+              <input type="name" class="form-control" id="lastname" placeholder="Cognome" required>
+            </div>
           </div>
 
-          <div class="col-12 mt-4" id="infowindow-content">
+
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <input type="email" class="form-control" id="email" placeholder="Email" required>
+             </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <input minlength="10" maxlength="10" type="name" placeholder="Numero di telefono" class="form-control" id="phone_number" required>
+            </div>
+          </div>
+          
+
+          <div class="col-12 mt-2" id="infowindow-content">
             <input type="hidden" id="street_number">
             <input type="hidden" id="route">
             <input type="hidden" id="locality">
@@ -175,7 +185,7 @@ export default {
 @import 'resources/sass/_variables.scss';
 
 #map {
-  height: 500px;
+  height: 400px;
 }
 
 #pac-input{
