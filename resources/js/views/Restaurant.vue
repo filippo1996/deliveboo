@@ -258,7 +258,7 @@ export default {
   height: 500px;
   background-color: $yellow;
   z-index: 500;
-  background-image: url("/images/metamorphosis.gif");
+  background-image: url("/images/meta.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 250px;
@@ -319,6 +319,7 @@ section {
 // Product
 
 .prodotto {
+  padding: 0 15px;
   border-radius: 15px;
   height: 280px;
   overflow: hidden;
@@ -441,7 +442,7 @@ section {
 
 .trash{
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 5px 8px;
   border-radius: 5px;
   transition: 0.5s;
   background-color: rgb(255, 96, 96);

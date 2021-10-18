@@ -2,8 +2,8 @@
   <section :class="{'d-none': loading}">
     <div class="py-2">
       <div class="row">
-        <h2 class="title mb-4">Tipologie di Ristoranti</h2>
-        <ul class="list-unstyled d-flex flex-wrap">
+        <h2 class="title">Scopri le nostre categorie</h2>
+        <ul class="list-unstyled d-flex flex-wrap mb-4">
           <li class="mt-2 mb-3 text-center pointer" v-for="(tag, index) in tags" :key="index">
             <!-- <router-link class="nav-link rest-tag fw-bold" :to="{name: 'category', params:{ slug: index }}">{{ tag }}</router-link> -->
             <span @click="emit(index)" class="nav-link rest-tag fw-bold" :class="{'bounce': tagsActive.indexOf(index) < 0}">{{ tag }}</span>
@@ -63,9 +63,10 @@ export default {
       margin: 0 10px;
       cursor: pointer;
 
-      // &:hover{
-      //   transform: translateY(-10px);
-      // }
+      &:hover{
+         transform: translateY(-5px);
+      }
+      
     }
 
     .rest-tag{
@@ -75,9 +76,9 @@ export default {
       color: white;
       transition: 0.5s;
 
-      // &:hover{
-      //   background-color: #4e87aa;
-      // }
+      &:hover{
+        background-color: #4e87aa;
+      }
     }
     .bounce{
       background-color: $blue;
