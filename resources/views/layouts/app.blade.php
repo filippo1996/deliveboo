@@ -9,6 +9,9 @@
 
     <title>@yield('title', 'Dashboard')</title>
 
+    <!-- favicon -->
+    <link rel="icon" href="{{ asset('images/logo_icon.png') }}">
+
     <!-- Scripts -->
     <script src="{{ asset('js/admin.js') }}" defer></script>
 

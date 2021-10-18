@@ -83,6 +83,14 @@ export default {
       statusAddress: {}
     }
   },
+  created(){
+    const modal = document.querySelector('.modal-open');
+    if(modal) {
+      modal.style = null;
+      modal.classList.remove('modal-open');
+      document.querySelector('.modal-backdrop.fade.show').remove();
+    }
+  },
   mounted(){
     this.removeGoogleMapScript();
     // API Google
