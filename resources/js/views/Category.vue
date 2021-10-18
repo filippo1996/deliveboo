@@ -2,7 +2,8 @@
   <section>
     <div class="container py-5">
       <Tag @slugEmit="callSlug" :tagsActive="slugs"/>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4" :class="{'d-none': loading}" v-if="!message">
+      <div class="row-cols" :class="{'d-none': loading}" v-if="!message">
+        <!-- row-cols-1 row-cols-sm-2 row-cols-lg-4 -->
 
         <div v-for="(restaurant, index) in restaurants" :key="index">
           <!-- Title category -->
@@ -10,7 +11,7 @@
 
           <div v-if="'0' in restaurant.item">
             <!-- start card category -->
-            <div class="border-white mb-3" v-for="item in restaurant.item" :key="item.id">
+            <div class="col-12 col-sm-6 col-lg-3 border-white mb-3 d-inline-block" v-for="item in restaurant.item" :key="item.id">
               <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: item.slug }}">
                 <div class="card text-white overflow-hidden rest-card box_shadow" >
                   <img :src="item.cover" class="card-img" :alt="item.name">
