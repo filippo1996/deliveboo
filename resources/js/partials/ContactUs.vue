@@ -23,8 +23,17 @@
             <form @submit.prevent="sendMessage" id="reused_form">
               <div class="row mb-4">
                 <div class="col-sm-12 form-group">
-                    <textarea v-model="message" class="form-control" type="textarea" name="message" id="message" maxlength="6000" rows="7" placeholder="Scrivi qui il tuo messaggio" required></textarea>
-                    </div>
+                    <textarea 
+                      v-model="message" 
+                      class="form-control" 
+                      type="textarea" 
+                      name="message" 
+                      id="message" 
+                      maxlength="6000" 
+                      rows="7" 
+                      placeholder="Scrivi qui il tuo messaggio..." required>
+                    </textarea>
+                  </div>
                 </div>
 
                 <div class="row">
@@ -65,7 +74,6 @@
             </div>
         </div>
       </div>
-
     </div>
   </section>
 </template>

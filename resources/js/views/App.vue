@@ -5,7 +5,7 @@
       <img src="/images/metamorphosis.gif" alt="food">
     </div>
     <div>
-      <Header/>
+      <Header :items="AboutUs"/>
       <Jumbotron v-if="$route.meta.requiresJumbotron"/>
       <main>
         <!-- rendering -->

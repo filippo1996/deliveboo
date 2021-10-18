@@ -13,8 +13,11 @@
             <li class="nav-item">
               <a class="nav-link active text-light" aria-current="page" href="#contact">Contattaci</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">Chi siamo</a>
+            <li class="nav-link active text-light">
+              <router-link 
+                class="text-reset text-decoration-none" 
+                :to="{name: 'aboutus'}">{{ 'Chi Siamo' }}
+              </router-link>
             </li>
           </ul>
           <div v-if="!auth">

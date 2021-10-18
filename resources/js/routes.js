@@ -7,6 +7,7 @@ import NotFound from './views/errors/404.vue';
 import Checkout from './views/Checkout.vue';
 import Payment from './views/Payment.vue';
 import Success from './views/Success.vue';
+import AboutUs from './views/AboutUs.vue';
 
 import { Cart } from './utils/factory.js';
 
@@ -77,6 +78,14 @@ const routes = [
         if(status !== 'authorized') return from;
       }
     },
+
+    {
+      path: '/aboutus',
+      name: 'aboutus',
+      component: AboutUs,
+      props: true,
+      meta: { title: 'Sviluppatori di Deliveboo' },
+    }
 ];
 
 // Export const routes in file app.js
