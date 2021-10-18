@@ -25,19 +25,19 @@
             <input type="hidden" id="postal_code">
           </div>
           <div class="mb-3 col-12 col-md-9">
-            <label for="pac-input" class="form-label">Indirizzo di spedizione</label>
+            <label for="pac-input" class="form-label">Seleziona l'indirizzo di consegna</label>
             <input class="form-control" type="text" id="pac-input" name="pac-input" placeholder="Inserisci la tua via" required>
             <div id="map" class="w-100"></div>
           </div>
           <div>
-            <button class="btn bottone text-decoration-none">Salva Indirizzo</button>
+            <button class="btn bottone text-decoration-none">Spedisci a questo indirizzo</button>
           </div>
         </form>
         </div>
 
 
         <div class="col-12 col-md-12 col-lg-4 my-3" v-if="'name' in statusAddress">
-          <div class="mb-2">Il tuo Indirizzo</div>
+          <div class="mb-2">Riepilogo dettagli spedizione</div>
           <div class="card">
             <div class="card-body text-black w-100">
               <p class="card-text">Nome: {{ name}} </p>
@@ -54,7 +54,7 @@
           <div class="bottone btn me-2 my-2">
             <router-link 
               class="text-reset text-decoration-none" 
-              :to="{name: 'payment'}">{{ 'Pagamento' }}
+              :to="{name: 'payment'}">{{ 'Procedi all\'ordine' }}
             </router-link>
           </div>
         </div>
@@ -184,12 +184,12 @@ export default {
   border-radius: 3px;
   border: 0;
   margin-top: 10px;
-  width: 50%;
+  width: 60%;
   height: 40px;
   text-overflow: ellipsis;
   padding: 0 1em;
   position: absolute;
-  left: 25%;
+  left: 20%;
 }
 
 section{
