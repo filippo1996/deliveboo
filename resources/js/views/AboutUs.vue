@@ -10,6 +10,11 @@
           </div>
           <div class="col-6 text-center">
             <img src="images/us/fil.jpg" alt="fil" class="circle">
+            <div class="fs-3 mt-1">
+              <i class="fab fa-linkedin px-2"></i>
+              <i class="fab fa-github-square px-2"></i>
+              <i class="fab fa-twitter-square px-2"></i>
+            </div>
           </div>
         </div>
 
@@ -18,6 +23,11 @@
         <div class="row mt-5 p-5">
           <div class="col-6 text-center">
             <img src="images/us/fraJ.jpg" alt="fraJ" class="circle">
+            <div class="fs-3 mt-1">
+              <i class="fab fa-linkedin px-2"></i>
+              <i class="fab fa-github-square px-2"></i>
+              <i class="fab fa-twitter-square px-2"></i>
+            </div>
           </div>
           <div class="col-6 d-flex">
             <p class="d-flex align-items-center">Da sempre appassionato di tecnologia e programmazione, mi riservo anche del tempo per passeggiate in montagna sempre in cerca di nuove esperienze.</p>
@@ -32,6 +42,11 @@
           </div>
           <div class="col-6 text-center">
             <img src="images/us/fra.jpg" alt="fra" class="circle">
+            <div class="fs-3 mt-1">
+              <i class="fab fa-linkedin px-2"></i>
+              <i class="fab fa-github-square px-2"></i>
+              <i class="fab fa-twitter-square px-2"></i>
+            </div>
           </div>
         </div>
 
@@ -40,6 +55,11 @@
         <div class="row mt-5 p-5">
           <div class="col-6 text-center">
             <img src="images/us/nico.jpg" alt="nico" class="circle">
+            <div class="fs-3 mt-1">
+              <i class="fab fa-linkedin px-2"></i>
+              <i class="fab fa-github-square px-2"></i>
+              <i class="fab fa-twitter-square px-2"></i>
+            </div>
           </div>
           <div class="col-6 d-flex">
             <p class="d-flex align-items-center">Sono un ragazzo appassionato di tecnologia, attento ai dettagli e sempre pronto ad imparare.
@@ -55,6 +75,11 @@
           </div>
           <div class="col-6 text-center">
             <img src="images/us/melo.png" alt="melo" class="circle">
+            <div class="fs-3 mt-1">
+              <i class="fab fa-linkedin px-2"></i>
+              <i class="fab fa-github-square px-2"></i>
+              <i class="fab fa-twitter-square px-2"></i>
+            </div>
           </div>
         </div>
       </div>
