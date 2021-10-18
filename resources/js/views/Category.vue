@@ -2,21 +2,22 @@
   <section>
     <div class="container py-5">
       <Tag @slugEmit="callSlug" :tagsActive="slugs"/>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4" :class="{'d-none': loading}" v-if="!message">
+      <div class="row-cols" :class="{'d-none': loading}" v-if="!message">
+        <!-- row-cols-1 row-cols-sm-2 row-cols-lg-4 -->
 
         <div v-for="(restaurant, index) in restaurants" :key="index">
           <!-- Title category -->
-           <h3>{{ restaurant.tagName }}</h3>
+           <h3 class="text_blue">{{ restaurant.tagName }}</h3>
 
           <div v-if="'0' in restaurant.item">
             <!-- start card category -->
-            <div class="border-white mb-3" v-for="item in restaurant.item" :key="item.id">
+            <div class="col-12 col-sm-6 col-lg-3 border-white mb-3 d-inline-block" v-for="item in restaurant.item" :key="item.id">
               <router-link class="nav-link rest-tag fw-bold" :to="{name: 'restaurant', params:{ slug: item.slug }}">
                 <div class="card text-white overflow-hidden rest-card box_shadow" >
                   <img :src="item.cover" class="card-img" :alt="item.name">
                   <div class="card-img-overlay text-center shadow">
                     <div class="description">
-                      <h3 class="card-title mb-5">{{ item.name }}</h3>
+                      <h3 class="card-title text_blue mb-5">{{ item.name }}</h3>
                       <span class="tag">{{ restaurant.tagName }}</span>
                     </div>
                   </div>
@@ -26,12 +27,12 @@
             </div>
             <!-- end card category -->
           </div>
-          <h3 class="mb-4" v-else>Presto in arrivo nuovi ristoranti</h3>
+          <h3 class="mb-4 text_blue" v-else>Presto in arrivo nuovi ristoranti</h3>
         
         </div>
       </div>
       
-      <h3 v-else>{{ message }}</h3>
+      <h3 class="text_blue" v-else>{{ message }}</h3>
     </div>  
     <!-- Container -->
   </section>
@@ -105,6 +106,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/_variables.scss';
+
 section{
   background-color: rgb(255, 214, 112);
   
@@ -130,10 +133,10 @@ section{
       object-fit: cover;
     }
   }
-  
+
   .rest-card:hover img{
     filter: blur(0px);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   .shadow {
@@ -157,5 +160,9 @@ section{
   .box_shadow:hover {
     box-shadow: 15px 15px 0 hsl(0deg 0% 0% / 0.25);
   }
+}
+
+.text_blue{
+  color: $blue;
 }
 </style>
