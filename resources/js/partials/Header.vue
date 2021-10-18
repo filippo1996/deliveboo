@@ -40,9 +40,9 @@
             <div class="d-lg-none">
               <hr class="dropdown-divider text-light">
               <h6 class="text-light mb-3 d-inline">Ciao, {{ name }} <img class="logorest" :src="cover" alt="logo"></h6>
-              <a href="http://127.0.0.1:8000/restaurant/restaurant" class="nav-link active text-light">Dashboard</a>
-              <a href="http://127.0.0.1:8000/restaurant/restaurant/products" class="nav-link active text-light">Prodotti</a>
-              <a href="http://127.0.0.1:8000/restaurant/restaurant/orders" class="nav-link active text-light">Ordini</a>
+              <a href="http://127.0.0.1:8000/restaurant" class="nav-link active text-light">Dashboard</a>
+              <a href="http://127.0.0.1:8000/restaurant/products" class="nav-link active text-light">Prodotti</a>
+              <a href="http://127.0.0.1:8000/restaurant/orders" class="nav-link active text-light">Ordini</a>
             </div>
 
           </div>
