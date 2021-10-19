@@ -28,7 +28,7 @@
 
         <!-- Riga 2 -->
         <div class="row mt-5 py-3">
-          <div class="col-12 col-md-8 col-lg-6 text-center">
+          <div class="col-12 col-md-4 col-lg-6 text-center">
             <span class="d-flex justify-content-center mb-3">Francesco Pittiglio</span>
             <img src="images/us/fraJ.jpg" alt="fraJ" class="circle img-fluid">
             <div class="fs-3 mt-1">
@@ -43,7 +43,7 @@
               </a>
             </div>
           </div>
-          <div class="col-12 col-md-4 col-lg-6 d-flex">
+          <div class="col-12 col-md-8 col-lg-6 d-flex">
             <p class="d-flex align-items-center">Da sempre appassionato di tecnologia e programmazione, mi riservo anche del tempo per passeggiate in montagna sempre in cerca di nuove esperienze.</p>
           </div>
         </div>
@@ -74,7 +74,7 @@
 
         <!-- Riga 4 -->
         <div class="row mt-5 py-3">
-          <div class="col-12 col-md-8 col-lg-6 text-center">
+          <div class="col-12 col-md-4 col-lg-6 text-center">
             <span class="d-flex justify-content-center mb-3">Nicolò Crivaro</span>
             <img src="images/us/nico.jpg" alt="nico" class="circle img-fluid">
             <div class="fs-3 mt-1">
@@ -89,7 +89,7 @@
               </a>
             </div>
           </div>
-          <div class="col-12 col-md-4 col-lg-6 d-flex">
+          <div class="col-12 col-md-8 col-lg-6 d-flex">
             <p class="d-flex align-items-center">Sono un ragazzo appassionato di tecnologia, attento ai dettagli e sempre pronto ad imparare.
             Voglio approfondire la mia conoscenza nei linguaggi di programmazione e mettermi in gioco nel mondo dello sviluppo web.</p>
           </div>
