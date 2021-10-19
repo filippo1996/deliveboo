@@ -9,7 +9,7 @@
             Questa mia caratteristica, negli anni, mi ha permesso di perfezionare sempre di più il mio modo di lavorare.</p>
           </div>
           <div class="col-12 col-md-4 col-lg-6 text-center">
-            <span class="d-flex justify-content-center mb-3">Filippo Mazzamuto</span>
+            <h4 class="name d-flex justify-content-center mb-3">Filippo Mazzamuto</h4>
             <img src="images/us/fil.jpg" alt="fil" class="circle img-fluid">
             <div class="fs-3 mt-1">
               <a href="https://www.linkedin.com/in/filippo-mazzamuto/" target="_blank" class="text-reset text-decoration-none">
@@ -29,7 +29,7 @@
         <!-- Riga 2 -->
         <div class="row mt-5 py-3">
           <div class="col-12 col-md-4 col-lg-6 text-center">
-            <span class="d-flex justify-content-center mb-3">Francesco Pittiglio</span>
+            <h4 class="name d-flex justify-content-center mb-3">Francesco Pittiglio</h4>
             <img src="images/us/fraJ.jpg" alt="fraJ" class="circle img-fluid">
             <div class="fs-3 mt-1">
               <a href="https://www.linkedin.com/in/francesco-pittiglio-806769221/" target="_blank" class="text-reset text-decoration-none">
@@ -55,7 +55,7 @@
             <p class="d-flex align-items-center text-end">Sono un ragazzo di 23 anni . Appassionato da sempre del mondo informatico e quello dell'economia, alla continua ricerca di stimoli per la crescita personale. Sono energico e solare ho un’ottima attitudine al lavoro in team. Ho un forte spirito di gruppo e di adattamento grazie all’esperienza acquisita in ambienti multiculturali e lavorativi, sempre disposto a mettermi in gioco e lanciarmi in nuove sfide.</p>
           </div>
           <div class="col-12 col-md-4 col-lg-6 text-center">
-            <span class="d-flex justify-content-center mb-3">Francesco Coclite</span>
+            <h4 class="name d-flex justify-content-center mb-3">Francesco Coclite</h4>
             <img src="images/us/fra.jpg" alt="fra" class="circle img-fluid">
             <div class="fs-3 mt-1">
               <a href="https://www.linkedin.com/in/francesco-coclite-web-dev/" target="_blank" class="text-reset text-decoration-none">
@@ -75,7 +75,7 @@
         <!-- Riga 4 -->
         <div class="row mt-5 py-3">
           <div class="col-12 col-md-4 col-lg-6 text-center">
-            <span class="d-flex justify-content-center mb-3">Nicolò Crivaro</span>
+            <h4 class="name d-flex justify-content-center mb-3">Nicolò Crivaro</h4>
             <img src="images/us/nico.jpg" alt="nico" class="circle img-fluid">
             <div class="fs-3 mt-1">
               <a href="https://www.linkedin.com/in/nicol%C3%B2-crivaro/" target="_blank" class="text-reset text-decoration-none">
@@ -102,7 +102,7 @@
             <p class="d-flex align-items-center text-end">Curioso e tech addicted. Se non scrivo codice, allora leggo. Adoro passeggiare immerso nella natura.</p>
           </div>
           <div class="col-12 col-md-4 col-lg-6 text-center">
-            <span class="d-flex justify-content-center mb-3">Carmelo Granvillano</span>
+            <h4 class="name d-flex justify-content-center mb-3">Carmelo Granvillano</h4>
             <img src="images/us/melo.png" alt="melo" class="circle img-fluid">
             <div class="fs-3 mt-1">
               <a href="https://www.linkedin.com/in/carmelo-granvillano/" target="_blank"  class="text-reset text-decoration-none">
@@ -155,6 +155,11 @@ img {
 
 .circle {
   border-radius: 50%;
+}
+
+.name{
+  color: $blue;
+  font-weight: 500;
 }
 
 p,

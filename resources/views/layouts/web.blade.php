@@ -19,6 +19,13 @@
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+  <script>
+    window.addEventListener('load', function(){
+      const buffer = document.querySelector('#buffer');
+      buffer.classList.remove('d-none');
+    });
+  </script>
+
 </head>
 <body>
   <div id="app"></div>

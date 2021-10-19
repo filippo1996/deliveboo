@@ -4,7 +4,7 @@
       <div class="fw-bold buffering fs-5">Caricamento...</div>
       <img src="/images/meta.gif" alt="food">
     </div>
-    <div>
+    <div id="buffer" class="d-none">
       <Header/>
       <Jumbotron v-if="$route.meta.requiresJumbotron"/>
       <main>
