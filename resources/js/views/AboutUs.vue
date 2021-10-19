@@ -12,10 +12,10 @@
             <span class="d-flex justify-content-center mb-3">Filippo Mazzamuto</span>
             <img src="images/us/fil.jpg" alt="fil" class="circle img-fluid">
             <div class="fs-3 mt-1">
-              <a href="https://www.linkedin.com/in/filippo-mazzamuto/" class="text-reset text-decoration-none">
+              <a href="https://www.linkedin.com/in/filippo-mazzamuto/" target="_blank" class="text-reset text-decoration-none">
                 <i class="fab fa-linkedin px-2"></i>
               </a>
-              <a href="https://github.com/filippo1996" class="text-reset text-decoration-none">
+              <a href="https://github.com/filippo1996" target="_blank" class="text-reset text-decoration-none">
                 <i class="fab fa-github-square px-2"></i>
               </a>
               <a href="#" class="text-reset text-decoration-none">
@@ -32,10 +32,10 @@
             <span class="d-flex justify-content-center mb-3">Francesco Pittiglio</span>
             <img src="images/us/fraJ.jpg" alt="fraJ" class="circle img-fluid">
             <div class="fs-3 mt-1">
-              <a href="https://www.linkedin.com/in/francesco-pittiglio-806769221/" class="text-reset text-decoration-none">
+              <a href="https://www.linkedin.com/in/francesco-pittiglio-806769221/" target="_blank" class="text-reset text-decoration-none">
                 <i class="fab fa-linkedin px-2"></i>
               </a>
-              <a href="https://github.com/PittiglioFrancesco" class="text-reset text-decoration-none">
+              <a href="https://github.com/PittiglioFrancesco" target="_blank" class="text-reset text-decoration-none">
                 <i class="fab fa-github-square px-2"></i>
               </a>
               <a href="#" class="text-reset text-decoration-none">
@@ -58,10 +58,10 @@
             <span class="d-flex justify-content-center mb-3">Francesco Coclite</span>
             <img src="images/us/fra.jpg" alt="fra" class="circle img-fluid">
             <div class="fs-3 mt-1">
-              <a href="https://www.linkedin.com/in/francesco-coclite-web-dev/" class="text-reset text-decoration-none">
+              <a href="https://www.linkedin.com/in/francesco-coclite-web-dev/" target="_blank" class="text-reset text-decoration-none">
                 <i class="fab fa-linkedin px-2"></i>
               </a>
-              <a href="https://github.com/FrancescoCoclite" class="text-reset text-decoration-none">
+              <a href="https://github.com/FrancescoCoclite" target="_blank" class="text-reset text-decoration-none">
                 <i class="fab fa-github-square px-2"></i>
               </a>
               <a href="#" class="text-reset text-decoration-none">
@@ -78,10 +78,10 @@
             <span class="d-flex justify-content-center mb-3">Nicolò Crivaro</span>
             <img src="images/us/nico.jpg" alt="nico" class="circle img-fluid">
             <div class="fs-3 mt-1">
-              <a href="https://www.linkedin.com/in/nicol%C3%B2-crivaro/" class="text-reset text-decoration-none">
+              <a href="https://www.linkedin.com/in/nicol%C3%B2-crivaro/" target="_blank" class="text-reset text-decoration-none">
                 <i class="fab fa-linkedin px-2"></i>
               </a>
-              <a href="https://github.com/nicocriva" class="text-reset text-decoration-none">
+              <a href="https://github.com/nicocriva" target="_blank" class="text-reset text-decoration-none">
                 <i class="fab fa-github-square px-2"></i>
               </a>
               <a href="#" class="text-reset text-decoration-none">
@@ -105,10 +105,10 @@
             <span class="d-flex justify-content-center mb-3">Carmelo Granvillano</span>
             <img src="images/us/melo.png" alt="melo" class="circle img-fluid">
             <div class="fs-3 mt-1">
-              <a href="https://www.linkedin.com/in/carmelo-granvillano/" class="text-reset text-decoration-none">
+              <a href="https://www.linkedin.com/in/carmelo-granvillano/" target="_blank"  class="text-reset text-decoration-none">
                 <i class="fab fa-linkedin px-2"></i>
               </a>
-              <a href="https://github.com/megralo" class="text-reset text-decoration-none">
+              <a href="https://github.com/megralo" target="_blank" class="text-reset text-decoration-none">
                 <i class="fab fa-github-square px-2"></i>
               </a>
               <a href="#" class="text-reset text-decoration-none">
