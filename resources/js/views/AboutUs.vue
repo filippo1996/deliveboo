@@ -118,14 +118,22 @@
           </div>
         </div>
       </div>
+
+      <ContactUs />
     </div>
   </section>
 </template>
 
 
 <script>
+import ContactUs from '../partials/ContactUs.vue';
+
 export default {
-  name: 'AboutUs'
+  name: 'AboutUs',
+  
+  components: {
+    ContactUs,
+  }
  
 }
 </script>
