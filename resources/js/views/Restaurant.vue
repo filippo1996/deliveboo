@@ -196,7 +196,8 @@ export default {
       cart: undefined,
       totalPriceCart: 0,
       messageCart: undefined,
-      statusMessage: false
+      statusMessage: false,
+      timeout_handles: []
     }
   },
   created(){
@@ -256,9 +257,21 @@ export default {
     showMessageCart(message){
       this.messageCart = message;
       this.statusMessage = true;
-      setTimeout(() => {
-        this.statusMessage = false;
-      },2000);
+
+      const timeout_handles = this.timeout_handles;
+
+      function setTimeOut(id, code, time) // wrapper
+      {
+    
+        if( id in timeout_handles )
+        {
+          clearTimeout(timeout_handles[id]);
+        }
+
+        timeout_handles[id] = setTimeout(code, time);
+      }
+
+      setTimeOut(0, () => this.statusMessage = false, 2000);
     },
     returnToTop(){
       document.documentElement.scrollTop = 0;
