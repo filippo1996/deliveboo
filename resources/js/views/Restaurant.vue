@@ -254,9 +254,7 @@ export default {
     },
     showMessageCart(message){
       this.messageCart = message;
-      setTimeout(() => {
-        this.messageCart = undefined;
-      },2000);
+      this.messageCart = undefined;
     },
     returnToTop(){
       document.documentElement.scrollTop = 0;
