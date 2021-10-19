@@ -27,7 +27,7 @@
           <div v-else>
             <!-- menu da lg in su -->
             <div class="d-none d-lg-block">
-              <h6 class="text-light mb-3 d-inline">Ciao, </h6>
+              <h6 class="text-light mb-3 me-3 d-inline">Ciao,</h6>
               <div class="d-inline dropdown">
                 <button class="btn bottone dropdown-toggle text-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                   {{ name }}<img class="logorest mx-1" :src="cover" alt="logo">
@@ -100,6 +100,8 @@ export default {
   
   .logo{
     width: 100px;
+    position: relative;
+    bottom: 2px;
   }
   .logo-icon{
     width: 35px;
