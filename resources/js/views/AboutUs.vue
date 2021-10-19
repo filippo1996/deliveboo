@@ -18,9 +18,12 @@
               <a href="https://github.com/filippo1996" target="_blank" class="text-reset text-decoration-none">
                 <i class="fab fa-github-square px-2"></i>
               </a>
-              <a href="#" class="text-reset text-decoration-none">
-                <i class="fab fa-twitter-square px-2"></i>
+              <a href="http://instagram.com/_u/filippo_mazzamuto" class="text-reset text-decoration-none">
+                <i class="fab fa-instagram-square px-2"></i>
               </a>
+              <!-- <a href="https://www.instagram.com/filippo_mazzamuto" class="text-reset text-decoration-none">
+                <i class="fab fa-instagram-square px-2"></i>
+              </a> -->
             </div>
           </div>
         </div>
