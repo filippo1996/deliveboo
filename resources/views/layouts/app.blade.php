@@ -34,7 +34,7 @@
               <img 
                 src="{{ Auth::user()->cover }}" 
                 alt=" {{ Auth::user()->name }}" 
-                width="80px">
+                width="50px">
             </div>
 
             <div class="text-primary fs-5 text-center p-1">Dashboard di: 
@@ -119,6 +119,8 @@
           </div>
       </nav>
 
+
+      
       {{-- Sidebar Sx --}}
       <div class="container-fluid">
         <div class="row">
