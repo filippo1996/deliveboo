@@ -5,7 +5,7 @@
       <div class="row d-flex justify-content-center py-5">
         <div class="col-md-6 col-md-offset-3" id="form_container">
           
-              <div class="row text-center mb-1">
+              <div class="row text-center mt-5 mb-1">
                 <div class="col-12 d-inline-block">
                   <span class="fs-4 ps-3">Contattaci</span>
                   <img src="/images/mail.png" alt="mail" class="ps-3">
