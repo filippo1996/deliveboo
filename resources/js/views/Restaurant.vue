@@ -131,7 +131,13 @@
                   </div>
                 </div>
               </div>
-                <!-- end cart -->
+              <!-- end cart -->
+
+              <!-- start message cart -->
+              <div class="alert alert-success" :class="{ 'd-none' : !messageCart}" role="alert">
+                {{ messageCart }}
+              </div>
+              <!-- end message cart -->
 
               <div class="card-footer text-center bg-white mt-2">
                 <h3 class="fw-bold fs-5 mt-2 mb-3">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
@@ -188,7 +194,8 @@ export default {
       products: [],
       loading: true,
       cart: undefined,
-      totalPriceCart: 0
+      totalPriceCart: 0,
+      messageCart: undefined,
     }
   },
   created(){
@@ -221,6 +228,7 @@ export default {
       // set property cart
       this.cart = cart.getCart();
       this.totalPriceCart = cart.getTotalPrice();
+      this.showMessageCart('Prodotto aggiunto al carello');
     },
     setQuantity(product, symbol){
       const cart = new Cart(this.restaurant, product);
@@ -228,6 +236,7 @@ export default {
       // set property cart
       this.cart = cart.getCart();
       this.totalPriceCart = cart.getTotalPrice();
+      this.showMessageCart('Prodotto aggiornato');
     },
     deleteProduct(position = undefined){
       const cart = new Cart();
@@ -236,11 +245,16 @@ export default {
         // set property cart
         this.cart = cart.getCart();
         this.totalPriceCart = cart.getTotalPrice();
+        this.showMessageCart('Prodotto eliminato dal carello');
       } else {
         cart.clearCart();
         this.totalPriceCart = cart.getTotalPrice();
         this.cart = undefined;
       }
+    },
+    showMessageCart(message){
+      this.messageCart = message;
+      this.messageCart = undefined;
     },
     returnToTop(){
       document.documentElement.scrollTop = 0;
