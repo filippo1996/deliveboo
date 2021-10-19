@@ -24,7 +24,7 @@
         <img src="{{asset('/images/logo.png')}}" alt="logo-image">
       </header>
       <div class="container">
-        <h1 class="title"> Ordine confermato nel ristorante {{ $order['cart']['user']['name'] }} </h1>
+        <h2 class="title"> Ordine confermato nel ristorante {{ $order['cart']['user']['name'] }} </h2>
         <div class="subtitle"> ID ordine numero {{ $idOrder }} effettuato da {{ $order['address']['name'] }} {{ $order['address'] ['lastname'] }}</div>
         <div>
           <ul>
