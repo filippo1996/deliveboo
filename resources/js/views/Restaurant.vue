@@ -131,7 +131,13 @@
                   </div>
                 </div>
               </div>
-                <!-- end cart -->
+              <!-- end cart -->
+
+              <!-- start message cart -->
+              <div class="alert alert-success" :class="{ 'dissolvenza' : !statusMessage }" role="alert">
+                {{ messageCart }}
+              </div>
+              <!-- end message cart -->
 
               <div class="card-footer text-center bg-white mt-2">
                 <h3 class="fw-bold fs-5 mt-2 mb-3">Totale carrello {{ totalPriceCart.toFixed(2) }}&euro;</h3>
@@ -188,7 +194,10 @@ export default {
       products: [],
       loading: true,
       cart: undefined,
-      totalPriceCart: 0
+      totalPriceCart: 0,
+      messageCart: undefined,
+      statusMessage: false,
+      timeout_handles: []
     }
   },
   created(){
@@ -217,10 +226,13 @@ export default {
     async insertCart(product){
       const qty = document.querySelector(`input[data-product="${product.id}"]`);
       const cart = new Cart(this.restaurant,product);
-      await cart.setCart(+qty.value);
-      // set property cart
-      this.cart = cart.getCart();
-      this.totalPriceCart = cart.getTotalPrice();
+      const response = await cart.setCart(+qty.value);
+      if(response) {
+        // set property cart
+        this.cart = cart.getCart();
+        this.totalPriceCart = cart.getTotalPrice();
+        this.showMessageCart('Prodotto aggiunto al carello');
+      }
     },
     setQuantity(product, symbol){
       const cart = new Cart(this.restaurant, product);
@@ -228,6 +240,7 @@ export default {
       // set property cart
       this.cart = cart.getCart();
       this.totalPriceCart = cart.getTotalPrice();
+      this.showMessageCart('Prodotto aggiornato');
     },
     deleteProduct(position = undefined){
       const cart = new Cart();
@@ -236,11 +249,31 @@ export default {
         // set property cart
         this.cart = cart.getCart();
         this.totalPriceCart = cart.getTotalPrice();
+        this.showMessageCart('Prodotto eliminato dal carello');
       } else {
         cart.clearCart();
         this.totalPriceCart = cart.getTotalPrice();
         this.cart = undefined;
       }
+    },
+    showMessageCart(message){
+      this.messageCart = message;
+      this.statusMessage = true;
+
+      const timeout_handles = this.timeout_handles;
+
+      function setTimeOut(id, code, time) // wrapper
+      {
+    
+        if( id in timeout_handles )
+        {
+          clearTimeout(timeout_handles[id]);
+        }
+
+        timeout_handles[id] = setTimeout(code, time);
+      }
+
+      setTimeOut(0, () => this.statusMessage = false, 2000);
     },
     returnToTop(){
       document.documentElement.scrollTop = 0;
@@ -391,7 +424,7 @@ section {
     font-size: 15px;
     color: $blue;
     background-color: $light-blue;
-    padding: 8px 10px;
+    padding: 9px 10px;
     border-radius: 50%;
     margin-left: 20px;
   }
@@ -421,6 +454,11 @@ section {
       } 
     }
   }
+}
+
+.dissolvenza{
+  transition: 1s;
+  opacity: 0;
 }
 
 

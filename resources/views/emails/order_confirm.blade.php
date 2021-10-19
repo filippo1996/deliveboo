@@ -7,7 +7,7 @@
     <style>
       body { font-family:verdana; background-color: #ffd670 }
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      header { background-color: #41708E; height: 50px; }
+      header { background-color: #41708E; height: 50px; padding: 5px;}
       header img { height: 100%; margin-left: 20px;}
       .container { margin: 15px; }
       .title { text-align: center; margin-bottom: 25px; }
@@ -21,10 +21,10 @@
 
     <div>
       <header>
-        <img src="/images/logo.png" alt="logo-image">
+        <img src="{{asset('/images/logo.png')}}" alt="logo-image">
       </header>
       <div class="container">
-        <h1 class="title"> Ordine confermato nel ristorante {{ $order['cart']['user']['name'] }} </h1>
+        <h2 class="title"> Ordine confermato nel ristorante {{ $order['cart']['user']['name'] }} </h2>
         <div class="subtitle"> ID ordine numero {{ $idOrder }} effettuato da {{ $order['address']['name'] }} {{ $order['address'] ['lastname'] }}</div>
         <div>
           <ul>

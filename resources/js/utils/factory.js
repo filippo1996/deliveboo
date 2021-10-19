@@ -68,12 +68,19 @@ export class Cart {
    */
   async setCart(qty){
 
+    let success = false;
+
     if(!this.obj) return null;
 
     if(qty >= 1){
-      await this.insertCart(qty);
-      localStorage.setItem(this.nameStorage, JSON.stringify(this.cart));
+      let response = await this.insertCart(qty);
+      if(response){
+        localStorage.setItem(this.nameStorage, JSON.stringify(this.cart));
+        success = true;
+      }
     }
+
+    return success;
   }
 
   /**
@@ -126,7 +133,7 @@ export class Cart {
 
     if(!('user' in this.cart)){
       this.cart = {user: this.user, items: [{product: this.obj, qty: intQty}]};
-      return;
+      return true;
     }
 
     if(this.cart.user.id !== this.user.id){
@@ -135,8 +142,9 @@ export class Cart {
       if(status){
         this.clearCart();
         this.cart = {user: this.user, items: [{product: this.obj, qty: intQty}]};
+        return true;
       }
-      return;
+      return false;
     }
 
     let set = false;
@@ -156,6 +164,8 @@ export class Cart {
     });
 
     if(!set) this.cart.items.push({ product: this.obj, qty: intQty });
+
+    return true;
 
   }
 

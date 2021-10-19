@@ -2,14 +2,14 @@
   <section :class="{'load': loading}">
     <div class="container mt-5 overflow-hidden">
     <div class="row pt-5">
-      <div class="col">
+      <div class="col pagamento">
         <form id="payment-form" :class="{ 'd-none' : paymentProcessing }">
           <div id="dropin-container"></div>
           <input :class="{ 'd-none' : loadingPayament }" class="btn bottone mt-3 mb-5" type="submit" value="Paga"/>
           <!-- <input type="hidden" id="nonce" name="payment_method_nonce"/> -->
         </form>
-        <div class="d-none x" :class="{ 'load' : paymentProcessing }">
-          <div class="fw-bold buffering fs-5">Pagamento in corso...</div>
+        <div class="d-none buffering" :class="{ 'load' : paymentProcessing }">
+          <div class="fw-bold fs-5">Pagamento in corso...</div>
           <img src="/images/meta.gif" alt="food">
         </div>
       </div>
@@ -98,11 +98,13 @@ section{
 }
 
 // loading
-.x{
+.buffering{
   position: relative;
   top: -10px;
 }
-
+.pagamento{
+  height: calc(100vh - 310px - 40px);
+}
 .load{
   width: 100%;
   

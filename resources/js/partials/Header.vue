@@ -3,7 +3,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
-        <router-link class="nav-link active text-light d-none d-sm-block" :to="{name: 'home'}"> <img src="/images/logo.png" class="logo" alt="logo"></router-link>
+        <router-link class="nav-link active text-light d-none d-sm-block" @click="returnToTop" :to="{name: 'home'}"> <img src="/images/logo.png" class="logo" alt="logo"></router-link>
         <router-link class="nav-link active text-light d-block d-sm-none align-item-center logo-icon" :to="{name: 'home'}"> <img src="/images/logo_icon.png" class="logo-icon" alt="icona-logo"></router-link>
         <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="fas fa-bars text-light"></i></span>
@@ -15,7 +15,7 @@
             </li>
             <li class="nav-link active text-light">
               <router-link 
-                class="text-reset text-decoration-none" 
+                class="text-reset text-decoration-none" @click="returnToTop" 
                 :to="{name: 'aboutus'}">{{ 'Chi Siamo' }}
               </router-link>
             </li>
@@ -27,7 +27,7 @@
           <div v-else>
             <!-- menu da lg in su -->
             <div class="d-none d-lg-block">
-              <h6 class="text-light mb-3 d-inline">Ciao, </h6>
+              <h6 class="text-light mb-3 me-3 d-inline">Ciao,</h6>
               <div class="d-inline dropdown">
                 <button class="btn bottone dropdown-toggle text-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                   {{ name }}<img class="logorest mx-1" :src="cover" alt="logo">
@@ -84,6 +84,9 @@ export default {
       } catch(error) {
         console.log(error);
       }
+    },
+    returnToTop(){
+      document.documentElement.scrollTop = 0;
     }
   },
 }
@@ -97,6 +100,8 @@ export default {
   
   .logo{
     width: 100px;
+    position: relative;
+    bottom: 2px;
   }
   .logo-icon{
     width: 35px;
