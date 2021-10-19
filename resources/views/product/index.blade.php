@@ -11,7 +11,7 @@
       <div class="col-12">
         <div class="table-responsive mt-3">
           <table class="table table-sm table-hover">
-            <thead class="table-dark">
+            <thead class="text_color background_color_y">
               <tr class="text-start">
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
@@ -26,14 +26,14 @@
             </thead>
                 
             @foreach ($products as $product)
-              <tbody data-product="{{ $product->id }}" class="text-start">
+              <tbody data-product="{{ $product->id }}" class="text-start background_color_y">
                 <tr>
                   <th scope="row">{{ $product->id }}</th>
                   <td>{{ Str::limit($product->name, 15) }}</td>
                   <td>{{ Str::limit($product->description, 25) }}</td>
                   <td>
                     <div>
-                      <img src="{{ $product->img_path }}" alt="{{ $product->name }}" width="60px" class="container_img">
+                      <img src="{{ $product->img_path }}" alt="{{ $product->name }}"width="30px" class="container_img">
                     </div>
                   </td>
                   <th scope="row">{{ number_format($product->price, 2) }} &euro;</th>
@@ -47,7 +47,7 @@
                   {{-- Show --}}
                   <td class="text-center">
                     <a href="{{ route('products.show', ['product'=>$product->slug]) }}" class="text-muted">
-                      <div class="btn btn-outline-success">
+                      <div class="btn bottone border-0">
                         <i class="fas fa-glasses"></i>
                       </div>
                     </a>
@@ -56,7 +56,7 @@
                   {{-- Edit --}}
                   <td class="text-center">
                     <a href="{{ route('products.edit', ['product'=>$product->id]) }}" class="text-muted">
-                      <div class="btn btn-outline-info">
+                      <div class="btn bottone border-0">
                         <i class="fas fa-pen"></i>
                       </div>
                     </a>
@@ -64,7 +64,7 @@
 
                   {{-- Destroy --}}
                   <td class="text-center">
-                    <button data-product-delete="{{ $product->id }}" class="btn btn-outline-danger">
+                    <button data-product-delete="{{ $product->id }}" class="btn bottone border-0">
                       <i class="fas fa-trash"></i>
                     </button> 
                   </td>

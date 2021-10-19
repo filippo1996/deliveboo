@@ -17472,8 +17472,7 @@ input:checked + .slider:before {
   overflow-y: scroll;
 }
 .table-responsive .container_img {
-  width: 55px;
-  height: 55px;
+  width: 38px;
 }
 .table-responsive .container_img img {
   -o-object-fit: cover;
