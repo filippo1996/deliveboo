@@ -258,7 +258,7 @@ export default {
       this.statusMessage = true;
       setTimeout(() => {
         this.statusMessage = false;
-      },2000);
+      },1000);
     },
     returnToTop(){
       document.documentElement.scrollTop = 0;
@@ -409,7 +409,7 @@ section {
     font-size: 15px;
     color: $blue;
     background-color: $light-blue;
-    padding: 8px 10px;
+    padding: 9px 10px;
     border-radius: 50%;
     margin-left: 20px;
   }

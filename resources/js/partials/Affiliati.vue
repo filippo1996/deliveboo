@@ -7,11 +7,11 @@
             I migliori ristoranti della tua città, <br> a portata di click
           </h2>  
           <div class="subtitle mt-4">
-            I nostri esperti selezionano meticolosamente i locali migliori intorno a te, per garantirti una qualità ed un servizio unico
+            I nostri esperti selezionano meticolosamente i locali migliori intorno a te, per garantirti prodotti di qualità e un servizio unico
           </div>
         </div>
         <div class="col-12 col-md-6 h-100 text-center">
-          <img src="/images/food.png" alt="chef" class="h-100 p-3">
+          <img src="/images/food.png" alt="chef" class="p-3">
         </div>
       </div>
     </div>
@@ -29,7 +29,6 @@ export default {
 
 .jumbo{
   background-color: $blue;
-  height: 300px;
 
   .jumbo-text{
     .title{
@@ -44,7 +43,7 @@ export default {
   }
 
   img{
-    max-width: 450px;
+    height: 300px;
   }
   
 }

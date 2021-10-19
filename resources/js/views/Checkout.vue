@@ -34,7 +34,8 @@
             <input type="hidden" id="country">
             <input type="hidden" id="postal_code">
           </div>
-          <div class="mb-3 col-12 col-md-9 position-relative">
+
+          <div class="mb-3 col-12 position-relative">
             <label for="pac-input" class="form-label">Seleziona l'indirizzo di consegna</label>
             <input class="form-control" type="text" id="pac-input" name="pac-input" placeholder="Inserisci la tua via" required>
             <div id="map" class="w-100"></div>

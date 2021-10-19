@@ -7,7 +7,7 @@
     <style>
       body { font-family:verdana; background-color: #ffd670 }
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      header { background-color: #41708E; height: 50px; padding: 10px;}
+      header { background-color: #41708E; height: 50px; padding: 5px;}
       header img { height: 100%; margin-left: 20px;}
       .container { margin: 15px; }
       .title { text-align: center; margin-bottom: 25px; }
