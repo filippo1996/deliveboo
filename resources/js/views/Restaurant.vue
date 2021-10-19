@@ -226,11 +226,13 @@ export default {
     async insertCart(product){
       const qty = document.querySelector(`input[data-product="${product.id}"]`);
       const cart = new Cart(this.restaurant,product);
-      await cart.setCart(+qty.value);
-      // set property cart
-      this.cart = cart.getCart();
-      this.totalPriceCart = cart.getTotalPrice();
-      this.showMessageCart('Prodotto aggiunto al carello');
+      const response = await cart.setCart(+qty.value);
+      if(response) {
+        // set property cart
+        this.cart = cart.getCart();
+        this.totalPriceCart = cart.getTotalPrice();
+        this.showMessageCart('Prodotto aggiunto al carello');
+      }
     },
     setQuantity(product, symbol){
       const cart = new Cart(this.restaurant, product);
