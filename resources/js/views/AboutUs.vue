@@ -1,7 +1,7 @@
 <template>
   <section class="mt-5">
     <div class="background_color">
-      <div class="container pt-5 m-auto">
+      <div class="container pt-5 m-auto mb-5">
          <!-- Riga 1 -->
         <div class="row mt-5">
           <div class="col-12 col-md-8 col-lg-6 d-flex">

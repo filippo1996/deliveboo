@@ -105,7 +105,6 @@ section{
 
 .load{
   width: 100%;
-  height: 90vh;
   
   display: flex !important;
   flex-direction: column;
