@@ -18,7 +18,7 @@
             <div class="col-12 col-md-4 mt-5">
               <h4 class="mb-4">Aiuto</h4>
               <ul class="fs-6">
-                <li><a href="#">Contatti</a></li>
+                <li><a href="#contact">Contattaci</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Tipi di cucina</a></li>
                 <li><a href="#">Mappa del sito</a></li>
