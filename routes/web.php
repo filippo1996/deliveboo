@@ -19,7 +19,6 @@ Route::get('/', function () {
     return view('layouts.web');
 });
 */
-Route::view('/email', 'emails.order_confirm');
 
 // Verify access restaurant
 Route::get('/auth',[RestaurantController::class, 'auth']);
