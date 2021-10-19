@@ -175,10 +175,10 @@
                           @csrf
                       </form>
                     </li>
-                    <li class="nav-item mt-1 fs-6">
+                    <li class="nav-item mt-3 fs-6">
                       <a class="nav-link" href="/" target="_blank">
-                        <i class="fas fa-hand-point-left"></i>
-                        Torna alla home del sito
+                        <i class="fas fa-hand-point-left fs-5 pe-2"></i>
+                        Home Deliveboo
                       </a>
                     </li>
                   </ul>
