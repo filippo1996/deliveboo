@@ -4,7 +4,7 @@
 
     <!-- Modal -->
     <div aria-labelledby="exampleModalLabel" aria-hidden="true" class="z_index">
-      <div class="modal-content mt-3">
+      <div class="modal-content mt-3 col-12">
         <div class="modal-body" >
           <div class="row" v-for="item in items" :key="item.id">
             <div class="p-2">
@@ -76,7 +76,6 @@ export default {
   .modal-content {
     background-color: #41718eda;
     height: 100%;
-    width: 50%;
     margin: 0 auto;
     border-radius: 10px;
 
@@ -107,4 +106,17 @@ export default {
     }
   }
 }
+
+@media screen and (min-width: 576px) {
+  .modal-content{
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .modal-content{
+    width: 60%;
+  }
+}
+
 </style>

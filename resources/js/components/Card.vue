@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <div class="row">
-    <h2>I più ricercati</h2>
+    <h2>I locali più ricercati</h2>
     <div 
       class="col-12 col-sm-6 col-lg-3 border-white mb-3" 
       v-for="restaurant in items" :key="restaurant.id">

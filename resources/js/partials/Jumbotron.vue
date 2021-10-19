@@ -89,6 +89,7 @@ export default {
     background-size: cover;
     background-repeat:no-repeat;
     animation-name: jumbo;
+    animation-delay: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
     animation-duration: 2s;
@@ -114,6 +115,7 @@ export default {
       .bike{
         bottom: 7px;
         right: -27px;
+        animation-delay: 0.5s;
         animation-duration: 2s;
         animation-name: delivery-man;
         animation-timing-function: ease-in-out;
@@ -124,7 +126,7 @@ export default {
       .smoke-container{
         .smoke{
           top: 0px;
-          animation-delay: 0.7s;
+          animation-delay: 1.3s;
           animation-duration: 1.7s;
           animation-name: smoke;
           animation-timing-function: ease-in-out;
@@ -178,6 +180,7 @@ export default {
     top: 10px;
     left: -80px;
     animation-name: linea;
+    animation-delay: 0.5s;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
