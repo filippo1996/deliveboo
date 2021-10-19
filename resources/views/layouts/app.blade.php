@@ -23,7 +23,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="background_color_lb">
     <div id="app">
       <nav class="navbar navbar-expand-md navbar-dark bg-dark m-0 p-0">
         <div class="container m-1 p-0">
