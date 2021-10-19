@@ -134,7 +134,7 @@
               <!-- end cart -->
 
               <!-- start message cart -->
-              <div class="alert alert-success" :class="{ 'd-none' : !messageCart}" role="alert">
+              <div class="alert alert-success" :class="{ 'dissolvenza' : !messageCart}" role="alert">
                 {{ messageCart }}
               </div>
               <!-- end message cart -->
@@ -437,6 +437,11 @@ section {
       } 
     }
   }
+}
+
+.dissolvenza{
+  transition: 1s;
+  opacity: 0;
 }
 
 
