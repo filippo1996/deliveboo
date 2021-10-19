@@ -63,7 +63,6 @@ h2{
     transition: 0.3s;
 
     img{
-      filter: blur(0.5px);
       position: relative;
       transition: 0.3s;
       height: 100%;
@@ -71,14 +70,9 @@ h2{
       object-fit: cover;
     }
   }
-  
-  .rest-card:hover img{
-    filter: blur(0px);
-    transform: scale(1.1);
-  }
 
   .shadow {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.15);
     
     .description{
       color: white;
@@ -98,4 +92,14 @@ h2{
   .box_shadow:hover {
     box-shadow: 15px 15px 0 hsl(0deg 0% 0% / 0.25);
   }
+
+@media screen and (min-width: 576px) {
+  img{
+    filter: blur(0.5px);
+  }
+  .rest-card:hover img{
+    filter: blur(0px);
+    transform: scale(1.1);
+  }
+}
 </style>
