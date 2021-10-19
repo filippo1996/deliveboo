@@ -9,7 +9,7 @@
     
     <div class="row overflow-hidden">
       <div class="col-12">
-        <div class="table-responsive mt-3">
+        <div class="table-responsive mt-5">
           <table class="table table-sm table-hover">
             <thead class="text_color background_color_y">
               <tr class="text-start">
