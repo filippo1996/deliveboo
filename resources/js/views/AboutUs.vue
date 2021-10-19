@@ -5,7 +5,7 @@
          <!-- Riga 1 -->
         <div class="row mt-5">
           <div class="col-12 col-md-8 col-lg-6 d-flex">
-            <p class="d-flex align-items-center">Mi ritengo una persona abbastanza curiosa e con tanta voglia di imparare. Sono sempre pronto a mettermi in gioco per apprendere e imparare tutto ciò che riguarda il mondo della tecnologia e non solo.
+            <p class="d-flex align-items-center text-end">Mi ritengo una persona abbastanza curiosa e con tanta voglia di imparare. Sono sempre pronto a mettermi in gioco per apprendere e imparare tutto ciò che riguarda il mondo della tecnologia e non solo.
             Questa mia caratteristica, negli anni, mi ha permesso di perfezionare sempre di più il mio modo di lavorare.</p>
           </div>
           <div class="col-12 col-md-4 col-lg-6 text-center">
@@ -52,7 +52,7 @@
         <!-- Riga 3 -->
         <div class="row mt-5 py-3">
           <div class="col-12 col-md-8 col-lg-6 d-flex">
-            <p class="d-flex align-items-center">Sono un ragazzo di 23 anni . Appassionato da sempre del mondo informatico e quello dell'economia, alla continua ricerca di stimoli per la crescita personale. Sono energico e solare ho un’ottima attitudine al lavoro in team. Ho un forte spirito di gruppo e di adattamento grazie all’esperienza acquisita in ambienti multiculturali e lavorativi, sempre disposto a mettermi in gioco e lanciarmi in nuove sfide.</p>
+            <p class="d-flex align-items-center text-end">Sono un ragazzo di 23 anni . Appassionato da sempre del mondo informatico e quello dell'economia, alla continua ricerca di stimoli per la crescita personale. Sono energico e solare ho un’ottima attitudine al lavoro in team. Ho un forte spirito di gruppo e di adattamento grazie all’esperienza acquisita in ambienti multiculturali e lavorativi, sempre disposto a mettermi in gioco e lanciarmi in nuove sfide.</p>
           </div>
           <div class="col-12 col-md-4 col-lg-6 text-center">
             <span class="d-flex justify-content-center mb-3">Francesco Coclite</span>
@@ -99,7 +99,7 @@
         <!-- Riga 5 -->
         <div class="row mt-5 pt-3 pb-5">
           <div class="col-12 col-md-8 col-lg-6 d-flex">
-            <p class="d-flex align-items-center">Curioso e tech addicted. Se non scrivo codice, allora leggo. Adoro passeggiare immerso nella natura.</p>
+            <p class="d-flex align-items-center text-end">Curioso e tech addicted. Se non scrivo codice, allora leggo. Adoro passeggiare immerso nella natura.</p>
           </div>
           <div class="col-12 col-md-4 col-lg-6 text-center">
             <span class="d-flex justify-content-center mb-3">Carmelo Granvillano</span>
