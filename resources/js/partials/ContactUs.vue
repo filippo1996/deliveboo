@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-sm-6 form-group">
+                  <div class="col-sm-6 form-group mb-1">
                     <input
                       v-model="name" 
                       type="text" 
@@ -47,7 +47,7 @@
                       name="name" required>
                   </div>
 
-                    <div class="col-sm-6 form-group">
+                    <div class="col-sm-6 form-group mb-1">
                       <input
                         v-model="email" 
                         type="email" 
