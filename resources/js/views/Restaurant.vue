@@ -134,7 +134,7 @@
               <!-- end cart -->
 
               <!-- start message cart -->
-              <div class="alert alert-success" :class="{ 'dissolvenza' : !messageCart}" role="alert">
+              <div class="alert alert-success" :class="{ 'dissolvenza' : !statusMessage }" role="alert">
                 {{ messageCart }}
               </div>
               <!-- end message cart -->
@@ -196,6 +196,7 @@ export default {
       cart: undefined,
       totalPriceCart: 0,
       messageCart: undefined,
+      statusMessage: false
     }
   },
   created(){
@@ -254,8 +255,9 @@ export default {
     },
     showMessageCart(message){
       this.messageCart = message;
+      this.statusMessage = true;
       setTimeout(() => {
-        this.messageCart = undefined;
+        this.statusMessage = false;
       },2000);
     },
     returnToTop(){
