@@ -139,21 +139,21 @@
                     <li class="nav-item mt-4 fs-6">
                       <a class="nav-link" href="{{ route('products.index') }}">
                         <i class="fas fa-cubes fs-5 pe-2"></i>
-                        Products
+                        Prodotti
                       </a>
                     </li>
                               
                     <li class="nav-item mt-4 fs-6">
                       <a class="nav-link" href="{{ route('products.create') }}">
                         <i class="fas fa-plus fs-5 pe-2"></i>
-                        Create Product
+                        Inserisci Prodotto
                       </a>
                     </li>
                               
                     <li class="nav-item mt-4 fs-6">
                       <a class="nav-link" href="{{ route('orders.index') }}">
                         <i class="fas fa-file-alt fs-5 pe-2"></i>
-                        Orders
+                        Ordini
                       </a>
                     </li>
                               

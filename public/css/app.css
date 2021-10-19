@@ -17468,7 +17468,7 @@ input:checked + .slider:before {
 }
 
 .table-responsive {
-  height: 80vh;
+  height: 75vh;
   overflow-y: scroll;
 }
 .table-responsive .container_img {
