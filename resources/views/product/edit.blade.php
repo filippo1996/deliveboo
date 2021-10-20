@@ -17,64 +17,113 @@
         <form action="{{ route('products.update', $product->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method('PATCH')
-          <div class="mt-5 mb-5">
-            <label for="nome" class="form-label">Nome</label>
-            <input 
-              name="name" 
-              type="text" 
-              class="form-control"
-              id="nome" 
-              value="{{ old('name', $product->name) }}"
-              required>
-          </div> 
 
-          <div class="mb-5">
-            <label for="descrizione" class="form-label">Descrizione</label>
-            <textarea 
-              name="description" 
-              class="form-control" 
-              id="descrizione" 
-              cols="30" 
-              rows="10">{{ old('description', $product->description) }}</textarea>
+
+
+          <div class="row row mb-5 p-lg-3 background_color_y text_color box_shadows">
+
+            {{-- SX --}}
+            <div class="col-lg-6">
+              {{-- Carico immagine --}}
+              <div class="mt-5 mb-5">
+                <label for="image" class="form-label"></label>
+                <input type="file" id="image" name='image' class="form-control @error('image') is-invalid @enderror">
+                <img class="mt-5 mb-1" id="preview" src="{{ $product->img_path }}" alt="" width="260px"/>
+                @if($product->getRawOriginal('img_path'))
+                <button id="delete-img" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                @endif
+
+                  @error('image')
+                  <div class="alert alert-danger">{{ $message }}</div> 
+                  @enderror
+              </div>
+
+              {{-- Disponibilità --}}
+              <div class="mb-5 w-50">
+                <label for="visibility" class="form-label">Disponibilità del prodotto</label>
+                <select id="visibility" name="visibility" class="form-select" required>
+                  <option {{ $product->visibility || (int) old('visibility') ? 'selected' : ''}} value="1">Disponibile</option>
+                  <option {{ $product->visibility || (int) old('visibility') ? '' : 'selected' }} value="0">Non disponibile</option>
+                </select>
+              </div>
+
+              {{-- Prezzo --}}
+              <div class="mb-5 w-25">
+                <label for="price" class="form-label">Prezzo</label>
+                <input class="form-control @error('price') is-invalid @enderror" type="number" step="0.01" min="0" id="price" name="price" value="{{ old('price') ? old('price') : $product->price }}" required>
+              </div>
+            {{-- End SX --}}  
+            </div>
+
+
+
+            {{-- DX --}}
+            <div class="col-lg-6">
+              {{-- Nome --}}
+              <div class="mt-5 mb-5">
+                <label for="nome" class="form-label">Nome</label>
+                <input 
+                  name="name" 
+                  type="text" 
+                  class="form-control"
+                  id="nome" 
+                  value="{{ old('name', $product->name) }}"
+                  required>
+              </div>
+
+              {{-- Descrizione --}}
+              <div class="mb-5">
+                <label for="descrizione" class="form-label">Descrizione</label>
+                <textarea 
+                  name="description" 
+                  class="form-control" 
+                  id="descrizione" 
+                  cols="30" 
+                  rows="10">{{ old('description', $product->description) }}</textarea>
+              </div>
+
+              {{-- Ingredienti --}}
+              <div class="mb-5 w-75">
+                <label for="ingredienti" class="form-label">Ingredienti</label>
+                <textarea 
+                  name="ingredient" 
+                  class="form-control @error('ingredient') is-invalid @enderror" 
+                  id="ingredienti" 
+                  cols="25" 
+                  rows="1"
+                  required>{{ old('ingredient', $product->ingredient) }}</textarea> 
+              </div>
+            {{-- End DX --}}  
+            </div>
+
+
+          {{-- End Row   --}}
           </div>
 
-          <div class="mb-5 w-75">
-            <label for="ingredienti" class="form-label">Ingredienti</label>
-            <textarea 
-              name="ingredient" 
-              class="form-control @error('ingredient') is-invalid @enderror" 
-              id="ingredienti" 
-              cols="25" 
-              rows="1"
-              required>{{ old('ingredient', $product->ingredient) }}</textarea> 
-          </div>
 
-          <div class="mb-5 w-50">
-            <label for="visibility" class="form-label">Disponibilità del prodotto</label>
-            <select id="visibility" name="visibility" class="form-select" required>
-              <option {{ $product->visibility || (int) old('visibility') ? 'selected' : ''}} value="1">Disponibile</option>
-              <option {{ $product->visibility || (int) old('visibility') ? '' : 'selected' }} value="0">Non disponibile</option>
-            </select>
-          </div>
 
-          <div class="mb-5 w-25">
-            <label for="price" class="form-label">Prezzo</label>
-            <input class="form-control @error('price') is-invalid @enderror" type="number" step="0.01" min="0" id="price" name="price" value="{{ old('price') ? old('price') : $product->price }}" required>
-          </div>
 
-          {{-- Carico immagine --}}
-          <div class="mt-5 mb-5">
-            <label for="image" class="form-label"></label>
-            <input type="file" id="image" name='image' class="form-control @error('image') is-invalid @enderror">
-            <img class="mt-5 mb-1" id="preview" src="{{ $product->img_path }}" alt="" width="260px"/>
-            @if($product->getRawOriginal('img_path'))
-            <button id="delete-img" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-            @endif
 
-              @error('image')
-              <div class="alert alert-danger">{{ $message }}</div> 
-              @enderror
-          </div>
+
+
+
+
+
+
+
+
+
+           
+
+          
+
+          
+
+          
+
+          
+
+          
 
           <button type="submit" class="btn btn-success">Salva modiche</button>
         </form>  
