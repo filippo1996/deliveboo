@@ -17,7 +17,7 @@
               <div class="card prodotto"> 
                 <div class="row">
                   <div class="col-md-4 img-box d-flex align-items-center justify-content-center">
-                    <img :src="product.img_path" class="card-img m-0 text" :alt="product.name">
+                    <img :src="product.img_path" class="card-img mt-1 text" :alt="product.name">
                   </div>
                   
                   <div class="col-md-8">
