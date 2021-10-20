@@ -33,11 +33,19 @@
               {{-- Immagine --}}
               <div class="my-3 w-auto">
                 <label for="image" class="form-label">Immagine</label>
-                <input type="file" id="image" name='image' class="form-control @error('image') is-invalid @enderror">
-                <img class="mt-5 mb-1" id="preview" src="{{ $product->img_path }}" alt="" width="260px"/>
-                @if($product->getRawOriginal('img_path'))
-                <button id="delete-img" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                @endif
+                <input 
+                  type="file" 
+                  id="image" 
+                  name='image' 
+                  class="form-control @error('image') is-invalid @enderror">
+                    <img 
+                      class="mt-3 ms-3" 
+                      id="preview" 
+                      src="{{ $product->img_path }}" 
+                      alt="" width="260px"/>
+                        @if($product->getRawOriginal('img_path'))
+                        <button id="delete-img" class="btn bottone text_color ms-2"><i class="fas fa-trash"></i></button>
+                        @endif
 
                   @error('image')
                   <div class="alert alert-danger">{{ $message }}</div> 
@@ -45,7 +53,7 @@
               </div>
 
               {{-- Disponibilità --}}
-              <div class="my-3 w-auto">
+              <div class="mt-5 mb-3 w-auto">
                 <label for="visibility" class="form-label">Disponibilità del prodotto</label>
                 <select id="visibility" name="visibility" class="form-select" required>
                   <option {{ $product->visibility || (int) old('visibility') ? 'selected' : ''}} value="1">Disponibile</option>
