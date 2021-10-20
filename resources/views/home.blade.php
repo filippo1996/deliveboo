@@ -33,7 +33,7 @@
           <div class="col-md-8">
             <div class="card text_color background_color_y mb-5 box_shadows p-0">
               <div class="card-header text-center fw-bold">{{ __('Elenco prodotti') }}</div>
-              <div class="card-body text-center"><a href="{{ route('products.index') }}">{{ __('Visualizza prodotti') }}</a></div>
+              <div class="card-body text-center"><a href="{{ route('products.index') }}">{{ __('Vai ai Prodotti') }}</a></div>
             </div>
           </div>
         </div>
