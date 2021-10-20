@@ -64,7 +64,7 @@
 
                   {{-- Destroy --}}
                   <td class="text-center">
-                    <button data-product-delete="{{ $product->id }}" class="btn bottone border-0">
+                    <button data-product-delete="{{ $product->id }}" data-delete="" class="btn bottone border-0">
                       <i class="fas fa-trash"></i>
                     </button> 
                   </td>
@@ -81,7 +81,7 @@
 @section('script-footer')
 @parent
 <script>
-  let btnDelete = document.querySelectorAll('.btn-outline-danger');
+  let btnDelete = document.querySelectorAll('button[data-delete]');
   btnDelete.forEach(ele => {
     ele.addEventListener('click', function(event){
       event.preventDefault();
@@ -93,14 +93,14 @@
 
       if(accept){
         axios.delete('products/' + productId)
-          .then(response => {
-            if(response.data.status){
-              const tr = document.querySelector(`tbody[data-product="${productId}"]`);
-              tr.remove();
-              //alert(response.data.message);
-            }
-          })
-          .catch(err => console.log(err));
+        .then(response => {
+          if(response.data.status){
+            const tr = document.querySelector(`tbody[data-product="${productId}"]`);
+            tr.remove();
+            //alert(response.data.message);
+          }
+        })
+        .catch(err => console.log(err));
       }
     });
   });
