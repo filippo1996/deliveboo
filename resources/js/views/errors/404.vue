@@ -22,9 +22,9 @@
                     </router-link>
                   </li>
 
-                  <li class="fs-6 p-3">
+                  <!-- <li class="fs-6 p-3">
                     <a href="" class="text-reset text-decoration-none">Contattaci</a>
-                  </li>
+                  </li> -->
 
                   <li class="fs-6 p-3">
                     <router-link 
@@ -45,7 +45,8 @@
 
 <script>
 export default {
-
+  name: '404'
+  
 }
 </script>
 
