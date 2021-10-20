@@ -4,11 +4,13 @@
 
 @section('content')
   <div class="container">
-    <div class="row overflow-hidden vh-100">
+    <div class="row overflow-hidden">
       <div class="col-12">
-        <div class="table-responsive mt-3 h-50">
+        <div class="text-center fs-4 fw-bold text_color mt-5">Elenco Ordini</div>
+
+        <div class="table-responsive mt-1">
           <table class="table table-sm table-hover">
-            <thead class="table-dark">
+            <thead class="text_color background_color_y">
               <tr class="text-start">
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
@@ -25,7 +27,7 @@
             </thead>
                 
             @foreach ($orders as $order)
-              <tbody data-product="{{ $order->id }}" class="text-start">
+              <tbody data-product="{{ $order->id }}" class="text-start background_color_y">
                 <tr>
                   <th scope="row">{{ $order->id }}</th>
                   <td>{{ $order->name }}</td>
@@ -42,7 +44,7 @@
                   {{-- Show --}}
                   <td class="text-center">
                     <a href="{{ route('orders.show', ['order'=>$order->id]) }}"class="text-muted">
-                      <div class="btn btn-outline-success">
+                      <div class="btn bottone border-0">
                         <i class="fas fa-glasses"></i>
                       </div>
                     </a>

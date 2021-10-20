@@ -9,7 +9,9 @@
     
     <div class="row overflow-hidden">
       <div class="col-12">
-        <div class="table-responsive mt-5">
+        <div class="text-center fs-4 fw-bold text_color mt-5">Elenco prodotti</div>
+        
+        <div class="table-responsive mt-1">
           <table class="table table-sm table-hover">
             <thead class="text_color background_color_y">
               <tr class="text-start">
