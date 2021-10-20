@@ -5,7 +5,7 @@
     <div class="row mt-5">
       <div class="col-lg-8 m-auto">
         <div class="card text-center w-50 m-auto background_color_y text_colo box_shadows">
-          <img class="card-img-top image-auto" src="{{ $product->img_path }}" alt="{{ $product->name }}">
+          <img class="card-img-top img-fluid w-50 m-auto" src="{{ $product->img_path }}" alt="{{ $product->name }}">
           <h1 class="card-header fs-5 fw-bold">{{ $product->name }}</h1>
           <div class="card-body p-3">
             {{-- <h2 class="card-title">{{ $product->slug }}</h2> --}}

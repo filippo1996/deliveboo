@@ -17496,3 +17496,8 @@ input:checked + .slider:before {
   border-radius: 15px;
   box-shadow: 15px 15px 0 rgba(0, 0, 0, 0.25);
 }
+
+.obj_fit {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
