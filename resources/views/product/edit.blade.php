@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-12">
         @if ($errors->any())
-          <div class="aler alert-danger">
+          <div class="aler alert-danger pt-2">
             <ul>
               @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li> 
@@ -118,11 +118,11 @@
                   <i class="fas fa-save mt-1 fs-3"></i>
                 </button>
               </div>
-              {{-- Annulla --}}
+
               <div class="col-6 text-start">
-                <button type="submit" class="text_color btn bottone">
-                  <i class="fas fa-window-close mt-1 fs-3"></i>
-                </button>
+                <a href="{{ route('products.index') }}">
+                  <button type="button" class="btn btn-outline-danger">Annulla</button>
+                </a>
               </div>
             </div>
 
@@ -131,17 +131,6 @@
         </form>  
       </div>
     </div>
-
-    {{-- <div class="row mt-5">
-      <div class="col-6">
-        <div class="text-center mt-5">
-          <a href="{{ route('products.index') }}">
-            <button type="button" class="btn btn-outline-danger">Annulla</button>
-          </a>
-          {{-- Il bottone Annulla rimane in secondo piano, rispetto all'operazione "Salva modifiche" suggerita e in evidenza --}}
-        </div>
-      </div>
-    </div> --}}
   </div>
 @endsection
 
