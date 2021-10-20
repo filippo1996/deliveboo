@@ -17493,7 +17493,6 @@ input:checked + .slider:before {
 
 .box_shadows {
   border: 1px solid rgba(0, 0, 0, 0.25);
-  padding: 35px;
   border-radius: 15px;
   box-shadow: 15px 15px 0 rgba(0, 0, 0, 0.25);
 }
