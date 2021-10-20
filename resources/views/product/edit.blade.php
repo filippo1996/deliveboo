@@ -167,8 +167,9 @@
     input.value = true;
     btnDeleteImg.append(input);
     btnDeleteImg.parentNode.insertBefore(input, btnDeleteImg.nextSibling);
+    btnDeleteImg.remove();
     image.value = '';
-    preview.src = '#';
+    preview.src = "<?= asset('storage/products/product-placeholder.jpeg') ?>";
   });
 </script>
 @endsection
