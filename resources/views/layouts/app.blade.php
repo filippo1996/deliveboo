@@ -139,7 +139,7 @@
                     <li class="nav-item mt-4 fs-6">
                       <a class="nav-link" href="{{ route('products.index') }}">
                         <i class="fas fa-cubes fs-5 pe-2"></i>
-                        Prodtti
+                        Prodotti
                       </a>
                     </li>
                               
