@@ -101,43 +101,31 @@
               </div>
             {{-- End DX --}}  
             </div>
-
+            
+            {{-- Bottoni --}}
+            <div class="row text-center">
+              {{-- Salva --}}
+              <div class="col-6 text-end">
+                <button type="submit" class="text_color btn bottone">
+                  <i class="fas fa-save mt-1 fs-3"></i>
+                </button>
+              </div>
+              {{-- Annulla --}}
+              <div class="col-6 text-start">
+                <button type="submit" class="text_color btn bottone">
+                  <i class="fas fa-window-close mt-1 fs-3"></i>
+                </button>
+              </div>
+            </div>
 
           {{-- End Row   --}}
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           
-
-          
-
-          
-
-          
-
-          
-
-          
-
-          <button type="submit" class="btn btn-success">Salva modiche</button>
         </form>  
       </div>
     </div>
 
-    <div class="row mt-5">
-      <div class="col-12">
+    {{-- <div class="row mt-5">
+      <div class="col-6">
         <div class="text-center mt-5">
           <a href="{{ route('products.index') }}">
             <button type="button" class="btn btn-outline-danger">Annulla</button>
@@ -145,7 +133,7 @@
           {{-- Il bottone Annulla rimane in secondo piano, rispetto all'operazione "Salva modifiche" suggerita e in evidenza --}}
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 @endsection
 
