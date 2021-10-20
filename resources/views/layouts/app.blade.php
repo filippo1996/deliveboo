@@ -186,7 +186,7 @@
             </nav>
           @endauth
 
-          <main class="col-12 col-md-10 col-lg-12 m-auto mt-5 pb-5 w-75">
+          <main class="col-12 col-md-10 col-lg-12 m-auto mt-5 p-5 w-75">
             @yield('content')
           </main>
         </div>
