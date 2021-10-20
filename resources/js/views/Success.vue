@@ -1,14 +1,14 @@
 <template>
   <section>
     <div class="container">
-      <div class="row py-5">
-        <div class="col-6 mt-5 d-flex align-items-center">
+      <div class="row pt-5">
+        <div class="col-12 col-md-6 mt-5 d-flex align-items-center">
          <h3>L'ordine è stato completato con successo, arriverà il prima possibile.</h3>
         </div>
-        <div class="col-6 d-flex justify-content-center mt-5">
+        <div class="col-12 col-md-6 d-flex justify-content-center mt-5">
           <img src="/images/food.png" alt="food">
         </div>
-        <div class="col-3 d-flex justify-content-center mb-5">
+        <div class="col-12 col-md-4 d-flex justify-content-center my-5">
          <router-link 
               class="text-decoration-none bottone p-2 px-3" 
               :to="{ name: 'home' }">
@@ -37,6 +37,10 @@ export default {
   h3{
     color: white;
     text-align: center;
+  }
+
+  img{
+    width: 300px;
   }
 
 </style>
