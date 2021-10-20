@@ -114,14 +114,16 @@
             <div class="row text-center">
               {{-- Salva --}}
               <div class="col-6 text-end">
-                <button type="submit" class="text_color btn bottone">
+                <button type="submit" class="btn bottone text_color">
                   <i class="fas fa-save mt-1 fs-3"></i>
                 </button>
               </div>
 
               <div class="col-6 text-start">
                 <a href="{{ route('products.index') }}">
-                  <button type="button" class="btn btn-outline-danger">Annulla</button>
+                  <button type="button" class="btn bottone text_color">
+                    <i class="fas fa-window-close mt-1 fs-3"></i>
+                  </button>
                 </a>
               </div>
             </div>
