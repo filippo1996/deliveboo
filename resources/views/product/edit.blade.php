@@ -16,7 +16,7 @@
 
         <div class="row pt-3 pt-lg-0">
           <div class="col">
-            <h1 class="text-center mt-5 fs-4 fw-bold text_color">Modifica un prodotto</h1>
+            <h1 class="text-center mt-3 fs-4 fw-bold text_color">Modifica un prodotto</h1>
           </div>
         </div>
 
@@ -31,13 +31,21 @@
             {{-- SX --}}
             <div class="col-lg-6">
               {{-- Immagine --}}
-              <div class="my-5 w-auto">
+              <div class="my-3 w-auto">
                 <label for="image" class="form-label">Immagine</label>
-                <input type="file" id="image" name='image' class="form-control @error('image') is-invalid @enderror">
-                <img class="mt-5 mb-1" id="preview" src="{{ $product->img_path }}" alt="" width="260px"/>
-                @if($product->getRawOriginal('img_path'))
-                <button id="delete-img" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                @endif
+                <input 
+                  type="file" 
+                  id="image" 
+                  name='image' 
+                  class="form-control @error('image') is-invalid @enderror">
+                    <img 
+                      class="mt-3 ms-3" 
+                      id="preview" 
+                      src="{{ $product->img_path }}" 
+                      alt="" width="260px"/>
+                        @if($product->getRawOriginal('img_path'))
+                        <button id="delete-img" class="btn bottone text_color ms-2"><i class="fas fa-trash"></i></button>
+                        @endif
 
                   @error('image')
                   <div class="alert alert-danger">{{ $message }}</div> 
@@ -45,7 +53,7 @@
               </div>
 
               {{-- Disponibilità --}}
-              <div class="my-5 w-auto">
+              <div class="mt-5 mb-3 w-auto">
                 <label for="visibility" class="form-label">Disponibilità del prodotto</label>
                 <select id="visibility" name="visibility" class="form-select" required>
                   <option {{ $product->visibility || (int) old('visibility') ? 'selected' : ''}} value="1">Disponibile</option>
@@ -54,7 +62,7 @@
               </div>
 
               {{-- Prezzo --}}
-              <div class="my-5 w-auto">
+              <div class="my-3 w-auto">
                 <label for="price" class="form-label">Prezzo</label>
                 <input class="form-control @error('price') is-invalid @enderror" type="number" step="0.01" min="0" id="price" name="price" value="{{ old('price') ? old('price') : $product->price }}" required>
               </div>
@@ -66,7 +74,7 @@
             {{-- DX --}}
             <div class="col-lg-6">
               {{-- Nome --}}
-              <div class="my-5 w-auto">
+              <div class="my-3 w-auto">
                 <label for="nome" class="form-label">Nome</label>
                 <input 
                   name="name" 
@@ -78,7 +86,7 @@
               </div>
 
               {{-- Descrizione --}}
-              <div class="my-5 w-auto">
+              <div class="my-3 w-auto">
                 <label for="descrizione" class="form-label">Descrizione</label>
                 <textarea 
                   name="description" 
@@ -89,7 +97,7 @@
               </div>
 
               {{-- Ingredienti --}}
-              <div class="my-5 w-auto">
+              <div class="my-3 w-auto">
                 <label for="ingredienti" class="form-label">Ingredienti</label>
                 <textarea 
                   name="ingredient" 
