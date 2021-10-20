@@ -4,7 +4,7 @@
 @section('content')
   <div class="container">
     @if (session('updated'))
-      <div class="alert alert-success">{{ session('updated') }}</div>        
+      <div class="alert alert-success mt-3">{{ session('updated') }}</div>        
     @endif
     
     <div class="row overflow-hidden">
