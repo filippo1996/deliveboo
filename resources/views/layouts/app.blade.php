@@ -139,7 +139,7 @@
                     <li class="nav-item mt-4 fs-6">
                       <a class="nav-link" href="{{ route('products.index') }}">
                         <i class="fas fa-cubes fs-5 pe-2"></i>
-                        Prodotti
+                        Prodtti
                       </a>
                     </li>
                               
@@ -186,7 +186,7 @@
             </nav>
           @endauth
 
-          <main class="col-12 col-md-10 col-lg-12 m-auto mt-5 w-75">
+          <main class="col-12 col-md-10 col-lg-12 m-auto mt-5 p-5 w-75">
             @yield('content')
           </main>
         </div>
