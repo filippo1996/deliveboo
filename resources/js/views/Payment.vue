@@ -103,7 +103,7 @@ section{
   top: -10px;
 }
 .pagamento{
-  height: 29rem;
+  height: 35rem;
 }
 .load{
   width: 100%;
