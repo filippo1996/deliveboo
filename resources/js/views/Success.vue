@@ -35,7 +35,7 @@ export default {
   }
 
   h3{
-    color: white;
+    color: $blue;
     text-align: center;
   }
 
