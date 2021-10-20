@@ -104,7 +104,9 @@
         <div class="row text-center">
           <div class="col">
             {{-- Crea --}}
-            <button type="submit" class="text_color btn bottone">Inserisci</button>
+            <button type="submit" class="text_color btn bottone">
+              <i class="fas fa-check-square mt-1 fs-3"></i>
+            </button>
           </div>
         </div>
       </div>

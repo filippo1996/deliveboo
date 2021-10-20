@@ -14,6 +14,12 @@
           </div>  
         @endif
 
+        <div class="row pt-3 pt-lg-0">
+          <div class="col">
+            <h1 class="text-center mt-5 fs-4 fw-bold text_color">Modifica un prodotto</h1>
+          </div>
+        </div>
+
         <form action="{{ route('products.update', $product->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method('PATCH')
@@ -24,9 +30,9 @@
 
             {{-- SX --}}
             <div class="col-lg-6">
-              {{-- Carico immagine --}}
-              <div class="mt-5 mb-5">
-                <label for="image" class="form-label"></label>
+              {{-- Immagine --}}
+              <div class="my-5 w-auto">
+                <label for="image" class="form-label">Immagine</label>
                 <input type="file" id="image" name='image' class="form-control @error('image') is-invalid @enderror">
                 <img class="mt-5 mb-1" id="preview" src="{{ $product->img_path }}" alt="" width="260px"/>
                 @if($product->getRawOriginal('img_path'))
@@ -39,7 +45,7 @@
               </div>
 
               {{-- Disponibilità --}}
-              <div class="mb-5 w-50">
+              <div class="my-5 w-auto">
                 <label for="visibility" class="form-label">Disponibilità del prodotto</label>
                 <select id="visibility" name="visibility" class="form-select" required>
                   <option {{ $product->visibility || (int) old('visibility') ? 'selected' : ''}} value="1">Disponibile</option>
@@ -48,7 +54,7 @@
               </div>
 
               {{-- Prezzo --}}
-              <div class="mb-5 w-25">
+              <div class="my-5 w-auto">
                 <label for="price" class="form-label">Prezzo</label>
                 <input class="form-control @error('price') is-invalid @enderror" type="number" step="0.01" min="0" id="price" name="price" value="{{ old('price') ? old('price') : $product->price }}" required>
               </div>
@@ -60,7 +66,7 @@
             {{-- DX --}}
             <div class="col-lg-6">
               {{-- Nome --}}
-              <div class="mt-5 mb-5">
+              <div class="my-5 w-auto">
                 <label for="nome" class="form-label">Nome</label>
                 <input 
                   name="name" 
@@ -72,18 +78,18 @@
               </div>
 
               {{-- Descrizione --}}
-              <div class="mb-5">
+              <div class="my-5 w-auto">
                 <label for="descrizione" class="form-label">Descrizione</label>
                 <textarea 
                   name="description" 
                   class="form-control" 
                   id="descrizione" 
                   cols="30" 
-                  rows="10">{{ old('description', $product->description) }}</textarea>
+                  rows="8">{{ old('description', $product->description) }}</textarea>
               </div>
 
               {{-- Ingredienti --}}
-              <div class="mb-5 w-75">
+              <div class="my-5 w-auto">
                 <label for="ingredienti" class="form-label">Ingredienti</label>
                 <textarea 
                   name="ingredient" 
@@ -95,43 +101,31 @@
               </div>
             {{-- End DX --}}  
             </div>
-
+            
+            {{-- Bottoni --}}
+            <div class="row text-center">
+              {{-- Salva --}}
+              <div class="col-6 text-end">
+                <button type="submit" class="text_color btn bottone">
+                  <i class="fas fa-save mt-1 fs-3"></i>
+                </button>
+              </div>
+              {{-- Annulla --}}
+              <div class="col-6 text-start">
+                <button type="submit" class="text_color btn bottone">
+                  <i class="fas fa-window-close mt-1 fs-3"></i>
+                </button>
+              </div>
+            </div>
 
           {{-- End Row   --}}
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           
-
-          
-
-          
-
-          
-
-          
-
-          
-
-          <button type="submit" class="btn btn-success">Salva modiche</button>
         </form>  
       </div>
     </div>
 
-    <div class="row mt-5">
-      <div class="col-12">
+    {{-- <div class="row mt-5">
+      <div class="col-6">
         <div class="text-center mt-5">
           <a href="{{ route('products.index') }}">
             <button type="button" class="btn btn-outline-danger">Annulla</button>
@@ -139,7 +133,7 @@
           {{-- Il bottone Annulla rimane in secondo piano, rispetto all'operazione "Salva modifiche" suggerita e in evidenza --}}
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 @endsection
 
