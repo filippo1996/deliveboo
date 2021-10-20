@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col">
           <div class="not_found">
-            <div class="content">
-              <h1 class="fs-2 mb-1 pt-1 pt-3">Oops! Non abbiamo trovato questa pagina.</h1>
+            <div class="content pt-5">
+              <h1 class="fs-2 mb-1 pt-1 pt-5">Oops! Non abbiamo trovato questa pagina.</h1>
 
               <img src="images/not_found.png" class="img-fluid" alt="Pagina non trovata">
 
@@ -27,7 +27,10 @@
                   </li>
 
                   <li class="fs-6 p-3">
-                    <a href="" class="text-reset  text-decoration-none">Chi Siamo</a>
+                    <router-link 
+                      class="text-reset text-decoration-none" @click="returnToTop" 
+                      :to="{name: 'aboutus'}">{{ 'Chi Siamo' }}
+                    </router-link>
                   </li>
                 </ul>
               </div>
