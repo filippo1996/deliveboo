@@ -6,9 +6,9 @@
   <div class="container">
     <div class="row overflow-hidden">
       <div class="col-12">
-        <div class="text-center fs-4 fw-bold text_color mt-5">Elenco Ordini</div>
+        <div class="text-center fs-4 fw-bold text_color mt-1">Elenco Ordini</div>
 
-        <div class="table-responsive mt-1 overflow-hidden">
+        <div class="table-responsive mt-1 overflow-y-auto">
           <table class="table table-sm table-hover">
             <thead class="text_color background_color_y">
               <tr class="text-start">
