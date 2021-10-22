@@ -3,6 +3,8 @@
 @section('content')
   <div class="container">
 
+    <x-modal></x-modal>
+     
     <div class="row pt-5">
 
       {{-- col 1 --}}
@@ -70,7 +72,6 @@
 <script src="./js/chart_utils.js"></script>
 {{-- Chart --}}
 <script>
-
 let date, orders;
 fetch('restaurant/char/orders')
     .then(response => response.json())
