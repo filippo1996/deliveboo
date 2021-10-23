@@ -3,7 +3,11 @@
 @section('content')
   <div class="container">
 
-    <x-modal></x-modal>
+    <x-modal title="Custom Title" id="customModal">
+      <p class="fs-4 mt-2">Benvenuto in Deliveboo!</p>
+      <p class="fs-6 mt-5">Questa è la tua Dashboard</p>
+    </x-modal>
+    
      
     <div class="row pt-5">
 

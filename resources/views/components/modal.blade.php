@@ -5,17 +5,11 @@
 <div class="modal d-block m-5 p-5" tabindex="-1" role="dialog" id="welcome">
   <div class="modal-dialog" role="document">
     <div class="modal-content text_color background_color_y box_shadows">
-      <div class="modal-header m-auto text-center">
-        <h5 class="modal-title fs-5 fw-bold">Benvenuto in Deliveboo</h5>
-      </div>
-
+     
       <div class="modal-body text-center">
-        <p class="fs-6 mt-5">Questa è la tua Dashboard</p>
+        {{$slot}}
       </div>
         
-      {{-- <div class="modal-footer">
-     
-      </div> --}}
     </div>
   </div>
 </div>
