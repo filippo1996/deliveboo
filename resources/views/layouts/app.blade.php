@@ -127,7 +127,7 @@
           @auth
             <nav class="col-md-2 d-none d-md-block sidebar bg-dark p-1 pt-1 min-vh-100">  
               <div class="sidebar-sticky p-1 mt-5">
-                <ul class="nav flex-column mt-1">
+                <ul class="nav flex-column mt-4">
                     <li class="nav-item mt-1 fs-6">
                       {{-- Rotta in home da verificare --}}
                       <a class="nav-link" href="{{ route('home') }}">
