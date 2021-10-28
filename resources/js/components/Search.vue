@@ -75,7 +75,7 @@ export default {
 
   .modal-content {
     background-color: #41718eda;
-    height: 100%;
+    height: 350px;
     margin: 0 auto;
     border-radius: 10px;
 
